@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 5690 Ch 7</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 5690 (Topology)  ·  Chapter 7 Homework</h1>
+<div class="hdr"><p class="small">Problems first; ALL solutions together at the end. The comps problem is quoted verbatim from the CSULA topology comprehensive exam (solution by Claude - comps have no key). The assigned main-textbook problems are inlined verbatim (cropped from Morris, Topology Without Tears); official solutions are appended.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<h3 class="grp">Assigned problems (Chapter 7)</h3>
+<p>$\bullet$ Fall 2008 topology comps, Problem 4(b).</p>
+<p>$\bullet$ Main textbook: Section 7.1 #1-5;  Section 7.2 #1, 3, 4, 6, 7.</p>
+<p>$\bullet$ Worksheet problems (appended).</p>
+<h4 class="sub">Comprehensive-exam problem  (Fall 2008, #4)  - verbatim</h4>
+<div class="item prob" id="c7-p-comps"><p>Consider $\mathbb{R}^2$ equipped with the topology $\tau$ having as a subbase all sets of the form $U_a:=\{(x,y): x\neq a\}$ where $a\in\mathbb{R}$.</p>
+<p>(a) Prove that $V\in\tau$ iff for some finite subset $F$ of $\mathbb{R}$, $V=\{(x,y): x\notin F\}$.</p>
+<p>(b) Prove that $\langle\mathbb{R}^2,\tau\rangle$ is compact.</p>
+<p>[The assignment is part (b); part (a) is included since the solution to (b) uses it.]</p><div class="tosol"><a href="#c7-s-comps">Solution &darr;</a></div></div>
+<h4 class="sub">Worksheet problems - verbatim</h4>
+<div class="item prob" id="c7-p-ws1"><p><b>(1)</b> Prove that every finite topological space is compact.</p><div class="tosol"><a href="#c7-off-ch7-worksheet-sols-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws2"><p><b>(2)</b> Let $X$ be a topological space. Let $A,B$ be compact subsets of $X$. Prove that $A\cup B$ is compact.</p><div class="tosol"><a href="#c7-off-ch7-worksheet-sols-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws3"><p><b>(3)</b> Let $X$ be a metric space, and let $K$ be a compact subset of $X$. Prove that $K$ is bounded. (In other words, prove that there exists $x\in X$ and $r&gt;0$ such that $K\subset B_r(x)$.)</p><div class="tosol"><a href="#c7-off-ch7-worksheet-sols-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws4"><p><b>(4)</b> Let $X$ be compact, and let $Y$ be a closed subset of $X$. Prove that $Y$ is compact.</p><div class="tosol"><a href="#c7-off-ch7-worksheet-sols-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws5"><p><b>(5)</b> Let $X$ be a Hausdorff space. Prove that if $A$ is a compact subset of $X$, then $A$ is closed in $X$.</p><div class="tosol"><a href="#c7-off-ch7-worksheet-sols-p2">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws6"><p><b>(6)</b> Let $f:X\to Y$ be a continuous function. Prove that if $X$ is compact, then $f(Y)$ is compact.</p><div class="tosol"><a href="#c7-off-ch7-worksheet-sols-p2">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws7"><p><b>(7)</b> CHALLENGE: Let $f:[0,1]\to\mathbb{R}$ be a continuous function. Prove that the image of $f$ is either a point or a closed interval. (Hint: Remember what you know about images of compact and connected sets under continuous functions.)</p><div class="tosol"><a href="#c7-s-ws7">Solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws8"><p><b>(8)</b> Give an example of a topological space $X$ and a subset $A$ of $X$ such that $A$ is compact but not closed. (Hint: Consider the indiscrete topology.)</p><div class="tosol"><a href="#c7-off-ch7-worksheet-sols-p2">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws9"><p><b>(9)</b> Let $X$ be a discrete topological space. Prove that $X$ is compact iff $X$ is finite.</p><div class="tosol"><a href="#c7-off-ch7-worksheet-sols-p3">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws10"><p><b>(10)</b> Let $X$ be a Hausdorff space. Let $A,B$ be compact subsets of $X$. Prove that $A\cap B$ is compact. (CHALLENGE: Give an example to show that this can fail when $X$ is not Hausdorff.)</p><div class="tosol"><a href="#c7-off-ch7-worksheet-sols-p3">Official solution &darr;</a> &middot; <a href="#c7-s-ws10">Solution (Claude) &darr;</a></div></div>
+<div class="item prob" id="c7-p-ws11"><p><b>(11)</b> CHALLENGE: Prove that $\mathbb{R}^2$ is the Zariski topology is compact.</p><div class="tosol"><a href="#c7-s-ws11">Solution &darr;</a></div></div>
+<h3 class="grp">MAIN-TEXTBOOK PROBLEMS  (Morris, Topology Without Tears - assigned exercises, verbatim)</h3>
+
+<h4 class="sub">Exercises 7.1</h4>
+<div class="item prob" id="c7-p-s7-1-1"><p><b>$\bullet$  #1.</b> Let $(X,\tau)$ be an indiscrete space. Prove that every subset of $X$ is compact.</p><div class="tosol"><a href="#c7-off-ch7-extra-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-s7-1-2"><p><b>$\bullet$  #2.</b> Let $\tau$ be the finite-closed topology on any set $X$. Prove that every subset of $(X,\tau)$ is compact.</p><div class="tosol"><a href="#c7-s-s7-1-2">Solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-s7-1-3"><p><b>$\bullet$  #3.</b> Prove that each of the following spaces is not compact.</p>
+<p>(i) $(0,1)$;</p>
+<p>(ii) $[0,1)$;</p>
+<p>(iii) $\mathbb{Q}$;</p>
+<p>(iv) $\mathbb{P}$;</p>
+<p>(v) $\mathbb{R}^2$;</p>
+<p>(vi) the open disc $D = \{\langle x,y\rangle : x^2 + y^2 &lt; 1\}$ considered as a subspace of $\mathbb{R}^2$;</p>
+<p>(vii) the Sorgenfrey line;</p>
+<p>(viii) $C[0,1]$ with the topology induced by the metric $d$ of Example 6.1.5:</p>
+<p>(ix) $\ell_1, \ell_2, \ell_\infty, c_0$ with the topologies induced respectively by the metrics $d_1, d_2$,</p>
+<p>$d_\infty$, and $d_0$ of Exercises 6.1 #7.</p><div class="tosol"><a href="#c7-s-s7-1-3">Solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-s7-1-4"><p><b>$\bullet$  #4.</b> Is $[0,1]$ a compact subset of the Sorgenfrey line?</p><div class="tosol"><a href="#c7-s-s7-1-4">Solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-s7-1-5"><p><b>$\bullet$  #5.</b> Is $[0,1] \cap \mathbb{Q}$ a compact subset of $\mathbb{Q}$?</p><div class="tosol"><a href="#c7-off-ch7-extra-p1">Official solution &darr;</a></div></div>
+<h4 class="sub">Exercises 7.2</h4>
+<div class="item prob" id="c7-p-s7-2-1"><p><b>$\bullet$  #1.</b> Which of the following subsets of $\mathbb{R}$ are compact? (Justify your answers.)</p>
+<p>(i) $\mathbb{Z}$;</p>
+<p>(ii) $\{\frac{\sqrt{2}}{n} : n = 1, 2, 3, \dots\}$;</p>
+<p>(iii) $\{x : x = \cos y, y \in [0,1]\}$;</p>
+<p>(iv) $\{x : x = \tan y, y \in [0, \pi/2)\}$.</p><div class="tosol"><a href="#c7-off-ch7-extra-p2">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-s7-2-3"><p><b>$\bullet$  #3.</b> Let $(X,\tau)$ be a compact space. If $\{F_i : i \in I\}$ is a family of closed subsets of $X$ such that $\bigcap_{i\in I} F_i = \emptyset$, prove that there is a finite subfamily $F_{i_1}, F_{i_2}, \dots, F_{i_m}$ such that $F_{i_1} \cap F_{i_2} \cap \dots \cap F_{i_m} = \emptyset$.</p><div class="tosol"><a href="#c7-s-s7-2-3">Solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-s7-2-4"><p><b>$\bullet$  #4.</b> Corollary 4.3.7 says that for real numbers $a, b, c$ and $d$ with $a &lt; b$ and $c &lt; d$,</p>
+<p>(i) $(a,b) \ncong [c,d]$</p>
+<p>(ii) $[a,b) \ncong [c,d]$. Prove each of these using a compactness argument (rather than a connectedness argument as was done in Corollary 4.3.7).</p><div class="tosol"><a href="#c7-off-ch7-extra-p2">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-s7-2-6"><p><b>$\bullet$  #6.</b> Let $f : (X,\tau) \to (Y,\tau_1)$ be a continuous bijection. If $(X,\tau)$ is compact and $(Y,\tau_1)$ is Hausdorff, prove that $f$ is a homeomorphism.</p><div class="tosol"><a href="#c7-off-ch7-extra-p2">Official solution &darr;</a></div></div>
+<div class="item prob" id="c7-p-s7-2-7"><p><b>$\bullet$  #7.</b> Let $\{C_j : j \in J\}$ be a family of closed compact subsets of a topological space $(X,\tau)$. Prove that $\bigcap_{j\in J} C_j$ is compact.</p><div class="tosol"><a href="#c7-off-ch7-extra-p3">Official solution &darr;</a></div></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<p class="small">My worked solutions to the comprehensive-exam problem (and any class problem with no official key) follow; the instructor's official solutions to the main-textbook / worksheet problems are appended after.</p>
+<h4 class="sub">Comps Fall 2008 #4(b)  - solution</h4>
+<div class="item sol" id="c7-s-comps"><div class="toprob"><a href="#c7-p-comps">&uarr; Problem</a></div><p>First note (part (a)) that the nonempty open sets are exactly the sets $\{(x,y): x\notin F\}$ for a finite $F\subseteq\mathbb{R}$: a finite intersection of subbasic sets $U_{a_1}\cap\cdots\cap U_{a_k}=\{x\notin\{a_1,\dots,a_k\}\}$ has this form, an arbitrary union of such sets $\{x\notin F_i\}$ is $\{x\notin\bigcap_i F_i\}$ (again of this form, with $\bigcap_i F_i$ finite), and $\mathbb{R}^2=\{x\notin\emptyset\}$. A key feature: a nonempty open set constrains only the $x$-coordinate, so if it contains one point of a vertical line $\{x=a\}$ it contains the entire line. Now let $\{W_i\}_{i\in I}$ be an open cover of $\mathbb{R}^2$. Pick one nonempty member $W_{i_0}=\{x\notin F\}$, $F=\{a_1,\dots,a_m\}$ finite. Its complement is the union of the $m$ vertical lines $\{x=a_1\},\dots,\{x=a_m\}$. For each $j$, choose any point of the line $\{x=a_j\}$; it lies in some $W_{i_j}$, and since $W_{i_j}$ is a nonempty open set containing a point with $x=a_j$, it contains the whole line $\{x=a_j\}$. Then $W_{i_0}\cup W_{i_1}\cup\cdots\cup W_{i_m}=\mathbb{R}^2$, a finite subcover. So $\langle\mathbb{R}^2,\tau\rangle$ is compact.  ∎</p></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch7_extra.pdf, 3 pages (shown as page images)</div>
+<div class="off" id="c7-off-ch7-extra-p1"><div class="toprob"><a href="#c7-p-s7-1-1">&uarr; Problem 7.1 #1</a> &middot; <a href="#c7-p-s7-1-5">&uarr; Problem 7.1 #5</a></div><div class="offcap">ch7_extra.pdf, page 1</div><img src="img/5690-ch7_extra-p1.png" width="1275" height="1650" loading="lazy" alt="ch7_extra.pdf page 1"></div>
+<div class="off" id="c7-off-ch7-extra-p2"><div class="toprob"><a href="#c7-p-s7-2-1">&uarr; Problem 7.2 #1</a> &middot; <a href="#c7-p-s7-2-4">&uarr; Problem 7.2 #4</a> &middot; <a href="#c7-p-s7-2-6">&uarr; Problem 7.2 #6</a></div><div class="offcap">ch7_extra.pdf, page 2</div><img src="img/5690-ch7_extra-p2.png" width="1275" height="1650" loading="lazy" alt="ch7_extra.pdf page 2"></div>
+<div class="off" id="c7-off-ch7-extra-p3"><div class="toprob"><a href="#c7-p-s7-2-7">&uarr; Problem</a></div><div class="offcap">ch7_extra.pdf, page 3</div><img src="img/5690-ch7_extra-p3.png" width="1275" height="1650" loading="lazy" alt="ch7_extra.pdf page 3"></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch7_worksheet_probs.pdf, 1 page (shown as page images)</div>
+<div class="off" id="c7-off-ch7-worksheet-probs-p1"><div class="offcap">ch7_worksheet_probs.pdf, page 1</div><img src="img/5690-ch7_worksheet_probs-p1.png" width="1241" height="1754" loading="lazy" alt="ch7_worksheet_probs.pdf page 1"></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch7_worksheet_sols.pdf, 3 pages (shown as page images)</div>
+<div class="off" id="c7-off-ch7-worksheet-sols-p1"><div class="toprob"><a href="#c7-p-ws1">&uarr; Problem Worksheet (1)</a> &middot; <a href="#c7-p-ws2">&uarr; Problem Worksheet (2)</a> &middot; <a href="#c7-p-ws3">&uarr; Problem Worksheet (3)</a> &middot; <a href="#c7-p-ws4">&uarr; Problem Worksheet (4)</a></div><div class="offcap">ch7_worksheet_sols.pdf, page 1</div><img src="img/5690-ch7_worksheet_sols-p1.png" width="1241" height="1754" loading="lazy" alt="ch7_worksheet_sols.pdf page 1"></div>
+<div class="off" id="c7-off-ch7-worksheet-sols-p2"><div class="toprob"><a href="#c7-p-ws5">&uarr; Problem Worksheet (5)</a> &middot; <a href="#c7-p-ws6">&uarr; Problem Worksheet (6)</a> &middot; <a href="#c7-p-ws8">&uarr; Problem Worksheet (8)</a></div><div class="offcap">ch7_worksheet_sols.pdf, page 2</div><img src="img/5690-ch7_worksheet_sols-p2.png" width="1241" height="1754" loading="lazy" alt="ch7_worksheet_sols.pdf page 2"></div>
+<div class="off" id="c7-off-ch7-worksheet-sols-p3"><div class="toprob"><a href="#c7-p-ws9">&uarr; Problem Worksheet (9)</a> &middot; <a href="#c7-p-ws10">&uarr; Problem Worksheet (10)</a></div><div class="offcap">ch7_worksheet_sols.pdf, page 3</div><img src="img/5690-ch7_worksheet_sols-p3.png" width="1241" height="1754" loading="lazy" alt="ch7_worksheet_sols.pdf page 3"></div>
+<div class="frag">
+<h3>Chapter 7: backup solutions (Claude, not official)</h3>
+
+<p>Official files cover Section 7.1 #1, #5; Section 7.2 #1, #4, #6, #7; Worksheet #1 to #6, #8, #9 and the main part of #10. Everything below is NOT in the official files. Throughout, "compact" is Morris' Definition 7.1.7 (every open covering has a finite subcovering), and by Remark 7.1.8 a subset A of (X,τ) is compact as a subset iff it is compact as a subspace, so we may use open sets of the big space.</p>
+
+
+<div class="lbl anch" id="c7-s-s7-1-2">Section 7.1 #2</div><div class="toprob"><a href="#c7-p-s7-1-2">&uarr; Problem</a></div>
+<div class="stmt">Let τ be the finite-closed topology on any set X. Prove that every subset of (X,τ) is compact.</div>
+<p><b>Proof.</b> Recall that in the finite-closed topology the open sets are Ø and the sets whose complement in X is finite. Let A ⊆ X and let O<sub>i</sub>, i ∈ I, be an open covering of A, so A ⊆ ⋃<sub>i∈I</sub> O<sub>i</sub>.</p>
+<p>If A = Ø, then any single O<sub>i</sub> (or, if I = Ø, the empty subfamily) is a finite subcovering. So assume A ≠ Ø and pick a ∈ A. Some O<sub>i<sub>0</sub></sub> contains a. Then O<sub>i<sub>0</sub></sub> ≠ Ø, so by definition of the finite-closed topology X \ O<sub>i<sub>0</sub></sub> is finite. Hence A \ O<sub>i<sub>0</sub></sub> ⊆ X \ O<sub>i<sub>0</sub></sub> is finite, say A \ O<sub>i<sub>0</sub></sub> = {y<sub>1</sub>, …, y<sub>m</sub>} (possibly m = 0). Each y<sub>k</sub> ∈ A, so there is i<sub>k</sub> ∈ I with y<sub>k</sub> ∈ O<sub>i<sub>k</sub></sub>. Then</p>
+<p style="text-align:center">A ⊆ O<sub>i<sub>0</sub></sub> ∪ O<sub>i<sub>1</sub></sub> ∪ ⋯ ∪ O<sub>i<sub>m</sub></sub>,</p>
+<p>because every point of A is either in O<sub>i<sub>0</sub></sub> or is one of the y<sub>k</sub>. This is a finite subcovering, so A is compact. ∎</p>
+
+
+<div class="lbl anch" id="c7-s-s7-1-3">Section 7.1 #3</div><div class="toprob"><a href="#c7-p-s7-1-3">&uarr; Problem</a></div>
+<div class="stmt">Prove that each of the following spaces is <i>not</i> compact.<br>
+(i) (0, 1);<br>
+(ii) [0, 1);<br>
+(iii) ℚ;<br>
+(iv) ℙ;<br>
+(v) ℝ<sup>2</sup>;<br>
+(vi) the open disc D = {⟨x, y⟩ : x<sup>2</sup> + y<sup>2</sup> &lt; 1} considered as a subspace of ℝ<sup>2</sup>;<br>
+(vii) the Sorgenfrey line;<br>
+(viii) C[0, 1] with the topology induced by the metric d of Example 6.1.5:<br>
+(ix) ℓ<sub>1</sub>, ℓ<sub>2</sub>, ℓ<sub>∞</sub>, c<sub>0</sub> with the topologies induced respectively by the metrics d<sub>1</sub>, d<sub>2</sub>, d<sub>∞</sub>, and d<sub>0</sub> of Exercises 6.1 #7.</div>
+<p>In each part we exhibit an open covering with no finite subcovering. (Parts (i) to (vi) are subsets of ℝ or ℝ<sup>2</sup>; by Remark 7.1.8 it is enough to use open sets of ℝ or ℝ<sup>2</sup>.) In most parts the covering is an increasing sequence O<sub>1</sub> ⊆ O<sub>2</sub> ⊆ ⋯, and then a finite subfamily O<sub>n<sub>1</sub></sub>, …, O<sub>n<sub>k</sub></sub> has union O<sub>N</sub> where N = max{n<sub>1</sub>, …, n<sub>k</sub>}; so it suffices to find, for each N, a point of the space not in O<sub>N</sub>.</p>
+
+<p><b>(i)</b> Let O<sub>n</sub> = (1/n, 1) for n = 2, 3, …. Each O<sub>n</sub> is open in ℝ, O<sub>2</sub> ⊆ O<sub>3</sub> ⊆ ⋯, and (0, 1) = ⋃<sub>n⩾2</sub> O<sub>n</sub>: if 0 &lt; x &lt; 1, choose n ⩾ 2 with 1/n &lt; x. Given N ⩾ 2, the point 1/N lies in (0, 1) but not in O<sub>N</sub> = (1/N, 1). So no finite subfamily covers (0, 1), and (0, 1) is not compact. (This is also Corollary 7.2.3.)</p>
+
+<p><b>(ii)</b> Let O<sub>n</sub> = (−1, 1 − 1/n) for n = 1, 2, …. These are open, increasing, and [0, 1) ⊆ ⋃ O<sub>n</sub>: if 0 ⩽ x &lt; 1, choose n with 1/n &lt; 1 − x, so x &lt; 1 − 1/n. Given N, the point 1 − 1/N ∈ [0, 1) is not in O<sub>N</sub>. So [0, 1) is not compact. (This is also Example 7.2.7.)</p>
+
+<p><b>(iii)</b> Let O<sub>n</sub> = (−n, n), n = 1, 2, …. These are open in ℝ, increasing, and cover ℝ ⊇ ℚ (every real x satisfies |x| &lt; n for some n). Given N, the rational number N ∈ ℚ is not in (−N, N). So ℚ is not compact.</p>
+
+<p><b>(iv)</b> ℙ is the set of irrational numbers. Use the same O<sub>n</sub> = (−n, n). They cover ℙ. Given N, the number N + √2 is irrational (if it were rational then √2 = (N + √2) − N would be rational), and N + √2 &gt; N, so N + √2 ∈ ℙ \ O<sub>N</sub>. So ℙ is not compact.</p>
+
+<p><b>(v)</b> Let O<sub>n</sub> = {⟨x, y⟩ : x<sup>2</sup> + y<sup>2</sup> &lt; n<sup>2</sup>}, the open disc (open ball) of radius n about the origin, n = 1, 2, …. These are open in ℝ<sup>2</sup>, increasing, and cover ℝ<sup>2</sup> (any point has distance &lt; n from the origin for some n). Given N, the point ⟨N, 0⟩ is not in O<sub>N</sub> since N<sup>2</sup> is not &lt; N<sup>2</sup>. So ℝ<sup>2</sup> is not compact.</p>
+
+<p><b>(vi)</b> Let O<sub>n</sub> = {⟨x, y⟩ : x<sup>2</sup> + y<sup>2</sup> &lt; (1 − 1/n)<sup>2</sup>}, n = 2, 3, …, the open disc of radius 1 − 1/n about the origin. These are open in ℝ<sup>2</sup> and increasing. They cover D: if ⟨x, y⟩ ∈ D put r = √(x<sup>2</sup> + y<sup>2</sup>) &lt; 1 and choose n ⩾ 2 with 1/n &lt; 1 − r; then r &lt; 1 − 1/n. Given N ⩾ 2, the point ⟨1 − 1/N, 0⟩ lies in D but not in O<sub>N</sub>. So D is not compact.</p>
+
+<p><b>(vii)</b> By Exercises 3.2 #11 the Sorgenfrey line (ℝ, τ<sub>1</sub>) has basis {[a, b) : a ∈ ℝ, b ∈ ℚ, a &lt; b}. For each n ∈ ℤ the set [n, n + 1) is a basis element (n + 1 ∈ ℚ), hence open. Every real x lies in [⌊x⌋, ⌊x⌋ + 1), so {[n, n + 1) : n ∈ ℤ} is an open covering of ℝ. These sets are pairwise disjoint and each is nonempty, so a finite subfamily [n<sub>1</sub>, n<sub>1</sub> + 1), …, [n<sub>k</sub>, n<sub>k</sub> + 1) misses, for example, the point M + 1 where M = max{n<sub>1</sub>, …, n<sub>k</sub>} (since M + 1 lies only in [M + 1, M + 2)). So the Sorgenfrey line is not compact.</p>
+
+<p><b>(viii)</b> Here d(f, g) = ∫<sub>0</sub><sup>1</sup> |f(x) − g(x)| dx. Let 0 denote the zero function and let O<sub>n</sub> = B<sub>n</sub>(0) = {f ∈ C[0, 1] : d(f, 0) &lt; n}, n = 1, 2, …. Open balls are open in the metric topology, the O<sub>n</sub> increase, and they cover C[0, 1] because d(f, 0) is a real number for each f. Given N, the constant function g(x) = N is continuous and d(g, 0) = ∫<sub>0</sub><sup>1</sup> N dx = N, which is not &lt; N; so g ∉ O<sub>N</sub>. Hence (C[0, 1], d) is not compact.</p>
+
+<p><b>(ix)</b> Let (Z, ρ) be any one of (ℓ<sub>1</sub>, d<sub>1</sub>), (ℓ<sub>2</sub>, d<sub>2</sub>), (ℓ<sub>∞</sub>, d<sub>∞</sub>), (c<sub>0</sub>, d<sub>0</sub>), and let 0 = (0, 0, 0, …), which lies in all four sets. Let O<sub>n</sub> = {x ∈ Z : ρ(x, 0) &lt; n}, n = 1, 2, …. As in (viii) these open balls are open, increasing, and cover Z. For N ∈ ℕ let e<sup>(N)</sup> = (N, 0, 0, 0, …). This sequence has only one nonzero term, so Σ|x<sub>n</sub>| and Σx<sub>n</sub><sup>2</sup> converge, it is bounded, and it converges to 0; hence e<sup>(N)</sup> ∈ ℓ<sub>1</sub>, ℓ<sub>2</sub>, ℓ<sub>∞</sub>, c<sub>0</sub>. Moreover</p>
+<p style="text-align:center">d<sub>1</sub>(e<sup>(N)</sup>, 0) = N, d<sub>2</sub>(e<sup>(N)</sup>, 0) = (N<sup>2</sup>)<sup>1/2</sup> = N, d<sub>∞</sub>(e<sup>(N)</sup>, 0) = d<sub>0</sub>(e<sup>(N)</sup>, 0) = sup{N, 0} = N.</p>
+<p>So e<sup>(N)</sup> ∉ O<sub>N</sub>, and no finite subfamily covers Z. Hence none of the four spaces is compact. ∎</p>
+<p><i>Remark.</i> (iii), (iv), (v), (viii), (ix) can also be done in one line with Proposition 7.2.12 (a compact subset of a metric space is bounded), since each of these sets is unbounded; the covers above just make that argument explicit.</p>
+
+
+<div class="lbl anch" id="c7-s-s7-1-4">Section 7.1 #4</div><div class="toprob"><a href="#c7-p-s7-1-4">&uarr; Problem</a></div>
+<div class="stmt">Is [0, 1] a compact subset of the Sorgenfrey line?</div>
+<p><b>Answer: No.</b> Use the basis {[a, b) : a ∈ ℝ, b ∈ ℚ, a &lt; b} of the Sorgenfrey line (Exercises 3.2 #11). Consider the family</p>
+<p style="text-align:center">[1, 2) and O<sub>n</sub> = [0, 1 − 1/n) for n = 2, 3, ….</p>
+<p>Each is a basis element (right endpoints 2 and 1 − 1/n are rational), hence open. They cover [0, 1]: the point 1 lies in [1, 2); if 0 ⩽ x &lt; 1, choose n ⩾ 2 with 1/n &lt; 1 − x, so x ∈ [0, 1 − 1/n).</p>
+<p>Suppose a finite subfamily covered [0, 1]. The O<sub>n</sub> increase with n, so the finite subfamily is contained in {[1, 2), O<sub>N</sub>} for N the largest index used (take N = 2 if no O<sub>n</sub> is used). Then [0, 1] ⊆ [1, 2) ∪ [0, 1 − 1/N). But the point 1 − 1/N lies in [0, 1] (as N ⩾ 2), is less than 1 so is not in [1, 2), and is not &lt; 1 − 1/N so is not in O<sub>N</sub>. Contradiction. Hence [0, 1] is not a compact subset of the Sorgenfrey line. ∎</p>
+<p><i>Remark.</i> The point is that in the Sorgenfrey line the points of [0, 1) can only be approached "from the right" by the open sets [a, b), so the covering sets that reach toward 1 from the left never reach it; 1 has to be covered separately by a set that does not help near 1<sup>−</sup>.</p>
+
+
+<div class="lbl anch" id="c7-s-s7-2-3">Section 7.2 #3</div><div class="toprob"><a href="#c7-p-s7-2-3">&uarr; Problem</a></div>
+<div class="stmt">Let (X,τ) be a compact space. If {F<sub>i</sub> : i ∈ I} is a family of closed subsets of X such that ⋂<sub>i∈I</sub> F<sub>i</sub> = Ø, prove that there is a finite subfamily F<sub>i<sub>1</sub></sub>, F<sub>i<sub>2</sub></sub>, …, F<sub>i<sub>m</sub></sub> such that F<sub>i<sub>1</sub></sub> ∩ F<sub>i<sub>2</sub></sub> ∩ ⋯ ∩ F<sub>i<sub>m</sub></sub> = Ø.</div>
+<p><b>Proof.</b> For each i ∈ I let O<sub>i</sub> = X \ F<sub>i</sub>. Since F<sub>i</sub> is closed, O<sub>i</sub> is open. By De Morgan's law,</p>
+<p style="text-align:center">⋃<sub>i∈I</sub> O<sub>i</sub> = ⋃<sub>i∈I</sub> (X \ F<sub>i</sub>) = X \ ⋂<sub>i∈I</sub> F<sub>i</sub> = X \ Ø = X.</p>
+<p>So {O<sub>i</sub> : i ∈ I} is an open covering of X. Since X is compact, there are i<sub>1</sub>, …, i<sub>m</sub> ∈ I with X = O<sub>i<sub>1</sub></sub> ∪ ⋯ ∪ O<sub>i<sub>m</sub></sub>. Applying De Morgan again,</p>
+<p style="text-align:center">F<sub>i<sub>1</sub></sub> ∩ ⋯ ∩ F<sub>i<sub>m</sub></sub> = (X \ O<sub>i<sub>1</sub></sub>) ∩ ⋯ ∩ (X \ O<sub>i<sub>m</sub></sub>) = X \ (O<sub>i<sub>1</sub></sub> ∪ ⋯ ∪ O<sub>i<sub>m</sub></sub>) = X \ X = Ø. ∎</p>
+<p><i>Remark (degenerate case).</i> If I = Ø the usual convention is ⋂<sub>i∈Ø</sub> F<sub>i</sub> = X, so the hypothesis forces X = Ø, and then the conclusion is trivial. For I ≠ Ø the argument above gives m ⩾ 1.</p>
+
+
+<div class="lbl anch" id="c7-s-ws7">Worksheet #7</div><div class="toprob"><a href="#c7-p-ws7">&uarr; Problem</a></div>
+<div class="stmt">(7) CHALLENGE: Let f : [0, 1] → ℝ be a continuous function. Prove that the image of f is either a point or a closed interval. (Hint: Remember what you know about images of compact and connected sets under continuous functions.)</div>
+<p><b>Proof.</b> Let S = f([0, 1]). Then S ≠ Ø.</p>
+<p><i>Step 1: S is compact, hence closed and bounded.</i> [0, 1] is compact (Proposition 7.1.9) and f is continuous, so S is compact (Proposition 7.2.1 applied to f : [0, 1] → S, which is continuous into the subspace S and surjective). By Proposition 7.2.10, S is closed and bounded in ℝ.</p>
+<p><i>Step 2: S has a least and a greatest element.</i> S is nonempty and bounded, so c = inf S and d = sup S exist. Since S is closed, Lemma 3.3.2 gives d ∈ S, and the same argument applied to inf (or to −S) gives c ∈ S. (This is Proposition 7.2.14.) Clearly S ⊆ [c, d].</p>
+<p><i>Step 3: S ⊇ [c, d].</i> [0, 1] is connected (Proposition 4.3.5: a subspace of ℝ is connected iff it is an interval), and a continuous image of a connected space is connected (Chapter 5), so S is connected. Suppose some t with c &lt; t &lt; d is not in S. Put A = S ∩ (−∞, t) and B = S ∩ (t, ∞). These are open in the subspace S, disjoint, A ∪ B = S (because t ∉ S), c ∈ A and d ∈ B, so both are nonempty. Then A is a nonempty proper clopen subset of S (its complement in S is the open set B), contradicting connectedness of S. Hence every t ∈ (c, d) lies in S, and with c, d ∈ S we get [c, d] ⊆ S.</p>
+<p>Therefore S = [c, d]. If c = d, then S = {c} is a point; if c &lt; d, S is the closed interval [c, d]. ∎ (Compare Proposition 7.2.15.)</p>
+
+
+<div class="lbl anch" id="c7-s-ws10">Worksheet #10 (CHALLENGE part)</div><div class="toprob"><a href="#c7-p-ws10">&uarr; Problem</a></div>
+<div class="stmt">(10) Let X be a Hausdorff space. Let A, B be compact subsets of X. Prove that A ∩ B is compact. (CHALLENGE: Give an example to show that this can fail when X is not Hausdorff.)</div>
+<p>The Hausdorff part is in the official solutions; here is the CHALLENGE example.</p>
+<p><b>Example.</b> Let ℕ = {1, 2, 3, …}, let a, b be two extra points not in ℕ, and let X = ℕ ∪ {a, b}. Define</p>
+<p style="text-align:center">τ = {U : U ⊆ ℕ} ∪ {U ⊆ X : ℕ ⊆ U}.</p>
+<p><i>τ is a topology.</i> Ø ⊆ ℕ and ℕ ⊆ X, so Ø, X ∈ τ. For a union of members of τ: if some member contains ℕ, the union contains ℕ; otherwise every member is a subset of ℕ, and so is the union. For the intersection of two members U, V: if both contain ℕ, so does U ∩ V; otherwise one of them is ⊆ ℕ, so U ∩ V ⊆ ℕ. In all cases the result is in τ.</p>
+<p><i>A = ℕ ∪ {a} is compact.</i> Let {O<sub>i</sub>} be an open covering of A. Some O<sub>i<sub>0</sub></sub> contains a. Since a ∉ ℕ, O<sub>i<sub>0</sub></sub> is not a subset of ℕ, so by definition of τ, ℕ ⊆ O<sub>i<sub>0</sub></sub>. Thus A ⊆ O<sub>i<sub>0</sub></sub>, a one-set subcovering. Likewise <i>B = ℕ ∪ {b} is compact.</i></p>
+<p><i>A ∩ B = ℕ is not compact.</i> For each n ∈ ℕ, {n} ⊆ ℕ, so {n} ∈ τ. The family {{n} : n ∈ ℕ} is an open covering of ℕ, and any finite subfamily {n<sub>1</sub>}, …, {n<sub>k</sub>} misses the point max{n<sub>1</sub>, …, n<sub>k</sub>} + 1 ∈ ℕ. So ℕ is not compact.</p>
+<p>So A, B are compact but A ∩ B is not. As the Hausdorff part guarantees, X is not Hausdorff: every open set containing a contains ℕ, and so does every open set containing b, so a and b cannot be separated by disjoint open sets. ∎</p>
+
+
+<div class="lbl anch" id="c7-s-ws11">Worksheet #11</div><div class="toprob"><a href="#c7-p-ws11">&uarr; Problem</a></div>
+<div class="stmt">(11) CHALLENGE: Prove that ℝ<sup>2</sup> is the Zariski topology is compact.</div>
+<p>(Read: "ℝ<sup>2</sup> in the Zariski topology is compact.") As in the course (Hatcher's notes), for a polynomial f ∈ ℝ[x, y] let U<sub>f</sub> = {p ∈ ℝ<sup>2</sup> : f(p) ≠ 0}. The Zariski-open sets are exactly the unions of sets U<sub>f</sub>; equivalently the closed sets are the common zero sets Z(S) = {p : g(p) = 0 for all g ∈ S} of sets S of polynomials.</p>
+<p><b>Tool (Hilbert basis theorem).</b> Every ideal of the polynomial ring ℝ[x, y] is finitely generated. (This is a standard theorem of algebra; we use it without proof.)</p>
+<p><b>Proof.</b> Let {O<sub>i</sub> : i ∈ I} be a Zariski-open covering of ℝ<sup>2</sup>. Each O<sub>i</sub> is a union of sets U<sub>f</sub>; let S be the set of all polynomials f such that U<sub>f</sub> ⊆ O<sub>i</sub> for some i ∈ I. Then ⋃<sub>f∈S</sub> U<sub>f</sub> = ⋃<sub>i∈I</sub> O<sub>i</sub> = ℝ<sup>2</sup>. It suffices to find finitely many f<sub>1</sub>, …, f<sub>k</sub> ∈ S with U<sub>f<sub>1</sub></sub> ∪ ⋯ ∪ U<sub>f<sub>k</sub></sub> = ℝ<sup>2</sup>, because then choosing for each f<sub>j</sub> an index i<sub>j</sub> with U<sub>f<sub>j</sub></sub> ⊆ O<sub>i<sub>j</sub></sub> gives the finite subcovering O<sub>i<sub>1</sub></sub>, …, O<sub>i<sub>k</sub></sub>.</p>
+<p>Note that ⋃<sub>f∈S</sub> U<sub>f</sub> = ℝ<sup>2</sup> says exactly: there is no point p ∈ ℝ<sup>2</sup> with f(p) = 0 for all f ∈ S.</p>
+<p>Let J be the ideal of ℝ[x, y] generated by S, i.e. the set of all finite sums Σ h<sub>j</sub>f<sub>j</sub> with h<sub>j</sub> ∈ ℝ[x, y], f<sub>j</sub> ∈ S. By the Hilbert basis theorem J = (g<sub>1</sub>, …, g<sub>m</sub>) for some g<sub>1</sub>, …, g<sub>m</sub> ∈ J. Each g<sub>l</sub> ∈ J is a finite combination of elements of S, so altogether only finitely many elements f<sub>1</sub>, …, f<sub>k</sub> of S occur in these expressions, and each g<sub>l</sub> ∈ (f<sub>1</sub>, …, f<sub>k</sub>).</p>
+<p>Claim: U<sub>f<sub>1</sub></sub> ∪ ⋯ ∪ U<sub>f<sub>k</sub></sub> = ℝ<sup>2</sup>. Suppose not: then there is p with f<sub>1</sub>(p) = ⋯ = f<sub>k</sub>(p) = 0. Each g<sub>l</sub> = Σ h<sub>lj</sub>f<sub>j</sub>, so g<sub>l</sub>(p) = 0 for all l. Every element of J is Σ q<sub>l</sub>g<sub>l</sub>, so vanishes at p. In particular every f ∈ S ⊆ J vanishes at p, contradicting the previous paragraph. So the claim holds, and by the reduction above {O<sub>i</sub>} has a finite subcovering. Hence ℝ<sup>2</sup> with the Zariski topology is compact. ∎</p>
+<p><i>Remarks.</i> (1) Over ℝ one cannot conclude J = (1) (e.g. x<sup>2</sup> + y<sup>2</sup> + 1 has no real zeros); the proof above deliberately avoids needing that. (2) The same proof shows ℝ<sup>n</sup> and every subspace of ℝ<sup>n</sup> are compact in the Zariski topology.</p>
+
+</div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

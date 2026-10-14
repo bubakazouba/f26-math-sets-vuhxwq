@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 5401 ES4</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 5401 (Theory of Groups)  ·  Exercise Set 4</h1>
+<div class="hdr"><p class="small">Problems inlined verbatim from Judson, Abstract Algebra: Theory and Applications (Ch. 5 Permutation Groups, Ch. 6 Cosets and Lagrange's Theorem). Solutions by Claude, all together at the end. Permutation products read right to left, (στ)(x)=σ(τ(x)). Due Mon Sep 28, 2026, 11:59pm.</p><h3 class="grp">Assigned problems (Exercise Set 4)</h3>
+<p>$\bullet$ Chapter 5 exercises: 3(a,b,c), 13, 36.<span class="sp"></span>Chapter 6 exercises: 1, 5(a,b,c), 6, 8, 9, 11, 14, 17.</p>
+<p>$\bullet$ Additional problem (also required): List the subgroups of $S_4$. Which of these are also subgroups of $A_4$?</p>
+<p>$\bullet$ Challenge problems (not required): 6.22, 6.23 (included at the end).</p>
+<p>$\bullet$ Also answer the two reflection questions at the end of the problem list.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<h4 class="sub">Chapter 5 (Permutation Groups)</h4>
+<div class="item prob" id="p-ch5-3"><p><b>3.</b> Express the following permutations as products of transpositions and identify them as even or odd.</p>
+<p>(a) (1 4 3 5 6)<span class="sp"></span>(b) (1 5 6)(2 3 4)<span class="sp"></span>(c) (1 4 2 6)(1 4 2)</p><div class="tosol"><a href="#s-ch5-3">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch5-13"><p><b>13.</b> Let $\sigma=\sigma_1\cdots\sigma_m\in S_n$ be the product of disjoint cycles. Prove that the order of $\sigma$ is the least common multiple of the lengths of the cycles $\sigma_1,\ldots,\sigma_m$.</p><div class="tosol"><a href="#s-ch5-13">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch5-36"><p><b>36.</b> Show that $\alpha^{-1}\beta^{-1}\alpha\beta$ is even for $\alpha,\beta\in S_n$.</p><div class="tosol"><a href="#s-ch5-36">Solution &darr;</a></div></div>
+<h4 class="sub">Chapter 6 (Cosets and Lagrange's Theorem)</h4>
+<div class="item prob" id="p-ch6-1"><p><b>1.</b> Suppose that $G$ is a finite group with an element $g$ of order 5 and an element $h$ of order 7. Why must $|G|\geq 35$?</p><div class="tosol"><a href="#s-ch6-1">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch6-5"><p><b>5.</b> List the left and right cosets of the subgroups in each of the following.</p>
+<p>(a) $\langle 8\rangle$ in $\mathbb{Z}_{24}$<span class="sp"></span>(b) $\langle 3\rangle$ in $U(8)$<span class="sp"></span>(c) $3\mathbb{Z}$ in $\mathbb{Z}$</p><div class="tosol"><a href="#s-ch6-5">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch6-6"><p><b>6.</b> Describe the left cosets of $SL_2(\mathbb{R})$ in $GL_2(\mathbb{R})$. What is the index of $SL_2(\mathbb{R})$ in $GL_2(\mathbb{R})$?</p><div class="tosol"><a href="#s-ch6-6">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch6-8"><p><b>8.</b> Use Fermat's Little Theorem to show that if $p=4n+3$ is prime, there is no solution to the equation $x^2\equiv -1$ (mod $p$).</p><div class="tosol"><a href="#s-ch6-8">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch6-9"><p><b>9.</b> Show that the integers have infinite index in the additive group of rational numbers.</p><div class="tosol"><a href="#s-ch6-9">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch6-11"><p><b>11.</b> Let $H$ be a subgroup of a group $G$ and suppose that $g_1,g_2\in G$. Prove that the following conditions are equivalent.</p>
+<p>(a) $g_1H=g_2H$<span class="sp"></span>(b) $Hg_1^{-1}=Hg_2^{-1}$<span class="sp"></span>(c) $g_1H\subset g_2H$<span class="sp"></span>(d) $g_2\in g_1H$<span class="sp"></span>(e) $g_1^{-1}g_2\in H$</p><div class="tosol"><a href="#s-ch6-11">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch6-14"><p><b>14.</b> Suppose that $g^n=e$. Show that the order of $g$ divides $n$.</p><div class="tosol"><a href="#s-ch6-14">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch6-17"><p><b>17.</b> Suppose that $[G:H]=2$. If $a$ and $b$ are not in $H$, show that $ab\in H$.</p><div class="tosol"><a href="#s-ch6-17">Solution &darr;</a></div></div>
+<h4 class="sub">Additional problem (also required)</h4>
+<div class="item prob" id="p-add"><p>List the subgroups of $S_4$. Which of these are also subgroups of $A_4$?</p><div class="tosol"><a href="#s-add">Solution &darr;</a></div></div>
+<h4 class="sub">Challenge problems (not required)</h4>
+<div class="item prob" id="p-chal-6-22"><p><b>6.22.</b> Let $n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$, where $p_1,p_2,\ldots,p_k$ are distinct primes. Prove that $\phi(n)=n\left(1-\frac{1}{p_1}\right)\left(1-\frac{1}{p_2}\right)\cdots\left(1-\frac{1}{p_k}\right)$.</p><div class="tosol"><a href="#s-chal-6-22">Solution &darr;</a></div></div>
+<div class="item prob" id="p-chal-6-23"><p><b>6.23.</b> Show that $n=\sum_{d\mid n}\phi(d)$ for all positive integers $n$.</p><div class="tosol"><a href="#s-chal-6-23">Solution &darr;</a></div></div>
+<h4 class="sub">Also answer these two questions</h4>
+<div class="item prob" id="p-refl"><p>(a) What are a few important ideas that you learned (or are still learning) for this homework?</p>
+<p>(b) List 1 or 2 exercises where you had some trouble and would like some feedback from me.</p>
+<p class="small">The homework exercises are graded on completeness: you get full credit just for doing them, and I will not read any of your work except the 1 or 2 exercises you ask me for feedback on.</p></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<p class="small">All solutions by Claude. Products of permutations are read right to left. The two reflection questions are yours to answer.</p>
+<h4 class="sub">Chapter 5</h4>
+<div class="item sol" id="s-ch5-3"><div class="toprob"><a href="#p-ch5-3">&uarr; Problem</a></div><p><b>3.</b> A $k$-cycle is a product of $k-1$ transpositions: $(a_1\,a_2\,\ldots\,a_k)=(a_1\,a_k)(a_1\,a_{k-1})\cdots(a_1\,a_2)$ (right to left).</p>
+<p>(a) $(1\,4\,3\,5\,6)=(1\,6)(1\,5)(1\,3)(1\,4)$: four transpositions, so EVEN.</p>
+<p>(b) $(1\,5\,6)(2\,3\,4)=(1\,6)(1\,5)(2\,4)(2\,3)$: four transpositions, so EVEN.</p>
+<p>(c) First multiply out: $1\to4\to2$, $2\to1\to4$, $4\to2\to6$, $6\to6\to1$, $3$ fixed. So $(1\,4\,2\,6)(1\,4\,2)=(1\,2\,4\,6)=(1\,6)(1\,4)(1\,2)$: three transpositions, so ODD. (Check: $(1\,4\,2\,6)$ is odd and $(1\,4\,2)$ is even, and odd times even is odd.)  ∎</p></div>
+<div class="item sol" id="s-ch5-13"><div class="toprob"><a href="#p-ch5-13">&uarr; Problem</a></div><p><b>13.</b> Let $\sigma_i$ have length $\ell_i$, so $\sigma_i$ has order $\ell_i$. Disjoint cycles commute, so $\sigma^k=\sigma_1^k\sigma_2^k\cdots\sigma_m^k$ for every $k$. The factors $\sigma_i^k$ move pairwise disjoint sets of points, so $\sigma^k$ is the identity iff each $\sigma_i^k$ is the identity, i.e. iff $\ell_i\mid k$ for every $i$. The least positive such $k$ is $\mathrm{lcm}(\ell_1,\ldots,\ell_m)$, which is therefore the order of $\sigma$.  ∎</p></div>
+<div class="item sol" id="s-ch5-36"><div class="toprob"><a href="#p-ch5-36">&uarr; Problem</a></div><p><b>36.</b> Write $\alpha$ as a product of $a$ transpositions and $\beta$ as a product of $b$ transpositions. Reversing the order gives $\alpha^{-1}$ as a product of the same $a$ transpositions (each transposition is its own inverse), and likewise $\beta^{-1}$ uses $b$. So $\alpha^{-1}\beta^{-1}\alpha\beta$ is a product of $a+b+a+b=2(a+b)$ transpositions, an even number. Hence it is even.  ∎</p></div>
+<h4 class="sub">Chapter 6</h4>
+<div class="item sol" id="s-ch6-1"><div class="toprob"><a href="#p-ch6-1">&uarr; Problem</a></div><p><b>1.</b> The order of an element divides the order of the group (a corollary of Lagrange's Theorem: $|\langle g\rangle|$ divides $|G|$). So $5\mid |G|$ and $7\mid |G|$. Since $\gcd(5,7)=1$, $35\mid |G|$, and a positive multiple of 35 is at least 35.  ∎</p></div>
+<div class="item sol" id="s-ch6-5"><div class="toprob"><a href="#p-ch6-5">&uarr; Problem</a></div><p><b>5.</b> Each group here is abelian, so left and right cosets coincide.</p>
+<p>(a) $H=\langle 8\rangle=\{0,8,16\}$ has index $24/3=8$. The cosets are $k+H$ for $k=0,\ldots,7$: $\{0,8,16\}$, $\{1,9,17\}$, $\{2,10,18\}$, $\{3,11,19\}$, $\{4,12,20\}$, $\{5,13,21\}$, $\{6,14,22\}$, $\{7,15,23\}$.</p>
+<p>(b) $U(8)=\{1,3,5,7\}$ and $H=\langle 3\rangle=\{1,3\}$ (since $3^2=9\equiv1$). The cosets are $1H=3H=\{1,3\}$ and $5H=7H=\{5,7\}$ (since $5\cdot3=15\equiv7$).</p>
+<p>(c) The cosets of $3\mathbb{Z}$ in $\mathbb{Z}$ are $3\mathbb{Z}=\{\ldots,-3,0,3,\ldots\}$, $1+3\mathbb{Z}=\{\ldots,-2,1,4,\ldots\}$, and $2+3\mathbb{Z}=\{\ldots,-1,2,5,\ldots\}$.  ∎</p></div>
+<div class="item sol" id="s-ch6-6"><div class="toprob"><a href="#p-ch6-6">&uarr; Problem</a></div><p><b>6.</b> For $g,A\in GL_2(\mathbb{R})$: $A\in g\,SL_2(\mathbb{R})$ iff $g^{-1}A\in SL_2(\mathbb{R})$ iff $\det(g^{-1}A)=1$ iff $\det A=\det g$. So the left coset $g\,SL_2(\mathbb{R})$ is exactly the set of invertible matrices whose determinant equals $\det g$. Every nonzero real $t$ occurs as a determinant (e.g. $\mathrm{diag}(t,1)$), so the cosets are in bijection with $\mathbb{R}^*=\mathbb{R}\setminus\{0\}$, one coset per value of the determinant. Hence the index $[GL_2(\mathbb{R}):SL_2(\mathbb{R})]$ is infinite (it has the cardinality of $\mathbb{R}^*$, uncountable).  ∎</p></div>
+<div class="item sol" id="s-ch6-8"><div class="toprob"><a href="#p-ch6-8">&uarr; Problem</a></div><p><b>8.</b> Suppose $x^2\equiv-1$ (mod $p$). Then $p\nmid x$ (otherwise $0\equiv-1$, i.e. $p\mid1$). Since $p-1=4n+2=2(2n+1)$, we get $x^{p-1}=(x^2)^{2n+1}\equiv(-1)^{2n+1}=-1$ (mod $p$). But Fermat's Little Theorem gives $x^{p-1}\equiv1$ (mod $p$). So $1\equiv-1$, i.e. $p\mid2$, impossible because $p\geq3$. So there is no solution.  ∎</p></div>
+<div class="item sol" id="s-ch6-9"><div class="toprob"><a href="#p-ch6-9">&uarr; Problem</a></div><p><b>9.</b> Two cosets $q+\mathbb{Z}$ and $q'+\mathbb{Z}$ are equal iff $q-q'\in\mathbb{Z}$. For distinct positive integers $j&lt;k$ we have $0&lt;\frac{1}{j}-\frac{1}{k}&lt;1$, so $\frac{1}{j}-\frac{1}{k}\notin\mathbb{Z}$. Hence the cosets $\frac{1}{k}+\mathbb{Z}$, $k=1,2,3,\ldots$, are pairwise distinct. There are infinitely many cosets, so $[\mathbb{Q}:\mathbb{Z}]$ is infinite.  ∎</p></div>
+<div class="item sol" id="s-ch6-11"><div class="toprob"><a href="#p-ch6-11">&uarr; Problem</a></div><p><b>11.</b> (a)$\Rightarrow$(c): trivial.</p>
+<p>(c)$\Rightarrow$(d): $g_1=g_1e\in g_1H\subset g_2H$, so $g_1=g_2h$ for some $h\in H$. Then $g_2=g_1h^{-1}\in g_1H$.</p>
+<p>(d)$\Rightarrow$(e): if $g_2=g_1h$ with $h\in H$, then $g_1^{-1}g_2=h\in H$.</p>
+<p>(e)$\Rightarrow$(a): let $h=g_1^{-1}g_2\in H$, so $g_2=g_1h$. Since $hH=H$ (as $H$ is a subgroup), $g_2H=g_1hH=g_1H$.</p>
+<p>(a)$\Leftrightarrow$(b): for any $g$, taking inverses elementwise gives $(gH)^{-1}=\{h^{-1}g^{-1}:h\in H\}=Hg^{-1}$, because $h\mapsto h^{-1}$ is a bijection of $H$. Inversion is a bijection of $G$, so $g_1H=g_2H$ iff $(g_1H)^{-1}=(g_2H)^{-1}$ iff $Hg_1^{-1}=Hg_2^{-1}$. So all five are equivalent.  ∎</p></div>
+<div class="item sol" id="s-ch6-14"><div class="toprob"><a href="#p-ch6-14">&uarr; Problem</a></div><p><b>14.</b> Let $m$ be the order of $g$ (finite, since $g^n=e$; the case $n=0$ is trivial as $m\mid0$). Divide: $n=qm+r$ with $0\leq r&lt;m$. Then $g^r=g^n(g^m)^{-q}=e\cdot e=e$. Since $m$ is the least positive exponent giving $e$ and $0\leq r&lt;m$, we must have $r=0$. So $m\mid n$.  ∎</p></div>
+<div class="item sol" id="s-ch6-17"><div class="toprob"><a href="#p-ch6-17">&uarr; Problem</a></div><p><b>17.</b> Since $[G:H]=2$, the left cosets of $H$ are $H$ and $G\setminus H$. Now $a^{-1}\notin H$ (otherwise $a=(a^{-1})^{-1}\in H$), so $a^{-1}H\neq H$, which forces $a^{-1}H=G\setminus H$. As $b\notin H$, $b\in a^{-1}H$, say $b=a^{-1}h$ with $h\in H$. Then $ab=h\in H$.  ∎</p></div>
+<h4 class="sub">Additional problem: subgroups of $S_4$</h4>
+<div class="item sol" id="s-add"><div class="toprob"><a href="#p-add">&uarr; Problem</a></div><p>$S_4$ has order 24, so by Lagrange a subgroup has order 1, 2, 3, 4, 6, 8, 12 or 24. There are 30 subgroups in total:</p>
+<p>$\bullet$ Order 1 (1 subgroup): $\{e\}$.</p>
+<p>$\bullet$ Order 2 (9 subgroups): the six $\langle(i\,j)\rangle$, namely $\langle(1\,2)\rangle,\langle(1\,3)\rangle,\langle(1\,4)\rangle,\langle(2\,3)\rangle,\langle(2\,4)\rangle,\langle(3\,4)\rangle$. Also the three $\langle(1\,2)(3\,4)\rangle,\ \langle(1\,3)(2\,4)\rangle,\ \langle(1\,4)(2\,3)\rangle$.</p>
+<p>$\bullet$ Order 3 (4 subgroups): $\langle(1\,2\,3)\rangle,\ \langle(1\,2\,4)\rangle,\ \langle(1\,3\,4)\rangle,\ \langle(2\,3\,4)\rangle$, one for each 3-element subset of $\{1,2,3,4\}$.</p>
+<p>$\bullet$ Order 4 (7 subgroups). Cyclic: $\langle(1\,2\,3\,4)\rangle,\ \langle(1\,2\,4\,3)\rangle,\ \langle(1\,3\,2\,4)\rangle$. The normal Klein four-group $V=\{e,(1\,2)(3\,4),(1\,3)(2\,4),(1\,4)(2\,3)\}$. Three more Klein four-groups: $\{e,(1\,2),(3\,4),(1\,2)(3\,4)\}$, $\{e,(1\,3),(2\,4),(1\,3)(2\,4)\}$, $\{e,(1\,4),(2\,3),(1\,4)(2\,3)\}$.</p>
+<p>$\bullet$ Order 6 (4 subgroups): for each $i$, the stabilizer of $i$ (all permutations of the other three points, $\cong S_3$). For example, the stabilizer of 4 is $\{e,(1\,2),(1\,3),(2\,3),(1\,2\,3),(1\,3\,2)\}$.</p>
+<p>$\bullet$ Order 8 (3 subgroups, each $\cong D_4$, the symmetries of a square with vertices labeled in cyclic order): $\{e,(1\,2\,3\,4),(1\,3)(2\,4),(1\,4\,3\,2),(1\,3),(2\,4),(1\,2)(3\,4),(1\,4)(2\,3)\}$ $\{e,(1\,2\,4\,3),(1\,4)(2\,3),(1\,3\,4\,2),(1\,4),(2\,3),(1\,2)(3\,4),(1\,3)(2\,4)\}$ $\{e,(1\,3\,2\,4),(1\,2)(3\,4),(1\,4\,2\,3),(1\,2),(3\,4),(1\,3)(2\,4),(1\,4)(2\,3)\}$</p>
+<p>$\bullet$ Order 12 (1 subgroup): $A_4$.<span class="sp"></span>$\bullet$ Order 24 (1 subgroup): $S_4$.<span class="sp"></span>Total: $1+9+4+7+4+3+1+1=30$. Which are subgroups of $A_4$? Exactly those made entirely of even permutations. Transpositions and 4-cycles are odd, while 3-cycles and products of two disjoint transpositions are even. That leaves 10: $\{e\}$; the three $\langle(i\,j)(k\,l)\rangle$; the four $\langle(a\,b\,c)\rangle$; $V$; and $A_4$ itself. None of order 6: each $S_3$ above contains transpositions, and in fact $A_4$ has no subgroup of order 6 at all. None of order 8 either, since $8\nmid12$.  ∎</p></div>
+<h4 class="sub">Challenge problems</h4>
+<div class="item sol" id="s-chal-6-22"><div class="toprob"><a href="#p-chal-6-22">&uarr; Problem</a></div><p><b>6.22.</b> $\phi(n)$ counts $1\leq x\leq n$ with $\gcd(x,n)=1$, i.e. $x$ divisible by none of $p_1,\ldots,p_k$. Let $A_i=\{1\leq x\leq n: p_i\mid x\}$. For distinct $i_1,\ldots,i_r$, the set $A_{i_1}\cap\cdots\cap A_{i_r}$ consists of the multiples of $p_{i_1}\cdots p_{i_r}$ up to $n$. It has exactly $n/(p_{i_1}\cdots p_{i_r})$ elements, since that product divides $n$. By inclusion-exclusion, $\phi(n)=n-\sum_i\frac{n}{p_i}+\sum_{i&lt;j}\frac{n}{p_ip_j}-\cdots+(-1)^k\frac{n}{p_1\cdots p_k}=n\prod_{i=1}^{k}\left(1-\frac{1}{p_i}\right)$,</p>
+<p>where the last step is expanding the product.  ∎</p></div>
+<div class="item sol" id="s-chal-6-23"><div class="toprob"><a href="#p-chal-6-23">&uarr; Problem</a></div><p><b>6.23.</b> Sort the integers $1\leq x\leq n$ by $d=\gcd(x,n)$, a divisor of $n$. The $x$ with $\gcd(x,n)=d$ are $x=dy$ with $1\leq y\leq n/d$ and $\gcd(y,n/d)=1$, and there are exactly $\phi(n/d)$ of them. Every $x$ lands in exactly one class, so $n=\sum_{d\mid n}\phi(n/d)$. As $d$ runs over the divisors of $n$, so does $n/d$; hence $n=\sum_{d\mid n}\phi(d)$.  ∎</p></div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

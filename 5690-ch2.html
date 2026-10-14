@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 5690 Ch 2</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 5690 (Topology)  ·  Chapter 2 Homework</h1>
+<div class="hdr"><p class="small">Problems first; ALL solutions together at the end. The comps problem is quoted verbatim from the CSULA topology comprehensive exam (solution by Claude - comps have no key). The assigned main-textbook problems are inlined verbatim (cropped from Morris, Topology Without Tears); official solutions are appended.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<h3 class="grp">Assigned problems (Chapter 2)</h3>
+<p>$\bullet$ Fall 2012 topology comps, Problem 5.</p>
+<p>$\bullet$ Main textbook: Section 2.1 #3, 5, 7;  Section 2.2 #1, 2, 5;  Section 2.3 #1, 2.</p>
+<p>$\bullet$ Wikibook: #1, 2, 3, 5.</p>
+<h4 class="sub">Comprehensive-exam problem  (Fall 2012, #5)  - verbatim</h4>
+<div class="item prob" id="c2-p-comps"><p>For any polynomial function $f:\mathbb{R}^2\to\mathbb{R}$, put $U_f:=\{(x,y)\in\mathbb{R}^2: f(x,y)\neq 0\}$. Prove that the collection $\{U_f: f:\mathbb{R}^2\to\mathbb{R}$ is a polynomial$\}$ forms a basis for a topology on $\mathbb{R}^2$.</p><div class="tosol"><a href="#c2-s-comps">Solution &darr;</a></div></div>
+<h4 class="sub">Wikibook problems  (Wikibooks: Topology/Bases)  - verbatim</h4>
+<div class="item prob" id="c2-p-wiki1"><p><b>$\bullet$ #1.</b> Show that $\mathcal{B}=\{(a,b)\mid a,b\in\mathbb{R},\ a&lt;b\}$ is a base for a topology on $\mathbb{R}$ and that this topology is the usual one.</p><div class="tosol"><a href="#c2-off-ch2-wikibook-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-wiki2"><p><b>$\bullet$ #2.</b> Show that $\mathcal{C}=\{[a,b]\mid a&lt;b\}$ is not a base for any topology on $\mathbb{R}$ (identify which base axiom fails).</p><div class="tosol"><a href="#c2-off-ch2-wikibook-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-wiki3"><p><b>$\bullet$ #3.</b> Show that $\mathcal{L}=\{(a,b]\mid a&lt;b\}$ is a base for a topology on $\mathbb{R}$. Compare this topology to the lower limit topology.</p><div class="tosol"><a href="#c2-off-ch2-wikibook-p1">Official solution &darr;</a> &middot; <a href="#c2-s-wiki3">Solution (Claude) &darr;</a></div></div>
+<div class="item prob" id="c2-p-wiki5"><p><b>$\bullet$ #5.</b> (Comparing topologies.) Let $\mathcal{T}$ be the standard topology on $\mathbb{R}$, $\mathcal{T}_\ell$ the lower limit topology, and $\mathcal{T}_K$ the $K$-topology. Show that $\mathcal{T}_\ell$ and $\mathcal{T}_K$ are each strictly finer than $\mathcal{T}$, but are not comparable to each other.</p><div class="tosol"><a href="#c2-s-wiki5">Solution &darr;</a></div></div>
+<h4 class="sub">Additional problems (class) - verbatim</h4>
+<div class="item prob" id="c2-p-add1"><p><b>(1)</b> Let $U$ be the open unit disc in $\mathbb{R}^2$, that is, the set $\{(x,y)\mid x^2+y^2&lt;1\}$. Is $U$ open in the Zariski topology? Is it closed? Prove that your answer is correct.</p><div class="tosol"><a href="#c2-s-add1">Solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-add2"><p><b>(2)</b> Let $C$ be the closed unit disc in $\mathbb{R}^2$, that is, the set $\{(x,y)\mid x^2+y^2&lt;1\}$. Is $C$ open in the Zariski topology? Is it closed? Prove that your answer is correct.</p><div class="tosol"><a href="#c2-s-add2">Solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-add3"><p><b>(3)</b> Let $S$ be the unit circle in $\mathbb{R}^2$, that is, the set $\{(x,y)\mid x^2+y^2=1\}$. Is $S$ open in the Zariski topology? Is it closed? Prove that your answer is correct.</p><div class="tosol"><a href="#c2-s-add3">Solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-add4"><p><b>(4)</b> Let $K$ be the set $Z(y-x^2)$ in $\mathbb{R}^2$, that is, the set $\{(x,y)\mid y-x^2=0\}$. Prove that in the Zariski topology, $K$ is an irreducible closed set.</p><div class="tosol"><a href="#c2-s-add4">Solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-add5"><p><b>(5)</b> Prove that $\mathbb{R}^2$ is irreducible in the Zariski topology, that is, that it does not equal the union of two proper closed subsets.</p><div class="tosol"><a href="#c2-s-add5">Solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-add6"><p><b>(6)</b> Use your answers from (4) and (5) to prove that the Krull dimension of $\mathbb{R}^2$ in the Zariski topology is at least 2.</p><div class="tosol"><a href="#c2-s-add6">Solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-add7"><p><b>(7)</b> Find all closed irreducible subsets of $\mathbb{R}$ in the Euclidean topology.</p><div class="tosol"><a href="#c2-s-add7">Solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-add8"><p><b>(8)</b> Let $X$ be a set in the indiscrete topology. Find the Krull dimension of $X$, and prove that your answer is correct.</p><div class="tosol"><a href="#c2-s-add8">Solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-add9"><p><b>(9)</b> Recall that the cobounded topology on $\mathbb{R}$ consists of all sets whose complements are bounded, together with the empty set. Find the Krull dimension of $\mathbb{R}$ in this topology.</p><div class="tosol"><a href="#c2-s-add9">Solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-add10"><p><b>(10)</b> Generalize your answer from (9) to topologies defined by bornologies. Be wary of one special case.</p><div class="tosol"><a href="#c2-s-add10">Solution &darr;</a></div></div>
+<h3 class="grp">MAIN-TEXTBOOK PROBLEMS  (Morris, Topology Without Tears - assigned exercises, verbatim)</h3>
+
+<h4 class="sub">Exercises 2.1</h4>
+<div class="item prob" id="c2-p-s2-1-3"><p><b>$\bullet$  #3.</b> Show, by example, that the union of an infinite number of closed subsets of $\mathbb{R}$ is not necessarily a closed subset of $\mathbb{R}$.</p><div class="tosol"><a href="#c2-off-ch2-sec21-22-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-s2-1-5"><p><b>$\bullet$  #5.</b> If $F$ is a non-empty finite subset of $\mathbb{R}$, show that $F$ is closed in $\mathbb{R}$ but that $F$ is not open in $\mathbb{R}$.</p><div class="tosol"><a href="#c2-off-ch2-sec21-22-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-s2-1-7"><p><b>$\bullet$  #7.</b> </p>
+<p>(i) Let $S = \{0, 1, 1/2, 1/3, 1/4, 1/5, \ldots, 1/n, \ldots\}$. Prove that the set $S$ is closed in the euclidean topology on $\mathbb{R}$.</p>
+<p>(ii) Is the set $T = \{1, 1/2, 1/3, 1/4, 1/5, \ldots, 1/n, \ldots\}$ closed in $\mathbb{R}$?</p>
+<p>(iii) Is the set $\{\sqrt{2}, 2\sqrt{2}, 3\sqrt{2}, \ldots, n\sqrt{2}, \ldots\}$ closed in $\mathbb{R}$?</p><div class="tosol"><a href="#c2-off-ch2-sec21-22-p1">Official solution &darr;</a></div></div>
+<h4 class="sub">Exercises 2.2</h4>
+<div class="item prob" id="c2-p-s2-2-1"><p><b>$\bullet$  #1.</b> In this exercise you will prove that disc $\{\langle x, y\rangle : x^2 + y^2 &lt; 1\}$ is an open subset of $\mathbb{R}^2$, and then that every open disc in the plane is an open set.</p>
+<p>(i) Let $\langle a, b\rangle$ be any point in the disc $D = \{\langle x, y\rangle : x^2 + y^2 &lt; 1\}$. Put $r = \sqrt{a^2 + b^2}$. Let $R_{\langle a,b\rangle}$ be the open rectangle with vertices at the points $\langle a \pm \frac{1-r}{8}, b \pm \frac{1-r}{8}\rangle$. Verify that $R_{\langle a,b\rangle} \subset D$.</p>
+<p>(ii) Using (i) show that $D = \bigcup_{\langle a,b\rangle\in D} R_{\langle a,b\rangle}$.</p>
+<p>(iii) Deduce from (ii) that $D$ is an open set in $\mathbb{R}^2$.</p>
+<p>(iv) Show that every disc $\{\langle x, y\rangle : (x - a)^2 + (y - b)^2 &lt; c^2, a, b, c \in \mathbb{R}\}$ is open in $\mathbb{R}^2$.</p><div class="tosol"><a href="#c2-off-ch2-sec21-22-p2">Official solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-s2-2-2"><p><b>$\bullet$  #2.</b> In this exercise you will show that the collection of all open discs in $\mathbb{R}^2$ is a basis for a topology on $\mathbb{R}^2$. [Later we shall see that this is the euclidean topology.]</p>
+<p>(i) Let $D_1$ and $D_2$ be any open discs in $\mathbb{R}^2$ with $D_1 \cap D_2 \neq \emptyset$. If $\langle a, b\rangle$ is any point in $D_1 \cap D_2$, show that there exists an open disc $D_{\langle a,b\rangle}$ with centre $\langle a, b\rangle$ such that $D_{\langle a,b\rangle} \subset D_1 \cap D_2$. [Hint: draw a picture and use a method similar to that of Exercise 1 (i).]</p>
+<p>(ii) Show that $D_1 \cap D_2 = \bigcup_{\langle a,b\rangle\in D_1\cap D_2} D_{\langle a,b\rangle}$.</p>
+<p>(iii) Using (ii) and Proposition 2.2.8, prove that the collection of all open discs in $\mathbb{R}^2$ is a basis for a topology on $\mathbb{R}^2$.</p><div class="tosol"><a href="#c2-off-ch2-sec21-22-p2">Official solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-s2-2-5"><p><b>$\bullet$  #5.</b> Prove the following statements.</p>
+<p>(i) Let $m$ and $c$ be real numbers. Then the line $L = \{\langle x, y\rangle : y = mx + c\}$ is a closed subset of $\mathbb{R}^2$.</p>
+<p>(ii) Let $\mathbb{S}^1$ be the unit circle given by $\mathbb{S}^1 = \{\langle x, y\rangle \in \mathbb{R}^2 : x^2 + y^2 = 1\}$. Then $\mathbb{S}^1$ is a closed subset of $\mathbb{R}^2$.</p>
+<p>(iii) Let $\mathbb{S}^n$ be the unit $n$-sphere given by $\mathbb{S}^n = \{\langle x_1, x_2, \ldots, x_n, x_{n+1}\rangle \in \mathbb{R}^{n+1} : x_1^2 + x_2^2 + \cdots + x_{n+1}^2 = 1\}$. Then $\mathbb{S}^n$ is a closed subset of $\mathbb{R}^{n+1}$.</p>
+<p>(iv) Let $B^n$ be the closed unit $n$-ball given by $B^n = \{\langle x_1, x_2, \ldots, x_n\rangle \in \mathbb{R}^n : x_1^2 + x_2^2 + \cdots + x_n^2 \leq 1\}$. Then $B^n$ is a closed subset of $\mathbb{R}^n$.</p>
+<p>(v) The curve $C = \{\langle x, y\rangle \in \mathbb{R}^2 : xy = 1\}$ is a closed subset of $\mathbb{R}^2$.</p><div class="tosol"><a href="#c2-off-ch2-sec21-22-p3">Official solution &darr;</a> &middot; <a href="#c2-s-s2-2-5">Solution (Claude) 1 &darr;</a> &middot; <a href="#c2-s-s2-2-5-2">Solution (Claude) 2 &darr;</a></div></div>
+<h4 class="sub">Exercises 2.3</h4>
+<div class="item prob" id="c2-p-s2-3-1"><p><b>$\bullet$  #1.</b> Determine whether or not each of the following collections is a basis for the euclidean topology on $\mathbb{R}^2$ :</p>
+<p>(i) the collection of all "open" squares with sides parallel to the axes;</p>
+<p>(ii) the collection of all "open" discs;</p>
+<p>(iii) the collection of all "open" squares;</p>
+<p>(iv) the collection of all "open" rectangles;</p>
+<p>(v) the collection of all "open" triangles.</p><div class="tosol"><a href="#c2-off-ch2-sec21-22-p4">Official solution &darr;</a></div></div>
+<div class="item prob" id="c2-p-s2-3-2"><p><b>$\bullet$  #2.</b> </p>
+<p>(i) Let $\mathcal{B}$ be a basis for a topology $\tau$ on a non-empty set $X$. If $\mathcal{B}_1$ is a collection of subsets of $X$ such that $\tau \supseteq \mathcal{B}_1 \supseteq \mathcal{B}$, prove that $\mathcal{B}_1$ is also a basis for $\tau$.</p>
+<p>(ii) Deduce from (i) that there exist an uncountable number of distinct bases for the euclidean topology on $\mathbb{R}$.</p><div class="tosol"><a href="#c2-off-ch2-sec21-22-p4">Official solution &darr;</a></div></div>
+<div class="frag">
+<h3>Chapter 2: additional problem Krebs added after 10/5 (verbatim from his homework doc)</h3>
+<div class="p anch" id="c2-p-add11"><b>(11)</b> Let $X$ be a set.  Let $n$ be a positive integer.  Let $F_1,\ldots F_n$ are subsets of $X$ such that for all $i=1,\ldots n$ we have that either $F_i$ is finite or $F_i = X$.  Define $Z(F_1,\ldots F_n) = \{(x_1,\ldots,x_n) : x_i \text{ is in } F_i \text{ for all } i=1,\ldots n\}$.  Note that $Z(F_1,\ldots F_n)$ is a subset of $X^n$.<br>
+Let $T$ be the collection of all sets $Z(G_1,\ldots G_n)^c$ for some subsets $G_1,\ldots G_n$ of $X$ such that for all $i=1,\ldots n$ we have that either $G_i$ is finite or $G_i = X$.<br>
+(a) Prove that $T$ is a topology on $X^n$.<br>
+(b) Prove that in this topology, if $X$ is an infinite set, then $X^n$ has Krull dimension $n$.<div class="tosol"><a href="#c2-s-add11">Solution &darr;</a></div></div>
+</div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<p class="small">My worked solutions to the comprehensive-exam problem (and any class problem with no official key) follow; the instructor's official solutions to the main-textbook / worksheet problems are appended after.</p>
+<h4 class="sub">Comps Fall 2012 #5  - solution</h4>
+<div class="item sol" id="c2-s-comps"><div class="toprob"><a href="#c2-p-comps">&uarr; Problem</a></div><p>A collection $\mathcal{B}$ of subsets of a set $S$ is a basis if (i) every point of $S$ lies in some member of $\mathcal{B}$, and</p>
+<p>(ii) if $p\in B_1\cap B_2$ with $B_1,B_2\in\mathcal{B}$, then some $B_3\in\mathcal{B}$ has $p\in B_3\subseteq B_1\cap B_2$.</p>
+<p>(i) Covering: the constant polynomial $f\equiv 1$ is a polynomial with $U_f=\{(x,y): 1\neq 0\}=\mathbb{R}^2$. So every point of $\mathbb{R}^2$ lies in a member of the collection.</p>
+<p>(ii) Intersections: for polynomials $f,g$, the product $fg$ is a polynomial, and $(fg)(p)\neq 0 \Leftrightarrow f(p)\neq 0$ and $g(p)\neq 0$ (a field has no zero divisors). Hence $U_f\cap U_g=\{p: f(p)\neq 0$ and $g(p)\neq 0\}=U_{fg}$, itself a member of the collection. So for any $p\in U_f\cap U_g$ we may take $B_3=U_{fg}$, giving $p\in U_{fg}\subseteq U_f\cap U_g$. Both axioms hold, so the collection is a basis for a topology on $\mathbb{R}^2$ (the resulting open sets are the complements of common zero-sets of families of polynomials - the Zariski topology on $\mathbb{R}^2$).  ∎</p></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch2_sec21_22.pdf, 4 pages (shown as page images)</div>
+<div class="off" id="c2-off-ch2-sec21-22-p1"><div class="toprob"><a href="#c2-p-s2-1-3">&uarr; Problem 2.1 #3</a> &middot; <a href="#c2-p-s2-1-5">&uarr; Problem 2.1 #5</a> &middot; <a href="#c2-p-s2-1-7">&uarr; Problem 2.1 #7</a></div><div class="offcap">ch2_sec21_22.pdf, page 1</div><img src="img/5690-ch2_sec21_22-p1.png" width="1275" height="1650" loading="lazy" alt="ch2_sec21_22.pdf page 1"></div>
+<div class="off" id="c2-off-ch2-sec21-22-p2"><div class="toprob"><a href="#c2-p-s2-2-1">&uarr; Problem 2.2 #1</a> &middot; <a href="#c2-p-s2-2-2">&uarr; Problem 2.2 #2</a></div><div class="offcap">ch2_sec21_22.pdf, page 2</div><img src="img/5690-ch2_sec21_22-p2.png" width="1275" height="1650" loading="lazy" alt="ch2_sec21_22.pdf page 2"></div>
+<div class="off" id="c2-off-ch2-sec21-22-p3"><div class="toprob"><a href="#c2-p-s2-2-5">&uarr; Problem</a></div><div class="offcap">ch2_sec21_22.pdf, page 3</div><img src="img/5690-ch2_sec21_22-p3.png" width="1275" height="1650" loading="lazy" alt="ch2_sec21_22.pdf page 3"></div>
+<div class="off" id="c2-off-ch2-sec21-22-p4"><div class="toprob"><a href="#c2-p-s2-3-1">&uarr; Problem 2.3 #1</a> &middot; <a href="#c2-p-s2-3-2">&uarr; Problem 2.3 #2</a></div><div class="offcap">ch2_sec21_22.pdf, page 4</div><img src="img/5690-ch2_sec21_22-p4.png" width="1275" height="1650" loading="lazy" alt="ch2_sec21_22.pdf page 4"></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch2_wikibook.pdf, 1 page (shown as page images)</div>
+<div class="off" id="c2-off-ch2-wikibook-p1"><div class="toprob"><a href="#c2-p-wiki1">&uarr; Problem Wikibook (1)</a> &middot; <a href="#c2-p-wiki2">&uarr; Problem Wikibook (2)</a> &middot; <a href="#c2-p-wiki3">&uarr; Problem Wikibook (3)</a></div><div class="offcap">ch2_wikibook.pdf, page 1</div><img src="img/5690-ch2_wikibook-p1.png" width="1241" height="1754" loading="lazy" alt="ch2_wikibook.pdf page 1"></div>
+<div class="frag">
+<h3>Chapter 2: backup solutions (Claude, not official)</h3>
+
+<p><i>Covered by the official files and not repeated here: Section 2.1 #3, #5, #7 (ch2_sec21_22.pdf); Section 2.2 #1, #2, #5(i) to (iii); Section 2.3 #1, #2 (same file, Section 2.3 given as a sketch); Wikibook #1, #2 and the "is a base" half of #3 (ch2_wikibook.pdf). The official 2.2 #5(iv) is garbled (the rectangle's vertices are cut off) and 2.2 #5(v) takes "the minimum distance r" to the curve without showing r &gt; 0, so those two parts are redone below. Small errata in the official file: in 2.2 #1(iv) the rectangle should be centred at (m, n), not (a + m, b + n); in 2.2 #5(i) the restriction m ≠ 0 is unnecessary and the distance needs an absolute value, d = |b − am − c| / √(1 + m²).</i></p>
+
+<p><b>Conventions.</b> As in Morris, the euclidean topology on ℝ<sup>n</sup> has as a basis the open rectangles (a<sub>1</sub>, b<sub>1</sub>) × ⋯ × (a<sub>n</sub>, b<sub>n</sub>). For p ∈ ℝ<sup>n</sup>, ‖p‖ = √(p<sub>1</sub><sup>2</sup> + ⋯ + p<sub>n</sub><sup>2</sup>). For δ &gt; 0 let C(p, δ) = ∏(p<sub>i</sub> − δ, p<sub>i</sub> + δ), an open rectangle containing p; every q ∈ C(p, δ) has ‖q − p‖<sup>2</sup> &lt; nδ<sup>2</sup>, i.e. ‖q − p‖ &lt; √n·δ.</p>
+
+<div class="lbl anch" id="c2-s-s2-2-5">Section 2.2 #5(iv)</div><div class="toprob"><a href="#c2-p-s2-2-5">&uarr; Problem</a></div>
+<div class="stmt">5. Prove the following statements.<br>
+(iv) Let B<sup>n</sup> be the closed unit n-ball given by B<sup>n</sup> = {⟨x<sub>1</sub>, x<sub>2</sub>, . . . , x<sub>n</sub>⟩ ∈ ℝ<sup>n</sup> : x<sub>1</sub><sup>2</sup> + x<sub>2</sub><sup>2</sup> + ⋯ + x<sub>n</sub><sup>2</sup> ⩽ 1}. Then B<sup>n</sup> is a closed subset of ℝ<sup>n</sup>.</div>
+<p>We show T = ℝ<sup>n</sup> \ B<sup>n</sup> = {p : ‖p‖ &gt; 1} is open. Let p ∈ T and put r = ‖p‖ − 1 &gt; 0, δ = r/√n. Let q ∈ C(p, δ). Then ‖q − p‖ &lt; √n·δ = r, and by the triangle inequality ‖q‖ ≥ ‖p‖ − ‖q − p‖ &gt; ‖p‖ − r = 1. So q ∈ T. Thus p ∈ C(p, δ) ⊆ T with C(p, δ) an open rectangle. Hence T is a union of open rectangles, so T is open (Proposition 2.3.3) and B<sup>n</sup> is closed. ∎</p>
+
+<div class="lbl anch" id="c2-s-s2-2-5-2">Section 2.2 #5(v)</div><div class="toprob"><a href="#c2-p-s2-2-5">&uarr; Problem</a></div>
+<div class="stmt">(v) The curve C = {⟨x, y⟩ ∈ ℝ<sup>2</sup> : xy = 1} is a closed subset of ℝ<sup>2</sup>.</div>
+<p>Let T = ℝ<sup>2</sup> \ C and ⟨a, b⟩ ∈ T, so η = |ab − 1| &gt; 0. Put M = |a| + |b| + 1 and δ = min(1, η/(2M)) &gt; 0. Let ⟨x, y⟩ ∈ (a − δ, a + δ) × (b − δ, b + δ). Then |x| &lt; |a| + 1 and</p>
+<p>|xy − ab| = |x(y − b) + b(x − a)| ≤ |x||y − b| + |b||x − a| &lt; (|a| + 1)δ + |b|δ = Mδ ≤ η/2.</p>
+<p>Therefore |xy − 1| ≥ |ab − 1| − |xy − ab| &gt; η − η/2 &gt; 0, i.e. xy ≠ 1, so ⟨x, y⟩ ∈ T. Every point of T lies in an open rectangle contained in T, so T is open and C is closed. ∎</p>
+
+<div class="lbl anch" id="c2-s-wiki3">Wikibook #3 (comparison part)</div><div class="toprob"><a href="#c2-p-wiki3">&uarr; Problem</a></div>
+<div class="stmt">Show that 𝓛 = {(a,b] ∣ a &lt; b} is a base for a topology on ℝ. Compare this topology to the lower limit topology.</div>
+<p>(The "is a base" half is in the official file.) Let τ<sub>u</sub> be the topology generated by 𝓛 (the "upper limit topology") and τ<sub>ℓ</sub> the lower limit topology, generated by {[a, b) ∣ a &lt; b}.</p>
+<p><b>Neither contains the other.</b> [0, 1) ∈ τ<sub>ℓ</sub>. If [0, 1) were in τ<sub>u</sub>, then since 0 ∈ [0, 1) there would be (a, b] with 0 ∈ (a, b] ⊆ [0, 1). But 0 ∈ (a, b] forces a &lt; 0, and then a/2 ∈ (a, b] (as a &lt; a/2 &lt; 0 ≤ b) while a/2 ∉ [0, 1). Contradiction; so τ<sub>ℓ</sub> ⊄ τ<sub>u</sub>. Symmetrically (0, 1] ∈ τ<sub>u</sub> but (0, 1] ∉ τ<sub>ℓ</sub>: a set [a, b) containing 1 has b &gt; 1, so it contains (1 + b)/2 ∉ (0, 1]. So τ<sub>u</sub> ⊄ τ<sub>ℓ</sub>. The two topologies are different and not comparable.</p>
+<p><b>Both are strictly finer than the standard topology τ.</b> For x ∈ (a, b) we have x ∈ (a, x] ⊆ (a, b) and x ∈ [x, b) ⊆ (a, b), so by the base comparison criterion τ ⊆ τ<sub>u</sub> and τ ⊆ τ<sub>ℓ</sub>; the sets (0, 1] and [0, 1) are not open in τ (Exercises 2.1 #1), so both inclusions are strict.</p>
+<p><b>But they are "the same space".</b> The map φ(x) = −x is a bijection ℝ → ℝ with φ([a, b)) = (−b, −a] and φ((a, b]) = [−b, −a). Since φ sends base sets to base sets in both directions and images/preimages commute with unions, φ carries τ<sub>ℓ</sub> exactly onto τ<sub>u</sub>. So (ℝ, τ<sub>u</sub>) is homeomorphic to (ℝ, τ<sub>ℓ</sub>) (a mirror image of the Sorgenfrey line), even though τ<sub>u</sub> ≠ τ<sub>ℓ</sub> as collections of subsets of ℝ. ∎</p>
+
+<div class="lbl anch" id="c2-s-wiki5">Wikibook #5</div><div class="toprob"><a href="#c2-p-wiki5">&uarr; Problem</a></div>
+<div class="stmt">(Comparing topologies.) Let 𝒯 be the standard topology on ℝ, 𝒯<sub>ℓ</sub> the lower limit topology, and 𝒯<sub>K</sub> the K-topology. Show that 𝒯<sub>ℓ</sub> and 𝒯<sub>K</sub> are each strictly finer than 𝒯, but are not comparable to each other.</div>
+<p>Wikibook definitions: 𝒯<sub>ℓ</sub> has base {[a, b) ∣ a &lt; b}; with K = {1/n ∣ n ∈ ℕ}, 𝒯<sub>K</sub> has base all (a, b) together with all (a, b) \ K. We use the criterion from the wikibook: if 𝓑, 𝓑′ are bases of 𝒯, 𝒯′, then 𝒯 ⊆ 𝒯′ iff for every x and every B ∈ 𝓑 with x ∈ B there is B′ ∈ 𝓑′ with x ∈ B′ ⊆ B. Also, a set U is open in a topology with base 𝓑 iff every x ∈ U has some B ∈ 𝓑 with x ∈ B ⊆ U.</p>
+<p><b>𝒯 ⊆ 𝒯<sub>ℓ</sub>, strictly.</b> If x ∈ (a, b) then x ∈ [x, b) ⊆ (a, b). So 𝒯 ⊆ 𝒯<sub>ℓ</sub>. The set [0, 1) is in 𝒯<sub>ℓ</sub> (a base element) but not in 𝒯: any (a, b) ∋ 0 has a &lt; 0, so it contains a/2 &lt; 0, a point not in [0, 1).</p>
+<p><b>𝒯 ⊆ 𝒯<sub>K</sub>, strictly.</b> Every base element (a, b) of 𝒯 is a base element of 𝒯<sub>K</sub>, so 𝒯 ⊆ 𝒯<sub>K</sub>. Let V = (−1, 1) \ K ∈ 𝒯<sub>K</sub>. Then 0 ∈ V, but any (a, b) ∋ 0 has b &gt; 0; choose n with 1/n &lt; b, then 1/n ∈ (a, b) and 1/n ∉ V. So no open interval around 0 lies in V, and V ∉ 𝒯.</p>
+<p><b>𝒯<sub>K</sub> ⊄ 𝒯<sub>ℓ</sub>.</b> The same V = (−1, 1) \ K is not in 𝒯<sub>ℓ</sub>: any [a, b) ∋ 0 has a ≤ 0 &lt; b, and contains 1/n for n with 1/n &lt; b, which is not in V.</p>
+<p><b>𝒯<sub>ℓ</sub> ⊄ 𝒯<sub>K</sub>.</b> [0, 1) ∈ 𝒯<sub>ℓ</sub>. A 𝒯<sub>K</sub>-base element containing 0 is (a, b) or (a, b) \ K with a &lt; 0 &lt; b; either way it contains a/2 (negative, so not in K), and a/2 ∉ [0, 1). So [0, 1) ∉ 𝒯<sub>K</sub>.</p>
+<p>Hence each of 𝒯<sub>ℓ</sub>, 𝒯<sub>K</sub> is strictly finer than 𝒯, and neither of 𝒯<sub>ℓ</sub>, 𝒯<sub>K</sub> contains the other. ∎</p>
+
+<hr>
+<p><b>Background for the additional problems</b> (Krebs, "Fall 2026 Math 5690 Additional Chapter 2 Notes"). <b>Def. 0.2 to 0.4:</b> for f ∈ ℝ[x<sub>1</sub>, …, x<sub>n</sub>], Z(f) = {p ∈ ℝ<sup>n</sup> : f(p) = 0}; the <b>Zariski topology</b> on ℝ<sup>n</sup> is the topology with basis 𝓑 = {Z(f)<sup>C</sup> : f ∈ ℝ[x<sub>1</sub>, …, x<sub>n</sub>]}. So the open sets are the unions ⋃<sub>α</sub> Z(f<sub>α</sub>)<sup>C</sup>, and the closed sets are exactly the intersections ⋂<sub>α</sub> Z(f<sub>α</sub>) = Z(S) := {p : f(p) = 0 for all f ∈ S}, S = {f<sub>α</sub>} any set of polynomials (S = Ø gives ℝ<sup>n</sup>). <b>Def. 0.5:</b> a closed subset C of X is <b>reducible</b> if C = A ∪ B for some closed subsets A, B of X with A ≠ C and B ≠ C (then automatically A, B ⊊ C); otherwise C is <b>irreducible</b>. Note that under this definition Ø is irreducible (Ø = A ∪ B forces A = B = Ø = C). <b>Def. 0.6:</b> the <b>Krull dimension</b> of X is the largest non-negative integer n for which there are <i>non-empty</i>, closed, irreducible C<sub>0</sub> ⊊ C<sub>1</sub> ⊊ ⋯ ⊊ C<sub>n</sub> in X, provided such a largest n exists.</p>
+<p><b>Lemma 1.</b> A nonzero one-variable real polynomial of degree d has at most d real roots. (Standard.)</p>
+<p><b>Lemma 2.</b> If a polynomial f(x, y) vanishes at every point of an open rectangle (a<sub>1</sub>, b<sub>1</sub>) × (a<sub>2</sub>, b<sub>2</sub>), then f is the zero polynomial.<br>
+<i>Proof.</i> Write f = c<sub>0</sub>(x) + c<sub>1</sub>(x)y + ⋯ + c<sub>m</sub>(x)y<sup>m</sup>. Fix x<sub>0</sub> ∈ (a<sub>1</sub>, b<sub>1</sub>). The one-variable polynomial y ↦ f(x<sub>0</sub>, y) has infinitely many roots (all of (a<sub>2</sub>, b<sub>2</sub>)), so by Lemma 1 it is zero: c<sub>i</sub>(x<sub>0</sub>) = 0 for every i. This holds for every x<sub>0</sub> ∈ (a<sub>1</sub>, b<sub>1</sub>), so each c<sub>i</sub> has infinitely many roots and is the zero polynomial. ∎</p>
+<p><b>Lemma 3.</b> A Zariski-closed set F ⊊ ℝ<sup>2</sup> contains no open rectangle (so no non-empty euclidean-open set).<br>
+<i>Proof.</i> F is closed, so F = Z(S) for a set S of polynomials (see above). Since F ≠ ℝ<sup>2</sup>, some g ∈ S is not the zero polynomial (if every g ∈ S were zero, Z(S) = ℝ<sup>2</sup>), and F ⊆ Z(g). If F contained an open rectangle, g would vanish on it, so g = 0 by Lemma 2. Contradiction. ∎</p>
+<p><b>Corollary 4.</b> If A ⊆ ℝ<sup>2</sup> contains an open rectangle and A ≠ ℝ<sup>2</sup>, then A is not Zariski-closed. If additionally ℝ<sup>2</sup> \ A contains an open rectangle and A ≠ Ø, then A is not Zariski-open either (its complement would be a proper closed set containing a rectangle).</p>
+
+<div class="lbl anch" id="c2-s-add1">Additional problem (1)</div><div class="toprob"><a href="#c2-p-add1">&uarr; Problem</a></div>
+<div class="stmt">(1) Let U be the open unit disc in ℝ<sup>2</sup>, that is, the set {(x,y) | x<sup>2</sup> + y<sup>2</sup> &lt; 1}.  Is U open in the Zariski topology?  Is it closed?  Prove that your answer is correct.</div>
+<p><b>Neither open nor closed.</b> U contains the open rectangle (−½, ½) × (−½, ½) (there x<sup>2</sup> + y<sup>2</sup> &lt; ½), and U ≠ ℝ<sup>2</sup> (⟨2, 0⟩ ∉ U). By Lemma 3, U is not closed. The complement ℝ<sup>2</sup> \ U = {x<sup>2</sup> + y<sup>2</sup> ≥ 1} contains the open rectangle (2, 3) × (2, 3) and is not all of ℝ<sup>2</sup> (it misses ⟨0, 0⟩); by Lemma 3 it is not closed, so U is not open. ∎</p>
+
+<div class="lbl anch" id="c2-s-add2">Additional problem (2)</div><div class="toprob"><a href="#c2-p-add2">&uarr; Problem</a></div>
+<div class="stmt">(2) Let C be the closed unit disc in ℝ<sup>2</sup>, that is, the set {(x,y) | x<sup>2</sup> + y<sup>2</sup> &lt; 1}.  Is C open in the Zariski topology?  Is it closed?  Prove that your answer is correct.</div>
+<p><i>Note: the set-builder has "&lt; 1", which is the open disc again (a typo for ≤ 1, since it is called the closed disc). The answer is the same for either reading.</i></p>
+<p><b>Neither open nor closed.</b> Take C = {x<sup>2</sup> + y<sup>2</sup> ≤ 1} (for the "&lt;" reading, see (1)). C contains the rectangle (−½, ½)<sup>2</sup> and C ≠ ℝ<sup>2</sup>, so C is not Zariski-closed by Lemma 3. Its complement {x<sup>2</sup> + y<sup>2</sup> &gt; 1} contains (2, 3)<sup>2</sup> and is not ℝ<sup>2</sup>, so it is not closed and C is not open. ∎ (So the closed disc, although closed in the euclidean topology, is not Zariski-closed: the Zariski topology is much coarser.)</p>
+
+<div class="lbl anch" id="c2-s-add3">Additional problem (3)</div><div class="toprob"><a href="#c2-p-add3">&uarr; Problem</a></div>
+<div class="stmt">(3) Let S be the unit circle in ℝ<sup>2</sup>, that is, the set {(x,y) | x<sup>2</sup> + y<sup>2</sup> = 1}.  Is S open in the Zariski topology?  Is it closed?  Prove that your answer is correct.</div>
+<p><b>Closed, not open.</b> S = Z(x<sup>2</sup> + y<sup>2</sup> − 1), so S is Zariski-closed. The complement ℝ<sup>2</sup> \ S contains the rectangle (2, 3)<sup>2</sup> and is not ℝ<sup>2</sup> (⟨1, 0⟩ ∈ S), so it is not closed (Lemma 3; equivalently, S ≠ Ø and ℝ<sup>2</sup> \ S contains a rectangle). Hence S is not open. ∎</p>
+
+<div class="lbl anch" id="c2-s-add4">Additional problem (4)</div><div class="toprob"><a href="#c2-p-add4">&uarr; Problem</a></div>
+<div class="stmt">(4) Let K be the set Z(y – x<sup>2</sup>) in ℝ<sup>2</sup>, that is, the set {(x,y) | y – x<sup>2</sup> = 0}.  Prove that in the Zariski topology, K is an irreducible closed set.</div>
+<p>K = Z(y − x<sup>2</sup>) is closed (it is the complement of the basic open set Z(y − x<sup>2</sup>)<sup>C</sup>). By Def. 0.5 we must show K is not reducible: there are no closed A, B ⊆ ℝ<sup>2</sup> with K = A ∪ B, A ≠ K, B ≠ K. Any such A, B satisfy A, B ⊊ K.</p>
+<p><b>Claim: every closed A ⊊ K is finite.</b> Write A = Z(S). Since A ≠ K there is a point ⟨t<sub>0</sub>, t<sub>0</sub><sup>2</sup>⟩ ∈ K \ A, hence some f ∈ S with f(t<sub>0</sub>, t<sub>0</sub><sup>2</sup>) ≠ 0. Then g(t) = f(t, t<sup>2</sup>) is a one-variable polynomial with g(t<sub>0</sub>) ≠ 0, so g is not the zero polynomial and has finitely many roots (Lemma 1). Every point of A ∩ K = A has the form ⟨t, t<sup>2</sup>⟩ with f(t, t<sup>2</sup>) = 0, i.e. g(t) = 0. So A is finite.</p>
+<p>Now suppose K = A ∪ B with A, B closed, A ≠ K, B ≠ K, so A, B ⊊ K. By the claim A and B are finite, so K is finite. But K contains the infinitely many distinct points ⟨t, t<sup>2</sup>⟩, t ∈ ℝ. Contradiction. So K is irreducible. ∎</p>
+
+<div class="lbl anch" id="c2-s-add5">Additional problem (5)</div><div class="toprob"><a href="#c2-p-add5">&uarr; Problem</a></div>
+<div class="stmt">(5) Prove that ℝ<sup>2</sup> is irreducible in the Zariski topology, that is, that it does not equal the union of two proper closed subsets.</div>
+<p>Suppose ℝ<sup>2</sup> = A ∪ B with A, B proper closed subsets. As in Lemma 3, A ⊆ Z(f) and B ⊆ Z(g) for some nonzero polynomials f, g. Then every point p satisfies f(p) = 0 or g(p) = 0, so the polynomial fg vanishes at every point of ℝ<sup>2</sup>, and by Lemma 2 fg is the zero polynomial. But the product of two nonzero polynomials is nonzero (the product of their leading terms, in any monomial order, e.g. highest power of y then of x, is a nonzero term that cannot cancel). Contradiction. So ℝ<sup>2</sup> is not reducible, i.e. irreducible in the sense of Def. 0.5. ∎</p>
+
+<div class="lbl anch" id="c2-s-add6">Additional problem (6)</div><div class="toprob"><a href="#c2-p-add6">&uarr; Problem</a></div>
+<div class="stmt">(6) Use your answers from (4) and (5) to prove that the Krull dimension of ℝ<sup>2</sup> in the Zariski topology is at least 2.</div>
+<p>Consider {⟨0, 0⟩} ⊊ K ⊊ ℝ<sup>2</sup>, with K as in (4).</p>
+<ul>
+<li>{⟨0, 0⟩} = Z(x) ∩ Z(y) is closed and non-empty, and it is irreducible: if {⟨0, 0⟩} = A ∪ B with A, B ≠ {⟨0, 0⟩}, then A = B = Ø and A ∪ B = Ø, impossible.</li>
+<li>K is closed and irreducible by (4); ⟨0, 0⟩ ∈ K and K ≠ {⟨0, 0⟩} (⟨1, 1⟩ ∈ K).</li>
+<li>ℝ<sup>2</sup> is closed and irreducible by (5); K ≠ ℝ<sup>2</sup> (⟨0, 1⟩ ∉ K).</li>
+</ul>
+<p>This is a chain of length 2 of non-empty, closed, irreducible sets, so by Def. 0.6 the Krull dimension of ℝ<sup>2</sup> (the largest such length) is at least 2. ∎ (In fact it equals 2, but that is not asked.)</p>
+
+<div class="lbl anch" id="c2-s-add7">Additional problem (7)</div><div class="toprob"><a href="#c2-p-add7">&uarr; Problem</a></div>
+<div class="stmt">(7) Find all closed irreducible subsets of ℝ in the Euclidean topology.</div>
+<p><b>Answer: Ø and the singletons {a}, a ∈ ℝ.</b></p>
+<p>Ø is closed, and under Def. 0.5 it is irreducible (Ø = A ∪ B forces A = B = Ø = C, so the condition A ≠ C fails). Note that Ø never appears in a Krull-dimension chain, since Def. 0.6 only uses non-empty sets. Singletons {a} are closed (Exercises 2.1 #5) and irreducible: if {a} = A ∪ B with A ≠ {a} and B ≠ {a}, then A = B = Ø and A ∪ B = Ø ≠ {a}.</p>
+<p>Conversely let A be closed with at least two points a &lt; b, and pick c with a &lt; c &lt; b. Put A<sub>1</sub> = A ∩ (−∞, c] and A<sub>2</sub> = A ∩ [c, ∞). Both are closed (intersections of closed sets, Exercises 2.1 #2), A = A<sub>1</sub> ∪ A<sub>2</sub>, b ∉ A<sub>1</sub> and a ∉ A<sub>2</sub>, so both are proper subsets of A. Hence A is reducible. So the closed irreducible subsets are exactly Ø and the singletons. (Consequently the Krull dimension of ℝ in the euclidean topology is 0.) ∎</p>
+
+<div class="lbl anch" id="c2-s-add8">Additional problem (8)</div><div class="toprob"><a href="#c2-p-add8">&uarr; Problem</a></div>
+<div class="stmt">(8) Let X be a set in the indiscrete topology.  Find the Krull dimension of X, and prove that your answer is correct.</div>
+<p><b>Answer: 0</b> (X non-empty, as in Def. 0.1).</p>
+<p>The closed sets are Ø and X. Both are irreducible under Def. 0.5: Ø as always, and X because X = A ∪ B with A, B closed and A, B ≠ X forces A = B = Ø, whose union is Ø ≠ X. Def. 0.6 only counts non-empty sets, so the only set available for a chain is X. The chain C<sub>0</sub> = X has length 0, and no chain of length 1 exists (it would need two distinct non-empty closed sets). So the Krull dimension is 0. ∎</p>
+
+<div class="lbl anch" id="c2-s-add9">Additional problem (9)</div><div class="toprob"><a href="#c2-p-add9">&uarr; Problem</a></div>
+<div class="stmt">(9) Recall that the cobounded topology on ℝ consists of all sets whose complements are bounded, together with the empty set.  Find the Krull dimension of ℝ in this topology.</div>
+<p><b>Answer: 1.</b> The closed sets are ℝ and all bounded subsets of ℝ (including Ø).</p>
+<ul>
+<li><b>Ø and singletons</b> are bounded, hence closed, and irreducible (as in (7)).</li>
+<li><b>A bounded set A with at least two points</b> is reducible: pick a ∈ A; A = {a} ∪ (A \ {a}), both bounded hence closed, both proper subsets of A.</li>
+<li><b>ℝ is irreducible:</b> its proper closed subsets are exactly the bounded sets, and the union of two bounded sets is bounded, hence ≠ ℝ.</li>
+</ul>
+<p>So the irreducible closed sets are Ø, the singletons, and ℝ; the non-empty ones (the only ones allowed in Def. 0.6) are the singletons and ℝ. A chain C<sub>0</sub> ⊊ C<sub>1</sub> ⊊ ⋯ of these can contain at most one singleton (two distinct singletons are not nested) and at most one copy of ℝ, so every chain has length ≤ 1; and {0} ⊊ ℝ has length 1. The Krull dimension is 1. ∎</p>
+
+<div class="lbl anch" id="c2-s-add10">Additional problem (10)</div><div class="toprob"><a href="#c2-p-add10">&uarr; Problem</a></div>
+<div class="stmt">(10) Generalize your answer from (9) to topologies defined by bornologies.  Be wary of one special case.</div>
+<p>Let 𝔅 be a bornology on a non-empty set X (it covers X, is closed under subsets and under finite unions), and give X the topology whose closed sets are X and the members of 𝔅 (open sets: Ø and complements of members of 𝔅; see Chapter 1 HW from class (2)).</p>
+<p><b>Claim.</b> If X ∉ 𝔅, the Krull dimension of X is 1. If X ∈ 𝔅 (the special case), the Krull dimension is 0.</p>
+<p><i>Proof.</i> Every singleton {x} is in 𝔅 (x lies in some member, and 𝔅 is closed under subsets), so singletons are closed and, as in (7), irreducible; Ø ∈ 𝔅 is closed and irreducible too but is excluded from chains by Def. 0.6. A member A ∈ 𝔅 with at least two points is reducible: A = {a} ∪ (A \ {a}), both in 𝔅, both proper.</p>
+<ul>
+<li><b>X ∉ 𝔅.</b> Then the proper closed subsets of X are exactly the members of 𝔅, and a union of two of them is in 𝔅, hence ≠ X. So X is irreducible. The non-empty irreducible closed sets are the singletons and X; exactly as in (9) the longest chains are {x} ⊊ X (note X ≠ {x} because {x} ∈ 𝔅 but X ∉ 𝔅). Krull dimension 1.</li>
+<li><b>X ∈ 𝔅 (special case).</b> Then 𝔅 contains every subset of X, every subset is closed, and the topology is discrete. Now X itself is a member of 𝔅; if X has at least two points it is reducible, as is every closed set with two or more points. The non-empty irreducible closed sets are only the singletons, no two of which are nested, so the Krull dimension is 0.</li>
+</ul>
+<p>Examples: (9) is the case X = ℝ, 𝔅 = bounded sets (ℝ is unbounded, dimension 1). With 𝔅 = finite subsets we get the cofinite topology: dimension 1 if X is infinite, but if X is finite then X ∈ 𝔅, the cofinite topology is discrete, and the dimension is 0. ∎</p>
+</div>
+<div class="frag">
+<h3>Chapter 2, additional problem (11): backup solution (Claude, not official)</h3>
+<div class="stmt anch" id="c2-s-add11"><div class="toprob"><a href="#c2-p-add11">&uarr; Problem</a></div><b>(11)</b> Z(F<sub>1</sub>,…,F<sub>n</sub>) = F<sub>1</sub>×⋯×F<sub>n</sub> ⊆ X<sup>n</sup> with each F<sub>i</sub> finite or equal to X. T = all complements Z(G<sub>1</sub>,…,G<sub>n</sub>)<sup>c</sup>. (a) Prove T is a topology on X<sup>n</sup>. (b) If X is infinite, X<sup>n</sup> has Krull dimension n.</div>
+
+<p><b>Terminology.</b> Call a set F<sub>1</sub>×⋯×F<sub>n</sub> with every F<sub>i</sub> finite or equal to X a <i>box</i>. So T is the set of complements of boxes.</p>
+
+<p class="lbl">(a) A warning first: as literally written, T is NOT a topology when n ≥ 2 and X has at least 2 points.</p>
+<p>T does contain ∅ = (X×⋯×X)<sup>c</sup> and X<sup>n</sup> = (∅×⋯×∅)<sup>c</sup>, and it is closed under arbitrary unions: an intersection of boxes is the box of the factorwise intersections, and an intersection of sets that are each finite or X is finite or X. But T is not closed under finite intersections. Pick a, b ∈ X and let</p>
+<p style="margin-left:2em">U = Z({a}, X, …, X)<sup>c</sup>, &nbsp; V = Z(X, {b}, X, …, X)<sup>c</sup>, &nbsp; so U ∩ V = C<sup>c</sup>, where C = ({a}×X×⋯×X) ∪ (X×{b}×X×⋯×X).</p>
+<p>If C were a box G<sub>1</sub>×⋯×G<sub>n</sub>: the points (a, y, z<sub>3</sub>, …, z<sub>n</sub>) lie in C for all y, z<sub>i</sub> ∈ X, so G<sub>2</sub> = G<sub>3</sub> = ⋯ = G<sub>n</sub> = X, and the points (y, b, …) give G<sub>1</sub> = X. Then C = X<sup>n</sup>. But choosing c ≠ a and d ≠ b (possible since |X| ≥ 2), the point (c, d, …) is not in C. Contradiction, so U ∩ V ∉ T. (For n = 1, T is exactly the cofinite topology, which is fine.)</p>
+<p><b>The intended statement</b> (presumably): take as closed sets all <i>finite unions</i> of boxes, i.e. T* = { C<sup>c</sup> : C a finite union of boxes }. This is the smallest topology containing T. We prove that T* is a topology.</p>
+
+<p class="lbl">Proof that T* is a topology.</p>
+<p>(1) ∅ and X<sup>n</sup> are open: X<sup>n</sup> is a box, and ∅ is the empty union (or the box ∅×⋯×∅).<br>
+(2) Finite intersections of open sets: their complement is a finite union of finite unions of boxes, which is again a finite union of boxes.<br>
+(3) Arbitrary unions of open sets: we must show that an arbitrary intersection ⋂<sub>α</sub> C<sub>α</sub> of closed sets is closed. First, a <i>finite</i> intersection of closed sets is closed: distribute, and use box ∩ box = box. Next we use the following lemma.</p>
+<p><b>Lemma (descending chain condition).</b> There is no infinite strictly decreasing chain C<sub>1</sub> ⊋ C<sub>2</sub> ⊋ ⋯ of closed sets.</p>
+<p>Given the lemma, choose a minimal set D among all finite intersections C<sub>α<sub>1</sub></sub> ∩ ⋯ ∩ C<sub>α<sub>k</sub></sub>. One exists, since otherwise we could build an infinite strictly decreasing chain. For any α, D ∩ C<sub>α</sub> is a finite intersection contained in D, so by minimality D ∩ C<sub>α</sub> = D, i.e. D ⊆ C<sub>α</sub>. Hence ⋂<sub>α</sub> C<sub>α</sub> = D, which is closed. ∎</p>
+
+<p><b>Proof of the lemma.</b> If X is finite then X<sup>n</sup> is finite and there is nothing to prove, so assume X is infinite.</p>
+<p><i>Flats.</i> For S ⊆ {1,…,n} and c ∈ X<sup>n</sup>, the <i>flat</i> L(S, c) = { x : x<sub>i</sub> = c<sub>i</sub> for all i ∉ S }. Its dimension is |S|: the coordinates in S are free. A flat is a box (built from singletons and X), and every box is a finite union of flats (expand each finite factor into its points). So the closed sets are exactly the finite unions of flats.</p>
+<p><i>Fact A.</i> If a flat L is contained in a finite union M<sub>1</sub> ∪ ⋯ ∪ M<sub>r</sub> of flats, then L ⊆ M<sub>j</sub> for some j. Proof: suppose L ⊄ M<sub>j</sub> for every j. Then L ∩ M<sub>j</sub> is either empty or a flat that pins some coordinate that is free in L to a single value. Only finitely many (coordinate, value) pairs get pinned this way, and X is infinite, so we can choose x ∈ L whose free coordinates avoid all of them. Then x ∉ M<sub>j</sub> for every j, contradicting L ⊆ ⋃M<sub>j</sub>. ∎</p>
+<p><i>Fact B.</i> If L′ ⊆ L are flats, then every free coordinate of L′ is free in L, because a free coordinate of L′ takes infinitely many values and so cannot be pinned in L. Hence dim L′ ≤ dim L, with equality only if L′ = L.</p>
+<p>By Fact A, the maximal flats contained in a closed set C are finitely many, and C is their union. Let m<sub>k</sub>(C) be the number of maximal flats of C of dimension k, and v(C) = (m<sub>n</sub>, m<sub>n−1</sub>, …, m<sub>0</sub>) ∈ ℕ<sup>n+1</sup>. <b>Claim:</b> if C′ ⊊ C are closed, then v(C′) &lt; v(C) in lexicographic order. The lexicographic order on ℕ<sup>n+1</sup> has no infinite strictly decreasing sequence, so the lemma follows.</p>
+<p>Proof of the claim. Every maximal flat L′ of C′ lies in C, so by Fact A it lies in a maximal flat L of C, with dim L′ ≤ dim L. Not every maximal flat of C is a maximal flat of C′, since otherwise C ⊆ C′. Let k be the largest dimension of a maximal flat of C that is not a maximal flat of C′. Then for j &gt; k, every j-dimensional maximal flat of C is a maximal flat of C′. Now let L′ be a maximal flat of C′ with dim L′ = j ≥ k, contained in the maximal flat L of C. If dim L &gt; j ≥ k, then L is a maximal flat of C′ properly containing L′, contradicting the maximality of L′. So dim L = j, and L′ = L by Fact B. Hence m<sub>j</sub>(C′) = m<sub>j</sub>(C) for j &gt; k, and the k-dimensional maximal flats of C′ form a proper subset of those of C, so m<sub>k</sub>(C′) &lt; m<sub>k</sub>(C). ∎</p>
+
+<p class="lbl">(b) Krull dimension n when X is infinite (topology T*, Krebs' Def. 0.5 and 0.6: chains of non-empty, closed, irreducible sets).</p>
+<p><i>Step 1: the non-empty closed irreducible sets are exactly the flats.</i><br>
+A flat L is irreducible: if L = A ∪ B with A, B closed, then A and B are finite unions of flats, so by Fact A, L lies inside some flat contained in A or in B. Thus L ⊆ A (so A = L) or L ⊆ B (so B = L), and L is not reducible.<br>
+Conversely, let C ≠ ∅ be closed and irreducible, and write C = L<sub>1</sub> ∪ ⋯ ∪ L<sub>r</sub> as the union of its maximal flats (r ≥ 1). If r ≥ 2, put A = L<sub>1</sub> and B = L<sub>2</sub> ∪ ⋯ ∪ L<sub>r</sub>, both closed. B ≠ C because L<sub>1</sub> ⊄ B (Fact A plus maximality), and A ≠ C because L<sub>2</sub> ⊄ L<sub>1</sub>. So C would be reducible. Hence r = 1 and C is a flat.</p>
+<p><i>Step 2: a chain of length n.</i> Fix a ∈ X and let C<sub>k</sub> = { x : x<sub>i</sub> = a for all i &gt; k } for k = 0, …, n. Then C<sub>0</sub> = {(a, …, a)} ⊊ C<sub>1</sub> ⊊ ⋯ ⊊ C<sub>n</sub> = X<sup>n</sup>, strictly, because X has points other than a. Each C<sub>k</sub> is a non-empty flat, hence closed and irreducible. So the Krull dimension is at least n.</p>
+<p><i>Step 3: no longer chain exists.</i> In any chain C<sub>0</sub> ⊊ ⋯ ⊊ C<sub>m</sub> of non-empty closed irreducible sets, each C<sub>i</sub> is a flat (Step 1), and by Fact B the dimensions strictly increase. Dimensions lie in {0, …, n}, so m ≤ n.</p>
+<p>Therefore X<sup>n</sup> has Krull dimension exactly n. ∎</p>
+<p><i>Remark.</i> Fact A is where "X infinite" is used. If X is finite, every subset is a finite union of points, so the topology is discrete, the only non-empty irreducible closed sets are points, and the Krull dimension is 0.</p>
+</div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

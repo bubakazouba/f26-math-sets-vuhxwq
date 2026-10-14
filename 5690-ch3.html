@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 5690 Ch 3</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 5690 (Topology)  ·  Chapter 3 Homework</h1>
+<div class="hdr"><p class="small">Problems first; ALL solutions together at the end. The comps problem is quoted verbatim from the CSULA topology comprehensive exam (solution by Claude - comps have no key). The assigned main-textbook problems are inlined verbatim (cropped from Morris, Topology Without Tears); official solutions are appended.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<h3 class="grp">Assigned problems (Chapter 3)</h3>
+<p>$\bullet$ Spring 2013 topology comps, Problem 3.</p>
+<p>$\bullet$ Main textbook: Section 3.1 #1, 2, 3, 4(a), 5(i-iv);  Section 3.2 #1, 3, 5, 6, 9, 10, 11(i-iv); Section 3.3 #5 (prove your answer), 7;  Section 5.2 #4.</p>
+<p>$\bullet$ Hatcher (p. 28) #7a.</p>
+<h4 class="sub">Comprehensive-exam problem  (Spring 2013, #3)  - verbatim</h4>
+<div class="item prob" id="c3-p-comps"><p>Prove that a topological space $S$ is connected if and only if $\partial H\neq\emptyset$ for every nonempty proper subset $H$ of $S$.  (Here $\partial H$ denotes the boundary of $H$.)</p><div class="tosol"><a href="#c3-s-comps">Solution &darr;</a></div></div>
+<h4 class="sub">Hatcher (p. 28) #7a - verbatim</h4>
+<div class="item prob" id="c3-p-hatcher7"><p>(a) Show that if $A\subseteq B\subseteq\overline{A}$ and $A$ is connected then so is $B$.</p><div class="tosol"><a href="#c3-off-ch3-hatcher-p1">Official solution &darr;</a></div></div>
+<h3 class="grp">MAIN-TEXTBOOK PROBLEMS  (Morris, Topology Without Tears - assigned exercises, verbatim)</h3>
+
+<h4 class="sub">Exercises 3.1</h4>
+<div class="item prob" id="c3-p-s3-1-1"><p><b>$\bullet$  #1.</b> </p>
+<p>(a) In Example 3.1.2, find all the limit points of the following sets:</p>
+<p>(i) $\{a\}$,</p>
+<p>(ii) $\{b, c\}$,</p>
+<p>(iii) $\{a, c, d\}$,</p>
+<p>(iv) $\{b, d, e\}$.</p>
+<p>(b) Hence, find the closure of each of the above sets.</p>
+<p>(c) Now find the closure of each of the above sets using the method of Example 3.1.11.</p><div class="tosol"><a href="#c3-off-ch3-maintext-p1">Official solution &darr;</a> &middot; <a href="#c3-s-s3-1-1">Solution (Claude) &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-1-2"><p><b>$\bullet$  #2.</b> Let $(\mathbb{Z}, \tau)$ be the set of integers with the finite-closed topology. List the set of limit points of the following sets:</p>
+<p>(i) $A = \{1, 2, 3, \ldots, 10\}$,</p>
+<p>(ii) The set, $E$, consisting of all even integers.</p><div class="tosol"><a href="#c3-off-ch3-maintext-p1">Official solution &darr;</a> &middot; <a href="#c3-s-s3-1-2">Solution (Claude) &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-1-3"><p><b>$\bullet$  #3.</b> Find all the limit points of the open interval $(a, b)$ in $\mathbb{R}$, where $a &lt; b$.</p><div class="tosol"><a href="#c3-s-s3-1-3">Solution &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-1-4"><p><b>$\bullet$  #4.</b> </p>
+<p>(a) What is the closure in $\mathbb{R}$ of each of the following sets?</p>
+<p>(i) $\{1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots, \frac{1}{n}, \ldots\}$;</p>
+<p>(ii) the set $\mathbb{Z}$ of all integers;</p>
+<p>(iii) the set $\mathbb{P}$ of all irrational numbers.</p>
+<p>(b) Let $S$ be a non-empty subset of $\mathbb{R}$ and $a \in \mathbb{R}$. Prove that $a \in \overline{S}$ if and only if for each positive integer $n$, there exists an $x_n \in S$ such that $|x_n - a| &lt; \frac{1}{n}$.</p><div class="tosol"><a href="#c3-off-ch3-maintext-p1">Official solution &darr;</a> &middot; <a href="#c3-s-s3-1-4">Solution (Claude) &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-1-5"><p><b>$\bullet$  #5.</b> Let $S$ and $T$ be non-empty subsets of a topological space $(X, \tau)$ with $S \subseteq T$.</p>
+<p>(i) If $p$ is a limit point of the set $S$, verify that $p$ is also a limit point of the set $T$.</p>
+<p>(ii) Deduce from (i) that $\overline{S} \subseteq \overline{T}$.</p>
+<p>(iii) Hence show that if $S$ is dense in $X$, then $T$ is dense in $X$.</p>
+<p>(iv) Using (iii) show that $\mathbb{R}$ has an uncountable number of distinct dense subsets. [Hint: Uncountable sets are discussed in Appendix 1.]</p>
+<p>(v)* Again using (iii), prove that $\mathbb{R}$ has an uncountable number of distinct countable dense subsets and $2^c$ distinct uncountable dense subsets. [Hint: Note that $c$ is discussed in Appendix 1.]</p><div class="tosol"><a href="#c3-off-ch3-maintext-p1">Official solution 1 &darr;</a> &middot; <a href="#c3-off-ch3-maintext-p1">Official solution 2 &darr;</a> &middot; <a href="#c3-off-ch3-maintext-p1">Official solution 3 &darr;</a> &middot; <a href="#c3-off-ch3-maintext-p1">Official solution 4 &darr;</a></div></div>
+<h4 class="sub">Exercises 3.2</h4>
+<div class="item prob" id="c3-p-s3-2-1"><p><b>$\bullet$  #1.</b> Let $A$ be a subset of a topological space $(X, \tau)$. Prove that $A$ is dense in $X$ if and only if every neighbourhood of each point in $X \setminus A$ intersects $A$ non-trivially.</p><div class="tosol"><a href="#c3-off-ch3-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-2-3"><p><b>$\bullet$  #3.</b> Let $(X, \tau)$ be a topological space. Prove that $\tau$ is the finite-closed topology on $X$ if and only if (i) $(X, \tau)$ is a $T_1$-space, and (ii) every infinite subset of $X$ is dense in $X$.</p><div class="tosol"><a href="#c3-off-ch3-maintext-p3">Official solution &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-2-5"><p><b>$\bullet$  #5.</b> Let $(X, \tau)$ be any topological space and $A$ any subset of $X$. The largest open set contained in $A$ is called the interior of $A$ and is denoted by Int$(A)$. [It is the union of all open sets in $X$ which lie wholly in $A$.]</p>
+<p>(i) Prove that in $\mathbb{R}$, Int$([0, 1]) = (0, 1)$.</p>
+<p>(ii) Prove that in $\mathbb{R}$, Int$((3, 4)) = (3, 4)$.</p>
+<p>(iii) Show that if $A$ is open in $(X, \tau)$ then Int$(A) = A$.</p>
+<p>(iv) Verify that in $\mathbb{R}$, Int$(\{3\}) = \emptyset$.</p>
+<p>(v) Show that if $(X, \tau)$ is an indiscrete space then, for all proper subsets $A$ of $X$, Int$(A) = \emptyset$.</p>
+<p>(vi) Show that for every countable subset $A$ of $\mathbb{R}$, Int$(A) = \emptyset$.</p><div class="tosol"><a href="#c3-s-s3-2-5">Solution &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-2-6"><p><b>$\bullet$  #6.</b> Show that if $A$ is any subset of a topological space $(X, \tau)$, then Int$(A) = X \setminus \overline{(X \setminus A)}$. (See Exercise 5 above for the definition of Int.)</p><div class="tosol"><a href="#c3-s-s3-2-6">Solution &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-2-9"><p><b>$\bullet$  #9.</b> Let $S$ be a dense subset of a topological space $(X, \tau)$. Prove that for every open subset $U$ of $X$, $\overline{S \cap U} = \overline{U}$.</p><div class="tosol"><a href="#c3-off-ch3-maintext-p4">Official solution &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-2-10"><p><b>$\bullet$  #10.</b> Let $S$ and $T$ be dense subsets of a space $(X, \tau)$. If $T$ is also open, deduce from Exercise 9 above that $S \cap T$ is dense in $X$.</p><div class="tosol"><a href="#c3-s-s3-2-10">Solution &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-2-11"><p><b>$\bullet$  #11.</b> Let $\mathcal{B} = \{[a, b) : a \in \mathbb{R}, b \in \mathbb{Q}, a &lt; b\}$. Prove each of the following statements.</p>
+<p>(i) $\mathcal{B}$ is a basis for a topology $\tau_1$ on $\mathbb{R}$. (The space $(\mathbb{R}, \tau_1)$ is called the Sorgenfrey line.)</p>
+<p>(ii) If $\tau$ is the Euclidean topology on $\mathbb{R}$, then $\tau_1 \supset \tau$.</p>
+<p>(iii) For all $a, b \in \mathbb{R}$ with $a &lt; b$, $[a, b)$ is a clopen set in $(\mathbb{R}, \tau_1)$.</p>
+<p>(iv) The Sorgenfrey line is a separable space.</p>
+<p>(v)* The Sorgenfrey line does not satisfy the second axiom of countability.</p><div class="tosol"><a href="#c3-s-s3-2-11">Solution &darr;</a></div></div>
+<h4 class="sub">Exercises 3.3</h4>
+<div class="item prob" id="c3-p-s3-3-5"><p><b>$\bullet$  #5.</b> Let $(X, \tau)$ be any infinite set with the finite-closed topology. Is $(X, \tau)$ connected?</p><div class="tosol"><a href="#c3-s-s3-3-5">Solution &darr;</a></div></div>
+<div class="item prob" id="c3-p-s3-3-7"><p><b>$\bullet$  #7.</b> Which of the topological spaces of Exercises 1.1 #9 are connected?</p><div class="tosol"><a href="#c3-off-ch3-maintext-p6">Official solution &darr;</a> &middot; <a href="#c3-s-s3-3-7">Solution (Claude) &darr;</a></div></div>
+<h4 class="sub">Exercises 5.2</h4>
+<div class="item prob" id="c3-p-s5-2-4"><p><b>$\bullet$  #4.</b> Let $\{A_j : j \in J\}$ be a family of connected subspaces of a topological space $(X, \tau)$. If $\bigcap_{j\in J} A_j \neq \emptyset$, show that $\bigcup_{j\in J} A_j$ is connected.</p><div class="tosol"><a href="#c3-off-ch3-maintext-p6">Official solution &darr;</a></div></div>
+<div class="frag">
+<h3>MATH 5690 Ch 3: the additional problems Krebs added on 9/25</h3>
+<div class="sub">Problems copied verbatim from Krebs' homework doc (Chapter 3, "And, some additional problems"). He has posted no official solutions for these, so the solutions below are mine (Claude). Definitions used: Morris' limit point; <i>irreducible</i> = not the union of two proper closed subsets (as in Krebs' Ch 2 problem (5)); Zariski closed sets in ℝ<sup>n</sup> = common zero sets Z(S) of sets S of polynomials.</div>
+
+<h3>Problems</h3>
+<div class="p anch" id="c3-p-add1"><b>(1)</b> We have a bunch of topological spaces now: Euclidean, discrete, indiscrete, cofinite, Zariski, etc.  It's good practice to compute a bunch of examples on your own that you just make up.  Take a topological space $X$, one of the specific ones we've encountered so far.  Take some subset $A$ of $X$.  You choose $A$, whatever you want.  Is $A$ open?  Is $A$ closed?  Find the closure of $A$.<div class="tosol"><a href="#c3-s-add1">Solution &darr;</a></div></div>
+<div class="p anch" id="c3-p-add2"><b>(2)</b> True or false: Every irreducible topological space is connected.  Prove that your answer is correct.<div class="tosol"><a href="#c3-s-add2">Solution &darr;</a></div></div>
+<div class="p anch" id="c3-p-add3"><b>(3)</b> True or false: Every connected topological space is irreducible.  Prove that your answer is correct.<div class="tosol"><a href="#c3-s-add3">Solution &darr;</a></div></div>
+<div class="p anch" id="c3-p-add4"><b>(4)</b> Let $A = \{1/n \mid n \text{ is a positive integer}\}$.  Consider $A$ to be a subset of $\mathbb{R}$.  Find a real number $x$ such that $x$ is a limit point of $A$ in the Euclidean topology but not in the discrete topology.  (Use Morris' def. of limit point; that's the definition I gave in class.  NOTE: There was a mistake in an earlier version of this problem.  It said "indiscrete" but was supposed to say "discrete.")<div class="tosol"><a href="#c3-s-add4">Solution &darr;</a></div></div>
+<div class="p anch" id="c3-p-add5"><b>(5)</b> Let $A = \{(1/n,0) \mid n \text{ is a positive integer}\}$.  Consider $A$ to be a subset of $\mathbb{R}^2$, in the Zariski topology.  (i) Prove that $(0,0)$ is a limit point of $A$.  (ii) Find all limit points of $A$.<div class="tosol"><a href="#c3-s-add5">Solution &darr;</a></div></div>
+
+</div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<p class="small">My worked solutions to the comprehensive-exam problem (and any class problem with no official key) follow; the instructor's official solutions to the main-textbook / worksheet problems are appended after.</p>
+<h4 class="sub">Comps Spring 2013 #3  - solution</h4>
+<div class="item sol" id="c3-s-comps"><div class="toprob"><a href="#c3-p-comps">&uarr; Problem</a></div><p>Recall $\partial H=\overline{H}\cap\overline{S\setminus H}$, and that $S$ is disconnected iff it has a nonempty proper subset that is both open and closed (clopen). ($\Rightarrow$, contrapositive) Suppose some nonempty proper $H$ has $\partial H=\emptyset$, i.e. $\overline{H}\cap\overline{S\setminus H}=\emptyset$. From $\overline{H}\cap\overline{S\setminus H}=\emptyset$ we get $\overline{H}\subseteq S\setminus\overline{S\setminus H}\subseteq S\setminus(S\setminus H)=H$, so $\overline{H}=H$ ($H$ closed); likewise $\overline{S\setminus H}=S\setminus H$, so $S\setminus H$ is closed, i.e. $H$ is open. Thus $H$ is a nonempty proper clopen set and $S$ is disconnected. ($\Leftarrow$, contrapositive) Suppose $S$ is disconnected: $S=U\cup V$ with $U,V$ disjoint, nonempty, open. Take $H=U$; it is nonempty and proper. Since $U$ is open and $U=S\setminus V$ is closed, $U$ is clopen, so $\overline{U}=U$ and $\overline{S\setminus U}=\overline{V}=V$. Then $\partial H=\overline{U}\cap\overline{V}=U\cap V=\emptyset$. So the boundary condition fails for this $H$. Contrapositively, if every nonempty proper $H$ has $\partial H\neq\emptyset$ then $S$ is connected, and conversely.  ∎</p></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch3_maintext.pdf, 7 pages (shown as page images)</div>
+<div class="off" id="c3-off-ch3-maintext-p1"><div class="toprob"><a href="#c3-p-s3-1-1">&uarr; Problem 3.1 #1</a> &middot; <a href="#c3-p-s3-1-2">&uarr; Problem 3.1 #2</a> &middot; <a href="#c3-p-s3-1-4">&uarr; Problem 3.1 #4</a> &middot; <a href="#c3-p-s3-1-5">&uarr; Problem 3.1 #5</a> &middot; <a href="#c3-p-s3-2-1">&uarr; Problem 3.2 #1</a></div><div class="offcap">ch3_maintext.pdf, page 1</div><img src="img/5690-ch3_maintext-p1.png" width="1275" height="1650" loading="lazy" alt="ch3_maintext.pdf page 1"></div>
+<div class="off" id="c3-off-ch3-maintext-p2"><div class="offcap">ch3_maintext.pdf, page 2</div><img src="img/5690-ch3_maintext-p2.png" width="1275" height="1650" loading="lazy" alt="ch3_maintext.pdf page 2"></div>
+<div class="off" id="c3-off-ch3-maintext-p3"><div class="toprob"><a href="#c3-p-s3-2-3">&uarr; Problem</a></div><div class="offcap">ch3_maintext.pdf, page 3</div><img src="img/5690-ch3_maintext-p3.png" width="1275" height="1650" loading="lazy" alt="ch3_maintext.pdf page 3"></div>
+<div class="off" id="c3-off-ch3-maintext-p4"><div class="toprob"><a href="#c3-p-s3-2-9">&uarr; Problem</a></div><div class="offcap">ch3_maintext.pdf, page 4</div><img src="img/5690-ch3_maintext-p4.png" width="1275" height="1650" loading="lazy" alt="ch3_maintext.pdf page 4"></div>
+<div class="off" id="c3-off-ch3-maintext-p5"><div class="offcap">ch3_maintext.pdf, page 5</div><img src="img/5690-ch3_maintext-p5.png" width="1275" height="1650" loading="lazy" alt="ch3_maintext.pdf page 5"></div>
+<div class="off" id="c3-off-ch3-maintext-p6"><div class="toprob"><a href="#c3-p-s3-3-7">&uarr; Problem 3.3 #7</a> &middot; <a href="#c3-p-s5-2-4">&uarr; Problem 5.2 #4</a></div><div class="offcap">ch3_maintext.pdf, page 6</div><img src="img/5690-ch3_maintext-p6.png" width="1275" height="1650" loading="lazy" alt="ch3_maintext.pdf page 6"></div>
+<div class="off" id="c3-off-ch3-maintext-p7"><div class="offcap">ch3_maintext.pdf, page 7</div><img src="img/5690-ch3_maintext-p7.png" width="1275" height="1650" loading="lazy" alt="ch3_maintext.pdf page 7"></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch3_hatcher.pdf, 2 pages (shown as page images)</div>
+<div class="off" id="c3-off-ch3-hatcher-p1"><div class="toprob"><a href="#c3-p-hatcher7">&uarr; Problem</a></div><div class="offcap">ch3_hatcher.pdf, page 1</div><img src="img/5690-ch3_hatcher-p1.png" width="1241" height="1754" loading="lazy" alt="ch3_hatcher.pdf page 1"></div>
+<div class="off" id="c3-off-ch3-hatcher-p2"><div class="offcap">ch3_hatcher.pdf, page 2</div><img src="img/5690-ch3_hatcher-p2.png" width="1241" height="1754" loading="lazy" alt="ch3_hatcher.pdf page 2"></div>
+<div class="frag"><h3>Solutions</h3>
+<div class="p anch" id="c3-s-add1"><div class="toprob"><a href="#c3-p-add1">&uarr; Problem</a></div><b>(1)</b> This one is open-ended practice with no single answer. Two worked examples:<br>
+• X = ℝ cofinite, A = ℤ. A is not open, because its complement is infinite. A is not closed, because it's infinite and not all of ℝ. Closure: the only closed sets containing an infinite set are ℝ itself, so <span style="text-decoration:overline">A</span> = ℝ.<br>
+• X = ℝ<sup>2</sup> Zariski, A = the unit circle. A = Z(x<sup>2</sup> + y<sup>2</sup> − 1), so A is closed and <span style="text-decoration:overline">A</span> = A. A is not open, since its complement is not a zero set (the complement is not contained in the zero set of any nonzero polynomial). ∎</div>
+
+<div class="p anch" id="c3-s-add2"><div class="toprob"><a href="#c3-p-add2">&uarr; Problem</a></div><b>(2) TRUE.</b> Let X be irreducible and suppose X is not connected. Then X = U ∪ V with U, V non-empty, disjoint and open (Remark 3.3.9). Since V = X \ U and U = X \ V, both U and V are also closed. Both are proper: U ≠ X because V is non-empty and disjoint from U, and similarly V ≠ X. So X is the union of two proper closed subsets U and V, contradicting irreducibility. Hence X is connected. ∎</div>
+
+<div class="p anch" id="c3-s-add3"><div class="toprob"><a href="#c3-p-add3">&uarr; Problem</a></div><b>(3) FALSE.</b> Counterexample: ℝ with the Euclidean topology. It is connected (Proposition 3.3.5). But ℝ = (−∞, 0] ∪ [0, ∞), where both sets are closed and both are proper subsets of ℝ. So ℝ is not irreducible. ∎</div>
+
+<div class="p anch" id="c3-s-add4"><div class="toprob"><a href="#c3-p-add4">&uarr; Problem</a></div><b>(4) x = 0.</b><br>
+<i>Euclidean:</i> let U be open with 0 ∈ U. Then (−ε, ε) ⊆ U for some ε &gt; 0. Pick n &gt; 1/ε. Then 1/n ∈ (−ε, ε) ⊆ U, 1/n ∈ A, and 1/n ≠ 0. So every open set containing 0 contains a point of A other than 0, and 0 is a limit point of A.<br>
+<i>Discrete:</i> {0} is open. It contains no point of A other than 0 (in fact 0 ∉ A). So 0 is not a limit point of A. (In the discrete topology no point is a limit point of any set, because {x} is always open.) ∎</div>
+
+<div class="p anch" id="c3-s-add5"><div class="toprob"><a href="#c3-p-add5">&uarr; Problem</a></div><b>(5)</b> Key fact: a one-variable polynomial with infinitely many roots is the zero polynomial.<br>
+<b>(ii) Answer: the limit points of A are exactly the points of the x-axis, {(a, 0) : a ∈ ℝ}.</b> Part (i) is the case a = 0.<br>
+<i>Every (a, 0) is a limit point.</i> Let U be Zariski-open with (a, 0) ∈ U, so U = ℝ<sup>2</sup> \ Z(S) for some set S of polynomials. Since (a, 0) ∉ Z(S), some f ∈ S has f(a, 0) ≠ 0. Suppose U contained no point of A other than (a, 0). Then every point of A except possibly (a, 0) lies in Z(S). In particular f(1/n, 0) = 0 for all n, with at most one exception. Put g(x) = f(x, 0), a polynomial in one variable. It has infinitely many roots 1/n, so g is the zero polynomial. Then f(a, 0) = g(a) = 0, a contradiction. So every open set containing (a, 0) meets A in a point other than (a, 0). For a = 0 this proves (i).<br>
+<i>No point off the x-axis is a limit point.</i> Let p = (a, b) with b ≠ 0. The x-axis is Z(y), which is closed, so U = ℝ<sup>2</sup> \ Z(y) = {(x, y) : y ≠ 0} is open. It contains p, and U ∩ A = Ø because every point of A has y = 0. So p is not a limit point of A. ∎</div>
+</div>
+<div class="frag"><h3>Solutions</h3>
+
+<div class="p anch" id="c3-s-s3-1-3"><div class="toprob"><a href="#c3-p-s3-1-3">&uarr; Problem</a></div><b>3.1 #3.</b> Answer: the set of limit points is [a, b].<br>
+<u>Every x ∈ [a, b] is a limit point.</u> Let U be open with x ∈ U. Then there is ε &gt; 0 with (x − ε, x + ε) ⊆ U. If x &lt; b, let δ = min(ε, b − x) &gt; 0 and y = x + δ/2. Then x &lt; y &lt; b and y &gt; a (since x ≥ a), and y ∈ (x − ε, x + ε) ⊆ U, so y ∈ U ∩ (a, b) and y ≠ x. If x = b, let δ = min(ε, b − a) &gt; 0 and y = b − δ/2; then a &lt; y &lt; b and y ∈ U, so again y ∈ U ∩ (a, b), y ≠ x. So every open set containing x meets (a, b) in a point other than x.<br>
+<u>No x outside [a, b] is a limit point.</u> If x &lt; a, then U = (x − 1, a) is open, contains x, and U ∩ (a, b) = Ø. If x &gt; b, use U = (b, x + 1). ∎</div>
+
+<div class="p anch" id="c3-s-s3-2-5"><div class="toprob"><a href="#c3-p-s3-2-5">&uarr; Problem</a></div><b>3.2 #5.</b> Throughout, Int(A) ⊆ A always holds, and any open set V ⊆ A satisfies V ⊆ Int(A).<br>
+(i) (0, 1) is open and (0, 1) ⊆ [0, 1], so (0, 1) ⊆ Int([0, 1]) ⊆ [0, 1]. It remains to show 0, 1 ∉ Int([0, 1]). Int([0,1]) is open, so if 0 ∈ Int([0,1]) there is ε &gt; 0 with (−ε, ε) ⊆ Int([0,1]) ⊆ [0, 1]; but −ε/2 is in (−ε, ε) and not in [0, 1], a contradiction. Similarly, if 1 ∈ Int([0,1]) then some (1 − ε, 1 + ε) ⊆ [0, 1], contradicted by 1 + ε/2. So Int([0, 1]) = (0, 1).<br>
+(ii) (3, 4) is itself open, so it is the largest open subset of itself. This is the special case of (iii).<br>
+(iii) A is open and A ⊆ A, so A ⊆ Int(A). Always Int(A) ⊆ A. Hence Int(A) = A.<br>
+(iv) Int({3}) is an open subset of {3}, so it is Ø or {3}. {3} is not open in ℝ: any open set containing 3 contains some (3 − ε, 3 + ε), which has points other than 3. So Int({3}) = Ø.<br>
+(v) The only open sets are Ø and X. If A is a proper subset, X ⊄ A, so the only open set inside A is Ø. Hence Int(A) = Ø.<br>
+(vi) Suppose Int(A) ≠ Ø and pick x ∈ Int(A). Since Int(A) is open, some interval (x − ε, x + ε) ⊆ Int(A) ⊆ A. But a non-trivial interval is uncountable, and a subset of a countable set is countable. Contradiction, so Int(A) = Ø. ∎</div>
+
+<div class="p anch" id="c3-s-s3-2-6"><div class="toprob"><a href="#c3-p-s3-2-6">&uarr; Problem</a></div><b>3.2 #6.</b> Let C = <span class="ov">(X \ A)</span>, the smallest closed set containing X \ A.<br>
+<u>X \ C ⊆ Int(A).</u> X \ C is open, since C is closed. Also X \ A ⊆ C, so X \ C ⊆ X \ (X \ A) = A. So X \ C is an open set contained in A, hence X \ C ⊆ Int(A).<br>
+<u>Int(A) ⊆ X \ C.</u> Int(A) is open, so X \ Int(A) is closed. Since Int(A) ⊆ A, we get X \ A ⊆ X \ Int(A). So X \ Int(A) is a closed set containing X \ A, and therefore C ⊆ X \ Int(A), because C is the smallest such set. Taking complements, Int(A) ⊆ X \ C.<br>
+So Int(A) = X \ <span class="ov">(X \ A)</span>. ∎</div>
+
+<div class="p anch" id="c3-s-s3-2-10"><div class="toprob"><a href="#c3-p-s3-2-10">&uarr; Problem</a></div><b>3.2 #10.</b> S is dense and T is open, so by Exercise 9 (with U = T), <span class="ov">S ∩ T</span> = <span class="ov">T</span>. T is dense, so <span class="ov">T</span> = X. Hence <span class="ov">S ∩ T</span> = X, i.e. S ∩ T is dense in X. ∎</div>
+
+<div class="p anch" id="c3-s-s3-2-11"><div class="toprob"><a href="#c3-p-s3-2-11">&uarr; Problem</a></div><b>3.2 #11.</b><br>
+(i) Use the basis criterion: ℬ must cover ℝ, and for B<sub>1</sub>, B<sub>2</sub> ∈ ℬ and x ∈ B<sub>1</sub> ∩ B<sub>2</sub>, some B ∈ ℬ must satisfy x ∈ B ⊆ B<sub>1</sub> ∩ B<sub>2</sub>.<br>
+<i>Covering:</i> for x ∈ ℝ, choose a rational q &gt; x (ℚ is unbounded). Then x ∈ [x, q) ∈ ℬ.<br>
+<i>Intersections:</i> let x ∈ [a<sub>1</sub>, b<sub>1</sub>) ∩ [a<sub>2</sub>, b<sub>2</sub>) with b<sub>1</sub>, b<sub>2</sub> ∈ ℚ. Put a = max(a<sub>1</sub>, a<sub>2</sub>) and b = min(b<sub>1</sub>, b<sub>2</sub>). Then the intersection is exactly [a, b), with b ∈ ℚ, and a ≤ x &lt; b gives a &lt; b. So [a, b) ∈ ℬ and x ∈ [a, b) ⊆ B<sub>1</sub> ∩ B<sub>2</sub>. Hence ℬ is a basis for a topology τ<sub>1</sub>.<br>
+(ii) Every Euclidean open set is a union of open intervals, so it suffices to show each (c, d) is τ<sub>1</sub>-open. For x ∈ (c, d), choose a rational q with x &lt; q &lt; d (ℚ is dense). Then x ∈ [x, q) ⊆ (c, d) with [x, q) ∈ ℬ. So (c, d) is a union of members of ℬ and lies in τ<sub>1</sub>. Hence τ ⊆ τ<sub>1</sub>.<br>
+The containment is strict: [0, 1) ∈ ℬ ⊆ τ<sub>1</sub>, but [0, 1) is not Euclidean-open, since every (−ε, ε) around 0 contains negative numbers. So τ<sub>1</sub> ⊃ τ properly.<br>
+(iii) Let a &lt; b be any reals (b need not be rational).<br>
+<i>Open:</i> for x ∈ [a, b), pick a rational q with x &lt; q &lt; b. Then x ∈ [a, q) ⊆ [a, b) with [a, q) ∈ ℬ. So [a, b) is a union of basis sets and is open.<br>
+<i>Closed:</i> ℝ \ [a, b) = (−∞, a) ∪ [b, ∞). (−∞, a) is Euclidean-open, hence τ<sub>1</sub>-open by (ii). [b, ∞) = ⋃ { [b, q) : q ∈ ℚ, q &gt; b }, a union of basis sets, hence open. So the complement is open and [a, b) is closed. So [a, b) is clopen.<br>
+(iv) ℚ is countable, so it suffices to show ℚ is dense in (ℝ, τ<sub>1</sub>), i.e. every non-empty open set meets ℚ. A non-empty τ<sub>1</sub>-open set U contains some basis set [a, b) with a &lt; b, and [a, b) ⊇ (a, b) contains a rational number. So U ∩ ℚ ≠ Ø for every non-empty open U, and so <span class="ov">ℚ</span> = ℝ. (If x ∉ ℚ, every open U ∋ x meets ℚ in a point other than x, so x is a limit point of ℚ.) Hence the Sorgenfrey line is separable. ∎</div>
+
+<div class="p anch" id="c3-s-s3-3-5"><div class="toprob"><a href="#c3-p-s3-3-5">&uarr; Problem</a></div><b>3.3 #5.</b> Answer: <b>yes</b>, (X, τ) is connected.<br>
+Proof. Let U be clopen in X. We show U = Ø or U = X. Suppose U ≠ Ø and U ≠ X.<br>
+• U is open and non-empty, so X \ U is finite (open sets in the finite-closed topology are Ø and the complements of finite sets).<br>
+• U is closed and U ≠ X, so U is finite (closed sets are X and the finite sets).<br>
+Then X = U ∪ (X \ U) is a union of two finite sets, so it is finite. This contradicts X being infinite. Hence the only clopen sets are Ø and X, and X is connected. ∎</div>
+</div>
+<div class="frag">
+<h3>Chapter 3: backup solutions (Claude, not official)</h3>
+<p>These fill the gaps left in Krebs' "selected problems" file for Chapter 3 after checking it against the current edition. (3.1 #3; 3.2 #5, 6, 10, 11; 3.3 #5 and additional problems (1) to (5) are in the earlier backup files and are not repeated here.)</p>
+
+<div class="lbl anch" id="c3-s-s3-1-1">Section 3.1 #1</div><div class="toprob"><a href="#c3-p-s3-1-1">&uarr; Problem</a></div>
+<div class="stmt">1. (a) In Example 3.1.2, find all the limit points of the following sets:<br>
+(i) {a},<br>
+(ii) {b, c},<br>
+(iii) {a, c, d},<br>
+(iv) {b, d, e}.<br>
+(b) Hence, find the closure of each of the above sets.<br>
+(c) Now find the closure of each of the above sets using the method of Example 3.1.11.</div>
+<p><i>Why this is here:</i> the official file answers (a) and (b) only, and it was written for an older edition in which X also contained a point f; the current Example 3.1.2 has X = {a, b, c, d, e}, so every "f" in the official answers must be deleted. The official 1(a)(iii) also omits d (Krebs' note). Part (c) has no official solution.</p>
+<p>Example 3.1.2: X = {a, b, c, d, e}, τ = {X, Ø, {a}, {c, d}, {a, c, d}, {b, c, d, e}}. The open sets containing each point are:<br>
+a: {a}, {a, c, d}, X. &nbsp; b: {b, c, d, e}, X. &nbsp; c and d: {c, d}, {a, c, d}, {b, c, d, e}, X. &nbsp; e: {b, c, d, e}, X.<br>
+In each case the first set listed is contained in all the others. So p is a limit point of A iff that smallest open set M<sub>p</sub> (M<sub>a</sub> = {a}, M<sub>b</sub> = M<sub>e</sub> = {b, c, d, e}, M<sub>c</sub> = M<sub>d</sub> = {c, d}) contains a point of A other than p: if M<sub>p</sub> does, every larger open set does too; if it does not, M<sub>p</sub> itself shows p is not a limit point.</p>
+<p><b>(a)</b><br>
+(i) A = {a}. M<sub>a</sub> = {a} has no point of A other than a; M<sub>b</sub>, M<sub>e</sub>, M<sub>c</sub>, M<sub>d</sub> do not contain a. <b>No limit points</b> (A′ = Ø).<br>
+(ii) A = {b, c}. a: {a} misses A. b: M<sub>b</sub> contains c ≠ b, yes. c: {c, d} contains no point of A other than c, no. d: {c, d} contains c, yes. e: M<sub>e</sub> contains b, yes. <b>A′ = {b, d, e}.</b><br>
+(iii) A = {a, c, d}. a: {a}, no. b: M<sub>b</sub> contains c, yes. c: {c, d} contains d, yes. d: {c, d} contains c, yes. e: M<sub>e</sub> contains c, yes. <b>A′ = {b, c, d, e}.</b><br>
+(iv) A = {b, d, e}. a: no. b: M<sub>b</sub> contains d, yes. c: {c, d} contains d, yes. d: {c, d} contains no point of A other than d, no. e: M<sub>e</sub> contains b, yes. <b>A′ = {b, c, e}.</b></p>
+<p><b>(b)</b> <span class="ov">A</span> = A ∪ A′:<br>
+(i) <span class="ov">{a}</span> = {a}. (ii) <span class="ov">{b, c}</span> = {b, c, d, e}. (iii) <span class="ov">{a, c, d}</span> = X. (iv) <span class="ov">{b, d, e}</span> = {b, c, d, e}.</p>
+<p><b>(c)</b> The closed sets are the complements of the open sets: X, Ø, {b, c, d, e}, {a, b, e}, {a}, {b, e} (complements of Ø, X, {a}, {c, d}, {b, c, d, e}, {a, c, d} respectively). The closure is the smallest closed set containing the given set (Remark 3.1.10):<br>
+(i) {a} is itself closed, so <span class="ov">{a}</span> = {a}.<br>
+(ii) Closed sets containing b and c: X and {b, c, d, e}. Smallest: <span class="ov">{b, c}</span> = {b, c, d, e}.<br>
+(iii) Closed sets containing a, c and d: only X. So <span class="ov">{a, c, d}</span> = X.<br>
+(iv) Closed sets containing b, d and e: X and {b, c, d, e}. So <span class="ov">{b, d, e}</span> = {b, c, d, e}.<br>
+These agree with (b). ∎</p>
+
+<div class="lbl anch" id="c3-s-s3-1-2">Section 3.1 #2(i)</div><div class="toprob"><a href="#c3-p-s3-1-2">&uarr; Problem</a></div>
+<div class="stmt">2. Let (ℤ, τ) be the set of integers with the finite-closed topology. List the set of limit points of the following sets:<br>
+(i) A = {1, 2, 3, . . . , 10},</div>
+<p><i>Why this is here:</i> the official answer (Ø) is right, but its reason, "because A is closed", only shows A′ ⊆ A (Proposition 3.1.6), not A′ = Ø. A complete argument:</p>
+<p><b>A′ = Ø.</b> Let n ∈ ℤ. The set U = ℤ \ (A \ {n}) has finite complement A \ {n}, so it is open, and it contains n. Every point of A in U is not in A \ {n}, so it equals n. So U is an open set containing n and no point of A other than n, and n is not a limit point of A. As n was arbitrary, A has no limit points. ∎</p>
+
+<div class="lbl anch" id="c3-s-s3-1-4">Section 3.1 #4(a)</div><div class="toprob"><a href="#c3-p-s3-1-4">&uarr; Problem</a></div>
+<div class="stmt">4. (a) What is the closure in ℝ of each of the following sets?<br>
+(i) {1, 1/2, 1/3, 1/4, . . . , 1/n, . . . };<br>
+(ii) the set ℤ of all integers;<br>
+(iii) the set P of all irrational numbers.</div>
+<p><i>Why this is here:</i> the official file gives only the answer to (i), with no proof, and nothing for (ii) and (iii).</p>
+<p><b>(i)</b> Let S = {1/n : n ∈ ℕ}. <b><span class="ov">S</span> = S ∪ {0}.</b><br>
+0 is a limit point: an open U ∋ 0 contains some (−ε, ε); choosing n &gt; 1/ε gives 1/n ∈ U ∩ S with 1/n ≠ 0.<br>
+No other point outside S is a limit point: if x &lt; 0, (−∞, 0) is open, contains x and misses S; if x &gt; 1, (1, ∞) does the same. If 0 &lt; x ≤ 1 and x ∉ S, then 1/(n+1) &lt; x &lt; 1/n for some n ∈ ℕ (take n the largest integer with n &lt; 1/x, which exists as 1/x ≥ 1 is not an integer), and the open interval (1/(n+1), 1/n) contains x and no point of S. So S′ ⊆ S ∪ {0}, 0 ∈ S′, and <span class="ov">S</span> = S ∪ S′ = S ∪ {0}.</p>
+<p><b>(ii)</b> <b><span class="ov">ℤ</span> = ℤ.</b> ℝ \ ℤ = ⋃<sub>n∈ℤ</sub> (n, n + 1) is a union of open intervals, hence open, so ℤ is closed and equals its own closure.</p>
+<p><b>(iii)</b> <b><span class="ov">P</span> = ℝ.</b> By Proposition 3.1.15 it suffices to show every non-empty open set U meets P. U contains an interval (a, b) with a &lt; b. Pick a rational q ∈ (a, b) (as in Example 3.1.12) and an integer m with √2/m &lt; b − q. Then q + √2/m ∈ (a, b), and it is irrational (if it were rational, √2 = m((q + √2/m) − q) would be rational). So U ∩ P ≠ Ø, and P is dense in ℝ. ∎</p>
+
+<div class="lbl anch" id="c3-s-s3-3-7">Section 3.3 #7</div><div class="toprob"><a href="#c3-p-s3-3-7">&uarr; Problem</a></div>
+<div class="stmt">7. Which of the topological spaces of Exercises 1.1 #9 are connected?</div>
+<div class="stmt">[Exercises 1.1 #9, for reference:] 9.* Let ℝ be the set of all real numbers. Precisely three of the following ten collections of subsets of ℝ are topologies. Identify these and justify your answer.<br>
+(i) τ<sub>1</sub> consists of ℝ, Ø, and every interval (a, b), for a and b any real numbers with a &lt; b ;<br>
+(ii) τ<sub>2</sub> consists of ℝ, Ø, and every interval (−r, r), for r any positive real number;<br>
+(iii) τ<sub>3</sub> consists of ℝ, Ø, and every interval (−r, r), for r any positive rational number;<br>
+(iv) τ<sub>4</sub> consists of ℝ, Ø, and every interval [−r, r], for r any positive rational number;<br>
+(v) τ<sub>5</sub> consists of ℝ, Ø, and every interval (−r, r), for r any positive irrational number;<br>
+(vi) τ<sub>6</sub> consists of ℝ, Ø, and every interval [−r, r], for r any positive irrational number;<br>
+(vii) τ<sub>7</sub> consists of ℝ, Ø, and every interval [−r, r), for r any positive real number;<br>
+(viii) τ<sub>8</sub> consists of ℝ, Ø, and every interval (−r, r], for r any positive real number;<br>
+(ix) τ<sub>9</sub> consists of ℝ, Ø, every interval [−r, r], and every interval (−r, r), for r any positive real number;<br>
+(x) τ<sub>10</sub> consists of ℝ, Ø, every interval [−n, n], and every interval (−r, r), for n any positive integer and r any positive real number.</div>
+<p><i>Why this is here:</i> the official answer ((ii), (ix), (x)) is right, but its reason, "in each case the only open sets are ℝ and Ø", is false: each of these topologies has uncountably many open sets. Correct argument:</p>
+<p><b>Answer: all three topological spaces, (ℝ, τ<sub>2</sub>), (ℝ, τ<sub>9</sub>), (ℝ, τ<sub>10</sub>), are connected.</b></p>
+<p><i>Which collections are topologies</i> (this is Exercises 1.1 #9, included so the answer is self-contained). In (ii), (ix), (x), every member other than Ø is ℝ or an interval centred at 0. Given any family of members, let s be the supremum of the radii of its members (s = ∞ if the family contains ℝ or the radii are unbounded). The union is ℝ if s = ∞; otherwise it is [−s, s] if some member of the family is [−s, s], and (−s, s) if not (every point with |x| &lt; s lies in a member of radius &gt; |x|, and every member lies in [−s, s], inside (−s, s) unless it is [−s, s]). In (ii) only open intervals occur, so the union is (−s, s) ∈ τ<sub>2</sub>. In (ix), [−s, s] and (−s, s) are both in τ<sub>9</sub>. In (x), a closed member [−s, s] can only occur when s is a positive integer, so the union is again in τ<sub>10</sub>. The intersection of two members is the one of smaller radius, or, when the radii are equal, the open one; again a member. (An empty union is Ø.) So τ<sub>2</sub>, τ<sub>9</sub>, τ<sub>10</sub> are topologies. The other seven are not, because each fails to be closed under unions:<br>
+(i) (0, 1) ∪ (2, 3) is not an interval. (iii) ⋃{(−r, r) : r ∈ ℚ, 0 &lt; r &lt; √2} = (−√2, √2) ∉ τ<sub>3</sub>. (iv) ⋃{[−r, r] : r ∈ ℚ, 0 &lt; r &lt; √2} = (−√2, √2) ∉ τ<sub>4</sub>. (v), (vi) Using the irrationals r<sub>n</sub> = 1 − √2/(2n) ↑ 1, the union of the (−r<sub>n</sub>, r<sub>n</sub>) or of the [−r<sub>n</sub>, r<sub>n</sub>] is (−1, 1), not in τ<sub>5</sub> (1 is rational) nor in τ<sub>6</sub>. (vii) ⋃{[−r, r) : 0 &lt; r &lt; 1} = (−1, 1), which is not of the form [−r, r). (viii) Likewise ⋃{(−r, r] : 0 &lt; r &lt; 1} = (−1, 1) ∉ τ<sub>8</sub>.</p>
+<p><i>Connectedness.</i> In each of τ<sub>2</sub>, τ<sub>9</sub>, τ<sub>10</sub>, every non-empty open set contains 0. Suppose U were a clopen subset with U ≠ Ø and U ≠ ℝ. Then U and ℝ \ U are both open and non-empty, so both contain 0, which is impossible since they are disjoint. Hence the only clopen sets are Ø and ℝ, and each of the three spaces is connected. ∎</p>
+</div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

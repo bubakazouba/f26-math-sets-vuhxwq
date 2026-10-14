@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 4570 PS6</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 4570  ·  Problem Set 6 (with solutions)</h1>
+<div class="hdr"><p class="small">Source: MIT 18.700 Linear Algebra, Fall 2013 (MIT OpenCourseWare, CC BY-NC-SA), Problem Set 6. Problems 3-5 are Axler (2nd ed) p.122 ex.6, p.123 ex.12, p.124 ex.15, inlined. Solutions by Claude.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<div class="item prob" id="p-1"><p><b>1.</b> For $p_2=ax^2+bx+c,\ p_1=dx+e,\ p_0=f$, let $D=p_2\frac{d^2}{dx^2}+p_1\frac{d}{dx}+p_0$.</p>
+<p>(a) Why does $D$ preserve $\mathcal{P}_m(\mathbb{R})$?  (b) Find all diagonal entries of $D$ in the basis $(1,x,\dots,x^m)$.</p>
+<p>(c) If $0&lt;a&lt;d$, prove $D$ is diagonalizable on $\mathcal{P}_m(\mathbb{R})$.  (d) For $D=(x^2-x)\frac{d^2}{dx^2}+(2x-1)\frac{d}{dx}$, find a basis of eigenvectors on $\mathcal{P}_3(\mathbb{R})$.</p><div class="tosol"><a href="#s-1">Solution &darr;</a></div></div>
+<div class="item prob" id="p-2"><p><b>2.</b> On $C[0,1]$ with $\langle p,q\rangle=\int_0^1 p(x)q(x)\,dx$, let $U=\mathcal{P}_3(\mathbb{R})$.</p>
+<p>(a) Gram-Schmidt $(1,x,x^2,x^3)$ to an orthogonal basis.  (b) Project $f(x)=\sqrt{x}$ onto $U$.</p>
+<p>(c) Tabulate $f$ and $p_U(f)$ at $x=0,\frac14,\frac12,\frac34,1$.  (d) Relate your answers to 1(d).</p><div class="tosol"><a href="#s-2">Solution &darr;</a></div></div>
+<div class="item prob" id="p-3"><p><b>3.</b> (Axler 2nd ed, p.122 ex.6)  If $V$ is a real inner-product space, prove</p>
+<p>$\langle u,v\rangle=\frac{\|u+v\|^2-\|u-v\|^2}{4}$ for all $u,v\in V$.</p><div class="tosol"><a href="#s-3">Solution &darr;</a></div></div>
+<div class="item prob" id="p-4"><p><b>4.</b> (Axler 2nd ed, p.123 ex.12)  If $V$ is real and $(v_1,\dots,v_m)$ is linearly independent, prove there are exactly $2^m$ orthonormal lists $(e_1,\dots,e_m)$ with</p>
+<p>$\mathrm{span}(v_1,\dots,v_j)=\mathrm{span}(e_1,\dots,e_j)$ for all $j$.</p><div class="tosol"><a href="#s-4">Solution &darr;</a></div></div>
+<div class="item prob" id="p-5"><p><b>5.</b> (Axler 2nd ed, p.124 ex.15)  If $U$ is a subspace of $V$, prove $\dim U^{\perp}=\dim V-\dim U$.</p><div class="tosol"><a href="#s-5">Solution &darr;</a></div></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<div class="item sol" id="s-1"><div class="toprob"><a href="#p-1">&uarr; Problem</a></div><p class="lead"><b>Solution 1.</b> (a),(b) $D$ is upper-triangular in $(1,x,\dots,x^m)$.</p>
+<p>Compute on a monomial: $(x^k)''=k(k-1)x^{k-2}$ and $(x^k)'=kx^{k-1}$, so $D(x^k)=[a\,k(k-1)+dk+f]\,x^k+[b\,k(k-1)+ek]\,x^{k-1}+[c\,k(k-1)]\,x^{k-2}.$</p>
+<p>(a) Each $D(x^k)$ has degree $\leq k\leq m$, so $D$ maps $\mathcal{P}_m(\mathbb{R})$ into itself (and is linear).</p>
+<p>(b) $D(x^k)$ only involves $x^{k},x^{k-1},x^{k-2}$, so the matrix is upper-triangular; the diagonal entry for $x^k$ is the coefficient of $x^k$:  $a\,k(k-1)+dk+f$, for $k=0,1,\dots,m$.</p>
+<p>(c) Being triangular, the eigenvalues of $D$ are the diagonal entries $\lambda_k=a\,k(k-1)+dk+f$. Their gaps are $\lambda_{k+1}-\lambda_k=2ak+d&gt;0$ (as $a,d&gt;0$), so $\lambda_0&lt;\lambda_1&lt;\cdots&lt;\lambda_m$ are distinct. An operator on the $(m{+}1)$-dimensional $\mathcal{P}_m(\mathbb{R})$ with $m{+}1$ distinct eigenvalues is diagonalizable.</p>
+<p>(d) Here $a=1,b=-1,c=0,d=2,e=-1,f=0$, so $\lambda_k=k(k-1)+2k=k(k+1)$: eigenvalues $0,2,6,12$. Solving $D(p)=\lambda_k p$ degree by degree gives the eigenvectors (verified by substitution): $\lambda=0:\ 1;\quad \lambda=2:\ x-\frac12;\quad \lambda=6:\ x^2-x+\frac16;\quad \lambda=12:\ x^3-\frac32 x^2+\frac35 x-\frac{1}{20}.$  ∎</p></div>
+<div class="item sol" id="s-2"><div class="toprob"><a href="#p-2">&uarr; Problem</a></div><p class="lead"><b>Solution 2.</b> (a) Gram-Schmidt (orthogonal, not normalized).</p>
+<p>$e_0=1$;  $e_1=x-\frac12$;  $e_2=x^2-x+\frac16$;  $e_3=x^3-\frac32 x^2+\frac35 x-\frac{1}{20}$, with $\langle e_0,e_0\rangle=1,\ \langle e_1,e_1\rangle=\frac{1}{12},\ \langle e_2,e_2\rangle=\frac{1}{180},\ \langle e_3,e_3\rangle=\frac{1}{2800}$. (These are the shifted Legendre polynomials on $[0,1]$, and they equal the eigenvectors from 1(d).)</p>
+<p>(b) $p_U(f)=\sum_k c_k e_k$ with $c_k=\langle f,e_k\rangle/\langle e_k,e_k\rangle$ and $\langle\sqrt{x},x^k\rangle=\int_0^1 x^{k+1/2}dx=2/(2k+3)$. The $c_k$ are $\frac{2}{3},\ \frac{4}{5},\ -\frac{4}{7},\ \frac{8}{9}$, giving $p_U(\sqrt{x})=\frac{8}{9}x^3-\frac{40}{21}x^2+\frac{40}{21}x+\frac{8}{63}.$</p>
+<p>(c) Values (to $3$ decimals):</p>
+<pre class="mono">        x        sqrt(x)    p_U(f)(x)
+        0.00      0.000      0.127
+        0.25      0.500      0.498
+        0.50      0.707      0.714
+        0.75      0.866      0.859
+        1.00      1.000      1.016</pre>
+<p>(d) The eigenvectors of $D$ from 1(d) are exactly the Gram-Schmidt orthogonal polynomials from 2(a). Reason: $D$ is self-adjoint for $\langle\,,\rangle$ (a Sturm-Liouville operator), so its eigenvectors are orthogonal; since the degree-$k$ eigenvector has degree exactly $k$, it must be the $k$-th orthogonal polynomial. This pattern continues for every $\mathcal{P}_m$: the Gram-Schmidt basis is always a basis of eigenvectors of $D$.  ∎</p></div>
+<div class="item sol" id="s-3"><div class="toprob"><a href="#p-3">&uarr; Problem</a></div><p class="lead"><b>Solution 3.</b> Polarization (real case).</p>
+<p>$\|u+v\|^2=\|u\|^2+2\langle u,v\rangle+\|v\|^2$ and $\|u-v\|^2=\|u\|^2-2\langle u,v\rangle+\|v\|^2$ (using $\langle u,v\rangle=\langle v,u\rangle$). Subtracting: $\|u+v\|^2-\|u-v\|^2=4\langle u,v\rangle$, so $\langle u,v\rangle=\frac{\|u+v\|^2-\|u-v\|^2}{4}$.  ∎</p></div>
+<div class="item sol" id="s-4"><div class="toprob"><a href="#p-4">&uarr; Problem</a></div><p class="lead"><b>Solution 4.</b> Exactly $2^m$ such lists.</p>
+<p>Run Gram-Schmidt: for each $j$, $e_j$ must lie in $\mathrm{span}(v_1,\dots,v_j)$ and be orthogonal to $\mathrm{span}(v_1,\dots,v_{j-1})$. That orthogonal complement inside $\mathrm{span}(v_1,\dots,v_j)$ is $1$-dimensional (the dimension goes up by one), and a unit vector in a $1$-dimensional real space is determined up to sign - exactly $2$ choices for each $e_j$. The choices for $j=1,\dots,m$ are independent, and every such choice satisfies all the span conditions. So there are exactly $2\cdot 2\cdots 2=2^m$ orthonormal lists.  ∎</p></div>
+<div class="item sol" id="s-5"><div class="toprob"><a href="#p-5">&uarr; Problem</a></div><p class="lead"><b>Solution 5.</b> $\dim U^{\perp}=\dim V-\dim U$.</p>
+<p>Every $v\in V$ splits as $v=P_U v+(v-P_U v)$ with $P_U v\in U$ and $v-P_U v\in U^{\perp}$, so $V=U+U^{\perp}$. If $w\in U\cap U^{\perp}$ then $\langle w,w\rangle=0$, so $w=0$; hence $V=U\oplus U^{\perp}$. Taking dimensions, $\dim V=\dim U+\dim U^{\perp}$, i.e. $\dim U^{\perp}=\dim V-\dim U$.  ∎</p></div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

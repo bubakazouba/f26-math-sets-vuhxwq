@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 5690 Ch 8</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 5690 (Topology)  ·  Chapter 8 Homework</h1>
+<div class="hdr"><p class="small">Problems first; ALL solutions together at the end. The comps problem is quoted verbatim from the CSULA topology comprehensive exam (solution by Claude - comps have no key). The assigned main-textbook problems are inlined verbatim (cropped from Morris, Topology Without Tears); official solutions are appended.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<h3 class="grp">Assigned problems (Chapter 8)</h3>
+<p>$\bullet$ Fall 2004 topology comps, Problem 3 (all parts).</p>
+<p>$\bullet$ Main textbook: Section 8.1 #2-10;  Section 8.2 #1, 3, 4;  Section 8.3 #1(viii).</p>
+<h4 class="sub">Comprehensive-exam problem  (Fall 2004, #3)  - verbatim</h4>
+<div class="item prob" id="c8-p-comps"><p>Let $(X,\tau)$ and $(Y,\sigma)$ be topological spaces and let $f:X\to Y$ be continuous.</p>
+<p>(a) Assuming that $Y$ is Hausdorff, prove that the graph of $f$, $\Gamma(f)=\{(x,y): x\in X,\ y=f(x)\}$, is a closed subset of $X\times Y$ equipped with the product topology.</p>
+<p>(b) Prove that $\Gamma(f)$ equipped with the relative topology is homeomorphic to $X$.</p><div class="tosol"><a href="#c8-s-comps">Solution &darr;</a></div></div>
+<h3 class="grp">MAIN-TEXTBOOK PROBLEMS  (Morris, Topology Without Tears - assigned exercises, verbatim)</h3>
+
+<h4 class="sub">Exercises 8.1</h4>
+<div class="item prob" id="c8-p-s8-1-2"><p><b>$\bullet$  #2.</b> If $(X_1,\tau_1)$, $(X_2,\tau_2),\dots,(X_n,\tau_n)$ are discrete spaces, prove that the product space $(X_1,\tau_1) \times (X_2,\tau_2) \times \dots \times (X_n,\tau_n)$ is also a discrete space.</p><div class="tosol"><a href="#c8-off-ch8-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-1-3"><p><b>$\bullet$  #3.</b> Let $X_1$ and $X_2$ be infinite sets and $\tau_1$ and $\tau_2$ the finite-closed topology on $X_1$ and $X_2$, respectively. Show that the product topology, $\tau$, on $X_1 \times X_2$ is not the finite-closed topology.</p><div class="tosol"><a href="#c8-s-s8-1-3">Solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-1-4"><p><b>$\bullet$  #4.</b> Prove that the product of any finite number of indiscrete spaces is an indiscrete space.</p><div class="tosol"><a href="#c8-s-s8-1-4">Solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-1-5"><p><b>$\bullet$  #5.</b> Prove that the product of any finite number of Hausdorff spaces is Hausdorff.</p><div class="tosol"><a href="#c8-s-s8-1-5">Solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-1-6"><p><b>$\bullet$  #6.</b> Let $(X,\tau)$ be a topological space and $D = \{(x,x) : x \in X\}$ the diagonal in the product space $(X,\tau) \times (X,\tau) = (X \times X, \tau_1)$. Prove that $(X,\tau)$ is a Hausdorff space if and only if $D$ is closed in $(X \times X, \tau_1)$.</p><div class="tosol"><a href="#c8-s-s8-1-6">Solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-1-7"><p><b>$\bullet$  #7.</b> Let $(X_1,\tau_1)$, $(X_2,\tau_2)$ and $(X_3,\tau_3)$ be topological spaces. Prove that $[(X_1,\tau_1) \times (X_2,\tau_2)] \times (X_3,\tau_3) \cong (X_1,\tau_1) \times (X_2,\tau_2) \times (X_3,\tau_3)$.</p><div class="tosol"><a href="#c8-s-s8-1-7">Solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-1-8"><p><b>$\bullet$  #8.</b> </p>
+<p>(i) Let $(X_1,\tau_1)$ and $(X_2,\tau_2)$ be topological spaces. Prove that</p>
+<p>$(X_1,\tau_1) \times (X_2,\tau_2) \cong (X_2,\tau_2) \times (X_1,\tau_1)$.</p>
+<p>(ii) Generalize the above result to products of any finite number of topological spaces.</p><div class="tosol"><a href="#c8-s-s8-1-8">Solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-1-9"><p><b>$\bullet$  #9.</b> Let $C_1, C_2,\dots, C_n$ be subsets of the topological spaces $(X_1,\tau_1)$, $(X_2,\tau_2)$, $\dots,(X_n,\tau_n)$, respectively, so that $C_1 \times C_2 \times \dots \times C_n$ is a subset of the space $(X_1,\tau_1) \times (X_2,\tau_2) \times \dots \times (X_n,\tau_n)$. Prove each of the following statements.</p>
+<p>(i) $(C_1 \times C_2 \times \dots \times C_n)' \supseteq C_1' \times C_2' \times \dots \times C_n'$;</p>
+<p>(ii) $\overline{C_1 \times C_2 \times \dots \times C_n} = \overline{C_1} \times \overline{C_2} \times \dots \times \overline{C_n}$;</p>
+<p>(iii) if $C_1, C_2,\dots, C_n$ are dense in $(X_1,\tau_1)$, $(X_2,\tau_2)$, $\dots$, $(X_n,\tau_n)$, respectively, then $C_1 \times C_2 \times \dots \times C_n$ is dense in the product space $(X_1,\tau_1) \times (X_2,\tau_2) \times$</p>
+<p>$\dots \times (X_n,\tau_n)$;</p>
+<p>(iv) if $(X_1,\tau_1)$, $(X_2,\tau_2)$, $\dots$, $(X_n,\tau_n)$ are separable spaces, then $(X_1,\tau_1) \times$</p>
+<p>$(X_2,\tau_2) \times \dots \times (X_n,\tau_n)$ is a separable space;</p>
+<p>(v) for each $n \geq 1$, $\mathbb{R}^n$ is a separable space.</p><div class="tosol"><a href="#c8-s-s8-1-9">Solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-1-10"><p><b>$\bullet$  #10.</b> Show that the product of a finite number of $T_1$-spaces is a $T_1$-space.</p><div class="tosol"><a href="#c8-off-ch8-maintext-p1">Official solution &darr;</a></div></div>
+<h4 class="sub">Exercises 8.2</h4>
+<div class="item prob" id="c8-p-s8-2-1"><p><b>$\bullet$  #1.</b> Prove that the euclidean topology on $\mathbb{R}$ is finer than the finite-closed topology.</p><div class="tosol"><a href="#c8-off-ch8-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-2-3"><p><b>$\bullet$  #3.</b> Let $(Y,\tau)$ and $(X_i,\tau_i)$, $i = 1, 2, \dots, n$ be topological spaces. Further for each $i$, let $f_i$ be a mapping of $(Y,\tau)$ into $(X_i,\tau_i)$. Prove that the mapping $f : (Y,\tau) \to \prod_{i=1}^{n}(X_i,\tau_i)$, given by $f(y) = \langle f_1(y), f_2(y), \dots, f_n(y)\rangle$, is continuous if and only if every $f_i$ is continuous.</p>
+<p>[Hint: Observe that $f_i = p_i \circ f$, where $p_i$ is the projection mapping of $\prod_{j=1}^{n}(X_j,\tau_j)$ onto $(X_i,\tau_i)$.]</p><div class="tosol"><a href="#c8-s-s8-2-3">Solution &darr;</a></div></div>
+<div class="item prob" id="c8-p-s8-2-4"><p><b>$\bullet$  #4.</b> Let $(X, d_1)$ and $(Y, d_2)$ be metric spaces. Further let $e$ be the metric on $X \times Y$ defined in Exercises 6.1 #4. Also let $\tau$ be the topology induced on $X \times Y$ by $e$. If $d_1$ and $d_2$ induce the topologies $\tau_1$ and $\tau_2$ on $X$ and $Y$, respectively, and $\tau_3$ is the product topology of $(X,\tau_1) \times (Y,\tau_2)$, prove that $\tau = \tau_3$. [This shows that the product of any two metrizable spaces is metrizable.]</p><div class="tosol"><a href="#c8-off-ch8-maintext-p1">Official solution &darr;</a></div></div>
+<h4 class="sub">Exercises 8.3</h4>
+<div class="item prob" id="c8-p-s8-3-1"><p><b>$\bullet$  #1.</b> A topological space $(X,\tau)$ is said to be locally compact if each point $x \in X$ has at least one neighbourhood which is compact. Prove that</p>
+<p>(i) Every compact space is locally compact.</p>
+<p>(ii) $\mathbb{R}$ and $\mathbb{Z}$ are locally compact (but not compact).</p>
+<p>(iii) Every discrete space is locally compact.</p>
+<p>(iv) If $(X_1,\tau_1)$, $(X_2,\tau_2)$, $\dots$, $(X_n,\tau_n)$ are locally compact spaces, then</p>
+<p>$\prod_{i=1}^{n}(X_i,\tau_i)$ is locally compact.</p>
+<p>(v) Every closed subspace of a locally compact space is locally compact.</p>
+<p>(vi) A continuous image of a locally compact space is not necessarily locally compact.</p>
+<p>(vii) If $f$ is a continuous open mapping of a locally compact space $(X,\tau)$ onto a topological space $(Y,\tau_1)$, then $(Y,\tau_1)$ is locally compact.</p>
+<p>(viii) If $(X_1,\tau_1), (X_2,\tau_2),\dots,(X_n,\tau_n)$ are topological spaces such that $\prod_{i=1}^{n}(X_i,\tau_i)$ is locally compact, then each $(X_i,\tau_i)$ is locally compact.</p><div class="tosol"><a href="#c8-s-s8-3-1">Solution &darr;</a></div></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<p class="small">My worked solutions to the comprehensive-exam problem (and any class problem with no official key) follow; the instructor's official solutions to the main-textbook / worksheet problems are appended after.</p>
+<h4 class="sub">Comps Fall 2004 #3  - solution</h4>
+<div class="item sol" id="c8-s-comps"><div class="toprob"><a href="#c8-p-comps">&uarr; Problem</a></div><p>(a) We show $(X\times Y)\setminus\Gamma(f)$ is open. Let $(x,y)\notin\Gamma(f)$, so $y\neq f(x)$. As $Y$ is Hausdorff, pick disjoint open sets $V\ni y$ and $W\ni f(x)$. By continuity $f^{-1}(W)$ is open and contains $x$, so $f^{-1}(W)\times V$ is an open neighborhood of $(x,y)$ in $X\times Y$. For any $(x',y')$ in it, $f(x')\in W$ and $y'\in V$ with $W\cap V=\emptyset$, so $y'\neq f(x')$, i.e. $(x',y')\notin\Gamma(f)$. Hence the complement is open and $\Gamma(f)$ is closed.</p>
+<p>(b) Define $\varphi:X\to\Gamma(f)$ by $\varphi(x)=(x,f(x))$. It is a bijection (its inverse is $(x,f(x))\mapsto x$). It is continuous: its two coordinate maps $x\mapsto x$ and $x\mapsto f(x)$ are continuous, so the map into the product is continuous, and its image lies in $\Gamma(f)$. Its inverse is the restriction to $\Gamma(f)$ of the projection $\pi_X:X\times Y\to X$, which is continuous. A continuous bijection with continuous inverse is a homeomorphism, so $\Gamma(f)\cong X$.  ∎</p></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch8_maintext.pdf, 3 pages (shown as page images)</div>
+<div class="off" id="c8-off-ch8-maintext-p1"><div class="toprob"><a href="#c8-p-s8-1-2">&uarr; Problem 8.1 #2</a> &middot; <a href="#c8-p-s8-1-10">&uarr; Problem 8.1 #10</a> &middot; <a href="#c8-p-s8-2-1">&uarr; Problem 8.2 #1</a> &middot; <a href="#c8-p-s8-2-4">&uarr; Problem 8.2 #4</a></div><div class="offcap">ch8_maintext.pdf, page 1</div><img src="img/5690-ch8_maintext-p1.png" width="1275" height="1650" loading="lazy" alt="ch8_maintext.pdf page 1"></div>
+<div class="off" id="c8-off-ch8-maintext-p2"><div class="offcap">ch8_maintext.pdf, page 2</div><img src="img/5690-ch8_maintext-p2.png" width="1275" height="1650" loading="lazy" alt="ch8_maintext.pdf page 2"></div>
+<div class="off" id="c8-off-ch8-maintext-p3"><div class="offcap">ch8_maintext.pdf, page 3</div><img src="img/5690-ch8_maintext-p3.png" width="1275" height="1650" loading="lazy" alt="ch8_maintext.pdf page 3"></div>
+<div class="frag">
+<h3>Chapter 8: backup solutions (Claude, not official)</h3>
+
+<p>Official file covers Section 8.1 #2, #10; Section 8.2 #1, #4. Its "8.3 #1.viii" actually proves the current book's 8.3 #1(iv) (a product of locally compact spaces is locally compact), so the current #1(viii) (the converse) is written out below. Everything below is NOT in the official file.</p>
+<p><b>Facts used throughout.</b> (a) By Definition 8.1.1 the sets O<sub>1</sub> × ⋯ × O<sub>n</sub> (O<sub>i</sub> open in X<sub>i</sub>) form a basis for the product topology, so a set W is open in the product iff for each x ∈ W there is such a basic set with x ∈ O<sub>1</sub> × ⋯ × O<sub>n</sub> ⊆ W; and every open set is a union of basic sets. (b) A map g into a space with basis ℬ is continuous iff g<sup>−1</sup>(B) is open for every B ∈ ℬ (since g<sup>−1</sup> commutes with unions). (c) A bijection g is a homeomorphism iff g is continuous and g(U) is open for every open U; and since g(⋃U<sub>k</sub>) = ⋃g(U<sub>k</sub>), it is enough to check g(B) open for B in a basis of the domain.</p>
+
+
+<div class="lbl anch" id="c8-s-s8-1-3">Section 8.1 #3</div><div class="toprob"><a href="#c8-p-s8-1-3">&uarr; Problem</a></div>
+<div class="stmt">Let X<sub>1</sub> and X<sub>2</sub> be infinite sets and τ<sub>1</sub> and τ<sub>2</sub> the finite-closed topology on X<sub>1</sub> and X<sub>2</sub>, respectively. Show that the product topology, τ, on X<sub>1</sub> × X<sub>2</sub> is <u>not</u> the finite-closed topology.</div>
+<p><b>Proof.</b> In the finite-closed topology on a set Y the closed sets are exactly Y and the finite subsets of Y.</p>
+<p>Fix a ∈ X<sub>1</sub>. The set {a} is finite, hence closed in (X<sub>1</sub>, τ<sub>1</sub>), and X<sub>2</sub> is closed in (X<sub>2</sub>, τ<sub>2</sub>). By Proposition 8.1.4, C = {a} × X<sub>2</sub> is closed in (X<sub>1</sub> × X<sub>2</sub>, τ).</p>
+<p>But C is not closed in the finite-closed topology on X<sub>1</sub> × X<sub>2</sub>: C is infinite (it is in bijection with the infinite set X<sub>2</sub>), and C ≠ X<sub>1</sub> × X<sub>2</sub> (X<sub>1</sub> is infinite, so there is b ∈ X<sub>1</sub> with b ≠ a, and then ⟨b, y⟩ ∉ C for any y ∈ X<sub>2</sub>). So C is neither finite nor the whole space.</p>
+<p>Hence τ has a closed set (so its complement is an open set) that the finite-closed topology does not have; therefore τ is not the finite-closed topology. ∎</p>
+
+
+<div class="lbl anch" id="c8-s-s8-1-4">Section 8.1 #4</div><div class="toprob"><a href="#c8-p-s8-1-4">&uarr; Problem</a></div>
+<div class="stmt">Prove that the product of any finite number of indiscrete spaces is an indiscrete space.</div>
+<p><b>Proof.</b> Let (X<sub>1</sub>, τ<sub>1</sub>), …, (X<sub>n</sub>, τ<sub>n</sub>) be indiscrete, so τ<sub>i</sub> = {Ø, X<sub>i</sub>}, and let X = X<sub>1</sub> × ⋯ × X<sub>n</sub> with the product topology τ. A basic open set is O<sub>1</sub> × ⋯ × O<sub>n</sub> with each O<sub>i</sub> ∈ {Ø, X<sub>i</sub>}. If some O<sub>i</sub> = Ø the product is Ø; otherwise it is X. So the basis is contained in {Ø, X}. Every member of τ is a union of basic sets, and any union of sets from {Ø, X} is Ø or X. Hence τ ⊆ {Ø, X}; since every topology on X contains Ø and X, τ = {Ø, X}, the indiscrete topology. ∎</p>
+
+
+<div class="lbl anch" id="c8-s-s8-1-5">Section 8.1 #5</div><div class="toprob"><a href="#c8-p-s8-1-5">&uarr; Problem</a></div>
+<div class="stmt">Prove that the product of any finite number of Hausdorff spaces is Hausdorff.</div>
+<p><b>Proof.</b> Let (X<sub>1</sub>, τ<sub>1</sub>), …, (X<sub>n</sub>, τ<sub>n</sub>) be Hausdorff and let x = ⟨x<sub>1</sub>, …, x<sub>n</sub>⟩ ≠ y = ⟨y<sub>1</sub>, …, y<sub>n</sub>⟩ in the product. Two n-tuples are equal iff all coordinates are equal, so there is an index i with x<sub>i</sub> ≠ y<sub>i</sub>. Since X<sub>i</sub> is Hausdorff there are open U, V in X<sub>i</sub> with x<sub>i</sub> ∈ U, y<sub>i</sub> ∈ V, U ∩ V = Ø. Put</p>
+<p style="text-align:center">U′ = X<sub>1</sub> × ⋯ × X<sub>i−1</sub> × U × X<sub>i+1</sub> × ⋯ × X<sub>n</sub>, V′ = X<sub>1</sub> × ⋯ × X<sub>i−1</sub> × V × X<sub>i+1</sub> × ⋯ × X<sub>n</sub>.</p>
+<p>Each is a product of open sets, hence open (Observations 8.1.3(ii)). Clearly x ∈ U′ and y ∈ V′. If z ∈ U′ ∩ V′ then z<sub>i</sub> ∈ U ∩ V = Ø, impossible; so U′ ∩ V′ = Ø. Hence the product is Hausdorff. ∎</p>
+
+
+<div class="lbl anch" id="c8-s-s8-1-6">Section 8.1 #6</div><div class="toprob"><a href="#c8-p-s8-1-6">&uarr; Problem</a></div>
+<div class="stmt">Let (X,τ) be a topological space and D = {(x, x) : x ∈ X} the diagonal in the product space (X,τ) × (X,τ) = (X × X,τ<sub>1</sub>). Prove that (X,τ) is a Hausdorff space if and only if D is closed in (X × X,τ<sub>1</sub>).</div>
+<p><b>Key observation.</b> For subsets U, V of X: (U × V) ∩ D = Ø ⟺ U ∩ V = Ø. Indeed, (z, z) ∈ U × V iff z ∈ U and z ∈ V iff z ∈ U ∩ V.</p>
+<p><b>(⇒)</b> Suppose X is Hausdorff. We show (X × X) \ D is open. Let (x, y) ∉ D, i.e. x ≠ y. Choose disjoint open sets U ∋ x, V ∋ y. Then U × V is open in X × X, contains (x, y), and by the key observation (U × V) ∩ D = Ø, i.e. U × V ⊆ (X × X) \ D. So every point of (X × X) \ D has an open set around it inside (X × X) \ D; hence (X × X) \ D is a union of open sets, so it is open and D is closed.</p>
+<p><b>(⇐)</b> Suppose D is closed, so W = (X × X) \ D is open. Let x ≠ y in X. Then (x, y) ∈ W, so by Fact (a) there is a basic open set U × V (U, V open in X) with (x, y) ∈ U × V ⊆ W. Then x ∈ U, y ∈ V, and (U × V) ∩ D = Ø, so U ∩ V = Ø by the key observation. Hence X is Hausdorff. ∎</p>
+
+
+<div class="lbl anch" id="c8-s-s8-1-7">Section 8.1 #7</div><div class="toprob"><a href="#c8-p-s8-1-7">&uarr; Problem</a></div>
+<div class="stmt">Let (X<sub>1</sub>,τ<sub>1</sub>), (X<sub>2</sub>,τ<sub>2</sub>) and (X<sub>3</sub>,τ<sub>3</sub>) be topological spaces. Prove that<br>
+<span style="display:block;text-align:center">[(X<sub>1</sub>,τ<sub>1</sub>) × (X<sub>2</sub>,τ<sub>2</sub>)] × (X<sub>3</sub>, τ<sub>3</sub>) ≅ (X<sub>1</sub>,τ<sub>1</sub>) × (X<sub>2</sub>,τ<sub>2</sub>) × (X<sub>3</sub>,τ<sub>3</sub>).</span></div>
+<p>Krebs' note: the intended statement is the associative law, [(X<sub>1</sub>, τ<sub>1</sub>) × (X<sub>2</sub>, τ<sub>2</sub>)] × (X<sub>3</sub>, τ<sub>3</sub>) ≅ (X<sub>1</sub>, τ<sub>1</sub>) × [(X<sub>2</sub>, τ<sub>2</sub>) × (X<sub>3</sub>, τ<sub>3</sub>)]. We prove that both bracketed products are homeomorphic to the unbracketed triple product P = X<sub>1</sub> × X<sub>2</sub> × X<sub>3</sub>; this proves the book's statement and, composing, the associative law.</p>
+<p><b>Step 1 (left bracketing).</b> Let L = (X<sub>1</sub> × X<sub>2</sub>) × X<sub>3</sub>, with the product topology of the space X<sub>1</sub> × X<sub>2</sub> (itself carrying the product topology) and X<sub>3</sub>. Define</p>
+<p style="text-align:center">f : L → P, f(⟨⟨x<sub>1</sub>, x<sub>2</sub>⟩, x<sub>3</sub>⟩) = ⟨x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>⟩.</p>
+<p>f is a bijection (its inverse is ⟨x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>⟩ ↦ ⟨⟨x<sub>1</sub>, x<sub>2</sub>⟩, x<sub>3</sub>⟩).</p>
+<p><i>f is continuous.</i> A basic open set of P is O<sub>1</sub> × O<sub>2</sub> × O<sub>3</sub> with O<sub>i</sub> ∈ τ<sub>i</sub>, and f<sup>−1</sup>(O<sub>1</sub> × O<sub>2</sub> × O<sub>3</sub>) = (O<sub>1</sub> × O<sub>2</sub>) × O<sub>3</sub>. Here O<sub>1</sub> × O<sub>2</sub> is open in X<sub>1</sub> × X<sub>2</sub>, so (O<sub>1</sub> × O<sub>2</sub>) × O<sub>3</sub> is a basic open set of L. By Fact (b), f is continuous.</p>
+<p><i>f is open.</i> A basic open set of L is W × O<sub>3</sub> with W open in X<sub>1</sub> × X<sub>2</sub> and O<sub>3</sub> ∈ τ<sub>3</sub>. By Fact (a), W = ⋃<sub>k∈K</sub> (A<sub>k</sub> × B<sub>k</sub>) with A<sub>k</sub> ∈ τ<sub>1</sub>, B<sub>k</sub> ∈ τ<sub>2</sub>. Then</p>
+<p style="text-align:center">f(W × O<sub>3</sub>) = ⋃<sub>k∈K</sub> (A<sub>k</sub> × B<sub>k</sub> × O<sub>3</sub>),</p>
+<p>a union of basic open sets of P, hence open. By Fact (c), f is a homeomorphism: L ≅ P. This is exactly the book's statement.</p>
+<p><b>Step 2 (right bracketing).</b> Let R = X<sub>1</sub> × (X<sub>2</sub> × X<sub>3</sub>) and g : R → P, g(⟨x<sub>1</sub>, ⟨x<sub>2</sub>, x<sub>3</sub>⟩⟩) = ⟨x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>⟩. The same argument with the roles of the factors switched works: g<sup>−1</sup>(O<sub>1</sub> × O<sub>2</sub> × O<sub>3</sub>) = O<sub>1</sub> × (O<sub>2</sub> × O<sub>3</sub>) is open in R, and for a basic open set O<sub>1</sub> × W of R with W = ⋃<sub>k</sub>(B<sub>k</sub> × C<sub>k</sub>) open in X<sub>2</sub> × X<sub>3</sub>, g(O<sub>1</sub> × W) = ⋃<sub>k</sub>(O<sub>1</sub> × B<sub>k</sub> × C<sub>k</sub>) is open in P. So g is a homeomorphism: R ≅ P.</p>
+<p><b>Step 3 (associativity).</b> g<sup>−1</sup> ∘ f : L → R, ⟨⟨x<sub>1</sub>, x<sub>2</sub>⟩, x<sub>3</sub>⟩ ↦ ⟨x<sub>1</sub>, ⟨x<sub>2</sub>, x<sub>3</sub>⟩⟩, is a composition of homeomorphisms, hence a homeomorphism. So [(X<sub>1</sub>, τ<sub>1</sub>) × (X<sub>2</sub>, τ<sub>2</sub>)] × (X<sub>3</sub>, τ<sub>3</sub>) ≅ (X<sub>1</sub>, τ<sub>1</sub>) × [(X<sub>2</sub>, τ<sub>2</sub>) × (X<sub>3</sub>, τ<sub>3</sub>)]. ∎</p>
+
+
+<div class="lbl anch" id="c8-s-s8-1-8">Section 8.1 #8</div><div class="toprob"><a href="#c8-p-s8-1-8">&uarr; Problem</a></div>
+<div class="stmt">(i) Let (X<sub>1</sub>,τ<sub>1</sub>) and (X<sub>2</sub>,τ<sub>2</sub>) be topological spaces. Prove that<br>
+<span style="display:block;text-align:center">(X<sub>1</sub>,τ<sub>1</sub>) × (X<sub>2</sub>,τ<sub>2</sub>) ≅ (X<sub>2</sub>,τ<sub>2</sub>) × (X<sub>1</sub>,τ<sub>1</sub>).</span>
+(ii) Generalize the above result to products of any finite number of topological spaces.</div>
+<p><b>(i)</b> Define s : X<sub>1</sub> × X<sub>2</sub> → X<sub>2</sub> × X<sub>1</sub> by s(⟨x<sub>1</sub>, x<sub>2</sub>⟩) = ⟨x<sub>2</sub>, x<sub>1</sub>⟩, and t : X<sub>2</sub> × X<sub>1</sub> → X<sub>1</sub> × X<sub>2</sub> by t(⟨x<sub>2</sub>, x<sub>1</sub>⟩) = ⟨x<sub>1</sub>, x<sub>2</sub>⟩. Then t ∘ s and s ∘ t are identity maps, so s is a bijection with inverse t.</p>
+<p>s is continuous: for a basic open set O<sub>2</sub> × O<sub>1</sub> of X<sub>2</sub> × X<sub>1</sub> (O<sub>i</sub> ∈ τ<sub>i</sub>), s<sup>−1</sup>(O<sub>2</sub> × O<sub>1</sub>) = {⟨x<sub>1</sub>, x<sub>2</sub>⟩ : x<sub>2</sub> ∈ O<sub>2</sub>, x<sub>1</sub> ∈ O<sub>1</sub>} = O<sub>1</sub> × O<sub>2</sub>, which is open; apply Fact (b). By the identical argument (with indices swapped), t is continuous. So s is a homeomorphism. ∎</p>
+<p><b>(ii) Generalization.</b> <i>Let (X<sub>1</sub>, τ<sub>1</sub>), …, (X<sub>n</sub>, τ<sub>n</sub>) be topological spaces and σ a permutation (bijection) of {1, …, n}. Then</i></p>
+<p style="text-align:center"><i>(X<sub>1</sub>, τ<sub>1</sub>) × ⋯ × (X<sub>n</sub>, τ<sub>n</sub>) ≅ (X<sub>σ(1)</sub>, τ<sub>σ(1)</sub>) × ⋯ × (X<sub>σ(n)</sub>, τ<sub>σ(n)</sub>).</i></p>
+<p><b>Proof.</b> Let P = ∏<sub>j=1</sub><sup>n</sup> X<sub>j</sub>, Q = ∏<sub>k=1</sub><sup>n</sup> X<sub>σ(k)</sub>, and define h<sub>σ</sub> : P → Q by h<sub>σ</sub>(⟨x<sub>1</sub>, …, x<sub>n</sub>⟩) = ⟨x<sub>σ(1)</sub>, …, x<sub>σ(n)</sub>⟩ (the k-th coordinate of the image is x<sub>σ(k)</sub> ∈ X<sub>σ(k)</sub>). The map Q → P that sends ⟨y<sub>1</sub>, …, y<sub>n</sub>⟩ to the tuple whose j-th coordinate is y<sub>σ<sup>−1</sup>(j)</sub> is a two-sided inverse, so h<sub>σ</sub> is a bijection.</p>
+<p><i>h<sub>σ</sub> is continuous.</i> A basic open set of Q is U<sub>1</sub> × ⋯ × U<sub>n</sub> with U<sub>k</sub> ∈ τ<sub>σ(k)</sub>. Then</p>
+<p style="text-align:center">h<sub>σ</sub><sup>−1</sup>(U<sub>1</sub> × ⋯ × U<sub>n</sub>) = {x ∈ P : x<sub>σ(k)</sub> ∈ U<sub>k</sub> for all k} = {x ∈ P : x<sub>j</sub> ∈ U<sub>σ<sup>−1</sup>(j)</sub> for all j} = V<sub>1</sub> × ⋯ × V<sub>n</sub>,</p>
+<p>where V<sub>j</sub> = U<sub>σ<sup>−1</sup>(j)</sub> ∈ τ<sub>j</sub> (since σ(σ<sup>−1</sup>(j)) = j). This is a product of open sets, hence open in P; by Fact (b) h<sub>σ</sub> is continuous.</p>
+<p><i>h<sub>σ</sub> is open.</i> For a basic open set V<sub>1</sub> × ⋯ × V<sub>n</sub> of P (V<sub>j</sub> ∈ τ<sub>j</sub>), h<sub>σ</sub>(V<sub>1</sub> × ⋯ × V<sub>n</sub>) = V<sub>σ(1)</sub> × ⋯ × V<sub>σ(n)</sub>, a basic open set of Q (because x ranges over all tuples with x<sub>j</sub> ∈ V<sub>j</sub>, so the k-th coordinate x<sub>σ(k)</sub> ranges independently over V<sub>σ(k)</sub>). By Fact (c), h<sub>σ</sub> is a homeomorphism. ∎</p>
+<p>(Together with #7 and induction, this means a finite product of spaces is, up to homeomorphism, independent of both the order and the bracketing of the factors.)</p>
+
+
+<div class="lbl anch" id="c8-s-s8-1-9">Section 8.1 #9</div><div class="toprob"><a href="#c8-p-s8-1-9">&uarr; Problem</a></div>
+<div class="stmt">Let C<sub>1</sub>, C<sub>2</sub>, …, C<sub>n</sub> be subsets of the topological spaces (X<sub>1</sub>,τ<sub>1</sub>), (X<sub>2</sub>,τ<sub>2</sub>), …,(X<sub>n</sub>,τ<sub>n</sub>), respectively, so that C<sub>1</sub> × C<sub>2</sub> × ⋯ × C<sub>n</sub> is a subset of the space (X<sub>1</sub>,τ<sub>1</sub>) × (X<sub>2</sub>,τ<sub>2</sub>) × ⋯ × (X<sub>n</sub>,τ<sub>n</sub>). Prove each of the following statements.<br>
+(i) (C<sub>1</sub> × C<sub>2</sub> × ⋯ × C<sub>n</sub>)′ ⊇ C′<sub>1</sub> × C′<sub>2</sub> × ⋯ × C′<sub>n</sub> ;<br>
+(ii) <span class="ov">C<sub>1</sub> × C<sub>2</sub> × ⋯ × C<sub>n</sub></span> = <span class="ov">C<sub>1</sub></span> × <span class="ov">C<sub>2</sub></span> × ⋯ × <span class="ov">C<sub>n</sub></span> ;<br>
+(iii) if C<sub>1</sub>, C<sub>2</sub>, …, C<sub>n</sub> are dense in (X<sub>1</sub>,τ<sub>1</sub>), (X<sub>2</sub>,τ<sub>2</sub>) , … , (X<sub>n</sub>,τ<sub>n</sub>), respectively, then C<sub>1</sub> × C<sub>2</sub> × ⋯ × C<sub>n</sub> is dense in the product space (X<sub>1</sub>,τ<sub>1</sub>) × (X<sub>2</sub>,τ<sub>2</sub>) × ⋯ × (X<sub>n</sub>,τ<sub>n</sub>) ;<br>
+(iv) if (X<sub>1</sub>,τ<sub>1</sub>), (X<sub>2</sub>,τ<sub>2</sub>), …, (X<sub>n</sub>,τ<sub>n</sub>) are separable spaces, then (X<sub>1</sub>,τ<sub>1</sub>) × (X<sub>2</sub>,τ<sub>2</sub>) × ⋯ × (X<sub>n</sub>,τ<sub>n</sub>) is a separable space;<br>
+(v) for each n ⩾ 1, ℝ<sup>n</sup> is a separable space.</div>
+<p>Notation: C = C<sub>1</sub> × ⋯ × C<sub>n</sub>, X = X<sub>1</sub> × ⋯ × X<sub>n</sub>. Morris' definitions: x is a <i>limit point</i> of A if every open set containing x contains a point of A other than x (Definition 3.1.1); A′ is the set of limit points; <span class="ov">A</span> = A ∪ A′; A is dense if <span class="ov">A</span> = X; X is separable if it has a countable dense subset.</p>
+<p><b>Lemma.</b> x ∈ <span class="ov">A</span> iff every open set containing x meets A. <i>Proof.</i> If x ∈ A this is clear, and if x ∈ A′ every open U ∋ x contains a point of A. Conversely, suppose every open U ∋ x meets A, and x ∉ A; then the point of A in U is different from x, so x ∈ A′. ∎</p>
+
+<p><b>(i)</b> Let x = ⟨x<sub>1</sub>, …, x<sub>n</sub>⟩ with x<sub>i</sub> ∈ C′<sub>i</sub> for each i, and let W be open in X with x ∈ W. By Fact (a) there are O<sub>i</sub> ∈ τ<sub>i</sub> with x ∈ O<sub>1</sub> × ⋯ × O<sub>n</sub> ⊆ W. For each i, O<sub>i</sub> is open and contains x<sub>i</sub> ∈ C′<sub>i</sub>, so there is c<sub>i</sub> ∈ C<sub>i</sub> ∩ O<sub>i</sub> with c<sub>i</sub> ≠ x<sub>i</sub>. Then c = ⟨c<sub>1</sub>, …, c<sub>n</sub>⟩ ∈ C ∩ W, and c ≠ x (they differ in every coordinate). So every open set containing x contains a point of C other than x, i.e. x ∈ C′. ∎</p>
+<p><i>Remark:</i> equality can fail. In ℝ × ℝ take C<sub>1</sub> = {0}, C<sub>2</sub> = ℝ. Then C′<sub>1</sub> = Ø so C′<sub>1</sub> × C′<sub>2</sub> = Ø, but ⟨0, 0⟩ ∈ ({0} × ℝ)′, since every open set containing ⟨0, 0⟩ contains ⟨0, t⟩ for small t ≠ 0.</p>
+
+<p><b>(ii)</b> (⊇) Let x ∈ <span class="ov">C<sub>1</sub></span> × ⋯ × <span class="ov">C<sub>n</sub></span> and let W be open with x ∈ W; pick a basic x ∈ O<sub>1</sub> × ⋯ × O<sub>n</sub> ⊆ W. By the Lemma, each O<sub>i</sub> (open, containing x<sub>i</sub> ∈ <span class="ov">C<sub>i</sub></span>) contains some c<sub>i</sub> ∈ C<sub>i</sub>. Then ⟨c<sub>1</sub>, …, c<sub>n</sub>⟩ ∈ C ∩ W. So every open set containing x meets C, and x ∈ <span class="ov">C</span> by the Lemma.</p>
+<p>(⊆) Let x ∈ <span class="ov">C</span> and fix i. Let U be open in X<sub>i</sub> with x<sub>i</sub> ∈ U. The set p<sub>i</sub><sup>−1</sup>(U) = X<sub>1</sub> × ⋯ × X<sub>i−1</sub> × U × X<sub>i+1</sub> × ⋯ × X<sub>n</sub> is open in X and contains x, so by the Lemma it contains some c ∈ C; then c<sub>i</sub> ∈ U ∩ C<sub>i</sub>. So every open set containing x<sub>i</sub> meets C<sub>i</sub>, i.e. x<sub>i</sub> ∈ <span class="ov">C<sub>i</sub></span>. As i was arbitrary, x ∈ <span class="ov">C<sub>1</sub></span> × ⋯ × <span class="ov">C<sub>n</sub></span>. ∎</p>
+<p>(Alternatively for ⊆: <span class="ov">C<sub>1</sub></span> × ⋯ × <span class="ov">C<sub>n</sub></span> is closed by Proposition 8.1.4 and contains C, and <span class="ov">C</span> is the smallest closed set containing C.)</p>
+
+<p><b>(iii)</b> If each C<sub>i</sub> is dense, <span class="ov">C<sub>i</sub></span> = X<sub>i</sub>, so by (ii) <span class="ov">C</span> = <span class="ov">C<sub>1</sub></span> × ⋯ × <span class="ov">C<sub>n</sub></span> = X<sub>1</sub> × ⋯ × X<sub>n</sub> = X. So C is dense in X. ∎</p>
+
+<p><b>(iv)</b> For each i choose a countable dense subset D<sub>i</sub> of X<sub>i</sub>. By (iii), D = D<sub>1</sub> × ⋯ × D<sub>n</sub> is dense in X. A finite product of countable sets is countable (by induction on n: D<sub>1</sub> × ⋯ × D<sub>k+1</sub> = ⋃<sub>d∈D<sub>k+1</sub></sub> (D<sub>1</sub> × ⋯ × D<sub>k</sub>) × {d} is a countable union of countable sets). So X has a countable dense subset and is separable. ∎</p>
+
+<p><b>(v)</b> ℚ is countable and dense in ℝ (Example 3.1.12), so ℝ is separable. By Observations 8.1.3(i), the euclidean topology on ℝ<sup>n</sup> is the product topology on ℝ × ⋯ × ℝ (n factors), so by (iv) ℝ<sup>n</sup> is separable (with countable dense subset ℚ<sup>n</sup>). For n = 1 this is the statement about ℝ itself. ∎</p>
+
+
+<div class="lbl anch" id="c8-s-s8-2-3">Section 8.2 #3</div><div class="toprob"><a href="#c8-p-s8-2-3">&uarr; Problem</a></div>
+<div class="stmt">Let (Y,τ) and (X<sub>i</sub>,τ<sub>i</sub>), i = 1, 2, ..., n be topological spaces. Further for each i, let f<sub>i</sub> be a mapping of (Y,τ) into (X<sub>i</sub>,τ<sub>i</sub>). Prove that the mapping f : (Y,τ) → ∏<sub>i=1</sub><sup>n</sup>(X<sub>i</sub>,τ<sub>i</sub>), given by<br>
+<span style="display:block;text-align:center">f(y) = ⟨f<sub>1</sub>(y), f<sub>2</sub>(y), …, f<sub>n</sub>(y)⟩,</span>
+is continuous if and only if every f<sub>i</sub> is continuous. [Hint: Observe that f<sub>i</sub> = p<sub>i</sub> ∘ f, where p<sub>i</sub> is the projection mapping of ∏<sub>j=1</sub><sup>n</sup>(X<sub>j</sub>,τ<sub>j</sub>) onto (X<sub>i</sub>, τ<sub>i</sub>).]</div>
+<p><b>Proof.</b> For every y, p<sub>i</sub>(f(y)) = f<sub>i</sub>(y), so f<sub>i</sub> = p<sub>i</sub> ∘ f.</p>
+<p><b>(⇒)</b> If f is continuous, then each f<sub>i</sub> = p<sub>i</sub> ∘ f is a composition of continuous maps (p<sub>i</sub> is continuous by Proposition 8.2.5(i)), hence continuous.</p>
+<p><b>(⇐)</b> Suppose each f<sub>i</sub> is continuous. Let O<sub>1</sub> × ⋯ × O<sub>n</sub> be a basic open set of the product (O<sub>i</sub> ∈ τ<sub>i</sub>). Then</p>
+<p style="text-align:center">f<sup>−1</sup>(O<sub>1</sub> × ⋯ × O<sub>n</sub>) = {y : f<sub>i</sub>(y) ∈ O<sub>i</sub> for all i} = f<sub>1</sub><sup>−1</sup>(O<sub>1</sub>) ∩ ⋯ ∩ f<sub>n</sub><sup>−1</sup>(O<sub>n</sub>),</p>
+<p>a finite intersection of open subsets of Y (each f<sub>i</sub><sup>−1</sup>(O<sub>i</sub>) is open because f<sub>i</sub> is continuous), hence open. Any open W in the product is a union ⋃<sub>k</sub> B<sub>k</sub> of basic open sets, so f<sup>−1</sup>(W) = ⋃<sub>k</sub> f<sup>−1</sup>(B<sub>k</sub>) is open. Hence f is continuous. ∎</p>
+
+
+<div class="lbl anch" id="c8-s-s8-3-1">Section 8.3 #1(viii)</div><div class="toprob"><a href="#c8-p-s8-3-1">&uarr; Problem</a></div>
+<div class="stmt">1. A topological space (X,τ) is said to be <b>locally compact</b> if each point x ∈ X has at least one neighbourhood which is compact. Prove that<br>
+…<br>
+(viii) If (X<sub>1</sub>,τ<sub>1</sub>), (X<sub>2</sub>,τ<sub>2</sub>), …, (X<sub>n</sub>,τ<sub>n</sub>) are topological spaces such that ∏<sub>i=1</sub><sup>n</sup>(X<sub>i</sub>τ<sub>i</sub>) is locally compact, then each (X<sub>i</sub>,τ<sub>i</sub>) is locally compact.</div>
+<p><b>Note on numbering.</b> The official Ch. 8 file has a solution labelled "1.viii", but its content is "a product of locally compact spaces is locally compact", which is the current book's (iv). The current (viii) is the converse, proved here. (If Krebs meant the old-edition numbering, the official file already covers it.)</p>
+<p><b>A needed hypothesis.</b> The statement requires every X<sub>j</sub> to be nonempty. Otherwise it is false: take X<sub>1</sub> = Ø and X<sub>2</sub> = ℚ. The product Ø × ℚ = Ø is (vacuously) locally compact, but ℚ is not locally compact: if K were a compact neighbourhood of 0 in ℚ, there would be ε &gt; 0 with (−ε, ε) ∩ ℚ ⊆ K; K is compact in ℚ, hence a compact subset of ℝ, hence closed in ℝ (Proposition 7.2.5), so K ⊇ closure in ℝ of (−ε, ε) ∩ ℚ, which is [−ε, ε] and contains irrationals, contradicting K ⊆ ℚ. So assume all X<sub>j</sub> ≠ Ø.</p>
+<p>Recall (Definition 3.2.1) N is a neighbourhood of p if there is an open U with p ∈ U ⊆ N.</p>
+<p><b>Proof.</b> Fix i and a point a ∈ X<sub>i</sub>. Since every X<sub>j</sub> is nonempty, choose a<sub>j</sub> ∈ X<sub>j</sub> for j ≠ i, and let x ∈ ∏X<sub>j</sub> be the point with x<sub>i</sub> = a and x<sub>j</sub> = a<sub>j</sub> for j ≠ i. The product is locally compact, so x has a compact neighbourhood K: there is an open set W in the product with x ∈ W ⊆ K.</p>
+<p>Let p<sub>i</sub> be the projection onto X<sub>i</sub>. By Proposition 8.2.5(i), p<sub>i</sub> is continuous and an open mapping. Then:</p>
+<ul>
+<li>p<sub>i</sub>(W) is open in X<sub>i</sub> (p<sub>i</sub> is open), and a = p<sub>i</sub>(x) ∈ p<sub>i</sub>(W);</li>
+<li>p<sub>i</sub>(W) ⊆ p<sub>i</sub>(K), since W ⊆ K;</li>
+<li>p<sub>i</sub>(K) is compact: the restriction of p<sub>i</sub> to the subspace K is a continuous surjection of the compact space K onto the subspace p<sub>i</sub>(K), so Proposition 7.2.1 applies (with Remark 7.1.8 to pass between compact subsets and compact subspaces).</li>
+</ul>
+<p>So a ∈ p<sub>i</sub>(W) ⊆ p<sub>i</sub>(K) with p<sub>i</sub>(W) open: p<sub>i</sub>(K) is a compact neighbourhood of a. As a ∈ X<sub>i</sub> was arbitrary, (X<sub>i</sub>, τ<sub>i</sub>) is locally compact. ∎</p>
+<p>(This is also the special case of 8.3 #1(vii) with f = p<sub>i</sub>, a continuous open surjection.)</p>
+
+</div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

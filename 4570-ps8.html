@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 4570 PS8</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 4570  ·  Problem Set 8 (with solutions)</h1>
+<div class="hdr"><p class="small">Source: MIT 18.700 Linear Algebra, Fall 2013 (MIT OpenCourseWare, CC BY-NC-SA), Problem Set 8. Self-contained (QR decomposition / Iwasawa, and polar decomposition). Solutions by Claude.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<div class="item prob" id="p-1"><p><b>1.</b> $V$ an inner-product space with basis $(t_1,\dots,t_n)$.</p>
+<p>(a) Show there is a unique upper-triangular $U=(u_{ij})$ with $u_{ii}&gt;0$ real such that</p>
+<p>$f_j=u_{1j}t_1+\cdots+u_{jj}t_j$ is an orthonormal basis.  (b) If $V=\mathbb{R}^n$ or $\mathbb{C}^n$ and $T$ is the matrix with columns $(t_1,\dots,t_n)$, show $Q=TU$ is an isometry.  (c) Show any invertible $T$ factors uniquely as</p>
+<p>$T=QR$ ($Q$ an isometry, $R$ upper-triangular with positive real diagonal).  (d) Compute $Q,R$ for $T$ below.</p><div class="tosol"><a href="#s-1">Solution &darr;</a></div></div>
+<div class="item prob" id="p-2"><p><b>2.</b> (a) Find the polar decomposition $T=SP$ ($S$ an isometry, $P$ positive) of $T$ below.</p>
+<p>(b) For a unit vector $v\in\mathbb{R}^2$, find the largest possible $\|Tv\|$ and a $v$ achieving it.</p><div class="tosol"><a href="#s-2">Solution &darr;</a></div></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<div class="item sol" id="s-1"><div class="toprob"><a href="#p-1">&uarr; Problem</a></div><p class="lead"><b>Solution 1.</b> Gram-Schmidt gives the QR (Iwasawa) decomposition.</p>
+<p>(a) Apply Gram-Schmidt to $(t_1,\dots,t_n)$: it produces an orthonormal $(f_1,\dots,f_n)$ with each $f_j\in\mathrm{span}(t_1,\dots,t_j)$ and the coefficient of $t_j$ in $f_j$ positive. Thus $f_j=u_{1j}t_1+\cdots+u_{jj}t_j$ with $U$ upper-triangular and $u_{jj}&gt;0$. Uniqueness: $f_j$ is a unit vector in $\mathrm{span}(t_1,\dots,t_j)$ orthogonal to $\mathrm{span}(t_1,\dots,t_{j-1})$, so it is determined up to sign; requiring $u_{jj}&gt;0$ fixes the sign. Hence $U$ is unique.</p>
+<p>(b) Column $j$ of $Q=TU$ is $T(\text{col }j\text{ of }U)=u_{1j}t_1+\cdots+u_{nj}t_n=f_j$. So $Q$'s columns are the orthonormal $(f_1,\dots,f_n)$, i.e. $Q^{*}Q=I$: $Q$ is an isometry.</p>
+<p>(c) $T$ invertible $\Rightarrow$ its columns are a basis; by (a),(b) get $U$ (upper-tri, positive diagonal) with $Q=TU$ an isometry. Then $R=U^{-1}$ is also upper-triangular with positive diagonal, and $T=QU^{-1}=QR$. Uniqueness: if $QR=Q'R'$ then $Q'^{-1}Q=R'R^{-1}$ is an upper-triangular isometry with positive diagonal, which must be $I$.</p>
+<p>(d) For $T=\left(\text{cols }(3,1),(4,2)\right)$: Gram-Schmidt gives $f_1=(3,1)/\sqrt{10}$, $f_2=(-1,3)/\sqrt{10}$, so</p>
+<pre class="mono">        Q = (1/sqrt(10)) [ 3  -1 ]        R = [ sqrt(10)   7*sqrt(10)/5 ]
+                        [ 1   3 ]            [    0        sqrt(10)/5   ]</pre>
+<p>(One checks $QR=T$ and $R$ has positive diagonal $\sqrt{10},\ \sqrt{10}/5$.)  ∎</p></div>
+<div class="item sol" id="s-2"><div class="toprob"><a href="#p-2">&uarr; Problem</a></div><p class="lead"><b>Solution 2.</b> $T=\left(\text{rows }(2,-1),(11,7)\right)$.</p>
+<p>(a) $P=\sqrt{T^{\mathsf{T}}T}$. Here $T^{\mathsf{T}}T=\left(\text{rows }(125,75),(75,50)\right)$, with $\det=625$ and trace $175$. For a $2\times 2$ positive matrix, $\sqrt{M}=(M+\sqrt{\det M}\,I)\,/\,\sqrt{\mathrm{tr}\,M+2\sqrt{\det M}}=(M+25I)/15$, giving</p>
+<pre class="mono">        P = [ 10  5 ]        S = T P^(-1) = (1/5) [ 3  -4 ]
+            [  5  5 ]                            [ 4   3 ]</pre>
+<p>$P$ is positive ($P^2=T^{\mathsf{T}}T$, eigenvalues $&gt;0$) and $S$ is orthogonal (a rotation, $\det S=1$); $SP=T$. The singular values of $T$ (eigenvalues of $P$) are $\frac{5(3\pm\sqrt{5})}{2}\approx 13.09,\ 1.91$.</p>
+<p>(b) For $\|v\|=1$, $\|Tv\|^2=\langle Tv,Tv\rangle=\langle T^{\mathsf{T}}T v,v\rangle$ is maximized by the top eigenvector of $T^{\mathsf{T}}T$ (equivalently of $P$), giving the maximum $\|Tv\|=$ the largest singular value $\frac{15+5\sqrt{5}}{2}\approx 13.09$, attained at $v=\frac{1}{\sqrt{10-2\sqrt{5}}}\,(2,\ \sqrt{5}-1)$.  ∎</p></div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

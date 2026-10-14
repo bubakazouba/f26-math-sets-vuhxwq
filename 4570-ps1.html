@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 4570 PS1</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 4570  ·  Problem Set 1 (with solutions)</h1>
+<div class="hdr"><p class="small">Source: MIT 18.700 Linear Algebra, Fall 2013 (MIT OpenCourseWare, CC BY-NC-SA), Problem Set 1. Problems 4-7 cite Axler, Linear Algebra Done Right (2nd ed) - the edition MIT used - by its real page/exercise numbers; the exercises are inlined verbatim below. Solutions by Claude.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<div class="item prob" id="p-1"><p><b>1.</b> Is $G=\{a+bi \mid a,b\in\mathbb{Q}\}$ a field (operations from $\mathbb{C}$)?</p><div class="tosol"><a href="#s-1">Solution &darr;</a></div></div>
+<div class="item prob" id="p-2"><p><b>2.</b> Is $M=\{r\,e^{2\pi i\theta} \mid r,\theta\in\mathbb{Q}\}$ a field?</p><div class="tosol"><a href="#s-2">Solution &darr;</a></div></div>
+<div class="item prob" id="p-3"><p><b>3.</b> For $V=(\mathbb{F}_2)^2$ (four vectors), how many of the 16 subsets are linearly independent, and how many bases does $V$ have?</p><div class="tosol"><a href="#s-3">Solution &darr;</a></div></div>
+<div class="item prob" id="p-4"><p><b>4.</b> (Axler 2nd ed, p.19 ex.5)  For each subset of $\mathbb{F}^3$, decide whether it is a subspace of $\mathbb{F}^3$:</p>
+<p>(a) $\{x: x_1+2x_2+3x_3=0\}$<span class="sp"></span>(b) $\{x: x_1+2x_2+3x_3=4\}$</p>
+<p>(c) $\{x: x_1 x_2 x_3=0\}$<span class="sp"></span>(d) $\{x: x_1=5x_3\}$</p><div class="tosol"><a href="#s-4">Solution &darr;</a></div></div>
+<div class="item prob" id="p-5"><p><b>5.</b> (Axler 2nd ed, p.19 ex.15)  Prove or give a counterexample: if $U_1,U_2,W$ are subspaces of $V$ such that $V=U_1\oplus W$ and $V=U_2\oplus W$, then $U_1=U_2$.</p><div class="tosol"><a href="#s-5">Solution &darr;</a></div></div>
+<div class="item prob" id="p-6"><p><b>6.</b> (Axler 2nd ed, p.35 ex.1)  Prove that if $(v_1,\dots,v_n)$ spans $V$, then so does the list $(v_1{-}v_2,\ v_2{-}v_3,\ \dots,\ v_{n-1}{-}v_n,\ v_n)$.</p><div class="tosol"><a href="#s-6">Solution &darr;</a></div></div>
+<div class="item prob" id="p-7"><p><b>7.</b> (Axler 2nd ed, p.35 ex.3)  Suppose $(v_1,\dots,v_n)$ is linearly independent in $V$ and $w\in V$. Prove that if $(v_1{+}w,\dots,v_n{+}w)$ is linearly dependent, then</p>
+<p>$w\in\mathrm{span}(v_1,\dots,v_n)$.</p><div class="tosol"><a href="#s-7">Solution &darr;</a></div></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<div class="item sol" id="s-1"><div class="toprob"><a href="#p-1">&uarr; Problem</a></div><p class="lead"><b>Solution 1.</b> $G$ IS a field (it is $\mathbb{Q}(i)$).</p>
+<p>All axioms not involving inverses (associativity, commutativity, distributivity) are inherited from $\mathbb{C}$, so we only check closure and inverses.</p>
+<p>$\bullet$ Identities: $0=0+0i\in G$ and $1=1+0i\in G$.</p>
+<p>$\bullet$ Closed under $+$: $(a+bi)+(c+di)=(a+c)+(b+d)i$, and $a+c,\,b+d\in\mathbb{Q}$.</p>
+<p>$\bullet$ Closed under $\times$: $(a+bi)(c+di)=(ac-bd)+(ad+bc)i$, components in $\mathbb{Q}$.</p>
+<p>$\bullet$ Additive inverse: $-(a+bi)=(-a)+(-b)i\in G$.</p>
+<p>$\bullet$ Multiplicative inverse of $z=a+bi\neq 0$:</p>
+<p>$z^{-1}=\frac{a-bi}{a^2+b^2}=\frac{a}{a^2+b^2}+\left(\frac{-b}{a^2+b^2}\right)i.$ Since $a,b\in\mathbb{Q}$ and $a^2+b^2$ is a positive rational, both parts lie in $\mathbb{Q}$, so $z^{-1}\in G$.  Hence $G$ is a field.  ∎</p></div>
+<div class="item sol" id="s-2"><div class="toprob"><a href="#p-2">&uarr; Problem</a></div><p class="lead"><b>Solution 2.</b> $M$ is NOT a field (it fails closure under addition).</p>
+<p>Key fact: for $\theta\in\mathbb{Q}$, $e^{2\pi i\theta}$ is a root of unity (modulus $1$), so every element $r\,e^{2\pi i\theta}$ of $M$ has rational modulus $|r|$. Counterexample: $1=1\cdot e^{2\pi i\cdot 0}\in M$ and $i=1\cdot e^{2\pi i\cdot(1/4)}\in M$, but $1+i$ has modulus $\sqrt{2}$, which is irrational. So $1+i\notin M$: $M$ is not closed under addition, hence not a field.  ∎</p></div>
+<div class="item sol" id="s-3"><div class="toprob"><a href="#p-3">&uarr; Problem</a></div><p class="lead"><b>Solution 3.</b> Seven independent subsets; three bases.</p>
+<p>Any subset containing $(0,0)$ is dependent (it contains the zero vector), so we only consider subsets of the three nonzero vectors $(0,1),(1,0),(1,1)$.</p>
+<p>$\bullet$ Empty set: linearly independent (vacuously).  [1]</p>
+<p>$\bullet$ Singletons of the three nonzero vectors: each independent.  [3]</p>
+<p>$\bullet$ Pairs of distinct nonzero vectors: over $\mathbb{F}_2$ the only nonzero scalar is $1$, and $u+v=0\Leftrightarrow u=v$, so any two distinct nonzero vectors are independent.  [3]</p>
+<p>$\bullet$ Any subset of size $\geq 3$ in a $2$-dimensional space is dependent (e.g. $(0,1)+(1,0)=(1,1)$).  [0] Total independent subsets $=1+3+3=7$.  (If your course does not count $\emptyset$, it is $6$.) A basis of a $2$-dim space is an independent set of size $2$, so the bases are exactly the three independent pairs: $V$ has $3$ bases.  (Check: ordered $=(2^2-1)(2^2-2)=6$, unordered $=6/2!=3$.)  ∎</p></div>
+<div class="item sol" id="s-4"><div class="toprob"><a href="#p-4">&uarr; Problem</a></div><p class="lead"><b>Solution 4.</b> (a) subspace, (b) not, (c) not, (d) subspace.</p>
+<p>(a) $x_1+2x_2+3x_3=0$ is a homogeneous linear condition: $0$ satisfies it, and it is closed under sums and scalar multiples. YES, a subspace.</p>
+<p>(b) $x_1+2x_2+3x_3=4$: $(0,0,0)$ does not satisfy it, so NOT a subspace.</p>
+<p>(c) $x_1x_2x_3=0$: not closed under $+$. $(1,1,0)$ and $(0,0,1)$ satisfy it, but their sum $(1,1,1)$ has product $1\neq 0$. NOT a subspace.</p>
+<p>(d) $x_1=5x_3$, i.e. $x_1-5x_3=0$, is homogeneous linear. YES, a subspace.  ∎</p></div>
+<div class="item sol" id="s-5"><div class="toprob"><a href="#p-5">&uarr; Problem</a></div><p class="lead"><b>Solution 5.</b> FALSE - a direct-sum complement is not unique. Counterexample:</p>
+<p>Work in $V=\mathbb{R}^2$. Let $W=\mathrm{span}((1,0))$ (the $x$-axis), and take $U_1=\mathrm{span}((0,1))$ (the $y$-axis),<span class="sp"></span>$U_2=\mathrm{span}((1,1))$ (the diagonal).</p>
+<p>$\bullet$ $V=U_1\oplus W$: $(1,0)$ and $(0,1)$ are independent and span $\mathbb{R}^2$, and $U_1\cap W=\{0\}$, so the sum is direct.</p>
+<p>$\bullet$ $V=U_2\oplus W$: $(1,1)$ and $(1,0)$ are independent and span $\mathbb{R}^2$, and $U_2\cap W=\{0\}$, so this sum is direct too. But $U_1\neq U_2$ (e.g. $(0,1)\in U_1$ but $(0,1)\notin U_2$). So the claim is false: the same $W$ has two different complements.  ∎</p></div>
+<div class="item sol" id="s-6"><div class="toprob"><a href="#p-6">&uarr; Problem</a></div><p class="lead"><b>Solution 6.</b> Yes, the new list spans $V$.</p>
+<p>Write the new list as $u_k=v_k-v_{k+1}$ for $k=1,\dots,n-1$ and $u_n=v_n$. Each original $v_k$ is a sum of elements of the new list, via a telescoping sum: $v_k=(v_k{-}v_{k+1})+(v_{k+1}{-}v_{k+2})+\cdots+(v_{n-1}{-}v_n)+v_n=u_k+u_{k+1}+\cdots+u_n.$ Hence every $v_k\in\mathrm{span}(u_1,\dots,u_n)$, so $\mathrm{span}(u_1,\dots,u_n)\supseteq\mathrm{span}(v_1,\dots,v_n)=V$. Therefore the new list spans $V$.  ∎</p></div>
+<div class="item sol" id="s-7"><div class="toprob"><a href="#p-7">&uarr; Problem</a></div><p class="lead"><b>Solution 7.</b> If $(v_1{+}w,\dots,v_n{+}w)$ is dependent, then $w\in\mathrm{span}(v_1,\dots,v_n)$.</p>
+<p>Suppose $(v_1{+}w,\dots,v_n{+}w)$ is linearly dependent. Then there are scalars $a_1,\dots,a_n$, not all zero, with $a_1(v_1{+}w)+\cdots+a_n(v_n{+}w)=0$. Regrouping the $w$ terms, $(a_1 v_1+\cdots+a_n v_n) + (a_1+\cdots+a_n)\,w = 0.$<span class="sp"></span>Let $s=a_1+\cdots+a_n$.</p>
+<p>$\bullet$ If $s=0$, then $a_1 v_1+\cdots+a_n v_n=0$ with the $a_i$ not all zero, contradicting the linear independence of $(v_1,\dots,v_n)$. So this case cannot happen.</p>
+<p>$\bullet$ Hence $s\neq 0$, and we may solve for $w$:</p>
+<p>$w=-\frac{1}{s}\,(a_1 v_1+\cdots+a_n v_n) \in \mathrm{span}(v_1,\dots,v_n).$<span class="sp"></span>∎</p></div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 5401 ES3</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 5401 (Abstract Algebra)  ·  Exercise Set 3</h1>
+<div class="hdr"><p class="small">Problems inlined verbatim from Judson, Abstract Algebra: Theory and Applications (Ch. 4 Cyclic Groups, Ch. 5 Permutation Groups). Solutions by Claude, all together at the end. Permutation products use Judson's right-to-left convention, (στ)(x)=σ(τ(x)). Due Tue Sep 22, 2026.</p><h3 class="grp">Assigned problems (Exercise Set 3)</h3>
+<p>$\bullet$ Chapter 4: 19(a,b,c), 43, 45.<span class="sp"></span>Chapter 5: 1(a,b), 2(c,d,e,p), 10, 14, 23, 25, 29, 34.</p>
+<p>$\bullet$ Required extra: does $S_4$ have an element of order 6? does $S_5$?</p>
+<p>$\bullet$ Optional challenge: 4.46, 5.33 (included at the end).</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<h4 class="sub">Chapter 4 (Cyclic Groups)</h4>
+<div class="item prob" id="p-ch4-19"><p><b>19.</b> Prove each of the following statements. (Here $z,w\in\mathbb{C}$ and $\overline{z}$ is the conjugate.)</p>
+<p>(a) $|\overline{z}| = |z|$<span class="sp"></span>(b) $z\overline{z} = |z|^2$<span class="sp"></span>(c) $z^{-1} = \overline{z}/|z|^2$</p><div class="tosol"><a href="#s-ch4-19">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch4-43"><p><b>43.</b> Prove that the $n$th roots of unity form a cyclic subgroup of $\mathbb{T}$ of order $n$.</p><div class="tosol"><a href="#s-ch4-43">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch4-45"><p><b>45.</b> Let $z\in\mathbb{C}^*$. If $|z|\neq 1$, prove that the order of $z$ is infinite.</p><div class="tosol"><a href="#s-ch4-45">Solution &darr;</a></div></div>
+<h4 class="sub">Chapter 5 (Permutation Groups)</h4>
+<div class="item prob" id="p-ch5-1"><p><b>1.</b> Write the following permutations in cycle notation.</p>
+<pre class="mono">     (a)  1 2 3 4 5          (b)  1 2 3 4 5
+          2 4 1 5 3               4 2 5 1 3</pre><div class="tosol"><a href="#s-ch5-1">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch5-2"><p><b>2.</b> Compute each of the following.</p>
+<p>(c) (1 4 3)(2 3)(2 4)<span class="sp"></span>(d) (1 4 2 3)(3 4)(5 6)(1 3 2 4)</p>
+<p>(e) (1 2 5 4)(1 3)(2 5)<span class="sp"></span>(p) [(1 2 3 5)(4 6 7)]$^{-1}$</p><div class="tosol"><a href="#s-ch5-2">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch5-10"><p><b>10.</b> Find an element of largest order in $S_n$ for $n = 3,\ldots,10$.</p><div class="tosol"><a href="#s-ch5-10">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch5-14"><p><b>14.</b> Using cycle notation, list the elements in $D_5$. What are $r$ and $s$? Write every element as a product of $r$ and $s$.</p><div class="tosol"><a href="#s-ch5-14">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch5-23"><p><b>23.</b> If $\sigma$ is a cycle of odd length, prove that $\sigma^2$ is also a cycle.</p><div class="tosol"><a href="#s-ch5-23">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch5-25"><p><b>25.</b> Prove that in $A_n$ with $n\geq 3$, any permutation is a product of cycles of length 3.</p><div class="tosol"><a href="#s-ch5-25">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch5-29"><p><b>29.</b> Recall that the center of a group $G$ is $Z(G)=\{g\in G: gx=xg$ for all $x\in G\}$. Find the center of</p>
+<p>$D_4$. What about the center of $D_5$? What is the center of $D_n$?  [Per the instructor's note: use $D_4$ (square) and $D_5$ (pentagon); you need not prove your answer for $D_n$.]</p><div class="tosol"><a href="#s-ch5-29">Solution &darr;</a></div></div>
+<div class="item prob" id="p-ch5-34"><p><b>34.</b> If $\alpha$ is even, prove that $\alpha^{-1}$ is also even. Does a corresponding result hold if $\alpha$ is odd?</p><div class="tosol"><a href="#s-ch5-34">Solution &darr;</a></div></div>
+<h4 class="sub">Required additional problem</h4>
+<div class="item prob" id="p-add"><p>Does $S_4$ have an element of order 6? Does $S_5$ have an element of order 6?</p><div class="tosol"><a href="#s-add">Solution &darr;</a></div></div>
+<h4 class="sub">Optional challenge problems</h4>
+<div class="item prob" id="p-chal-4-46"><p><b>4.46.</b> Let $z=\cos\theta+i\sin\theta$ be in $\mathbb{T}$ where $\theta\in\mathbb{Q}$. Prove that the order of $z$ is infinite.</p><div class="tosol"><a href="#s-chal-4-46">Solution &darr;</a></div></div>
+<div class="item prob" id="p-chal-5-33"><p><b>5.33.</b> Let $\alpha\in S_n$ for $n\geq 3$. If $\alpha\beta=\beta\alpha$ for all $\beta\in S_n$, prove that $\alpha$ must be the identity permutation; hence the center of $S_n$ is the trivial subgroup.</p><div class="tosol"><a href="#s-chal-5-33">Solution &darr;</a></div></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<p class="small">All solutions by Claude. Complex-number and permutation computations follow Judson's conventions.</p>
+<h4 class="sub">Chapter 4</h4>
+<div class="item sol" id="s-ch4-19"><div class="toprob"><a href="#p-ch4-19">&uarr; Problem</a></div><p><b>19.</b> Write $z=a+bi$, so $\overline{z}=a-bi$.</p>
+<p>(a) $|\overline{z}|=\sqrt{a^2+(-b)^2}=\sqrt{a^2+b^2}=|z|$.</p>
+<p>(b) $z\overline{z}=(a+bi)(a-bi)=a^2-(bi)^2=a^2+b^2=|z|^2$.</p>
+<p>(c) By (b), $z\overline{z}=|z|^2$. For $z\neq 0$, $|z|^2\neq 0$, so $z\cdot(\overline{z}/|z|^2)=1$; hence $z^{-1}=\overline{z}/|z|^2$.  ∎</p></div>
+<div class="item sol" id="s-ch4-43"><div class="toprob"><a href="#p-ch4-43">&uarr; Problem</a></div><p><b>43.</b> Let $\zeta=e^{2\pi i/n}=\cos(2\pi/n)+i\sin(2\pi/n)$. Then $\zeta^n=1$ and $\zeta^k\neq 1$ for $0&lt;k&lt;n$, so $\zeta$ has order $n$, and the powers $\zeta^0,\zeta^1,\ldots,\zeta^{n-1}$ are $n$ distinct points, each with modulus 1 (so in $\mathbb{T}$). A complex number $w$ satisfies $w^n=1$ iff $|w|^n=1$ and $n\arg w\in 2\pi\mathbb{Z}$, i.e. iff $w=\zeta^k$ for some $k$; so the set of $n$th roots of unity is exactly $\langle\zeta\rangle=\{\zeta^0,\ldots,\zeta^{n-1}\}$, a cyclic subgroup of $\mathbb{T}$ of order $n$.  ∎</p></div>
+<div class="item sol" id="s-ch4-45"><div class="toprob"><a href="#p-ch4-45">&uarr; Problem</a></div><p><b>45.</b> Suppose $|z|\neq 1$. For every $k\geq 1$, $|z^k|=|z|^k$. If $|z|&gt;1$ then $|z|^k&gt;1$, and if $|z|&lt;1$ then $|z|^k&lt;1$; either way $|z^k|\neq 1=|1|$, so $z^k\neq 1$. Thus no positive power of $z$ equals $1$, and the order of $z$ is infinite.  ∎</p></div>
+<h4 class="sub">Chapter 5<span class="sp"></span>(products read right to left)</h4>
+<div class="item sol" id="s-ch5-1"><div class="toprob"><a href="#p-ch5-1">&uarr; Problem</a></div><p><b>1.</b> (a) $1\to2\to4\to5\to3\to1$, giving (1 2 4 5 3).</p>
+<p>(b) $1\to4\to1$, $3\to5\to3$, $2$ fixed, giving (1 4)(3 5).</p></div>
+<div class="item sol" id="s-ch5-2"><div class="toprob"><a href="#p-ch5-2">&uarr; Problem</a></div><p><b>2.</b> (c) (1 4 3)(2 3)(2 4): applying right to left, $1\to4,\ 4\to1,\ 2\to3,\ 3\to2$, so $=$ (1 4)(2 3).</p>
+<p>(d) (1 4 2 3)(3 4)(5 6)(1 3 2 4): $1\to2,\ 2\to1$, $3,4$ fixed, $5\leftrightarrow6$, so $=$ (1 2)(5 6).</p>
+<p>(e) (1 2 5 4)(1 3)(2 5): $1\to3\to2\to4\to1$, $5$ fixed, so $=$ (1 3 2 4).</p>
+<p>(p) $[(1 2 3 5)(4 6 7)]^{-1}=(4 6 7)^{-1}(1 2 3 5)^{-1}=(1 5 3 2)(4 7 6)$ (disjoint, so order does not matter).</p></div>
+<div class="item sol" id="s-ch5-10"><div class="toprob"><a href="#p-ch5-10">&uarr; Problem</a></div><p><b>10.</b> Largest order $=$ the max $\mathrm{lcm}$ of a partition of $n$ (a permutation's order is the lcm of its cycle lengths):</p>
+<p>$S_3{:}\,3$ (a 3-cycle),  $S_4{:}\,4$ (4-cycle),  $S_5{:}\,6$ = (1 2)(3 4 5),  $S_6{:}\,6$,  $S_7{:}\,12$ = (1 2 3)(4 5 6 7),</p>
+<p>$S_8{:}\,15$ = (1 2 3)(4 5 6 7 8),  $S_9{:}\,20$ = (1 2 3 4)(5 6 7 8 9),  $S_{10}{:}\,30$ = (1 2)(3 4 5)(6 7 8 9 10).</p></div>
+<div class="item sol" id="s-ch5-14"><div class="toprob"><a href="#p-ch5-14">&uarr; Problem</a></div><p><b>14.</b> Take the pentagon with vertices $1,2,3,4,5$. Rotation $r=$ (1 2 3 4 5); reflection $s=$ (2 5)(3 4) (fixes vertex 1). The 10 elements $r^k$ and $r^k s$ ($k=0,\ldots,4$), in cycle notation:</p>
+<p>$1=e$;  $r=$(1 2 3 4 5);  $r^2=$(1 3 5 2 4);  $r^3=$(1 4 2 5 3);  $r^4=$(1 5 4 3 2);</p>
+<p>$s=$(2 5)(3 4);  $rs=$(1 2)(3 5);  $r^2s=$(1 3)(4 5);  $r^3s=$(1 4)(2 3);  $r^4s=$(1 5)(2 4). Every element is one of $1,r,r^2,r^3,r^4,s,rs,r^2s,r^3s,r^4s$, i.e. a product of $r$ and $s$.  ∎</p></div>
+<div class="item sol" id="s-ch5-23"><div class="toprob"><a href="#p-ch5-23">&uarr; Problem</a></div><p><b>23.</b> Let $\sigma=(a_0\,a_1\,\cdots\,a_{2k})$ have odd length $m=2k+1$, so $\sigma(a_i)=a_{i+1}$ (indices mod $m$). Then $\sigma^2(a_i)=a_{i+2}$. Since $\gcd(2,m)=1$, the map $i\mapsto i+2\ (\mathrm{mod}\ m)$ is a single $m$-cycle, so $\sigma^2$ is one $m$-cycle. (E.g. $\sigma=$(1 2 3 4 5) gives $\sigma^2=$(1 3 5 2 4).)  ∎</p></div>
+<div class="item sol" id="s-ch5-25"><div class="toprob"><a href="#p-ch5-25">&uarr; Problem</a></div><p><b>25.</b> Every $\alpha\in A_n$ is a product of an even number of transpositions; pair them up. Each pair of transpositions is a product of 3-cycles: if they share a point, $(a\,b)(a\,c)=(a\,c\,b)$; if disjoint, $(a\,b)(c\,d)=(a\,c\,b)(a\,c\,d)$. Multiplying these together writes $\alpha$ as a product of 3-cycles (with $n\geq 3$ there are enough symbols).  ∎</p></div>
+<div class="item sol" id="s-ch5-29"><div class="toprob"><a href="#p-ch5-29">&uarr; Problem</a></div><p><b>29.</b> Write $D_n=\langle r,s\mid r^n=s^2=1,\ srs=r^{-1}\rangle$. A rotation $r^k$ is central iff $s r^k=r^k s$, i.e. $r^{-k}=r^k$, i.e. $n\mid 2k$. A reflection $r^k s$ commuting with $r$ forces $r^2=1$, impossible for $n\geq 3$. So: $Z(D_4)=\{1,\,r^2\}$ (order 2, since $4\mid 2k$ at $k=0,2$);  $Z(D_5)=\{1\}$ (trivial, $5$ odd);  and in general $Z(D_n)=\{1\}$ if $n$ is odd, $\{1,\,r^{n/2}\}$ if $n$ is even.  ∎</p></div>
+<div class="item sol" id="s-ch5-34"><div class="toprob"><a href="#p-ch5-34">&uarr; Problem</a></div><p><b>34.</b> If $\alpha=\tau_1\tau_2\cdots\tau_m$ is a product of $m$ transpositions, then $\alpha^{-1}=\tau_m\cdots\tau_2\tau_1$ (each $\tau_i^{-1}=\tau_i$), again a product of $m$ transpositions. So $\alpha^{-1}$ has the same parity as $\alpha$: even $\Rightarrow$ even, and yes, odd $\Rightarrow$ odd (equivalently $\mathrm{sgn}(\alpha^{-1})=\mathrm{sgn}(\alpha)$).  ∎</p></div>
+<h4 class="sub">Required additional problem</h4>
+<div class="item sol" id="s-add"><div class="toprob"><a href="#p-add">&uarr; Problem</a></div><p>The order of a permutation is the $\mathrm{lcm}$ of its disjoint-cycle lengths, so an element of order 6 needs cycle lengths whose lcm is 6 - either a 6-cycle, or disjoint 2- and 3-cycles (needing $2+3=5$ symbols).</p>
+<p>$\bullet$ $S_4$: only 4 symbols, so no 6-cycle and no disjoint 2+3-cycle; the possible orders are $1,2,3,4$. So $S_4$ has NO element of order 6.</p>
+<p>$\bullet$ $S_5$: YES. For example (1 2)(3 4 5) has order $\mathrm{lcm}(2,3)=6$.  ∎</p></div>
+<h4 class="sub">Optional challenge</h4>
+<div class="item sol" id="s-chal-4-46"><div class="toprob"><a href="#p-chal-4-46">&uarr; Problem</a></div><p><b>4.46.</b> Let $z=\cos\theta+i\sin\theta\in\mathbb{T}$ with $\theta\in\mathbb{Q}$ (radians), say $\theta=p/q$ in lowest terms, $q&gt;0$. Then $z^k=\cos(k\theta)+i\sin(k\theta)$, and $z^k=1$ iff $k\theta\in 2\pi\mathbb{Z}$, i.e. $kp/q=2\pi m$ for some integer $m$. Since $\pi$ is irrational, $kp/q=2\pi m$ with $k,m$ integers forces $k=m=0$. Hence $z^k\neq 1$ for all $k\geq 1$: the order is infinite. (If instead $\theta$ is a rational number of DEGREES, $z$ has finite order; the point is that $\theta/\pi$ irrational $\Rightarrow$ infinite.)  ∎</p></div>
+<div class="item sol" id="s-chal-5-33"><div class="toprob"><a href="#p-chal-5-33">&uarr; Problem</a></div><p><b>5.33.</b> Suppose $\alpha\neq\mathrm{id}$, so $\alpha(i)=j$ with $j\neq i$ for some $i$. As $n\geq 3$, pick $k\notin\{i,j\}$ and let $\beta=(j\,k)$. Then (right to left) $\beta\alpha(i)=\beta(j)=k$, while $\alpha\beta(i)=\alpha(i)=j$ (as $\beta$ fixes $i$). Since $k\neq j$, $\alpha\beta\neq\beta\alpha$, contradiction. So $\alpha=\mathrm{id}$, and the center of $S_n$ is trivial.  ∎</p></div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

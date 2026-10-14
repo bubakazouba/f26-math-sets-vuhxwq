@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 5690 Ch 5</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 5690 (Topology)  ·  Chapter 5 Homework</h1>
+<div class="hdr"><p class="small">Problems first; ALL solutions together at the end. The comps problem is quoted verbatim from the CSULA topology comprehensive exam (solution by Claude - comps have no key). The assigned main-textbook problems are inlined verbatim (cropped from Morris, Topology Without Tears); official solutions are appended. (NB: the Section 5.1-5.2 official solutions file was missing from the course page; the Hatcher #13 student</p>
+<p class="small">solution is appended.)</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<h3 class="grp">Assigned problems (Chapter 5)</h3>
+<p>$\bullet$ Spring 2010 topology comps, Problem 3.</p>
+<p>$\bullet$ Main textbook: Section 5.1 #1-3, 5-9, 11, 13;  Section 5.2 #1, 7.  [Official solutions file missing.]</p>
+<p>$\bullet$ Hatcher (p. 17) #13, 15.  (A student's solution to #13 is appended.)</p>
+<h4 class="sub">Comprehensive-exam problem  (Spring 2010, #3)  - verbatim</h4>
+<div class="item prob" id="c5-p-comps"><p>Let $X$ be a topological space, and let $Y$ be a Hausdorff space. Let $f,g$ be two continuous functions from $X$ to $Y$. Let $A=\{x\in X\mid f(x)=g(x)\}$. Show that $A$ is closed in $X$.</p><div class="tosol"><a href="#c5-s-comps">Solution &darr;</a></div></div>
+<h4 class="sub">Hatcher (p. 17) #13, 15 - verbatim</h4>
+<div class="item prob" id="c5-p-hatcher13"><p><b>#13.</b> Show the two maps $\mathbb{R}^2\to\mathbb{R}$ sending $(x,y)$ to $x+y$ and $xy$ are continuous, using only definitions and results from this class, not results from calculus for example.</p><div class="tosol"><a href="#c5-off-ch5-prob13-p1">Official solution &darr;</a> &middot; <a href="#c5-s-hatcher13">Solution (Claude) &darr;</a></div></div>
+<div class="item prob" id="c5-p-hatcher15"><p><b>#15.</b> Let $\mathbb{R}_h$ denote $\mathbb{R}$ with the `half-open interval topology' having as basis the intervals $[a,b)$. (a) For a subset $A\subseteq\mathbb{R}_h$ show that a point $x$ lies in the closure of $A$ if and only if there is a sequence $\{x_n\}$ in $A$ such that $x_n\geq x$ and $|x_n-x|\to 0$. (b) Show that a function $f:\mathbb{R}_h\to\mathbb{R}$ (with the usual topology on $\mathbb{R}$) is continuous if and only if it is continuous from the right at each point $x$, that is, $\lim f(x+\epsilon)=f(x)$ where the limit is as $\epsilon\to 0$ with $\epsilon&gt;0$.</p><div class="tosol"><a href="#c5-s-hatcher15">Solution &darr;</a></div></div>
+<h3 class="grp">MAIN-TEXTBOOK PROBLEMS  (Morris, Topology Without Tears - assigned exercises, verbatim)</h3>
+
+<h4 class="sub">Exercises 5.1</h4>
+<div class="item prob" id="c5-p-s5-1-1"><p><b>$\bullet$  #1.</b> </p>
+<p>(i) Let $f : (X, \tau) \to (Y, \tau_1)$ be a constant function. Show that $f$ is continuous.</p>
+<p>(ii) Let $f : (X, \tau) \to (X, \tau)$ be the identity function. Show that $f$ is continuous.</p><div class="tosol"><a href="#c5-s-s5-1-1">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-1-2"><p><b>$\bullet$  #2.</b> Let $f : \mathbb{R} \to \mathbb{R}$ be given by $f(x) = -1$ if $x \leq 0$, and $f(x) = 1$ if $x &gt; 0.$</p>
+<p>(i) Prove that $f$ is not continuous using the method of Example 5.1.6.</p>
+<p>(ii) Find $f^{-1}\{1\}$ and, using Proposition 5.1.9, deduce that $f$ is not continuous.</p><div class="tosol"><a href="#c5-s-s5-1-2">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-1-3"><p><b>$\bullet$  #3.</b> Let $f : \mathbb{R} \to \mathbb{R}$ be given by $f(x) = x$ if $x \leq 1$, and $f(x) = x + 2$ if $x &gt; 1.$ Is $f$ continuous? (Justify your answer.)</p><div class="tosol"><a href="#c5-s-s5-1-3">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-1-5"><p><b>$\bullet$  #5.</b> Let $(X, \tau)$ and $(Y, \tau_1)$ be topological spaces and $\mathcal{B}_1$ a basis for the topology $\tau_1$. Show that a map $f : (X, \tau) \to (Y, \tau_1)$ is continuous if and only if $f^{-1}(U) \in \tau$, for every $U \in \mathcal{B}_1$.</p><div class="tosol"><a href="#c5-s-s5-1-5">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-1-6"><p><b>$\bullet$  #6.</b> Let $(X, \tau)$ and $(Y, \tau_1)$ be topological spaces and $f$ a mapping of $X$ into $Y$. If $(X, \tau)$ is a discrete space, prove that $f$ is continuous.</p><div class="tosol"><a href="#c5-s-s5-1-6">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-1-7"><p><b>$\bullet$  #7.</b> Let $(X, \tau)$ and $(Y, \tau_1)$ be topological spaces and $f$ a mapping of $X$ into $Y$. If $(Y, \tau_1)$ is an indiscrete space, prove that $f$ is continuous.</p><div class="tosol"><a href="#c5-s-s5-1-7">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-1-8"><p><b>$\bullet$  #8.</b> Let $(X, \tau)$ and $(Y, \tau_1)$ be topological spaces and $f : (X, \tau) \to (Y, \tau_1)$ a continuous mapping. Let $A$ be a subset of $X$, $\tau_2$ the induced topology on $A$, $B = f(A)$, $\tau_3$ the induced topology on $B$ and $g : (A, \tau_2) \to (B, \tau_3)$ the restriction of $f$ to $A$. Prove that $g$ is continuous.</p><div class="tosol"><a href="#c5-s-s5-1-8">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-1-9"><p><b>$\bullet$  #9.</b> Let $f$ be a mapping of a space $(X, \tau)$ into a space $(Y, \tau')$. Prove that $f$ is continuous if and only if for each $x \in X$ and each neighbourhood $N$ of $f(x)$ there exists a neighbourhood $M$ of $x$ such that $f(M) \subseteq N$.</p><div class="tosol"><a href="#c5-s-s5-1-9">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-1-11"><p><b>$\bullet$  #11.</b> Let $f : \mathbb{R} \to \mathbb{R}$ be a continuous function such that $f(q) = 0$ for every rational number $q$. Prove that $f(x) = 0$ for every $x \in \mathbb{R}$.</p><div class="tosol"><a href="#c5-s-s5-1-11">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-1-13"><p><b>$\bullet$  #13.</b> Let $(X, \tau)$ and $(Y, \tau_1)$ be topological spaces and let $f$ be a mapping of $(X, \tau)$ into $(Y, \tau_1)$. Prove that $f$ is continuous if and only if for every subset $A$ of $X$, $f(\overline{A}) \subseteq \overline{f(A)}$.</p>
+<p>[Hint: Use Proposition 5.1.9.]</p><div class="tosol"><a href="#c5-s-s5-1-13">Solution &darr;</a></div></div>
+<h4 class="sub">Exercises 5.2</h4>
+<div class="item prob" id="c5-p-s5-2-1"><p><b>$\bullet$  #1.</b> Prove that a continuous image of a path-connected space is path-connected.</p><div class="tosol"><a href="#c5-s-s5-2-1">Solution &darr;</a></div></div>
+<div class="item prob" id="c5-p-s5-2-7"><p><b>$\bullet$  #7.</b> Let $E$ be the set of all points in $\mathbb{R}^2$ having both coordinates rational. Prove that the space $\mathbb{R}^2 \setminus E$ is path-connected.</p><div class="tosol"><a href="#c5-s-s5-2-7">Solution &darr;</a></div></div>
+<div class="frag">
+<h3>Chapter 5: additional problems Krebs added on 10/4 (verbatim from his homework doc)</h3>
+<div class="p anch" id="c5-p-add1"><b>(1)</b> Let $X$ and $Y$ be topological spaces. Let $T_X$ be the topology on $X$, and let $T_Y$ be the topology on $Y$. Define a function $\varphi : T_Y \to T_X$ by $\varphi(U) = f^{-1}(U)$. Answer the following questions. (a) Prove that $\varphi$ is well-defined if and only if $f$ is continuous. (b) Prove that if $f$ is continuous and surjective, then $\varphi$ is injective. (c) Prove that if the cardinality of $T_Y$ is strictly greater than the cardinality of $T_X$, then there does not exist a continuous surjective function from $X$ to $Y$. (NOTE: This problem is based on a question a student asked in class. I’m pretty sure it’s correct. But if you find an issue with it, please let me know.)<div class="tosol"><a href="#c5-s-add1">Solution &darr;</a></div></div>
+<div class="p anch" id="c5-p-add2"><b>(2)</b> Prove that $\mathbb{R}^2$ in the Zariski topology is path-connected.<div class="tosol"><a href="#c5-s-add2">Solution &darr;</a></div></div>
+<div class="p anch" id="c5-p-add3"><b>(3)</b> True or false: The image of an irreducible topological space under a continuous function is irreducible. Prove that your answer is correct.<div class="tosol"><a href="#c5-s-add3">Solution &darr;</a></div></div>
+<div class="p anch" id="c5-p-add4"><b>(4)</b> True or false: The image of an irreducible topological space under a continuous function is connected. Prove that your answer is correct.<div class="tosol"><a href="#c5-s-add4">Solution &darr;</a></div></div>
+<div class="p anch" id="c5-p-add5"><b>(5)</b> True or false: The image of an connected topological space under a continuous function is irreducible. Prove that your answer is correct.<div class="tosol"><a href="#c5-s-add5">Solution &darr;</a></div></div>
+<div class="p anch" id="c5-p-add6"><b>(6)</b> Open-ended question: Given two topological spaces $X$ and $Y$, and a continuous function $f : X \to Y$, say something about the Krull dimension of $X$ in relation to the the Krull dimension of $Y$, and prove that your answer is correct. You may need to impose some conditions on $f$. I don’t have a specific answer I’m fishing for here.<div class="tosol"><a href="#c5-s-add6">Solution &darr;</a></div></div>
+<div class="p anch" id="c5-p-add7"><b>(7)</b> Let $X$ be $\mathbb{R}^2$ in the Zariski topology. Let $f(x,y)$ and $g(x,y)$ be polynomials with real coefficients. Define $\varphi : X \to X$ by $\varphi(x,y) = (f(x,y), g(x,y))$. Prove that $\varphi$ is continuous.<div class="tosol"><a href="#c5-s-add7">Solution &darr;</a></div></div>
+<div class="p anch" id="c5-p-add8"><b>(8)</b> In the previous question, what about the converse? In other words, suppose $\varphi$ is continuous. Does it follow that $\varphi(x,y) = (f(x,y), g(x,y))$ for some polynomials $f$ and $g$? Prove that your answer is correct. (I don’t know the answer to this one.)<div class="tosol"><a href="#c5-s-add8">Solution &darr;</a></div></div>
+<h3>Chapter 5: additional problems (9)-(12), added by Krebs after 10/5 (verbatim from his homework doc, 10/12 export)</h3>
+<div class="p anch" id="c5-p-add9"><b>(9)</b> A small taste of topological data analysis: For all $(a,b)$ in $\mathbb{R}^2$ and $r &gt; 0$, define $C((a,b),r)$ to be the closed disk of radius $r$ centered at $(a,b)$.  That is,<div class="tosol"><a href="#c5-s-add9">Solution &darr;</a></div></div>
+<div class="p">$$C((a,b),r) = \{(x,y) \in \mathbb{R}^2 \mid (x-a)^2 + (y-b)^2 &lt; r^2\}.$$</div>
+<div class="p">Let $S_r$ = the union of $C((0,0),r)$ and $C((1,0),r)$ and $C((0,1),r)$.  Regard $S_r$ as having the subspace topology, as a subset of $\mathbb{R}^2$ in the Euclidean topology.<br>
+Find the smallest value of $r$ such that $S_r$ is connected.</div>
+<div class="p anch" id="c5-p-add10"><b>(10)</b> Here's a question I don't know the answer to, but which has tormented me for some time.  Let $\mathbb{Z}$ be the set of integers.  Let $\mathbb{Z}[x]$ be the set of polynomial functions with coefficients in $\mathbb{Z}$, that is, the set of functions $f : \mathbb{Z} \to \mathbb{Z}$ such that there exist integers $a_0, \ldots, a_n$ and some non-negative integer where<div class="tosol"><a href="#c5-s-add10">Solution &darr;</a></div></div>
+<div class="p">$$f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n \quad \text{for all } x \text{ in } \mathbb{Z}.$$</div>
+<div class="p">(There is a subtle distinction between polynomials and polynomial functions, but we don't have to worry about that for this problem.)<br>
+Does there exist a topology on $\mathbb{Z}$ with respect to which the set of continuous functions from $\mathbb{Z}$ to $\mathbb{Z}$ is precisely $\mathbb{Z}[x]$?</div>
+<div class="p anch" id="c5-p-add11"><b>(11)</b> Let $\mathbb{Q}$ be the set of rational numbers.  Regard $\mathbb{Q}$ as having the subspace topology, as a subset of $\mathbb{R}$ in the Euclidean topology.  Define $H : \mathbb{Q} \to \mathbb{Q}$ by $H(x) = 0$ if $x^2 &lt; 2$, and $H(x) = 1$ if $x^2 &gt; 2$.<div class="tosol"><a href="#c5-s-add11">Solution &darr;</a></div></div>
+<div class="p">(a) Is $H$ a continuous function?  Prove that your answer is correct.</div>
+<div class="p">(b) Does $H$ extend to a continuous function from $\mathbb{R}$ to $\mathbb{R}$?  In other words, does there exist a continuous function $J$ from $\mathbb{R}$ to $\mathbb{R}$ such that $J(x)=H(x)$ for all $x$ in $\mathbb{Q}$?  Prove that your answer is correct.</div>
+<div class="p anch" id="c5-p-add12"><b>(12)</b> First, a definition.  Let $\mathbb{Q}$ be the set of rational numbers.  Let $f : \mathbb{Q} \to \mathbb{Q}$ be a function.  We say that $f$ "extends continuously to $\mathbb{R}$" if there exists a continuous function $g : \mathbb{R} \to \mathbb{R}$  such that $g(x)=f(x)$ for all $x$ in $\mathbb{Q}$.<br>
+Note: For this problem, we regard $\mathbb{R}$ as having the Euclidean topology, as usual.  But we do NOT regard $\mathbb{Q}$ as having the subspace topology.  Instead...<div class="tosol"><a href="#c5-s-add12">Solution &darr;</a></div></div>
+<div class="p">Let $S$ be the set of all functions $f : \mathbb{Q} \to \mathbb{Q}$ such that $f$ extends continuously to $\mathbb{R}$.  The goal of this problem is to show that there does not exist a topology on $\mathbb{Q}$ with respect to which the set of continuous functions from $\mathbb{Q}$ to $\mathbb{Q}$ is precisely equal to $S$.</div>
+<div class="p">We'll do a proof by contradiction.  Start by assuming that such a topology $T$ exists.</div>
+<div class="p">(a) Prove that $T$ must be $T_0$.</div>
+<div class="p">(b) Use your answer from (a) to prove that $T$ must be $T_1$.</div>
+<div class="p">(c) Use your answer from (b) to prove that $T$ contains every open ray $(-\infty,x)$ and $(x,\infty)$.</div>
+<div class="p">(d) Use your answer from (c) to derive a contradiction by constructing a function from $\mathbb{Q}$ to $\mathbb{Q}$ which on the one hand must be continuous (remember to use $T$ as the topology on $\mathbb{Q}$), but on the other hand does not extend continuously to $\mathbb{R}$.  Hint: Define a piecewise function.  Use $x^2$ for the piece between $0$ and the square root of $2$.</div>
+<div class="p">If you have your own approach that doesn't follow the (a)/(b)/(c)/(d) path above, then that's good, too!</div>
+</div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<p class="small">My worked solutions to the comprehensive-exam problem (and any class problem with no official key) follow; the instructor's official solutions to the main-textbook / worksheet problems are appended after.</p>
+<h4 class="sub">Comps Spring 2010 #3  - solution</h4>
+<div class="item sol" id="c5-s-comps"><div class="toprob"><a href="#c5-p-comps">&uarr; Problem</a></div><p>We show the complement $X\setminus A$ is open. Let $x\in X\setminus A$, so $f(x)\neq g(x)$ in $Y$. Since $Y$ is Hausdorff, choose disjoint open sets $U\ni f(x)$ and $V\ni g(x)$ in $Y$. By continuity, $f^{-1}(U)$ and $g^{-1}(V)$ are open in $X$, and $W:=f^{-1}(U)\cap g^{-1}(V)$ is an open neighborhood of $x$. For any $z\in W$ we have $f(z)\in U$ and $g(z)\in V$; as $U\cap V=\emptyset$, $f(z)\neq g(z)$, so $z\notin A$. Thus $W\subseteq X\setminus A$, and $X\setminus A$ is open. Hence $A$ is closed. (Equivalently: the map $h:X\to Y\times Y$, $h(x)=(f(x),g(x))$, is continuous, and $A=h^{-1}(\Delta)$ where the diagonal $\Delta=\{(y,y)\}$ is closed in $Y\times Y$ precisely because $Y$ is Hausdorff.)  ∎</p></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch5_prob13.pdf, 2 pages (shown as page images)</div>
+<div class="off" id="c5-off-ch5-prob13-p1"><div class="toprob"><a href="#c5-p-hatcher13">&uarr; Problem</a></div><div class="offcap">ch5_prob13.pdf, page 1</div><img src="img/5690-ch5_prob13-p1.png" width="1241" height="1755" loading="lazy" alt="ch5_prob13.pdf page 1"></div>
+<div class="off" id="c5-off-ch5-prob13-p2"><div class="offcap">ch5_prob13.pdf, page 2</div><img src="img/5690-ch5_prob13-p2.png" width="1241" height="1755" loading="lazy" alt="ch5_prob13.pdf page 2"></div>
+<div class="frag">
+<h3>Chapter 5: backup solutions (Claude, not official)</h3>
+
+<p><i>The official solutions file for Sections 5.1 and 5.2 is missing (Krebs), so every assigned main-text problem is solved here. The student solution for Hatcher p.17 #13 covers only x + y, so only the xy part is solved here. Hatcher p.17 #15 has no official solution.</i></p>
+
+<p><i>Facts from Morris used below: Definition 5.1.3 (f is continuous iff f<sup>−1</sup>(U) ∈ τ for every U ∈ τ<sub>1</sub>); Proposition 5.1.9 (f is continuous iff the inverse image of every closed set is closed); Definition 3.2.1 (N is a neighbourhood of p iff there is an open U with p ∈ U ⊆ N); Corollary 3.2.8 (U is open iff it contains a neighbourhood of each of its points); Remark 3.1.10 (<span class="ov">A</span> is the smallest closed set containing A); a basis ℬ for τ is a subfamily of τ such that every open set is a union of members of ℬ.</i></p>
+
+<div class="lbl anch" id="c5-s-s5-1-1">Section 5.1 #1</div><div class="toprob"><a href="#c5-p-s5-1-1">&uarr; Problem</a></div>
+<div class="stmt">(i) Let f : (X, τ) → (Y, τ<sub>1</sub>) be a constant function. Show that f is continuous.<br>
+(ii) Let f : (X, τ) → (X, τ) be the identity function. Show that f is continuous.</div>
+<p><b>(i)</b> Say f(x) = c for all x ∈ X. Let U ∈ τ<sub>1</sub>. If c ∈ U then every x satisfies f(x) ∈ U, so f<sup>−1</sup>(U) = X ∈ τ. If c ∉ U then no x satisfies f(x) ∈ U, so f<sup>−1</sup>(U) = Ø ∈ τ. Either way f<sup>−1</sup>(U) ∈ τ, so f is continuous. ∎</p>
+<p><b>(ii)</b> For U ∈ τ, f<sup>−1</sup>(U) = {x ∈ X : x ∈ U} = U ∈ τ. So f is continuous. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-1-2">Section 5.1 #2</div><div class="toprob"><a href="#c5-p-s5-1-2">&uarr; Problem</a></div>
+<div class="stmt">Let f : ℝ → ℝ be given by<br>
+&nbsp;&nbsp;&nbsp;f(x) = { −1, x ⩽ 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1, x &gt; 0.<br>
+(i) Prove that f is not continuous using the method of Example 5.1.6.<br>
+(ii) Find f<sup>−1</sup>{1} and, using Proposition 5.1.9, deduce that f is not continuous.</div>
+<p><b>(i)</b> (The method of Example 5.1.6: exhibit one open set whose inverse image is not open.) Take U = (−2, 0), an open set in ℝ. Since f only takes the values −1 and 1, and −1 ∈ U while 1 ∉ U, we get f<sup>−1</sup>(U) = {x : f(x) = −1} = (−∞, 0]. This set is not open: 0 ∈ (−∞, 0], but for every δ &gt; 0 the interval (−δ, δ) contains δ/2 ∉ (−∞, 0], so no open interval around 0 lies inside (−∞, 0] (and every open set of ℝ containing 0 contains such an interval). Hence f is not continuous. ∎</p>
+<p><b>(ii)</b> f<sup>−1</sup>{1} = {x : x &gt; 0} = (0, ∞). The set {1} is closed in ℝ, since ℝ ∖ {1} = (−∞, 1) ∪ (1, ∞) is open. But (0, ∞) is not closed: its complement (−∞, 0] is not open, as shown in (i). So the inverse image of the closed set {1} is not closed, and by Proposition 5.1.9 f is not continuous. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-1-3">Section 5.1 #3</div><div class="toprob"><a href="#c5-p-s5-1-3">&uarr; Problem</a></div>
+<div class="stmt">Let f : ℝ → ℝ be given by<br>
+&nbsp;&nbsp;&nbsp;f(x) = { x, x ⩽ 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x + 2, x &gt; 1.<br>
+Is f continuous? (Justify your answer.)</div>
+<p><b>No.</b> Take the open set U = (0, 2). If x ⩽ 1, then f(x) = x ∈ (0, 2) iff 0 &lt; x &lt; 2, i.e. (with x ⩽ 1) iff x ∈ (0, 1]. If x &gt; 1, then f(x) = x + 2 &gt; 3, so f(x) ∉ U. Hence f<sup>−1</sup>(U) = (0, 1].</p>
+<p>(0, 1] is not open in ℝ: 1 ∈ (0, 1], but every interval (1 − δ, 1 + δ) with δ &gt; 0 contains 1 + δ/2 ∉ (0, 1]. So the inverse image of an open set is not open, and f is not continuous. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-1-5">Section 5.1 #5</div><div class="toprob"><a href="#c5-p-s5-1-5">&uarr; Problem</a></div>
+<div class="stmt">Let (X, τ) and (Y, τ<sub>1</sub>) be topological spaces and ℬ<sub>1</sub> a basis for the topology τ<sub>1</sub>. Show that a map f : (X, τ) → (Y, τ<sub>1</sub>) is continuous if and only if f<sup>−1</sup>(U) ∈ τ, for every U ∈ ℬ<sub>1</sub>.</div>
+<p><b>(⇒)</b> A basis is a subfamily of the topology, so each U ∈ ℬ<sub>1</sub> is in τ<sub>1</sub>; if f is continuous then f<sup>−1</sup>(U) ∈ τ.</p>
+<p><b>(⇐)</b> Suppose f<sup>−1</sup>(U) ∈ τ for every U ∈ ℬ<sub>1</sub>. Let V ∈ τ<sub>1</sub>. Since ℬ<sub>1</sub> is a basis, V = ⋃<sub>j∈J</sub> U<sub>j</sub> for some family {U<sub>j</sub> : j ∈ J} ⊆ ℬ<sub>1</sub> (possibly empty, when V = Ø). Inverse images commute with unions:</p>
+<p style="margin-left:2em">f<sup>−1</sup>(V) = {x : f(x) ∈ ⋃<sub>j</sub> U<sub>j</sub>} = ⋃<sub>j∈J</sub> f<sup>−1</sup>(U<sub>j</sub>).</p>
+<p>Each f<sup>−1</sup>(U<sub>j</sub>) ∈ τ, and a union of members of τ is in τ (the empty union is Ø ∈ τ). So f<sup>−1</sup>(V) ∈ τ for all V ∈ τ<sub>1</sub>, and f is continuous. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-1-6">Section 5.1 #6</div><div class="toprob"><a href="#c5-p-s5-1-6">&uarr; Problem</a></div>
+<div class="stmt">Let (X, τ) and (Y, τ<sub>1</sub>) be topological spaces and f a mapping of X into Y. If (X, τ) is a discrete space, prove that f is continuous.</div>
+<p>In the discrete topology every subset of X is open. So for every U ∈ τ<sub>1</sub>, the subset f<sup>−1</sup>(U) of X lies in τ. Hence f is continuous. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-1-7">Section 5.1 #7</div><div class="toprob"><a href="#c5-p-s5-1-7">&uarr; Problem</a></div>
+<div class="stmt">Let (X, τ) and (Y, τ<sub>1</sub>) be topological spaces and f a mapping of X into Y. If (Y, τ<sub>1</sub>) is an indiscrete space, prove that f is continuous.</div>
+<p>The indiscrete topology is τ<sub>1</sub> = {Ø, Y}. Now f<sup>−1</sup>(Ø) = Ø ∈ τ and f<sup>−1</sup>(Y) = X ∈ τ (every f(x) lies in Y). So the inverse image of every open set is open, and f is continuous. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-1-8">Section 5.1 #8</div><div class="toprob"><a href="#c5-p-s5-1-8">&uarr; Problem</a></div>
+<div class="stmt">Let (X, τ) and (Y, τ<sub>1</sub>) be topological spaces and f : (X, τ) → (Y, τ<sub>1</sub>) a continuous mapping. Let A be a subset of X, τ<sub>2</sub> the induced topology on A, B = f(A), τ<sub>3</sub> the induced topology on B and g : (A, τ<sub>2</sub>) → (B, τ<sub>3</sub>) the restriction of f to A. Prove that g is continuous.</div>
+<p>(g is well defined as a map into B because g(a) = f(a) ∈ f(A) = B for a ∈ A.) Let V ∈ τ<sub>3</sub>. By the definition of the induced topology, V = W ∩ B for some W ∈ τ<sub>1</sub>. Then</p>
+<p style="margin-left:2em">g<sup>−1</sup>(V) = {a ∈ A : f(a) ∈ W ∩ B} = {a ∈ A : f(a) ∈ W} = A ∩ f<sup>−1</sup>(W),</p>
+<p>where the middle equality holds because f(a) ∈ B automatically for a ∈ A. Since f is continuous, f<sup>−1</sup>(W) ∈ τ, so A ∩ f<sup>−1</sup>(W) ∈ τ<sub>2</sub> by the definition of the induced topology on A. Hence g<sup>−1</sup>(V) ∈ τ<sub>2</sub> for every V ∈ τ<sub>3</sub>, and g is continuous. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-1-9">Section 5.1 #9</div><div class="toprob"><a href="#c5-p-s5-1-9">&uarr; Problem</a></div>
+<div class="stmt">Let f be a mapping of a space (X, τ) into a space (Y, τ′). Prove that f is continuous if and only if for each x ∈ X and each neighbourhood N of f(x) there exists a neighbourhood M of x such that f(M) ⊆ N.</div>
+<p><b>(⇒)</b> Let f be continuous, x ∈ X, and N a neighbourhood of f(x). By Definition 3.2.1 there is U ∈ τ′ with f(x) ∈ U ⊆ N. Put M = f<sup>−1</sup>(U). Then M ∈ τ (continuity) and x ∈ M, so M is a neighbourhood of x (take the open set M itself in Definition 3.2.1). Also f(M) = f(f<sup>−1</sup>(U)) ⊆ U ⊆ N.</p>
+<p><b>(⇐)</b> Assume the neighbourhood condition. Let U ∈ τ′; we show f<sup>−1</sup>(U) ∈ τ. If f<sup>−1</sup>(U) = Ø it is open. Otherwise let x ∈ f<sup>−1</sup>(U). Then f(x) ∈ U and U is open, so U is a neighbourhood of f(x). By hypothesis there is a neighbourhood M of x with f(M) ⊆ U, i.e. M ⊆ f<sup>−1</sup>(U). Thus f<sup>−1</sup>(U) contains a neighbourhood of each of its points, so by Corollary 3.2.8 f<sup>−1</sup>(U) ∈ τ. Hence f is continuous. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-1-11">Section 5.1 #11</div><div class="toprob"><a href="#c5-p-s5-1-11">&uarr; Problem</a></div>
+<div class="stmt">Let f : ℝ → ℝ be a continuous function such that f(q) = 0 for every rational number q. Prove that f(x) = 0 for every x ∈ ℝ.</div>
+<p>Let Z = f<sup>−1</sup>({0}). The set {0} is closed in ℝ (its complement (−∞, 0) ∪ (0, ∞) is open), so by Proposition 5.1.9 Z is closed in ℝ. By hypothesis ℚ ⊆ Z. Since <span class="ov">ℚ</span> is the smallest closed set containing ℚ (Remark 3.1.10), <span class="ov">ℚ</span> ⊆ Z. But ℚ is dense in ℝ, i.e. <span class="ov">ℚ</span> = ℝ (Morris, Example 3.1.12 and Definition 3.1.13). Hence Z = ℝ, i.e. f(x) = 0 for all x ∈ ℝ. ∎</p>
+<p><i>Direct version.</i> Suppose f(x<sub>0</sub>) ≠ 0 for some x<sub>0</sub>. The set V = ℝ ∖ {0} is open and contains f(x<sub>0</sub>), so f<sup>−1</sup>(V) is open and contains x<sub>0</sub>; hence it contains an interval (x<sub>0</sub> − δ, x<sub>0</sub> + δ), δ &gt; 0. That interval contains a rational q, and then f(q) ∈ V, i.e. f(q) ≠ 0, a contradiction.</p>
+
+<div class="lbl anch" id="c5-s-s5-1-13">Section 5.1 #13</div><div class="toprob"><a href="#c5-p-s5-1-13">&uarr; Problem</a></div>
+<div class="stmt">Let (X, τ) and (Y, τ<sub>1</sub>) be topological spaces and let f be a mapping of (X, τ) into (Y, τ<sub>1</sub>). Prove that f is continuous if and only if for every subset A of X,<br>
+&nbsp;&nbsp;&nbsp;f(<span class="ov">A</span>) ⊆ <span class="ov">f(A)</span>.<br>
+[Hint: Use Proposition 5.1.9.]</div>
+<p><b>(⇒)</b> Let f be continuous and A ⊆ X. The set <span class="ov">f(A)</span> is closed in Y, so by Proposition 5.1.9 the set F = f<sup>−1</sup>(<span class="ov">f(A)</span>) is closed in X. Since f(A) ⊆ <span class="ov">f(A)</span>, every a ∈ A satisfies f(a) ∈ <span class="ov">f(A)</span>, so A ⊆ F. As <span class="ov">A</span> is the smallest closed set containing A (Remark 3.1.10), <span class="ov">A</span> ⊆ F. Applying f: f(<span class="ov">A</span>) ⊆ f(F) ⊆ <span class="ov">f(A)</span>.</p>
+<p><b>(⇐)</b> Assume f(<span class="ov">A</span>) ⊆ <span class="ov">f(A)</span> for every A ⊆ X. Let S be a closed subset of Y, and put A = f<sup>−1</sup>(S). Then f(A) ⊆ S, and S is a closed set containing f(A), so <span class="ov">f(A)</span> ⊆ S. Therefore</p>
+<p style="margin-left:2em">f(<span class="ov">A</span>) ⊆ <span class="ov">f(A)</span> ⊆ S, &nbsp;so&nbsp; <span class="ov">A</span> ⊆ f<sup>−1</sup>(S) = A.</p>
+<p>Since always A ⊆ <span class="ov">A</span>, we get A = <span class="ov">A</span>, so A = f<sup>−1</sup>(S) is closed (<span class="ov">A</span> is closed, Remark 3.1.10). The inverse image of every closed set is closed, so f is continuous by Proposition 5.1.9. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-2-1">Section 5.2 #1</div><div class="toprob"><a href="#c5-p-s5-2-1">&uarr; Problem</a></div>
+<div class="stmt">Prove that a continuous image of a path-connected space is path-connected.</div>
+<p>Let (X, τ) be path-connected, f : (X, τ) → (Y, τ<sub>1</sub>) continuous, and give Z = f(X) the induced topology τ<sub>Z</sub>. We show (Z, τ<sub>Z</sub>) is path-connected. (If f is onto, Z = Y and τ<sub>Z</sub> = τ<sub>1</sub>.)</p>
+<p>First, the map h : (X, τ) → (Z, τ<sub>Z</sub>), h(x) = f(x), is continuous: if V ∈ τ<sub>Z</sub> then V = W ∩ Z with W ∈ τ<sub>1</sub>, and h<sup>−1</sup>(V) = {x : f(x) ∈ W} = f<sup>−1</sup>(W) ∈ τ (since f(x) ∈ Z always).</p>
+<p>Now let a′, b′ ∈ Z (distinct). Choose a, b ∈ X with f(a) = a′, f(b) = b′; then a ≠ b. As X is path-connected there is a continuous p : [0, 1] → (X, τ) with p(0) = a, p(1) = b. By Proposition 5.1.8 the composite h ∘ p : [0, 1] → (Z, τ<sub>Z</sub>) is continuous, and (h ∘ p)(0) = f(a) = a′, (h ∘ p)(1) = f(b) = b′. So h ∘ p is a path in Z joining a′ to b′. Hence Z is path-connected. ∎</p>
+
+<div class="lbl anch" id="c5-s-s5-2-7">Section 5.2 #7</div><div class="toprob"><a href="#c5-p-s5-2-7">&uarr; Problem</a></div>
+<div class="stmt">Let E be the set of all points in ℝ<sup>2</sup> having both coordinates rational. Prove that the space ℝ<sup>2</sup> ∖ E is path-connected.</div>
+<p>Let X = ℝ<sup>2</sup> ∖ E with the induced topology, so ⟨x, y⟩ ∈ X iff at least one of x, y is irrational. We use three simple facts.</p>
+<p><b>Fact 1 (segments are paths).</b> For u = ⟨u<sub>1</sub>, u<sub>2</sub>⟩, v = ⟨v<sub>1</sub>, v<sub>2</sub>⟩ ∈ ℝ<sup>2</sup>, the map σ(t) = ⟨(1 − t)u<sub>1</sub> + tv<sub>1</sub>, (1 − t)u<sub>2</sub> + tv<sub>2</sub>⟩, t ∈ [0, 1], is continuous into ℝ<sup>2</sup>. Indeed the open rectangles (a, b) × (c, d) form a basis of the euclidean topology on ℝ<sup>2</sup>, and σ<sup>−1</sup>((a, b) × (c, d)) = α<sup>−1</sup>((a, b)) ∩ β<sup>−1</sup>((c, d)) where α, β are the coordinate functions t ↦ (1 − t)u<sub>i</sub> + tv<sub>i</sub>; these are continuous maps [0, 1] → ℝ (each is constant or an affine map, and the inverse image of an open interval under an affine map t ↦ mt + k, m ≠ 0, is an open interval, intersected with [0, 1]), so the intersection is open in [0, 1] and σ is continuous by Exercise 5.1 #5. If the whole segment σ([0, 1]) lies in X, then σ is continuous as a map into the subspace X, because for W open in ℝ<sup>2</sup>, σ<sup>−1</sup>(W ∩ X) = σ<sup>−1</sup>(W).</p>
+<p><b>Fact 2 (lines inside X).</b> If c is irrational, the vertical line {c} × ℝ and the horizontal line ℝ × {c} lie in X (every point on them has an irrational coordinate). Any segment between two points of one of these lines lies on that line, hence in X.</p>
+<p><b>Fact 3 (joining paths).</b> If γ<sub>1</sub>, γ<sub>2</sub> : [0, 1] → X are continuous with γ<sub>1</sub>(1) = γ<sub>2</sub>(0), then γ(t) = γ<sub>1</sub>(2t) for t ∈ [0, ½], γ(t) = γ<sub>2</sub>(2t − 1) for t ∈ [½, 1], is well defined (both formulas give γ<sub>1</sub>(1) = γ<sub>2</sub>(0) at t = ½) and continuous: for a closed S ⊆ X, γ<sup>−1</sup>(S) = {t ∈ [0, ½] : γ<sub>1</sub>(2t) ∈ S} ∪ {t ∈ [½, 1] : γ<sub>2</sub>(2t − 1) ∈ S}. The first set is the inverse image of S under the continuous map [0, ½] → X, t ↦ γ<sub>1</sub>(2t), hence closed in [0, ½], hence closed in [0, 1] because [0, ½] is closed in [0, 1]; likewise for the second. A union of two closed sets is closed, so γ is continuous by Proposition 5.1.9. Also the reverse t ↦ γ<sub>1</sub>(1 − t) is a path. Consequently, if every point of X can be joined by a path in X to one fixed point w, then any two points p, q ∈ X are joined (go from p to w, then reverse the path from q to w).</p>
+<p><b>Main argument.</b> Fix the irrational number α = √2 and let w = ⟨α, α⟩ ∈ X. Let p = ⟨p<sub>1</sub>, p<sub>2</sub>⟩ ∈ X.</p>
+<ul>
+<li><b>Case p<sub>1</sub> irrational.</b> The segment from ⟨p<sub>1</sub>, p<sub>2</sub>⟩ to ⟨p<sub>1</sub>, α⟩ lies on {p<sub>1</sub>} × ℝ ⊆ X, and the segment from ⟨p<sub>1</sub>, α⟩ to ⟨α, α⟩ lies on ℝ × {α} ⊆ X.</li>
+<li><b>Case p<sub>2</sub> irrational.</b> The segment from ⟨p<sub>1</sub>, p<sub>2</sub>⟩ to ⟨α, p<sub>2</sub>⟩ lies on ℝ × {p<sub>2</sub>} ⊆ X, and the segment from ⟨α, p<sub>2</sub>⟩ to ⟨α, α⟩ lies on {α} × ℝ ⊆ X.</li>
+</ul>
+<p>Since p ∉ E, one of the cases applies. By Facts 1 to 3, joining the two segments gives a path in X from p to w. Hence any two points of X are joined by a path in X, and ℝ<sup>2</sup> ∖ E is path-connected. ∎</p>
+
+<div class="lbl anch" id="c5-s-hatcher13">Hatcher p.17 #13</div><div class="toprob"><a href="#c5-p-hatcher13">&uarr; Problem</a></div>
+<div class="stmt">13. Show the two maps ℝ<sup>2</sup>→ℝ sending (x, y) to x+y and xy are continuous, using only definitions and results from this class, not results from calculus for example.</div>
+<p><i>The posted student solution proves the x + y part. Here is the xy part.</i></p>
+<p>Let m : ℝ<sup>2</sup> → ℝ, m(x, y) = xy. We use that the open rectangles (a, b) × (c, d) form a basis for the (euclidean = product) topology on ℝ<sup>2</sup>, so a subset of ℝ<sup>2</sup> is open iff it contains an open rectangle around each of its points.</p>
+<p>Let U ⊆ ℝ be open and (x<sub>0</sub>, y<sub>0</sub>) ∈ m<sup>−1</sup>(U). Since U is open and x<sub>0</sub>y<sub>0</sub> ∈ U, there is ε &gt; 0 with (x<sub>0</sub>y<sub>0</sub> − ε, x<sub>0</sub>y<sub>0</sub> + ε) ⊆ U. Put</p>
+<p style="margin-left:2em">δ = min{ 1, ε / (1 + |x<sub>0</sub>| + |y<sub>0</sub>|) } &gt; 0,</p>
+<p>and let R = (x<sub>0</sub> − δ, x<sub>0</sub> + δ) × (y<sub>0</sub> − δ, y<sub>0</sub> + δ), an open rectangle containing (x<sub>0</sub>, y<sub>0</sub>). For (x, y) ∈ R write h = x − x<sub>0</sub>, k = y − y<sub>0</sub>, so |h| &lt; δ and |k| &lt; δ. By pure algebra,</p>
+<p style="margin-left:2em">xy − x<sub>0</sub>y<sub>0</sub> = (x<sub>0</sub> + h)(y<sub>0</sub> + k) − x<sub>0</sub>y<sub>0</sub> = hk + hy<sub>0</sub> + x<sub>0</sub>k,</p>
+<p>so by the triangle inequality for |·|,</p>
+<p style="margin-left:2em">|xy − x<sub>0</sub>y<sub>0</sub>| ⩽ |h||k| + |h||y<sub>0</sub>| + |x<sub>0</sub>||k| &lt; δ·δ + δ|y<sub>0</sub>| + δ|x<sub>0</sub>| ⩽ δ(1 + |x<sub>0</sub>| + |y<sub>0</sub>|) ⩽ ε.</p>
+<p>(The strict inequality uses |h||k| &lt; δ<sup>2</sup>, valid since |h|, |k| &lt; δ; then δ<sup>2</sup> ⩽ δ because δ ⩽ 1.) Thus m(x, y) ∈ (x<sub>0</sub>y<sub>0</sub> − ε, x<sub>0</sub>y<sub>0</sub> + ε) ⊆ U, i.e. R ⊆ m<sup>−1</sup>(U). So m<sup>−1</sup>(U) contains an open rectangle around each of its points, hence is a union of basis elements and is open. Therefore m is continuous. ∎</p>
+
+<div class="lbl anch" id="c5-s-hatcher15">Hatcher p.17 #15</div><div class="toprob"><a href="#c5-p-hatcher15">&uarr; Problem</a></div>
+<div class="stmt">15. Let ℝ<sub>h</sub> denote ℝ with the ‘half-open interval topology’ having as basis the intervals [a, b). (a) For a subset A ⊂ ℝ<sub>h</sub> show that a point x lies in the closure of A if and only if there is a sequence {x<sub>n</sub>} in A such that x<sub>n</sub> ≥ x and |x<sub>n</sub> − x| → 0. (b) Show that a function f : ℝ<sub>h</sub>→ℝ (with the usual topology on ℝ) is continuous if and only if it is continuous from the right at each point x, that is, lim f(x + ε) = f(x) where the limit is as ε→0 with ε &gt; 0.</div>
+<p><b>Preliminary lemma.</b> In any space, x ∈ <span class="ov">A</span> iff every open set containing x meets A. (If x ∉ <span class="ov">A</span>, then U = X ∖ <span class="ov">A</span> is open, contains x, and misses A. Conversely if U is open, x ∈ U and U ∩ A = Ø, then X ∖ U is a closed set containing A, so <span class="ov">A</span> ⊆ X ∖ U and x ∉ <span class="ov">A</span>.) In ℝ<sub>h</sub> this simplifies: every open U ∋ x contains a basis element [a, b) with x ∈ [a, b) ⊆ U, and then [x, b) ⊆ U with b &gt; x; also each [x, x + ε), ε &gt; 0, is itself a basis element, hence open. Therefore</p>
+<p style="margin-left:2em">x ∈ <span class="ov">A</span> in ℝ<sub>h</sub> &nbsp;⇔&nbsp; [x, x + ε) ∩ A ≠ Ø for every ε &gt; 0. &nbsp;&nbsp;(★)</p>
+<p><b>(a) (⇐)</b> Let x<sub>n</sub> ∈ A, x<sub>n</sub> ≥ x, |x<sub>n</sub> − x| → 0. Given ε &gt; 0 choose n with |x<sub>n</sub> − x| &lt; ε; then x ⩽ x<sub>n</sub> &lt; x + ε, so x<sub>n</sub> ∈ [x, x + ε) ∩ A. By (★), x ∈ <span class="ov">A</span>.</p>
+<p><b>(a) (⇒)</b> Let x ∈ <span class="ov">A</span>. For each n ≥ 1, (★) with ε = 1/n gives some x<sub>n</sub> ∈ A with x ⩽ x<sub>n</sub> &lt; x + 1/n. Then x<sub>n</sub> ≥ x and |x<sub>n</sub> − x| &lt; 1/n → 0. ∎</p>
+<p><b>(b)</b> "Continuous from the right at x" means: for every η &gt; 0 there is δ &gt; 0 such that |f(x + ε) − f(x)| &lt; η whenever 0 &lt; ε &lt; δ.</p>
+<p><b>(⇒)</b> Let f : ℝ<sub>h</sub> → ℝ be continuous, x ∈ ℝ, η &gt; 0. The interval V = (f(x) − η, f(x) + η) is open in ℝ, so f<sup>−1</sup>(V) is open in ℝ<sub>h</sub> and contains x. Hence it contains some [a, b) with x ∈ [a, b), and so [x, b) ⊆ f<sup>−1</sup>(V). Put δ = b − x &gt; 0. If 0 &lt; ε &lt; δ then x + ε ∈ [x, b), so f(x + ε) ∈ V, i.e. |f(x + ε) − f(x)| &lt; η. So f is continuous from the right at x.</p>
+<p><b>(⇐)</b> Assume f is continuous from the right at every point. Let V ⊆ ℝ be open and x ∈ f<sup>−1</sup>(V). Since V is open there is η &gt; 0 with (f(x) − η, f(x) + η) ⊆ V. Take δ &gt; 0 from right-continuity at x for this η. Then every point of [x, x + δ) is mapped into V: the point x because f(x) ∈ V, and x + ε (0 &lt; ε &lt; δ) because |f(x + ε) − f(x)| &lt; η. So x ∈ [x, x + δ) ⊆ f<sup>−1</sup>(V). Thus f<sup>−1</sup>(V) is a union of basis elements [x, x + δ<sub>x</sub>), one for each of its points, and so is open in ℝ<sub>h</sub>. Hence f is continuous. ∎</p>
+
+
+<div class="lbl">Additional problems (1)-(8), added by Krebs 10/4 (Claude, not official)</div>
+<div class="lbl anch" id="c5-s-add1">Additional problem (1)</div><div class="toprob"><a href="#c5-p-add1">&uarr; Problem</a></div>
+<div class="stmt">(1) Let $X$ and $Y$ be topological spaces. Let $T_X$ be the topology on $X$, and let $T_Y$ be the topology on $Y$. Define a function $\varphi : T_Y \to T_X$ by $\varphi(U) = f^{-1}(U)$. Answer the following questions. (a) Prove that $\varphi$ is well-defined if and only if $f$ is continuous. (b) Prove that if $f$ is continuous and surjective, then $\varphi$ is injective. (c) Prove that if the cardinality of $T_Y$ is strictly greater than the cardinality of $T_X$, then there does not exist a continuous surjective function from $X$ to $Y$. (NOTE: This problem is based on a question a student asked in class. I’m pretty sure it’s correct. But if you find an issue with it, please let me know.)</div>
+<p>Throughout, f : X &rarr; Y is a function and &phi;(U) = f<sup>&minus;1</sup>(U). (The problem uses f without naming it; it is the function whose continuity is in question.)</p>
+<p><b>(a)</b> "&phi; is well-defined" means &phi; really is a function T<sub>Y</sub> &rarr; T<sub>X</sub>, i.e. &phi;(U) &isin; T<sub>X</sub> for every U &isin; T<sub>Y</sub>. (The value f<sup>&minus;1</sup>(U) is always a uniquely determined subset of X; the only issue is whether it lands in T<sub>X</sub>.) That condition, "f<sup>&minus;1</sup>(U) is open in X for every open U &sube; Y", is exactly the definition of f being continuous. So &phi; is well-defined &hArr; f is continuous. &#8718;</p>
+<p><b>(b)</b> Let f be continuous (so &phi; is defined) and surjective. For any subset U &sube; Y, surjectivity gives f(f<sup>&minus;1</sup>(U)) = U: "&sube;" always holds, and if y &isin; U pick x with f(x) = y; then x &isin; f<sup>&minus;1</sup>(U) and y = f(x). Now if &phi;(U) = &phi;(V) then U = f(f<sup>&minus;1</sup>(U)) = f(f<sup>&minus;1</sup>(V)) = V. So &phi; is injective. &#8718;</p>
+<p><b>(c)</b> Suppose f : X &rarr; Y were continuous and surjective. By (a), &phi; : T<sub>Y</sub> &rarr; T<sub>X</sub> is a function and by (b) it is injective, so |T<sub>Y</sub>| &le; |T<sub>X</sub>|, contradicting |T<sub>Y</sub>| &gt; |T<sub>X</sub>|. Hence no continuous surjection X &rarr; Y exists. &#8718;</p>
+<div class="lbl anch" id="c5-s-add2">Additional problem (2)</div><div class="toprob"><a href="#c5-p-add2">&uarr; Problem</a></div>
+<div class="stmt">(2) Prove that $\mathbb{R}^2$ in the Zariski topology is path-connected.</div>
+<p>Recall the closed sets of the Zariski topology on &#8477;<sup>2</sup> are the sets Z(S) = {p : h(p) = 0 for all h &isin; S}, S a set of polynomials in x, y. A path from p to q is a continuous map &gamma; : [0, 1] &rarr; &#8477;<sup>2</sup><sub>Zar</sub> with &gamma;(0) = p, &gamma;(1) = q, where [0, 1] has its usual (Euclidean subspace) topology.</p>
+<p>Let p, q &isin; &#8477;<sup>2</sup> and define the straight-line map &gamma;(t) = p + t(q &minus; p) = (p<sub>1</sub> + t(q<sub>1</sub> &minus; p<sub>1</sub>), p<sub>2</sub> + t(q<sub>2</sub> &minus; p<sub>2</sub>)). Then &gamma;(0) = p, &gamma;(1) = q. We show &gamma; is continuous by showing the preimage of every closed set is closed.</p>
+<p>For a polynomial h(x, y), the composite h&#8728;&gamma;(t) is a polynomial in the single variable t. A one-variable polynomial is either the zero polynomial (vanishing at every t) or nonzero with finitely many roots. So Z<sub>h</sub> := {t &isin; [0, 1] : h(&gamma;(t)) = 0} is either all of [0, 1] or a finite set.</p>
+<p>Now &gamma;<sup>&minus;1</sup>(Z(S)) = &#8898;<sub>h&isin;S</sub> Z<sub>h</sub>. An intersection of sets each of which is [0, 1] or finite is [0, 1] or finite (if S = &empty; it is [0, 1]). Both [0, 1] and finite subsets of [0, 1] are closed in the Euclidean topology on [0, 1]. Hence &gamma; is continuous, a path from p to q. Since p, q were arbitrary, &#8477;<sup>2</sup> with the Zariski topology is path-connected. &#8718;</p>
+<p>(The same argument shows &#8477;<sup>n</sup> in the Zariski topology is path-connected for every n.)</p>
+<div class="lbl anch" id="c5-s-add3">Additional problem (3)</div><div class="toprob"><a href="#c5-p-add3">&uarr; Problem</a></div>
+<div class="stmt">(3) True or false: The image of an irreducible topological space under a continuous function is irreducible. Prove that your answer is correct.</div>
+<p><b>True</b> (taking "irreducible" to include "nonempty", as usual: a space is irreducible if it is nonempty and is not the union of two proper closed subsets).</p>
+<p>Let f : X &rarr; Y be continuous with X irreducible, and give f(X) the subspace topology. The corestriction g : X &rarr; f(X), g(x) = f(x), is continuous (an open set of f(X) is V &cap; f(X) with V open in Y, and g<sup>&minus;1</sup>(V &cap; f(X)) = f<sup>&minus;1</sup>(V) is open) and surjective.</p>
+<p>f(X) &ne; &empty; because X &ne; &empty;. Suppose f(X) = A &cup; B with A, B closed in f(X) and A &ne; f(X) &ne; B. Then g<sup>&minus;1</sup>(A), g<sup>&minus;1</sup>(B) are closed in X (the complement of g<sup>&minus;1</sup>(A) is g<sup>&minus;1</sup>(f(X) &#8726; A), which is open), and X = g<sup>&minus;1</sup>(A) &cup; g<sup>&minus;1</sup>(B). If g<sup>&minus;1</sup>(A) = X then f(X) = g(X) &sube; A, so A = f(X), a contradiction; so g<sup>&minus;1</sup>(A) &ne; X, and likewise g<sup>&minus;1</sup>(B) &ne; X. Then X is a union of two proper closed subsets, contradicting irreducibility. Hence f(X) is irreducible. &#8718;</p>
+<div class="lbl anch" id="c5-s-add4">Additional problem (4)</div><div class="toprob"><a href="#c5-p-add4">&uarr; Problem</a></div>
+<div class="stmt">(4) True or false: The image of an irreducible topological space under a continuous function is connected. Prove that your answer is correct.</div>
+<p><b>True.</b></p>
+<p><b>Lemma: every irreducible space is connected.</b> Let Z be irreducible and suppose Z = U &cup; V with U, V open, disjoint and nonempty. Then Z &#8726; U = V and Z &#8726; V = U are closed, proper (U &ne; &empty; gives Z &#8726; U &ne; Z, and likewise for V), and their union is V &cup; U = Z. So Z is a union of two proper closed subsets, a contradiction. Hence Z is connected (Z &ne; &empty; since irreducible spaces are nonempty).</p>
+<p>Now let X be irreducible and f : X &rarr; Y continuous. By problem (3), f(X) is irreducible, so by the Lemma f(X) is connected. &#8718; (Alternatively: X is connected by the Lemma, and a continuous image of a connected space is connected.)</p>
+<div class="lbl anch" id="c5-s-add5">Additional problem (5)</div><div class="toprob"><a href="#c5-p-add5">&uarr; Problem</a></div>
+<div class="stmt">(5) True or false: The image of an connected topological space under a continuous function is irreducible. Prove that your answer is correct.</div>
+<p><b>False.</b> Counterexample: X = Y = &#8477; with the Euclidean topology and f = id, which is continuous with X connected. But f(X) = &#8477; is not irreducible: &#8477; = (&minus;&infin;, 0] &cup; [0, &infin;) is a union of two closed sets, neither of which is all of &#8477;. &#8718;</p>
+<p>(More generally, any Hausdorff space with at least two points is reducible: for a &ne; b take disjoint open U &ni; a, V &ni; b; the space is (X &#8726; U) &cup; (X &#8726; V), both proper and closed. So any continuous map from a connected space onto a Hausdorff space with more than one point is a counterexample.)</p>
+<div class="lbl anch" id="c5-s-add6">Additional problem (6)</div><div class="toprob"><a href="#c5-p-add6">&uarr; Problem</a></div>
+<div class="stmt">(6) Open-ended question: Given two topological spaces $X$ and $Y$, and a continuous function $f : X \to Y$, say something about the Krull dimension of $X$ in relation to the the Krull dimension of $Y$, and prove that your answer is correct. You may need to impose some conditions on $f$. I don’t have a specific answer I’m fishing for here.</div>
+<p>Recall: the <b>Krull dimension</b> dim X of a space X is the supremum of the lengths n of chains Z<sub>0</sub> &#8842; Z<sub>1</sub> &#8842; &middot;&middot;&middot; &#8842; Z<sub>n</sub> of irreducible closed subsets of X.</p>
+<p><b>Without extra conditions, continuity says nothing in either direction.</b></p>
+<ul>
+<li>A constant map &#8477;<sup>2</sup><sub>Zar</sub> &rarr; {pt} is continuous, but dim &#8477;<sup>2</sup><sub>Zar</sub> &ge; 2: the chain {(0,0)} &#8842; Z(y) &#8842; &#8477;<sup>2</sup> consists of irreducible closed sets. ({(0,0)} = Z(x, y) is a closed point. Z(y), the x-axis, has the finite-closed topology on an infinite set (Ch. 4 additional problem (1)), and any two nonempty open sets of such a space meet, so it is irreducible. &#8477;<sup>2</sup><sub>Zar</sub> is irreducible because any two nonempty Zariski-open sets meet, as in Ch. 4 additional problem (5b).) while dim {pt} = 0. So the target can have smaller dimension.</li>
+<li>The identity map from &#8477;<sup>2</sup> with the discrete topology to &#8477;<sup>2</sup><sub>Zar</sub> is continuous (every map out of a discrete space is). In a discrete space the irreducible closed sets are exactly the singletons, so its dimension is 0, while dim &#8477;<sup>2</sup><sub>Zar</sub> &ge; 2. So the target can have larger dimension, even for a continuous bijection.</li>
+<li>Injectivity alone does not help: id : &#8477;<sup>2</sup><sub>Zar</sub> &rarr; &#8477;<sup>2</sup> with the indiscrete topology is a continuous bijection onto a space of dimension 0 (its only nonempty closed set is the whole space). That is why the theorem below asks for an embedding.</li>
+</ul>
+<p><b>Theorem. If f : X &rarr; Y is an embedding (a homeomorphism of X onto f(X) with the subspace topology), then dim X &le; dim Y.</b></p>
+<p><b>Lemma 1.</b> If S &sube; Y is irreducible in the subspace topology, then its closure cl(S) is irreducible.<br>
+<i>Proof.</i> cl(S) &ne; &empty;. Suppose cl(S) = A &cup; B with A, B closed in cl(S), hence closed in Y. Then S = (A &cap; S) &cup; (B &cap; S) is a union of two closed subsets of S; S being irreducible, one of them, say A &cap; S, is all of S. So S &sube; A, and as A is closed, cl(S) &sube; A, i.e. A = cl(S). Hence cl(S) is not a union of two proper closed subsets. &#8718;</p>
+<p><b>Lemma 2.</b> If Z is closed in X, then cl(f(Z)) &cap; f(X) = f(Z).<br>
+<i>Proof.</i> Since f : X &rarr; f(X) is a homeomorphism and Z is closed in X, f(Z) is closed in f(X), so f(Z) = C &cap; f(X) for some closed C &sube; Y. Then f(Z) &sube; cl(f(Z)) &sube; C, so f(Z) &sube; cl(f(Z)) &cap; f(X) &sube; C &cap; f(X) = f(Z). &#8718;</p>
+<p><i>Proof of the theorem.</i> Let Z<sub>0</sub> &#8842; &middot;&middot;&middot; &#8842; Z<sub>n</sub> be a chain of irreducible closed subsets of X, and put W<sub>i</sub> = cl(f(Z<sub>i</sub>)) &sube; Y. Each f(Z<sub>i</sub>) is irreducible by problem (3) (applied to f restricted to Z<sub>i</sub>), so each W<sub>i</sub> is an irreducible closed subset of Y by Lemma 1. Clearly W<sub>i</sub> &sube; W<sub>i+1</sub>. If W<sub>i</sub> = W<sub>i+1</sub>, intersecting with f(X) and using Lemma 2 gives f(Z<sub>i</sub>) = f(Z<sub>i+1</sub>), so Z<sub>i</sub> = Z<sub>i+1</sub> because f is injective, a contradiction. So W<sub>0</sub> &#8842; &middot;&middot;&middot; &#8842; W<sub>n</sub> is a chain of the same length in Y. Taking suprema, dim X &le; dim Y. &#8718;</p>
+<p><b>Corollaries.</b> Homeomorphic spaces have equal Krull dimension, and every subspace A &sube; Y has dim A &le; dim Y (e.g. the x-axis in &#8477;<sup>2</sup><sub>Zar</sub> from the Chapter 4 problems).</p>
+<div class="lbl anch" id="c5-s-add7">Additional problem (7)</div><div class="toprob"><a href="#c5-p-add7">&uarr; Problem</a></div>
+<div class="stmt">(7) Let $X$ be $\mathbb{R}^2$ in the Zariski topology. Let $f(x,y)$ and $g(x,y)$ be polynomials with real coefficients. Define $\varphi : X \to X$ by $\varphi(x,y) = (f(x,y), g(x,y))$. Prove that $\varphi$ is continuous.</div>
+<p>The closed sets of X are the Z(S) = {p &isin; &#8477;<sup>2</sup> : h(p) = 0 for all h &isin; S}, S a set of polynomials in two variables. For any closed Z(S),</p>
+<p style="margin-left:2em">&phi;<sup>&minus;1</sup>(Z(S)) = {(x, y) : h(f(x, y), g(x, y)) = 0 for all h &isin; S} = Z(S&prime;), where S&prime; = {h(f, g) : h &isin; S}.</p>
+<p>Each h(f(x, y), g(x, y)) is a polynomial in x, y (substituting polynomials into a polynomial gives a polynomial), so S&prime; is a set of polynomials and Z(S&prime;) is Zariski-closed. Preimages of closed sets are closed, so &phi; is continuous. &#8718;</p>
+<div class="lbl anch" id="c5-s-add8">Additional problem (8)</div><div class="toprob"><a href="#c5-p-add8">&uarr; Problem</a></div>
+<div class="stmt">(8) In the previous question, what about the converse? In other words, suppose $\varphi$ is continuous. Does it follow that $\varphi(x,y) = (f(x,y), g(x,y))$ for some polynomials $f$ and $g$? Prove that your answer is correct. (I don’t know the answer to this one.)</div>
+<p><b>No.</b> A Zariski-continuous map &#8477;<sup>2</sup> &rarr; &#8477;<sup>2</sup> need not be given by polynomials.</p>
+<p><b>Counterexample.</b> Let &phi;(x, y) = (e<sup>x</sup>, 0).</p>
+<p><i>&phi; is continuous.</i> Let Z(S) be closed. For h &isin; S put q<sub>h</sub>(t) = h(t, 0), a polynomial in one variable t. Then E<sub>h</sub> := {(x, y) : h(&phi;(x, y)) = 0} = {(x, y) : q<sub>h</sub>(e<sup>x</sup>) = 0}.</p>
+<ul>
+<li>If q<sub>h</sub> is the zero polynomial, E<sub>h</sub> = &#8477;<sup>2</sup>.</li>
+<li>Otherwise q<sub>h</sub> has finitely many real roots r<sub>1</sub>, &hellip;, r<sub>k</sub>. Since e<sup>x</sup> is injective, the x with e<sup>x</sup> &isin; {r<sub>1</sub>, &hellip;, r<sub>k</sub>} form a finite set {c<sub>1</sub>, &hellip;, c<sub>m</sub>} (namely ln r<sub>j</sub> for the positive roots). So E<sub>h</sub> is the finite union of vertical lines x = c<sub>i</sub>, which is Z((x &minus; c<sub>1</sub>)&middot;&middot;&middot;(x &minus; c<sub>m</sub>)), closed (if m = 0 it is &empty; = Z(1)).</li>
+</ul>
+<p>&phi;<sup>&minus;1</sup>(Z(S)) = &#8898;<sub>h&isin;S</sub> E<sub>h</sub> is an intersection of Zariski-closed sets, hence closed. So &phi; is continuous.</p>
+<p><i>&phi; is not polynomial.</i> Suppose &phi;(x, y) = (f(x, y), g(x, y)) for polynomials f, g. Then f(x, 0) = e<sup>x</sup> for every real x, and f(x, 0) is a polynomial p(x) of some degree d. Differentiating d + 1 times gives 0 = e<sup>x</sup> for all x, which is impossible. &#8718;</p>
+<p>(Why this happens: there are very few Zariski-closed sets (the proper ones are thin: finite unions of points and curves), so requiring preimages of closed sets to be closed is a weak condition. The same argument shows (x, y) &#8614; (u(x), 0) is continuous for every injective u : &#8477; &rarr; &#8477;, polynomial or not.)</p>
+</div>
+<div class="frag">
+<h3>Chapter 5, additional problems (9)-(12) (added after 10/5): backup solutions (Claude, not official)</h3>
+
+<div class="lbl anch" id="c5-s-add9">Additional problem (9)</div><div class="toprob"><a href="#c5-p-add9">&uarr; Problem</a></div>
+<div class="stmt"><b>(9)</b> C((a,b),r) = disk of radius r centered at (a,b); S<sub>r</sub> = C((0,0),r) ∪ C((1,0),r) ∪ C((0,1),r) with the subspace topology from ℝ<sup>2</sup>. Find the smallest r such that S<sub>r</sub> is connected.</div>
+
+<p><b>A note on the statement.</b> The text says "closed disk" but the displayed formula uses a strict inequality "&lt; r<sup>2</sup>", which describes the <i>open</i> disk. The answer depends on which is meant, so both readings are treated below. Write D<sub>0</sub>, D<sub>1</sub>, D<sub>2</sub> for the disks centered at P<sub>0</sub> = (0,0), P<sub>1</sub> = (1,0), P<sub>2</sub> = (0,1). The distances between centers are |P<sub>0</sub>P<sub>1</sub>| = |P<sub>0</sub>P<sub>2</sub>| = 1 and |P<sub>1</sub>P<sub>2</sub>| = √2.</p>
+
+<p><b>Answer.</b> With closed disks (≤), the smallest r is <b>r = 1/2</b>. With open disks (&lt;, the formula as printed), S<sub>r</sub> is connected exactly when r &gt; 1/2, so the set of good r is the open interval (1/2, ∞), which has <b>no smallest element</b>. Its infimum is 1/2. In both readings the threshold is the radius at which D<sub>1</sub> and D<sub>2</sub> first touch D<sub>0</sub>. The radius at which D<sub>1</sub> and D<sub>2</sub> touch each other, √2/2 ≈ 0.707, is larger and plays no role, because D<sub>0</sub> already links them once r ≥ 1/2.</p>
+
+<p><b>Two facts used.</b><br>
+(F1) Two disks of radius r whose centers are distance d apart intersect iff d ≤ 2r (closed disks), resp. d &lt; 2r (open disks). If the disks meet at a point Q, the triangle inequality gives d ≤ |PQ| + |QP′| ≤ 2r, with strict inequality for open disks. Conversely, if d ≤ 2r (resp. d &lt; 2r), the midpoint of the two centers is at distance d/2 ≤ r (resp. &lt; r) from both.<br>
+(F2) Each disk is convex, hence path-connected, hence connected. If A, B are connected and A ∩ B ≠ ∅, then A ∪ B is connected.</p>
+
+<p><b>Closed disks.</b><br>
+<i>r ≥ 1/2 gives a connected set.</i> Since 1 ≤ 2r, (F1) gives D<sub>0</sub> ∩ D<sub>1</sub> ≠ ∅ and D<sub>0</sub> ∩ D<sub>2</sub> ≠ ∅. For example, at r = 1/2 the point (1/2, 0) lies in both D<sub>0</sub> and D<sub>1</sub>, and (0, 1/2) lies in both D<sub>0</sub> and D<sub>2</sub>. By (F2) applied twice, D<sub>0</sub> ∪ D<sub>1</sub> is connected, and then (D<sub>0</sub> ∪ D<sub>1</sub>) ∪ D<sub>2</sub> = S<sub>r</sub> is connected, because it meets D<sub>2</sub>.<br>
+<i>r &lt; 1/2 gives a disconnected set.</i> Now 2r &lt; 1 &lt; √2, so by (F1) the three disks are pairwise disjoint. Each D<sub>i</sub> is closed in ℝ<sup>2</sup>, so it is closed in S<sub>r</sub>. Then D<sub>0</sub> and D<sub>1</sub> ∪ D<sub>2</sub> are disjoint, nonempty, closed in S<sub>r</sub>, and their union is S<sub>r</sub>. That is a separation.<br>
+So {r : S<sub>r</sub> connected} = [1/2, ∞), and the minimum is 1/2. ∎</p>
+
+<p><b>Open disks (the formula as printed).</b><br>
+<i>r &gt; 1/2 gives a connected set.</i> The argument is the same, since 1 &lt; 2r.<br>
+<i>r ≤ 1/2 gives a disconnected set.</i> Now 1 ≥ 2r, so by (F1) D<sub>0</sub> ∩ D<sub>1</sub> = D<sub>0</sub> ∩ D<sub>2</sub> = ∅, and |P<sub>1</sub>P<sub>2</sub>| = √2 &gt; 1 ≥ 2r gives D<sub>1</sub> ∩ D<sub>2</sub> = ∅. At r = 1/2 the disks D<sub>0</sub> and D<sub>1</sub> are tangent at (1/2, 0), but that point lies in neither open disk. Each D<sub>i</sub> is open in ℝ<sup>2</sup>, so D<sub>0</sub> and D<sub>1</sub> ∪ D<sub>2</sub> are disjoint nonempty open subsets of S<sub>r</sub> whose union is S<sub>r</sub>. That is a separation.<br>
+So {r : S<sub>r</sub> connected} = (1/2, ∞). There is no smallest r, and the infimum is 1/2. ∎</p>
+
+<p><b>Numerical check (Python).</b> Two checks were run. (i) An exact rational test of the pairwise-intersection graph, which by (F1) and (F2) decides connectivity: the union is connected iff the graph on {D<sub>0</sub>, D<sub>1</sub>, D<sub>2</sub>} with an edge for each intersecting pair is connected. (ii) An independent pixel test: rasterize S<sub>r</sub> on a 1601×1601 grid over [−1.2, 2.2]<sup>2</sup> and count connected components with scipy.ndimage.label.</p>
+<table class="num"><tr><th>r</th><th>closed: connected?</th><th>open: connected?</th><th>pixel components</th></tr>
+<tr><td>0.49</td><td>no</td><td>no</td><td>3</td></tr>
+<tr><td>0.499</td><td>no</td><td>no</td><td>3</td></tr>
+<tr><td>0.5</td><td>yes</td><td>no</td><td>3*</td></tr>
+<tr><td>0.501</td><td>yes</td><td>yes</td><td>1</td></tr>
+<tr><td>0.6</td><td>yes</td><td>yes</td><td>1</td></tr>
+<tr><td>0.7071</td><td>yes</td><td>yes</td><td>1</td></tr></table>
+<p>Bisection on the exact closed-disk test converges to 0.5 (both endpoints are 0.5 after 60 steps). *At r = 1/2 exactly, the disks touch at the single point (1/2, 0), which a grid cannot resolve. The exact test confirms that (1/2, 0) satisfies x<sup>2</sup> + y<sup>2</sup> ≤ 1/4 and (x−1)<sup>2</sup> + y<sup>2</sup> ≤ 1/4 with equality, so it lies in the closed disks but not in the open ones.</p>
+
+<div class="lbl anch" id="c5-s-add10">Additional problem (10)</div><div class="toprob"><a href="#c5-p-add10">&uarr; Problem</a></div>
+<div class="stmt"><b>(10)</b> Is there a topology on ℤ for which the continuous maps ℤ → ℤ are exactly the polynomial functions with integer coefficients? (Krebs: "I don't know the answer.")</div>
+
+<p><b>Status: open, as far as I can tell.</b> I do not have a proof either way. I could not search the literature from this session, so I cannot say whether the question has been settled in print. What follows are rigorous <i>necessary conditions</i> that any such topology T would have to satisfy. They rule out every standard topology on ℤ, but they do not settle the question.</p>
+
+<p>Throughout, suppose T is a topology on ℤ with C((ℤ,T),(ℤ,T)) = ℤ[x]. Write P for ℤ[x]. The key algebraic fact is the following.</p>
+<p><i>Interpolation fact.</i> For integers x ≠ y and a, b, there is p ∈ P with p(x) = a and p(y) = b iff (y − x) divides (b − a). Necessity holds because y − x divides p(y) − p(x) for every integer polynomial. For sufficiency, take p(t) = a + ((b − a)/(y − x))(t − x).</p>
+
+<p><b>Partial result 1: T is T<sub>1</sub> (points are closed).</b> Define x ⪯ y to mean that every open set containing x contains y. This is the specialization preorder, and continuous maps preserve it: if U ∋ f(x) is open, then f<sup>−1</sup>(U) is an open set containing x, so it contains y, so f(y) ∈ U. Let D = {d : x ⪯ x + d for all x}.<br>
+Suppose x ⪯ y with d = y − x ≠ 0. For any a, the affine maps t ↦ a + (t − x) and t ↦ a − (t − x) lie in P, and they send (x, y) to (a, a + d) and (a, a − d). So a ⪯ a + d and a ⪯ a − d for every a. Hence D contains d. D is closed under addition (transitivity of ⪯) and under negation (just shown), so D is a subgroup nℤ, and x ⪯ y holds iff x ≡ y (mod n).<br>
+If n = 1, every open set is ∅ or ℤ. That is the indiscrete topology, where every function is continuous. Not allowed.<br>
+If n ≥ 2, points that are congruent mod n are topologically indistinguishable, so every open set is a union of residue classes mod n. Let f(t) = t for t ≠ 0 and f(0) = n. For every open U, f<sup>−1</sup>(U) = U, because f(t) ≡ t (mod n). So f is continuous. But f agrees with the identity at infinitely many points and is not the identity, so f ∉ P. Contradiction.<br>
+So n = 0, meaning ⪯ is equality, which is exactly the T<sub>1</sub> condition. ∎</p>
+
+<p><b>Partial result 2: T is connected.</b> Suppose ℤ = A ⊔ B with A, B clopen and nonempty. The function equal to 0 on A and 1 on B is continuous. One of A, B is infinite, so f takes some value infinitely often, and a polynomial that does this is constant. But f is not constant. Contradiction. ∎</p>
+
+<p><b>Partial result 3 (a stronger form of 2).</b> If A, B are closed, A ∪ B = ℤ, and neither equals ℤ, then A ∩ B is infinite.<br>
+<i>Proof.</i> Suppose A ∩ B = {c<sub>1</sub>, …, c<sub>k</sub>} is finite (possibly empty). A and B cannot both be finite, so by symmetry let A be infinite. Let q(t) = ∏(t − c<sub>i</sub>) (q = 1 if k = 0), and define f = 0 on A and f = q on B. The two pieces agree on A ∩ B. Constant maps and q are continuous, so by the pasting lemma for a finite closed cover, f is continuous. f vanishes on the infinite set A, so if f ∈ P then f ≡ 0. But A ≠ ℤ and A ∪ B = ℤ, so there is some b ∈ B ∖ A. Then b ∉ A ∩ B, so f(b) = q(b) ≠ 0. Contradiction. ∎<br>
+For example, ℤ<sub>≥0</sub> and ℤ<sub>≤0</sub> cannot both be closed. Otherwise |t| would be continuous by pasting.</p>
+
+<p><b>Partial result 4: T is strictly finer than the cofinite topology.</b> By result 1, T contains the cofinite topology. In the cofinite topology, the continuous maps ℤ → ℤ are the constants together with the maps whose fibers are all finite. That class contains non-polynomials such as t ↦ |t|, or the map that swaps 0 and 1 and fixes everything else. So T must have an infinite closed set F ≠ ℤ. Moreover, p<sup>−1</sup>(F) must be closed for every p ∈ P, as must finite unions and arbitrary intersections of such sets. This also shows that the smallest topology in which all of P is continuous and points are closed is exactly the cofinite topology (a nonconstant polynomial has finite fibers), and that one fails. So a positive answer requires adding infinite closed sets carefully: enough to kill every non-polynomial, but not so many that result 3, or continuity of P, breaks.</p>
+
+<p><b>Standard candidates, all ruled out:</b> discrete (everything is continuous); indiscrete (same); cofinite (result 4); the Zariski topology on ℤ, which is the cofinite topology; and the profinite / Furstenberg topology, in which every polynomial is continuous because p(t + kn) ≡ p(t) (mod n), but which is disconnected (cosets of nℤ are clopen), so result 2 rules it out. The Golomb topology (basis a + bℤ with gcd(a,b) = 1, on the positive integers) is a connected Hausdorff example. But it lives on ℕ rather than ℤ, and t ↦ −t does not even make sense on it, so it is not a candidate as stated.</p>
+
+<p><b>Where this leaves things.</b> A "yes" would need an explicit connected T<sub>1</sub> topology satisfying result 3, under which all integer polynomials are continuous, together with a proof that every non-polynomial f fails to be continuous. That means finding, for each such f, a closed F with f<sup>−1</sup>(F) not closed. A "no" would need a closure-type property of continuous-function monoids that ℤ[x] lacks. The pasting arguments above are of exactly this type, but each one I tried only yields conditions (results 1-4) that a cleverly chosen T could still satisfy. Compare problem (12), where the analogous question for ℚ has answer "no": there the set S contains functions such as min(t, x), which force all Euclidean open rays into T, and those rays give the clopen splitting at √2. For ℤ[x] there is no comparable supply of "cut-off" functions, since polynomials cannot be truncated. So the same argument does not go through, and I have no argument that does. <b>I am not claiming an answer to (10).</b></p>
+
+<div class="lbl anch" id="c5-s-add11">Additional problem (11)</div><div class="toprob"><a href="#c5-p-add11">&uarr; Problem</a></div>
+<div class="stmt"><b>(11)</b> ℚ has the subspace topology from ℝ. H : ℚ → ℚ, H(x) = 0 if x<sup>2</sup> &lt; 2 and H(x) = 1 if x<sup>2</sup> &gt; 2. (a) Is H continuous? (b) Does H extend to a continuous J : ℝ → ℝ?</div>
+<p>Since √2 is irrational, no rational x has x<sup>2</sup> = 2, so H is defined on all of ℚ. Let A = {x ∈ ℚ : x<sup>2</sup> &lt; 2} = ℚ ∩ (−√2, √2) and B = {x ∈ ℚ : x<sup>2</sup> &gt; 2} = ℚ ∩ ((−∞, −√2) ∪ (√2, ∞)). Then ℚ = A ⊔ B.</p>
+<p><b>(a) Yes, H is continuous.</b> A and B are intersections of ℚ with open subsets of ℝ, so both are open in ℚ. For any V ⊆ ℚ, H<sup>−1</sup>(V) is ∅, A, B, or ℚ, according to whether V contains neither of 0 and 1, only 0, only 1, or both. Each of these is open in ℚ, so H is continuous. (The point: ℚ is disconnected along the "gap" at ±√2, and H is locally constant.) ∎</p>
+<p><b>(b) No.</b> Suppose J : ℝ → ℝ is continuous with J = H on ℚ. Choose rationals a<sub>n</sub> ∈ (√2 − 1/n, √2) and b<sub>n</sub> ∈ (√2, √2 + 1/n), which exist by density of ℚ (take n ≥ 1, so that 0 &lt; a<sub>n</sub>). Then a<sub>n</sub> → √2 and b<sub>n</sub> → √2, with a<sub>n</sub><sup>2</sup> &lt; 2 &lt; b<sub>n</sub><sup>2</sup>, so J(a<sub>n</sub>) = 0 and J(b<sub>n</sub>) = 1 for all n. By sequential continuity of J at √2, J(√2) = lim J(a<sub>n</sub>) = 0 and J(√2) = lim J(b<sub>n</sub>) = 1. Contradiction. So no continuous extension exists. ∎</p>
+
+<div class="lbl anch" id="c5-s-add12">Additional problem (12)</div><div class="toprob"><a href="#c5-p-add12">&uarr; Problem</a></div>
+<div class="stmt"><b>(12)</b> S = {f : ℚ → ℚ that extend continuously to ℝ}. Show there is no topology T on ℚ whose continuous self-maps are exactly S, via (a) T is T<sub>0</sub>, (b) T is T<sub>1</sub>, (c) T contains all open rays, (d) a contradiction.</div>
+<p>Assume T is a topology on ℚ with C((ℚ,T),(ℚ,T)) = S. Some useful members of S: for rationals c, m, the affine map t ↦ mt + c (it maps ℚ into ℚ and extends by the same formula), min(t, c), max(t, c), and t ↦ max(t, 0)<sup>2</sup>. All of these send ℚ into ℚ and are given by continuous formulas on ℝ.</p>
+<p>Notation: write x ⪯ y if every T-open set containing x contains y. If f is T-continuous and x ⪯ y, then f(x) ⪯ f(y): for open U ∋ f(x), the set f<sup>−1</sup>(U) is open and contains x, hence y, so f(y) ∈ U.</p>
+
+<p><b>(a) T is T<sub>0</sub>.</b> Suppose not. Then there are rationals x ≠ y that are topologically indistinguishable, i.e. x ⪯ y and y ⪯ x. Let a, b ∈ ℚ be arbitrary. The affine map g(t) = a + (b − a)(t − x)/(y − x) has rational coefficients, so g ∈ S, so g is T-continuous. It sends x ↦ a and y ↦ b, so a ⪯ b and b ⪯ a. Thus every two rationals are indistinguishable, which means every T-open set is ∅ or ℚ: T is the indiscrete topology. But then every function ℚ → ℚ is T-continuous, including the function H of problem (11), which by (11)(b) has no continuous extension to ℝ, so H ∉ S. Contradiction. ∎</p>
+
+<p><b>(b) T is T<sub>1</sub>.</b> Suppose x ≠ y and x ⪯ y (every open set containing x contains y). The map g(t) = x + y − t lies in S and swaps x and y, so g(x) ⪯ g(y) gives y ⪯ x. Then x and y are indistinguishable, contradicting (a). So for x ≠ y there is an open set containing x but not y, i.e. T is T<sub>1</sub>. Equivalently, every singleton {x} is T-closed. ∎</p>
+
+<p><b>(c) T contains every open ray.</b> First let x ∈ ℚ. The map m(t) = min(t, x) lies in S, so it is T-continuous. {x} is T-closed by (b), so m<sup>−1</sup>({x}) = {t ∈ ℚ : t ≥ x} is T-closed. Its complement (−∞, x) ∩ ℚ is therefore T-open. Likewise M(t) = max(t, x) ∈ S, and M<sup>−1</sup>({x}) = {t ∈ ℚ : t ≤ x} is closed, so (x, ∞) ∩ ℚ is T-open.<br>
+If x is irrational, (−∞, x) ∩ ℚ = ⋃<sub>q ∈ ℚ, q &lt; x</sub> (−∞, q) ∩ ℚ and (x, ∞) ∩ ℚ = ⋃<sub>q ∈ ℚ, q &gt; x</sub> (q, ∞) ∩ ℚ. These are unions of T-open sets, hence T-open. So T contains every open ray (intersected with ℚ). Since every Euclidean open interval is an intersection of two rays, T contains the subspace topology on ℚ. ∎</p>
+
+<p><b>(d) The contradiction.</b> Following the hint, define F : ℚ → ℚ by</p>
+<p style="margin-left:2em">F(t) = 0 if t ≤ 0, &nbsp; F(t) = t<sup>2</sup> if 0 &lt; t &lt; √2, &nbsp; F(t) = 0 if t &gt; √2.</p>
+<p>This is defined on all of ℚ since √2 ∉ ℚ, and it maps ℚ into ℚ. Put U = (−∞, √2) ∩ ℚ and W = (√2, ∞) ∩ ℚ. By (c) both are T-open, and ℚ = U ⊔ W.<br>
+<i>F is T-continuous.</i> Let g(t) = max(t, 0)<sup>2</sup>. Then g ∈ S, so g is T-continuous, and F = g on U. Let z be the constant map 0, which is T-continuous, and note F = z on W. For a T-open V ⊆ ℚ,<br>
+&nbsp;&nbsp;F<sup>−1</sup>(V) = (U ∩ g<sup>−1</sup>(V)) ∪ (W ∩ z<sup>−1</sup>(V)),<br>
+which is a union of intersections of T-open sets, hence T-open. (This is the pasting lemma for an open cover.) So F is T-continuous, i.e. F ∈ C((ℚ,T),(ℚ,T)) = S.<br>
+<i>F does not extend continuously to ℝ.</i> Suppose G : ℝ → ℝ is continuous with G = F on ℚ. Take rationals a<sub>n</sub> ∈ (√2 − 1/n, √2) with a<sub>n</sub> &gt; 0, and b<sub>n</sub> ∈ (√2, √2 + 1/n). Then G(√2) = lim F(a<sub>n</sub>) = lim a<sub>n</sub><sup>2</sup> = 2, but also G(√2) = lim F(b<sub>n</sub>) = 0. Contradiction, so F ∉ S.<br>
+F ∈ S and F ∉ S is a contradiction, so no such topology T exists. ∎</p>
+<p><i>Remark (a shortcut for (d)).</i> Once (c) gives that A = ℚ ∩ (−√2, √2) and B = ℚ ∖ A are both T-open, the function H of problem (11) is T-continuous for any topology on the target, since every preimage under H is ∅, A, B, or ℚ. And H ∉ S by (11)(b). This gives the same contradiction without the x<sup>2</sup> piece.</p>
+</div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 4570 PS7</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 4570  ·  Problem Set 7 (with solutions)</h1>
+<div class="hdr"><p class="small">Source: MIT 18.700 Linear Algebra, Fall 2013 (MIT OpenCourseWare, CC BY-NC-SA), Problem Set 7. Problem 4 is Axler (2nd ed) p.159 ex.8, inlined. Inner product is linear in the first slot. Solutions by Claude.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<div class="item prob" id="p-1"><p><b>1.</b> $V$ a complex inner-product space with ORTHOGONAL basis $(f_1,\dots,f_n)$, and $T\in\mathcal{L}(V)$.</p>
+<p>(a) Show every $v\in V$ is $v=\sum_i \frac{\langle v,f_i\rangle}{\langle f_i,f_i\rangle}f_i$.  (b) A formula for the $(i,j)$ entry $a_{ij}$ of the matrix of $T$ in $(f_1,\dots,f_n)$.  (c) A formula for the entry $b_{ij}$ of the matrix of $T^*$.</p>
+<p>(d) How do you pass from $A$ to $B$?</p><div class="tosol"><a href="#s-1">Solution &darr;</a></div></div>
+<div class="item prob" id="p-2"><p><b>2.</b> $V=\mathbb{R}^2$. Find all self-adjoint square roots of the identity $I$.</p><div class="tosol"><a href="#s-2">Solution &darr;</a></div></div>
+<div class="item prob" id="p-3"><p><b>3.</b> $V$ is $2$-dimensional over a field with $q$ elements. How many square roots has $I$?</p><div class="tosol"><a href="#s-3">Solution &darr;</a></div></div>
+<div class="item prob" id="p-4"><p><b>4.</b> (Axler 2nd ed, p.159 ex.8)  Prove there is no self-adjoint $T\in\mathcal{L}(\mathbb{R}^3)$ with</p>
+<p>$T(1,2,3)=(0,0,0)$ and $T(2,5,7)=(2,5,7)$.</p><div class="tosol"><a href="#s-4">Solution &darr;</a></div></div>
+<div class="item prob" id="p-5"><p><b>5.</b> (a) Find a real $a$ so that some self-adjoint $T\in\mathcal{L}(\mathbb{R}^3)$ has $T(1,2,3)=(0,0,0)$ and</p>
+<p>$T(2,5,a)=(2,5,a)$.  (b) Find an eigenvector of $T$ not in $\mathrm{span}((1,2,3),(2,5,a))$.</p><div class="tosol"><a href="#s-5">Solution &darr;</a></div></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<div class="item sol" id="s-1"><div class="toprob"><a href="#p-1">&uarr; Problem</a></div><p class="lead"><b>Solution 1.</b> Fourier expansion in an orthogonal basis.</p>
+<p>(a) Write $v=\sum_j c_j f_j$. Taking the inner product with $f_i$ and using $\langle f_j,f_i\rangle=0$ for $j\neq i$, $\langle v,f_i\rangle=\sum_j c_j\langle f_j,f_i\rangle=c_i\langle f_i,f_i\rangle$, so $c_i=\frac{\langle v,f_i\rangle}{\langle f_i,f_i\rangle}$, giving $v=\sum_i\frac{\langle v,f_i\rangle}{\langle f_i,f_i\rangle}f_i$.</p>
+<p>(b) By definition $Tf_j=\sum_i a_{ij}f_i$, so applying (a) to $Tf_j$:  $a_{ij}=\frac{\langle Tf_j,f_i\rangle}{\langle f_i,f_i\rangle}$.</p>
+<p>(c) Likewise $b_{ij}=\frac{\langle T^*f_j,f_i\rangle}{\langle f_i,f_i\rangle}=\frac{\langle f_j,Tf_i\rangle}{\langle f_i,f_i\rangle}$  (using $\langle T^*x,y\rangle=\langle x,Ty\rangle$).</p>
+<p>(d) Since $\langle f_j,Tf_i\rangle=\overline{\langle Tf_i,f_j\rangle}=\overline{a_{ji}}\,\langle f_j,f_j\rangle$ (as $\langle f_j,f_j\rangle$ is real), $b_{ij}=\overline{a_{ji}}\cdot\frac{\langle f_j,f_j\rangle}{\langle f_i,f_i\rangle}$.  With $D=\mathrm{diag}(\langle f_i,f_i\rangle)$ this is $B=D^{-1}A^{*}D$, where $A^{*}$ is the conjugate transpose of $A$. (If the basis is orthonormal, $D=I$ and $B=A^{*}$ - the usual conjugate transpose.)  ∎</p></div>
+<div class="item sol" id="s-2"><div class="toprob"><a href="#p-2">&uarr; Problem</a></div><p class="lead"><b>Solution 2.</b> $I$, $-I$, and every reflection.</p>
+<p>A self-adjoint $S$ on $\mathbb{R}^2$ is a symmetric matrix, hence orthogonally diagonalizable with real eigenvalues; $S^2=I$ forces each eigenvalue to satisfy $\lambda^2=1$, i.e. $\lambda\in\{+1,-1\}$. So the self-adjoint square roots of $I$ are exactly the symmetric matrices with eigenvalues in $\{\pm1\}$:</p>
+<p>$\bullet$ both $+1$: $S=I$;  $\bullet$ both $-1$: $S=-I$;</p>
+<p>$\bullet$ one $+1$ and one $-1$: the reflections $S$ with rows $(\cos\varphi,\sin\varphi)$ and $(\sin\varphi,-\cos\varphi)$, $\varphi\in[0,2\pi)$. (Each such $S$ is symmetric with $S^2=I$.) Unlike the unique POSITIVE square root, there are infinitely many.  ∎</p></div>
+<div class="item sol" id="s-3"><div class="toprob"><a href="#p-3">&uarr; Problem</a></div><p class="lead"><b>Solution 3.</b> $q^2+q+2$ if $\mathrm{char}\neq 2$;  $q^2$ if $\mathrm{char}=2$.</p>
+<p>$S^2=I$ means the minimal polynomial of $S$ divides $x^2-1=(x-1)(x+1)$. Characteristic $\neq 2$: then $x-1,x+1$ are coprime, so $S$ is diagonalizable with eigenvalues in $\{\pm1\}$: $S=I$ (1 matrix), $S=-I$ (1), or $S$ has eigenvalues $+1,-1$ - determined by an ordered pair of distinct eigenlines (the $+1$ and $-1$ lines). There are $q+1$ lines, giving $(q+1)q$ such $S$. Total $2+q(q+1)=q^2+q+2$. Characteristic $2$: then $x^2-1=(x+1)^2$, so $S^2=I\Leftrightarrow(S+I)^2=0$, i.e. $S=I+N$ with $N^2=0$. The number of $N\in M_2(\mathbb{F}_q)$ with $N^2=0$ is $1+(q^2-1)=q^2$ (the zero matrix and $q^2-1$ rank-one nilpotents). (Check by brute force: $q=2\Rightarrow 4$; $q=3\Rightarrow 14$; $q=5\Rightarrow 32$.)  ∎</p></div>
+<div class="item sol" id="s-4"><div class="toprob"><a href="#p-4">&uarr; Problem</a></div><p class="lead"><b>Solution 4.</b> Impossible - the two vectors are not orthogonal.</p>
+<p>If such $T$ existed, $(1,2,3)$ would be an eigenvector with eigenvalue $0$ and $(2,5,7)$ an eigenvector with eigenvalue $1$. For a self-adjoint operator, eigenvectors for distinct eigenvalues are orthogonal. But $\langle(1,2,3),(2,5,7)\rangle=2+10+21=33\neq 0$. Contradiction, so no such $T$ exists.  ∎</p></div>
+<div class="item sol" id="s-5"><div class="toprob"><a href="#p-5">&uarr; Problem</a></div><p class="lead"><b>Solution 5.</b> (a) $a=-4$.  (b) $(-23,10,1)$.</p>
+<p>(a) As in problem 4, $(1,2,3)$ (eigenvalue $0$) and $(2,5,a)$ (eigenvalue $1$) must be orthogonal: $\langle(1,2,3),(2,5,a)\rangle=2+10+3a=0\Rightarrow a=-4$. (Such a self-adjoint $T$ then exists: diagonalize with these orthogonal eigenvectors.)</p>
+<p>(b) A self-adjoint $T$ has an orthogonal eigenbasis, so the third eigenvector is orthogonal to both $(1,2,3)$ and $(2,5,-4)$ - i.e. their cross product $(1,2,3)\times(2,5,-4)=(-23,10,1)$. This lies outside $\mathrm{span}((1,2,3),(2,5,-4))$ and is an eigenvector of $T$ (found without constructing $T$).  ∎</p></div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 5690 Ch 4</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 5690 (Topology)  ·  Chapter 4 Homework</h1>
+<div class="hdr"><p class="small">Problems first; ALL solutions together at the end. The comps problem is quoted verbatim from the CSULA topology comprehensive exam (solution by Claude - comps have no key). The assigned main-textbook problems are inlined verbatim (cropped from Morris, Topology Without Tears); official solutions are appended.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<h3 class="grp">Assigned problems (Chapter 4)</h3>
+<p>$\bullet$ Fall 2011 topology comps, Problem 1 (all parts).</p>
+<p>$\bullet$ Main textbook: Section 4.1 #1-10, 15, 16(i, ii, iv);  Section 4.2 #1, 2, 4, 5;  Section 4.3 #4, 5, 7.</p>
+<p>$\bullet$ Zariski question (below), and additional problems (2)-(7) (Krebs' doc numbers two of them (5)).</p>
+<h4 class="sub">Comprehensive-exam problem  (Fall 2011, #1)  - verbatim</h4>
+<div class="item prob" id="c4-p-comps"><p>(a) Define what it means for two topological spaces to be homeomorphic. For parts (b), (c), and (d), a topological space will be given. First determine if it is homeomorphic to the line $\mathbb{R}$, and then either produce a homeomorphism (but don't prove that it's a homeomorphism) between that space and $\mathbb{R}$, or else explain why no such homeomorphism exists.</p>
+<p>(b) The open interval $(0,1)=\{t\in\mathbb{R}: 0&lt;t&lt;1\}$.<span class="sp"></span>(c) The plane $\mathbb{R}^2$.<span class="sp"></span>(d) The circle $S=\{(x,y): x^2+y^2=1\}\subset\mathbb{R}^2$.</p><div class="tosol"><a href="#c4-s-comps">Solution &darr;</a></div></div>
+<h4 class="sub">Zariski question (class)  - verbatim</h4>
+<div class="item prob" id="c4-p-add1"><p>Let $X$ be $\mathbb{R}^2$ in the Zariski topology. Let $A$ be the $x$-axis. Show that the subspace topology on $A$ is the same as the finite-closed (also called cofinite) topology on $A$.  [Official solution appended, listed there as (6).]</p><div class="tosol"><a href="#c4-off-ch4-zariski-p2">Official solution &darr;</a></div></div>
+<h3 class="grp">MAIN-TEXTBOOK PROBLEMS  (Morris, Topology Without Tears - assigned exercises, verbatim)</h3>
+
+<h4 class="sub">Exercises 4.1</h4>
+<div class="item prob" id="c4-p-s4-1-1"><p><b>$\bullet$  #1.</b> Let $X = \{a,b,c,d,e\}$ and $\tau = \{X, \emptyset, \{a\}, \{a,b\}, \{a,c,d\}, \{a,b,c,d\}, \{a,b,e\}\}$. List the members of the induced topologies $\tau_Y$ on $Y = \{a,c,e\}$ and $\tau_Z$ on $Z = \{b,c,d,e\}$.</p><div class="tosol"><a href="#c4-off-ch4-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-2"><p><b>$\bullet$  #2.</b> Describe the topology induced on the set $\mathbb{N}$ of positive integers by the euclidean topology on $\mathbb{R}$.</p><div class="tosol"><a href="#c4-off-ch4-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-3"><p><b>$\bullet$  #3.</b> Write down a basis for the usual topology on each of the following:</p>
+<p>(i) $[a,b)$, where $a &lt; b$;</p>
+<p>(ii) $(a,b]$, where $a &lt; b$;</p>
+<p>(iii) $(-\infty, a]$;</p>
+<p>(iv) $(-\infty, a)$;</p>
+<p>(v) $(a, \infty)$;</p>
+<p>(vi) $[a, \infty)$.</p>
+<p>[Hint: see Examples 4.1.4 and 4.1.5.]</p><div class="tosol"><a href="#c4-off-ch4-maintext-p1">Official solution &darr;</a> &middot; <a href="#c4-s-s4-1-3">Solution (Claude) &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-4"><p><b>$\bullet$  #4.</b> Let $A \subseteq B \subseteq X$ and $X$ have the topology $\tau$. Let $\tau_B$ be the subspace topology on $B$. Further let $\tau_1$ be the topology induced on $A$ by $\tau$, and $\tau_2$ be the topology induced on $A$ by $\tau_B$. Prove that $\tau_1 = \tau_2$. (So a subspace of a subspace is a subspace.)</p><div class="tosol"><a href="#c4-off-ch4-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-5"><p><b>$\bullet$  #5.</b> Let $(Y, \tau_Y)$ be a subspace of a space $(X, \tau)$. Show that a subset $Z$ of $Y$ is closed in $(Y, \tau_Y)$ if and only if $Z = A \cap Y$, where $A$ is a closed subset of $(X, \tau)$.</p><div class="tosol"><a href="#c4-s-s4-1-5">Solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-6"><p><b>$\bullet$  #6.</b> Show that every subspace of a discrete space is discrete.</p><div class="tosol"><a href="#c4-s-s4-1-6">Solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-7"><p><b>$\bullet$  #7.</b> Show that every subspace of an indiscrete space is indiscrete.</p><div class="tosol"><a href="#c4-s-s4-1-7">Solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-8"><p><b>$\bullet$  #8.</b> Show that the subspace $[0,1] \cup [3,4]$ of $\mathbb{R}$ has at least $4$ clopen subsets. Exactly how many clopen subsets does it have?</p><div class="tosol"><a href="#c4-off-ch4-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-9"><p><b>$\bullet$  #9.</b> Is it true that every subspace of a connected space is connected?</p><div class="tosol"><a href="#c4-off-ch4-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-10"><p><b>$\bullet$  #10.</b> Let $(Y, \tau_Y)$ be a subspace of $(X, \tau)$. Show that $\tau_Y \subseteq \tau$ if and only if $Y \in \tau$.</p>
+<p>[Hint: Remember $Y \in \tau_Y$.]</p><div class="tosol"><a href="#c4-s-s4-1-10">Solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-15"><p><b>$\bullet$  #15.</b> Let $a$ and $b$ be in $\mathbb{R}$ with $a &lt; b$. Prove that $[a,b]$ is connected.</p>
+<p>[Hint: In the statement and proof of Proposition 3.3.3 replace $\mathbb{R}$ everywhere by $[a,b]$.]</p><div class="tosol"><a href="#c4-s-s4-1-15">Solution &darr;</a></div></div>
+<div class="item prob" id="c4-p-s4-1-16"><p><b>$\bullet$  #16.</b> Let $\mathbb{Q}$ be the set of all rational numbers with the usual topology and let $\mathbb{I}$ be the set of all irrational numbers with the usual topology.</p>
+<p>(i) Prove that neither $\mathbb{Q}$ nor $\mathbb{I}$ is a discrete space.</p>
+<p>(ii) Is $\mathbb{Q}$ or $\mathbb{I}$ a connected space?</p>
+<p>(iii) Is $\mathbb{Q}$ or $\mathbb{I}$ a Hausdorff space?</p>
+<p>(iv) Does $\mathbb{Q}$ or $\mathbb{I}$ have the finite-closed topology?</p><div class="tosol"><a href="#c4-s-s4-1-16">Solution &darr;</a></div></div>
+<div class="frag">
+
+<h4>Exercises 4.2</h4>
+<div class="n anch" id="c4-p-s4-2-1">∙ #1. <div class="tosol"><a href="#c4-off-ch4-maintext-p1">Official solution &darr;</a> &middot; <a href="#c4-s-s4-2-1">Solution (Claude) &darr;</a></div></div>
+<div class="i">(i) If a, b, c, and d are real numbers with a &lt; b and c &lt; d, prove that [a, b] ≅ [c, d].</div>
+<div class="i">(ii) If a and b are any real numbers, prove that</div>
+<div class="eq">(−∞, a] ≅ (−∞, b] ≅ [a, ∞) ≅ [b, ∞).</div>
+<div class="i">(iii) If c, d, e, and f are any real numbers with c &lt; d and e &lt; f, prove that</div>
+<div class="eq">[c, d) ≅ [e, f) ≅ (c, d] ≅ (e, f].</div>
+<div class="i">(iv) Deduce that for any real numbers a and b with a &lt; b,</div>
+<div class="eq">[0, 1) ≅ (−∞, a] ≅ [a, ∞) ≅ [a, b) ≅ (a, b].</div>
+<div class="n anch" id="c4-p-s4-2-2">∙ #2. <div class="tosol"><a href="#c4-off-ch4-maintext-p3">Official solution &darr;</a></div></div>
+<div>Prove that ℤ ≅ ℕ</div>
+<div class="n anch" id="c4-p-s4-2-4">∙ #4. <div class="tosol"><a href="#c4-s-s4-2-4">Solution &darr;</a></div></div>
+<div class="i">(i) Let X<sub>1</sub> and X<sub>2</sub> be the closed rectangular regions in ℝ<sup>2</sup> given by</div>
+<div class="eq">X<sub>1</sub> = {⟨x, y⟩: |x| ⩽ a<sub>1</sub> and |y| ⩽ b<sub>1</sub>}</div>
+<div class="eq">and X<sub>2</sub> = {⟨x, y⟩: |x| ⩽ a<sub>2</sub> and |y| ⩽ b<sub>2</sub>}</div>
+<div>where a<sub>1</sub>, b<sub>1</sub>, a<sub>2</sub>, and b<sub>2</sub> are positive real numbers. If X<sub>1</sub> and X<sub>2</sub> are given their induced topologies, τ<sub>1</sub> and τ<sub>2</sub> respectively, from ℝ<sup>2</sup>, show that X<sub>1</sub> ≅ X<sub>2</sub>.</div>
+<div class="i">(ii) Let D<sub>1</sub> and D<sub>2</sub> be the closed discs in ℝ<sup>2</sup> given by</div>
+<div class="eq">D<sub>1</sub> = {⟨x, y⟩: x<sup>2</sup> + y<sup>2</sup> ⩽ c<sub>1</sub>}</div>
+<div class="eq">and D<sub>2</sub> = {⟨x, y⟩: x<sup>2</sup> + y<sup>2</sup> ⩽ c<sub>2</sub>}</div>
+<div>where c<sub>1</sub> and c<sub>2</sub> are positive real numbers. Prove that the topological space D<sub>1</sub> ≅ D<sub>2</sub>, where D<sub>1</sub> and D<sub>2</sub> have their subspace topologies.</div>
+<div class="i">(iii) Prove that X<sub>1</sub> ≅ D<sub>1</sub>.</div>
+<div class="n anch" id="c4-p-s4-2-5">∙ #5. <div class="tosol"><a href="#c4-s-s4-2-5">Solution &darr;</a></div></div>
+<div>Let X<sub>1</sub> and X<sub>2</sub> be subspaces of ℝ given by X<sub>1</sub> = (0, 1) ∪ (3, 4) and X<sub>2</sub> = (0, 1) ∪ (1, 2). Is X<sub>1</sub> ≅ X<sub>2</sub>? (Justify your answer.)</div>
+<h4>Exercises 4.3</h4>
+<div class="n anch" id="c4-p-s4-3-4">∙ #4. <div class="tosol"><a href="#c4-off-ch4-maintext-p3">Official solution &darr;</a></div></div>
+<div>Let Y be the subspace of ℝ<sup>2</sup> given by</div>
+<div class="eq">Y = {⟨x, y⟩: x<sup>2</sup> + y<sup>2</sup> = 1} ∪ {⟨x, y⟩: (x − 2)<sup>2</sup> + y<sup>2</sup> = 1}</div>
+<div class="i">(i) Is Y homeomorphic to the space X in Exercise 3 above?</div>
+<div class="i">(ii) Is Y homeomorphic to an interval?</div>
+<div class="n anch" id="c4-p-s4-3-5">∙ #5. <div class="tosol"><a href="#c4-off-ch4-maintext-p3">Official solution &darr;</a> &middot; <a href="#c4-s-s4-3-5">Solution (Claude) &darr;</a></div></div>
+<div>Let Z be the subspace of ℝ<sup>2</sup> given by</div>
+<div class="eq">Z = {⟨x, y⟩: x<sup>2</sup> + y<sup>2</sup> = 1} ∪ {⟨x, y⟩: (x − 3/2)<sup>2</sup> + y<sup>2</sup> = 1}.</div>
+<div>Show that</div>
+<div class="i">(i) Z is not homeomorphic to any interval, and</div>
+<div class="i">(ii) Z is not homeomorphic to X or Y, the spaces described in Exercises 3 and Exercise 4 above.</div>
+<div class="n anch" id="c4-p-s4-3-7">∙ #7. <div class="tosol"><a href="#c4-s-s4-3-7">Solution &darr;</a></div></div>
+<div class="i">(i) Prove that the topological space in Exercises 1.1 #5 (i) is not homeomorphic to the space in Exercises 1.1 #9 (ii).</div>
+<div class="i">(ii)* In Exercises 1.1 #5, is (X, τ<sub>1</sub>) ≅ (X, τ<sub>2</sub>) ?</div>
+<div class="i">(iii)* In Exercises 1.1 # 9, is (X, τ<sub>2</sub>) ≅ (X, τ<sub>9</sub>) ?</div>
+</div>
+<div class="frag">
+<h3>Chapter 4: additional problems Krebs added on 9/25 and 10/4 (verbatim from his homework doc)</h3>
+<div class="p anch" id="c4-p-add2"><b>(2)</b> Generalizing the previous problem, let $X$ be $\mathbb{R}^n$ in the Zariski topology.  Let $A = \{(x_1,\ldots,x_{n-1},0) \in \mathbb{R}^n\}$.  In other words, $A = Z(x_n)$.  Show that $A$ (with the subspace topology) is homeomorphic with $\mathbb{R}^{n-1}$ in the Zariski topology.<div class="tosol"><a href="#c4-s-add2">Solution &darr;</a></div></div>
+<div class="p anch" id="c4-p-add3"><b>(3)</b> Prove that if $X$ and $Y$ are homeomorphic, and $X$ is irreducible, then $Y$ is irreducible.<div class="tosol"><a href="#c4-s-add3">Solution &darr;</a></div></div>
+<div class="p anch" id="c4-p-add4"><b>(4)</b> Let $X$ be $\mathbb{R}^3$ in the Zariski topology.  Let $A = \{(x,y,0) \in \mathbb{R}^3\}$.  So $A$ is the $xy$-plane.  Let $B = \{(x,y,x^2+y^2) \in \mathbb{R}^3\}$.  So $B$ is a paraboloid.  Give $A$ and $B$ each the subspace topology, as subsets of $X$.  Prove that $A$ and $B$ are homeomorphic.  (Remark: $A$ and $B$ are examples of algebraic varieties; these are the main objects of study in algebraic geometry.)<div class="tosol"><a href="#c4-s-add4">Solution &darr;</a></div></div>
+<div class="p anch" id="c4-p-add5"><b>(5)</b> Take $\mathbb{R}^2$ in the Euclidean topology, that is, the topology whose basis is the collection of all sets of the form
+<div class="eq">$$\{(x,y) \in \mathbb{R}^2 \mid (x-a)^2 + (y-b)^2 &lt; r^2\}$$</div>
+for some $a,b,r$ in $\mathbb{R}$.  Take two letters of the alphabet—your choice which—and find subsets of $\mathbb{R}^2$ that look like them.  Give each subset the subspace topology.  Are your two sets homeomorphic to each other?  Prove that your answer is correct.<div class="tosol"><a href="#c4-s-add5">Solution (Claude) 1 &darr;</a> &middot; <a href="#c4-s-add5-2">Solution (Claude) 2 &darr;</a></div></div>
+<div class="p anch" id="c4-p-add5-2"><b>(5)</b> Let $X$ be $\mathbb{R}^2$ in the Euclidean topology, that is, the topology whose basis is the collection of all sets of the form
+<div class="eq">$$\{(x,y) \in \mathbb{R}^2 \mid (x-a)^2 + (y-b)^2 &lt; r^2\}$$</div>
+for some $a,b,r$ in $\mathbb{R}$.  Let $Y$ be $\mathbb{R}^2$ in the Zariski topology.  Is $X$ homeomorphic to $Y$?  Prove that your answer is correct.<div class="tosol"><a href="#c4-s-add5">Solution (Claude) 1 &darr;</a> &middot; <a href="#c4-s-add5-2">Solution (Claude) 2 &darr;</a></div></div>
+<div class="p anch" id="c4-p-add6"><b>(6)</b> Let $U$ be a nonempty open subset of $\mathbb{R}$.  Prove that the subspace topology on $U$ is not the same as the discrete topology.<div class="tosol"><a href="#c4-s-add6">Solution &darr;</a></div></div>
+<div class="p anch" id="c4-p-add7"><b>(7)</b> Let $\mathbb{Q}$ be the rational numbers.  Prove that the subspace topology on $\mathbb{Q}$ (as a subspace of $\mathbb{R}$) is not the same as the discrete topology.<div class="tosol"><a href="#c4-s-add7">Solution &darr;</a></div></div>
+<div class="p" style="color:#666;font-size:10pt">(Additional problem (1), the $x$-axis in $\mathbb{R}^2$ Zariski, is the "Zariski question" already listed above. Krebs' doc numbers two different problems "(5)"; both are reproduced as he wrote them, and the solutions call them (5a) and (5b) in that order.)</div>
+</div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<p class="small">My worked solutions to the comprehensive-exam problem (and any class problem with no official key) follow; the instructor's official solutions to the main-textbook / worksheet problems are appended after.</p>
+<h4 class="sub">Comps Fall 2011 #1  - solution</h4>
+<div class="item sol" id="c4-s-comps"><div class="toprob"><a href="#c4-p-comps">&uarr; Problem</a></div><p>(a) Two topological spaces $X,Y$ are homeomorphic if there exists a bijection $f:X\to Y$ such that both $f$ and its inverse $f^{-1}$ are continuous (equivalently, $f$ is a continuous open bijection).</p>
+<p>(b) YES, $(0,1)\cong\mathbb{R}$. A homeomorphism is $f:(0,1)\to\mathbb{R}$, $f(t)=\tan(\pi t-\frac{\pi}{2})$ (strictly increasing, onto $\mathbb{R}$).</p>
+<p>(c) NO, $\mathbb{R}^2\ncong\mathbb{R}$. Removing one point from $\mathbb{R}$ disconnects it ($\mathbb{R}\setminus\{0\}$ has two components), while removing any one point from $\mathbb{R}^2$ leaves a (path-)connected space. A homeomorphism would carry the removed point of one to a point of the other and preserve connectedness of the complement - impossible. So no homeomorphism exists.</p>
+<p>(d) NO, $S\ncong\mathbb{R}$. The circle $S$ is compact (closed and bounded in $\mathbb{R}^2$), but $\mathbb{R}$ is not compact, and compactness is a homeomorphism invariant. (Equivalently, removing a point from $S$ leaves it connected, but not so for $\mathbb{R}$.)  ∎</p></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch4_maintext.pdf, 3 pages (shown as page images)</div>
+<div class="off" id="c4-off-ch4-maintext-p1"><div class="toprob"><a href="#c4-p-s4-1-1">&uarr; Problem 4.1 #1</a> &middot; <a href="#c4-p-s4-1-2">&uarr; Problem 4.1 #2</a> &middot; <a href="#c4-p-s4-1-3">&uarr; Problem 4.1 #3</a> &middot; <a href="#c4-p-s4-1-4">&uarr; Problem 4.1 #4</a> &middot; <a href="#c4-p-s4-1-8">&uarr; Problem 4.1 #8</a> &middot; <a href="#c4-p-s4-1-9">&uarr; Problem 4.1 #9</a> &middot; <a href="#c4-p-s4-2-1">&uarr; Problem 4.2 #1</a></div><div class="offcap">ch4_maintext.pdf, page 1</div><img src="img/5690-ch4_maintext-p1.png" width="1275" height="1650" loading="lazy" alt="ch4_maintext.pdf page 1"></div>
+<div class="off" id="c4-off-ch4-maintext-p2"><div class="offcap">ch4_maintext.pdf, page 2</div><img src="img/5690-ch4_maintext-p2.png" width="1275" height="1650" loading="lazy" alt="ch4_maintext.pdf page 2"></div>
+<div class="off" id="c4-off-ch4-maintext-p3"><div class="toprob"><a href="#c4-p-s4-2-2">&uarr; Problem 4.2 #2</a> &middot; <a href="#c4-p-s4-3-4">&uarr; Problem 4.3 #4</a> &middot; <a href="#c4-p-s4-3-5">&uarr; Problem 4.3 #5</a></div><div class="offcap">ch4_maintext.pdf, page 3</div><img src="img/5690-ch4_maintext-p3.png" width="1275" height="1650" loading="lazy" alt="ch4_maintext.pdf page 3"></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch4_zariski.pdf, 2 pages (shown as page images)</div>
+<div class="off" id="c4-off-ch4-zariski-p1"><div class="offcap">ch4_zariski.pdf, page 1</div><img src="img/5690-ch4_zariski-p1.png" width="1241" height="1754" loading="lazy" alt="ch4_zariski.pdf page 1"></div>
+<div class="off" id="c4-off-ch4-zariski-p2"><div class="toprob"><a href="#c4-p-add1">&uarr; Problem</a></div><div class="offcap">ch4_zariski.pdf, page 2</div><img src="img/5690-ch4_zariski-p2.png" width="1241" height="1754" loading="lazy" alt="ch4_zariski.pdf page 2"></div>
+<div class="frag">
+<h3>Chapter 4: backup solutions (Claude, not official)</h3>
+
+<p><i>Covered by the official files and not repeated here: Section 4.1 #1, #2, #3(i), #4, #8, #9; Section 4.2 #1(i), #2; Section 4.3 #4 (sketch), #5(i) (sketch) (ch4_maintext.pdf); Additional problem (1) (ch4_zariski.pdf, item (6)). The official 4.2 #5 solves an older-edition version with X<sub>1</sub> = (0, 1) ∪ (2, 3) (map x ↦ x − 1); the current book has (3, 4), so it is redone below.</i></p>
+
+<p><b>Tools used several times.</b></p>
+<p><b>Lemma A (restriction).</b> If f : (X, τ) → (Y, τ<sub>1</sub>) is a homeomorphism and S ⊆ X, then f restricted to S is a homeomorphism of the subspace S onto the subspace f(S).<br>
+<i>Proof.</i> It is a bijection S → f(S). If U is open in S, U = V ∩ S with V ∈ τ, and f(U) = f(V) ∩ f(S) (f is injective), which is open in f(S) since f(V) ∈ τ<sub>1</sub>. If W is open in f(S), W = G ∩ f(S) with G ∈ τ<sub>1</sub>, and the preimage of W in S is f<sup>−1</sup>(G) ∩ S, open in S. ∎</p>
+<p><b>Lemma B (ε-δ criterion).</b> Let A ⊆ ℝ<sup>m</sup>, B ⊆ ℝ<sup>k</sup> carry the subspace topologies, and let f : A → B be a bijection such that both f and f<sup>−1</sup> are ε-δ continuous (for every p and ε &gt; 0 there is δ &gt; 0 with ‖q − p‖ &lt; δ ⇒ ‖f(q) − f(p)‖ &lt; ε). Then f is a homeomorphism.<br>
+<i>Proof.</i> Open balls B(p, r) are open in ℝ<sup>n</sup> and form a basis (Exercises 2.2 #1, #2 and 2.3 #1(ii); the same argument works in ℝ<sup>n</sup>). Hence a set U ⊆ A is open in A iff for every p ∈ U there is r &gt; 0 with B(p, r) ∩ A ⊆ U. [If U = V ∩ A with V open, some B(p, r) ⊆ V; conversely U = (⋃<sub>p</sub> B(p, r<sub>p</sub>)) ∩ A.] Now let W be open in B and p ∈ f<sup>−1</sup>(W). Choose ε with B(f(p), ε) ∩ B ⊆ W and then δ for f at p; then B(p, δ) ∩ A ⊆ f<sup>−1</sup>(W). So f<sup>−1</sup>(W) is open in A: condition (iii) of Definition 4.2.1. Applying the same to f<sup>−1</sup> gives that f(U) = (f<sup>−1</sup>)<sup>−1</sup>(U) is open in B for U open in A: condition (iv). ∎</p>
+<p><b>Lemma M (monotone maps of intervals).</b> If I, J ⊆ ℝ are intervals and f : I → J is a strictly monotone bijection, then f is a homeomorphism.<br>
+<i>Proof.</i> First let f be strictly increasing. The sets (u, v) ∩ I, u &lt; v, form a basis of the subspace I (open intervals form a basis of ℝ). Let W = (u, v) ∩ I and y = f(x) with x ∈ W. If I ∩ (u, x) ≠ Ø pick x<sub>1</sub> in it and put y<sub>1</sub> = f(x<sub>1</sub>); otherwise put y<sub>1</sub> = y − 1. Similarly, if I ∩ (x, v) ≠ Ø pick x<sub>2</sub> in it and put y<sub>2</sub> = f(x<sub>2</sub>); otherwise y<sub>2</sub> = y + 1. Then y<sub>1</sub> &lt; y &lt; y<sub>2</sub>. Let z ∈ (y<sub>1</sub>, y<sub>2</sub>) ∩ J, z = f(t) with t ∈ I. If t ≤ u: in the first case t &lt; x<sub>1</sub> gives z = f(t) &lt; f(x<sub>1</sub>) = y<sub>1</sub>, impossible; in the second case t ≤ u &lt; x with t, x ∈ I, so (u, x) ⊆ [t, x] ⊆ I (I is an interval), contradicting I ∩ (u, x) = Ø. So t &gt; u, and symmetrically t &lt; v; thus z ∈ f(W). Hence y ∈ (y<sub>1</sub>, y<sub>2</sub>) ∩ J ⊆ f(W), so f(W) is open in J. Every open set of I is a union of such W, so f maps open sets to open sets. f<sup>−1</sup> : J → I is also a strictly increasing bijection, so it too maps open sets to open sets, i.e. preimages under f of open sets are open. If f is strictly decreasing, write f = n ∘ g where g = −f : I → −J is strictly increasing and n(y) = −y; n is a homeomorphism −J → J because it maps each basic set (u, v) ∩ (−J) onto (−v, −u) ∩ J and n<sup>−1</sup> = n. Compose (Example 4.2.2). ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-1-3">Section 4.1 #3(ii) to (vi)</div><div class="toprob"><a href="#c4-p-s4-1-3">&uarr; Problem</a></div>
+<div class="stmt">3. Write down a basis for the usual topology on each of the following:<br>
+(i) [a, b), where a &lt; b;<br>
+(ii) (a, b], where a &lt; b;<br>
+(iii) (−∞, a];<br>
+(iv) (−∞, a);<br>
+(v) (a, ∞);<br>
+(vi) [a, ∞).<br>
+[Hint: see Examples 4.1.4 and 4.1.5.]</div>
+<p><b>General fact.</b> If 𝓑 is a basis for (X, τ) and Y ⊆ X, then 𝓑<sub>Y</sub> = {B ∩ Y : B ∈ 𝓑} is a basis for τ<sub>Y</sub>: each B ∩ Y is open in Y, and if U = V ∩ Y with V = ⋃ B<sub>j</sub>, then U = ⋃ (B<sub>j</sub> ∩ Y). So a basis for Y ⊆ ℝ is {(c, d) ∩ Y : c &lt; d}, and we may drop Ø. Computing these intersections gives:</p>
+<ul>
+<li><b>(ii) Y = (a, b]:</b> {(c, d) : a ≤ c &lt; d ≤ b} ∪ {(c, b] : a ≤ c &lt; b}.</li>
+<li><b>(iii) Y = (−∞, a]:</b> {(c, d) : c &lt; d ≤ a} ∪ {(c, a] : c &lt; a}.</li>
+<li><b>(iv) Y = (−∞, a):</b> {(c, d) : c &lt; d ≤ a}.</li>
+<li><b>(v) Y = (a, ∞):</b> {(c, d) : a ≤ c &lt; d}.</li>
+<li><b>(vi) Y = [a, ∞):</b> {(c, d) : a ≤ c &lt; d} ∪ {[a, d) : a &lt; d}.</li>
+</ul>
+<p><i>Justification for (ii)</i> (the others are identical): a non-empty (c, d) ∩ (a, b] equals (max(a, c), min(b, d)) if d ≤ b, and (max(a, c), b] if d &gt; b, which are of the listed forms. Conversely each listed set is such an intersection: (c, d) = (c, d) ∩ (a, b] when a ≤ c &lt; d ≤ b, and (c, b] = (c, b + 1) ∩ (a, b]. So the list is exactly the non-empty members of 𝓑<sub>Y</sub>, a basis. For (vi) note [a, d) = (a − 1, d) ∩ [a, ∞) and for (iii) (c, a] = (c, a + 1) ∩ (−∞, a]. In (iv) and (v), Y is open in ℝ, so the intersections are ordinary open intervals inside Y. ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-1-5">Section 4.1 #5</div><div class="toprob"><a href="#c4-p-s4-1-5">&uarr; Problem</a></div>
+<div class="stmt">5. Let (Y, τ<sub>Y</sub>) be a subspace of a space (X, τ). Show that a subset Z of Y is closed in (Y, τ<sub>Y</sub>) if and only if Z = A ∩ Y, where A is a closed subset of (X, τ).</div>
+<p>(⇒) Z closed in Y means Y \ Z ∈ τ<sub>Y</sub>, so Y \ Z = U ∩ Y for some U ∈ τ. Let A = X \ U, closed in X. Then A ∩ Y = Y \ U = Y \ (U ∩ Y) = Y \ (Y \ Z) = Z.</p>
+<p>(⇐) If Z = A ∩ Y with A closed in X, then U = X \ A ∈ τ and Y \ Z = Y \ A = U ∩ Y ∈ τ<sub>Y</sub>. So Z is closed in Y. ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-1-6">Section 4.1 #6</div><div class="toprob"><a href="#c4-p-s4-1-6">&uarr; Problem</a></div>
+<div class="stmt">6. Show that every subspace of a discrete space is discrete.</div>
+<p>Let (X, τ) be discrete and Y ⊆ X. For any S ⊆ Y, S ⊆ X so S ∈ τ, and S = S ∩ Y ∈ τ<sub>Y</sub>. So every subset of Y is open in Y: τ<sub>Y</sub> is discrete. ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-1-7">Section 4.1 #7</div><div class="toprob"><a href="#c4-p-s4-1-7">&uarr; Problem</a></div>
+<div class="stmt">7. Show that every subspace of an indiscrete space is indiscrete.</div>
+<p>τ = {X, Ø}, so τ<sub>Y</sub> = {X ∩ Y, Ø ∩ Y} = {Y, Ø}, the indiscrete topology on Y. ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-1-10">Section 4.1 #10</div><div class="toprob"><a href="#c4-p-s4-1-10">&uarr; Problem</a></div>
+<div class="stmt">10. Let (Y, τ<sub>Y</sub>) be a subspace of (X, τ). Show that τ<sub>Y</sub> ⊆ τ if and only if Y ∈ τ.<br>[Hint: Remember Y ∈ τ<sub>Y</sub>.]</div>
+<p>(⇒) Y = X ∩ Y ∈ τ<sub>Y</sub> ⊆ τ.</p>
+<p>(⇐) Let W ∈ τ<sub>Y</sub>; W = U ∩ Y with U ∈ τ. Since U, Y ∈ τ, their intersection W ∈ τ. So τ<sub>Y</sub> ⊆ τ. ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-1-15">Section 4.1 #15</div><div class="toprob"><a href="#c4-p-s4-1-15">&uarr; Problem</a></div>
+<div class="stmt">15. Let a and b be in ℝ with a &lt; b. Prove that [a, b] is connected.<br>
+[Hint: In the statement and proof of Proposition 3.3.3 replace ℝ everywhere by [a, b].]</div>
+<p>Suppose S is a clopen subset of [a, b] with S ≠ Ø and S ≠ [a, b]. Then [a, b] \ S is also clopen, non-empty and proper. Pick x ∈ S and y ∈ [a, b] \ S; interchanging S and its complement if necessary, we may assume x &lt; y. Let Z = S ∩ [x, y], which is non-empty (x ∈ Z) and bounded above by y; let z = sup Z. Then x ≤ z ≤ y, so z ∈ [a, b].</p>
+<p><b>z ∈ S.</b> If not, z lies in the open set [a, b] \ S of [a, b], so there is ε &gt; 0 with (z − ε, z + ε) ∩ [a, b] ⊆ [a, b] \ S. As z = sup Z there is w ∈ Z with z − ε &lt; w ≤ z; w ∈ [a, b], so w ∉ S, contradicting w ∈ Z ⊆ S.</p>
+<p><b>Contradiction.</b> Since y ∉ S, z ≠ y, so z &lt; y. S is open in [a, b], so there is ε &gt; 0 with (z − ε, z + ε) ∩ [a, b] ⊆ S. Choose t with z &lt; t &lt; min(z + ε, y). Then a ≤ x ≤ z &lt; t &lt; y ≤ b, so t ∈ [a, b] ∩ (z − ε, z + ε) ⊆ S, and t ∈ [x, y]; thus t ∈ Z with t &gt; z = sup Z. Contradiction. Hence [a, b] has no proper non-empty clopen subset: it is connected. ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-1-16">Section 4.1 #16(i), (ii), (iv)</div><div class="toprob"><a href="#c4-p-s4-1-16">&uarr; Problem</a></div>
+<div class="stmt">16. Let ℚ be the set of all rational numbers with the usual topology and let 𝕀 be the set of all irrational numbers with the usual topology.<br>
+(i) Prove that neither ℚ nor 𝕀 is a discrete space.<br>
+(ii) Is ℚ or 𝕀 a connected space?<br>
+(iv) Does ℚ or 𝕀 have the finite-closed topology?</div>
+<p><b>(i)</b> If {0} were open in ℚ, then {0} = U ∩ ℚ with U open in ℝ, so (−ε, ε) ⊆ U for some ε &gt; 0. Choose n ∈ ℕ with 1/n &lt; ε; then 1/n ∈ U ∩ ℚ = {0}, contradiction. So ℚ is not discrete. Similarly if {√2} = U ∩ 𝕀 with (√2 − ε, √2 + ε) ⊆ U, choose n ∈ ℕ with √2/n &lt; ε; then √2(1 + 1/n) is irrational (a nonzero rational times √2), lies in (√2 − ε, √2 + ε) ∩ 𝕀, and differs from √2. Contradiction; 𝕀 is not discrete.</p>
+<p><b>(ii) Neither is connected.</b> In ℚ: A = ℚ ∩ (−∞, √2) and B = ℚ ∩ (√2, ∞) are open in ℚ, disjoint, non-empty (0 ∈ A, 2 ∈ B), and A ∪ B = ℚ since √2 ∉ ℚ. So A = ℚ \ B is clopen, proper and non-empty. In 𝕀: A = 𝕀 ∩ (−∞, 0) and B = 𝕀 ∩ (0, ∞) are open, disjoint, non-empty (−√2 ∈ A, √2 ∈ B), and cover 𝕀 since 0 ∉ 𝕀. So A is a proper non-empty clopen subset.</p>
+<p><b>(iv) Neither has the finite-closed topology.</b> In the finite-closed topology every non-empty open set has finite complement. But the sets A in (ii) are non-empty and open, while their complements B are infinite (B ∩ ℚ contains 2, 3, 4, …; B ∩ 𝕀 contains n√2 for all n ∈ ℕ). ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-2-1">Section 4.2 #1(ii), (iii), (iv)</div><div class="toprob"><a href="#c4-p-s4-2-1">&uarr; Problem</a></div>
+<div class="stmt">1. (ii) If a and b are any real numbers, prove that (−∞, a] ≅ (−∞, b] ≅ [a, ∞) ≅ [b, ∞).<br>
+(iii) If c, d, e, and f are any real numbers with c &lt; d and e &lt; f, prove that [c, d) ≅ [e, f) ≅ (c, d] ≅ (e, f].<br>
+(iv) Deduce that for any real numbers a and b with a &lt; b, [0, 1) ≅ (−∞, a] ≅ [a, ∞) ≅ [a, b) ≅ (a, b].</div>
+<p>All maps below are strictly monotone bijections between intervals, hence homeomorphisms by Lemma M; ≅ is an equivalence relation (Remark 4.2.3).</p>
+<p><b>(ii)</b> x ↦ x + (b − a) is an increasing bijection (−∞, a] → (−∞, b]. x ↦ a + b − x is a decreasing bijection (−∞, b] → [a, ∞) (it sends x ≤ b to a + b − x ≥ a, with inverse y ↦ a + b − y). x ↦ x + (b − a) is an increasing bijection [a, ∞) → [b, ∞).</p>
+<p><b>(iii)</b> x ↦ e + (f − e)(x − c)/(d − c) is an increasing bijection [c, d) → [e, f). x ↦ c + (d − c)(f − x)/(f − e) is a decreasing bijection [e, f) → (c, d] (e ↦ d, and x → f gives values → c, with c not attained). x ↦ e + (f − e)(x − c)/(d − c) is an increasing bijection (c, d] → (e, f].</p>
+<p><b>(iv)</b> By (iii), [0, 1) ≅ [a, b) ≅ (a, b]. The map x ↦ x/(1 − x) is a strictly increasing bijection [0, 1) → [0, ∞) (inverse y ↦ y/(1 + y); increasing because x/(1 − x) = 1/(1 − x) − 1), so [0, 1) ≅ [0, ∞), and by (ii) [0, ∞) ≅ [a, ∞) ≅ (−∞, a]. ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-2-4">Section 4.2 #4</div><div class="toprob"><a href="#c4-p-s4-2-4">&uarr; Problem</a></div>
+<div class="stmt">4. (i) Let X<sub>1</sub> and X<sub>2</sub> be the closed rectangular regions in ℝ<sup>2</sup> given by X<sub>1</sub> = {⟨x, y⟩ : |x| ⩽ a<sub>1</sub> and |y| ⩽ b<sub>1</sub>} and X<sub>2</sub> = {⟨x, y⟩ : |x| ⩽ a<sub>2</sub> and |y| ⩽ b<sub>2</sub>} where a<sub>1</sub>, b<sub>1</sub>, a<sub>2</sub>, and b<sub>2</sub> are positive real numbers. If X<sub>1</sub> and X<sub>2</sub> are given their induced topologies, τ<sub>1</sub> and τ<sub>2</sub> respectively, from ℝ<sup>2</sup>, show that X<sub>1</sub> ≅ X<sub>2</sub>.<br>
+(ii) Let D<sub>1</sub> and D<sub>2</sub> be the closed discs in ℝ<sup>2</sup> given by D<sub>1</sub> = {⟨x, y⟩ : x<sup>2</sup> + y<sup>2</sup> ⩽ c<sub>1</sub>} and D<sub>2</sub> = {⟨x, y⟩ : x<sup>2</sup> + y<sup>2</sup> ⩽ c<sub>2</sub>} where c<sub>1</sub> and c<sub>2</sub> are positive real numbers. Prove that the topological space D<sub>1</sub> ≅ D<sub>2</sub>, where D<sub>1</sub> and D<sub>2</sub> have their subspace topologies.<br>
+(iii) Prove that X<sub>1</sub> ≅ D<sub>1</sub>.</div>
+<p><b>(i)</b> Let α = a<sub>2</sub>/a<sub>1</sub>, β = b<sub>2</sub>/b<sub>1</sub> and f(x, y) = (αx, βy). Then |x| ≤ a<sub>1</sub> ⇔ |αx| ≤ a<sub>2</sub> and |y| ≤ b<sub>1</sub> ⇔ |βy| ≤ b<sub>2</sub>, so f is a bijection X<sub>1</sub> → X<sub>2</sub> with inverse (u, v) ↦ (u/α, v/β). Both satisfy ‖f(p) − f(q)‖ ≤ L‖p − q‖ (L = max(α, β), resp. max(1/α, 1/β)), so both are ε-δ continuous (δ = ε/L). By Lemma B, X<sub>1</sub> ≅ X<sub>2</sub>.</p>
+<p><b>(ii)</b> Let k = √(c<sub>2</sub>/c<sub>1</sub>) and g(p) = kp. Since ‖kp‖<sup>2</sup> = k<sup>2</sup>‖p‖<sup>2</sup>, ‖p‖<sup>2</sup> ≤ c<sub>1</sub> ⇔ ‖kp‖<sup>2</sup> ≤ c<sub>2</sub>, so g is a bijection D<sub>1</sub> → D<sub>2</sub> with inverse p ↦ p/k; ‖g(p) − g(q)‖ = k‖p − q‖. By Lemma B, D<sub>1</sub> ≅ D<sub>2</sub>.</p>
+<p><b>(iii)</b> By (i), X<sub>1</sub> ≅ Q = [−1, 1] × [−1, 1] (take a<sub>2</sub> = b<sub>2</sub> = 1), and by (ii), D<sub>1</sub> ≅ D = {‖p‖ ≤ 1} (take c<sub>2</sub> = 1). By transitivity it suffices to show Q ≅ D. Write ‖p‖<sub>∞</sub> = max(|p<sub>1</sub>|, |p<sub>2</sub>|); then Q = {‖p‖<sub>∞</sub> ≤ 1} and ‖p‖<sub>∞</sub> ≤ ‖p‖ ≤ √2‖p‖<sub>∞</sub>. Define</p>
+<p style="margin-left:2em">h(p) = (‖p‖<sub>∞</sub>/‖p‖) p for p ≠ 0, h(0) = 0; &nbsp;&nbsp; k(q) = (‖q‖/‖q‖<sub>∞</sub>) q for q ≠ 0, k(0) = 0.</p>
+<p>(h pushes each square ‖p‖<sub>∞</sub> = t radially onto the circle ‖q‖ = t.) Facts: h(p) is a positive multiple of p, with ‖h(p)‖ = ‖p‖<sub>∞</sub>; and ‖h(p)‖<sub>∞</sub> = (‖p‖<sub>∞</sub>/‖p‖)‖p‖<sub>∞</sub>. Hence for p ≠ 0, with q = h(p): ‖q‖/‖q‖<sub>∞</sub> = ‖p‖/‖p‖<sub>∞</sub>, so k(q) = (‖p‖/‖p‖<sub>∞</sub>)(‖p‖<sub>∞</sub>/‖p‖)p = p. Symmetrically h(k(q)) = q. So h and k are mutually inverse bijections of ℝ<sup>2</sup>. Also ‖h(p)‖ = ‖p‖<sub>∞</sub>, so h(Q) ⊆ D, and ‖k(q)‖<sub>∞</sub> = ‖q‖ (same computation), so k(D) ⊆ Q; hence h restricts to a bijection Q → D with inverse k.</p>
+<p><b>Continuity.</b> Away from 0, h and k are built from the functions ‖·‖ and ‖·‖<sub>∞</sub> (each satisfies |N(p) − N(q)| ≤ N(p − q) ≤ √2‖p − q‖, so is continuous), by quotients with non-vanishing denominators and multiplication by the coordinates, so they are ε-δ continuous at every p ≠ 0 by the usual limit laws. At 0: ‖h(p) − h(0)‖ = ‖p‖<sub>∞</sub> ≤ ‖p‖, and ‖k(q) − k(0)‖ = ‖q‖<sup>2</sup>/‖q‖<sub>∞</sub> ≤ √2‖q‖; take δ = ε, resp. δ = ε/√2. By Lemma B, h : Q → D is a homeomorphism. Hence X<sub>1</sub> ≅ Q ≅ D ≅ D<sub>1</sub>. ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-2-5">Section 4.2 #5</div><div class="toprob"><a href="#c4-p-s4-2-5">&uarr; Problem</a></div>
+<div class="stmt">5. Let X<sub>1</sub> and X<sub>2</sub> be subspaces of ℝ given by X<sub>1</sub> = (0, 1) ∪ (3, 4) and X<sub>2</sub> = (0, 1) ∪ (1, 2). Is X<sub>1</sub> ≅ X<sub>2</sub>? (Justify your answer.)</div>
+<p><b>Yes.</b> Define f : X<sub>1</sub> → X<sub>2</sub> by f(x) = x for x ∈ (0, 1) and f(x) = x − 2 for x ∈ (3, 4). f maps (0, 1) onto (0, 1) and (3, 4) onto (1, 2), so it is a bijection; f<sup>−1</sup>(y) = y on (0, 1), y + 2 on (1, 2).</p>
+<p>X<sub>1</sub> and X<sub>2</sub> are open in ℝ, so by Exercise 4.1 #10 (and since V ∩ X<sub>i</sub> is open in ℝ for V open) the open sets of X<sub>i</sub> are exactly the open subsets of ℝ contained in X<sub>i</sub>. Let U be open in X<sub>1</sub>. Then U ∩ (0, 1) and U ∩ (3, 4) are open in ℝ, and f(U) = (U ∩ (0, 1)) ∪ ((U ∩ (3, 4)) − 2), where a translate of an open set is open (it is a union of translated open intervals). So f(U) is open in ℝ and contained in X<sub>2</sub>, hence open in X<sub>2</sub>. The same argument with f<sup>−1</sup> (translation by +2 on (1, 2)) shows f<sup>−1</sup>(W) is open in X<sub>1</sub> for W open in X<sub>2</sub>. So f is a homeomorphism. ∎</p>
+
+<div class="lbl anch" id="c4-s-s4-3-5">Section 4.3 #5(ii)</div><div class="toprob"><a href="#c4-p-s4-3-5">&uarr; Problem</a></div>
+<div class="stmt">5. Let Z be the subspace of ℝ<sup>2</sup> given by Z = {⟨x, y⟩ : x<sup>2</sup> + y<sup>2</sup> = 1} ∪ {⟨x, y⟩ : (x − 3/2)<sup>2</sup> + y<sup>2</sup> = 1}.<br>
+Show that<br>
+(i) Z is not homeomorphic to any interval, and<br>
+(ii) Z is not homeomorphic to X or Y, the spaces described in Exercises 3 and Exercise 4 above.</div>
+<p>Notation: C<sub>1</sub> = {x<sup>2</sup> + y<sup>2</sup> = 1}, C<sub>2</sub> = {(x − 3/2)<sup>2</sup> + y<sup>2</sup> = 1}, so Z = C<sub>1</sub> ∪ C<sub>2</sub>. Subtracting the equations gives 3x − 9/4 = 0, so C<sub>1</sub> ∩ C<sub>2</sub> = {P, P′} with P = ⟨3/4, √7/4⟩, P′ = ⟨3/4, −√7/4⟩. X = C<sub>1</sub> is the circle of Exercise 3; Y = C<sub>1</sub> ∪ {(x − 2)<sup>2</sup> + y<sup>2</sup> = 1} is Exercise 4.</p>
+<p><b>Facts used.</b> (F1) A circle minus one point is homeomorphic to (0, 1) (Exercise 4.3 #3(i) for the point ⟨1, 0⟩; for another point first rotate, a rotation being a homeomorphism of the circle by Lemma B since it preserves distances), hence connected. (F2) If A, B are connected subspaces with A ∩ B ≠ Ø, A ∪ B is connected (Exercise 4.1 #11: if S is clopen in A ∪ B, S ∩ A is clopen in A so is Ø or A, likewise S ∩ B; a common point forces both to be Ø or both to be everything). (F3) Connectedness is preserved by homeomorphisms (Proposition 4.3.2), and a homeomorphism restricts to homeomorphisms of subspaces (Lemma A).</p>
+<p><b>Claim 1: Z \ {z} is connected for every z ∈ Z.</b> Say z ∈ C<sub>1</sub> (the other case is symmetric). If z ∉ C<sub>2</sub>, Z \ {z} = (C<sub>1</sub> \ {z}) ∪ C<sub>2</sub>, both connected, meeting in {P, P′}. If z = P (or P′), Z \ {z} = (C<sub>1</sub> \ {P}) ∪ (C<sub>2</sub> \ {P}), both connected by (F1), meeting at P′. Apply (F2).</p>
+<p><b>Z ≇ Y.</b> Y \ {⟨1, 0⟩} is disconnected: its points on the first circle have x &lt; 1 and those on the second circle have x &gt; 1, so (Y \ {⟨1, 0⟩}) ∩ {x &lt; 1} is a non-empty proper subset that is open, with open complement (Y \ {⟨1, 0⟩}) ∩ {x &gt; 1}. If f : Z → Y were a homeomorphism, with z = f<sup>−1</sup>(⟨1, 0⟩), then f would restrict to a homeomorphism of Z \ {z} (connected, Claim 1) onto Y \ {⟨1, 0⟩} (disconnected), contradicting (F3).</p>
+<p><b>Claim 2: X \ {a, b} is disconnected for all distinct a, b ∈ X.</b> By (F1) there is a homeomorphism g : X \ {a} → (0, 1); let c = g(b). By Lemma A, X \ {a, b} ≅ (0, 1) \ {c}, which is disconnected ((0, c) is a proper non-empty clopen subset of it).</p>
+<p><b>Claim 3: there are distinct a, b ∈ Z with Z \ {a, b} connected.</b> Take a = ⟨−1, 0⟩ ∈ C<sub>1</sub> \ C<sub>2</sub> and b = ⟨5/2, 0⟩ ∈ C<sub>2</sub> \ C<sub>1</sub>. Then Z \ {a, b} = (C<sub>1</sub> \ {a}) ∪ (C<sub>2</sub> \ {b}), both connected by (F1), meeting at P. By (F2) it is connected.</p>
+<p><b>Z ≇ X.</b> If f : Z → X were a homeomorphism, with a, b as in Claim 3, then f would restrict to a homeomorphism Z \ {a, b} → X \ {f(a), f(b)}, connected onto disconnected (Claim 2). Contradiction with (F3). ∎</p>
+<p>(For (i), covered officially: every interval with more than one point has a point whose removal disconnects it, while Z has none by Claim 1; and Z is not a single point.)</p>
+
+<div class="lbl anch" id="c4-s-s4-3-7">Section 4.3 #7</div><div class="toprob"><a href="#c4-p-s4-3-7">&uarr; Problem</a></div>
+<div class="stmt">7. (i) Prove that the topological space in Exercises 1.1 #5 (i) is not homeomorphic to the space in Exercises 1.1 #9 (ii).<br>
+(ii)* In Exercises 1.1 #5, is (X, τ<sub>1</sub>) ≅ (X, τ<sub>2</sub>)?<br>
+(iii)* In Exercises 1.1 # 9, is (X, τ<sub>2</sub>) ≅ (X, τ<sub>9</sub>)?</div>
+<p>Recall: 1.1 #5 (i) τ<sub>1</sub> = {ℝ, Ø} ∪ {(−n, n) : n ∈ ℕ}; 1.1 #5 (ii) τ<sub>2</sub> = {ℝ, Ø} ∪ {[−n, n] : n ∈ ℕ}; 1.1 #9 (ii) σ<sub>2</sub> = {ℝ, Ø} ∪ {(−r, r) : r &gt; 0}; 1.1 #9 (ix) σ<sub>9</sub> = {ℝ, Ø} ∪ {[−r, r], (−r, r) : r &gt; 0}.</p>
+<p><b>Key remark.</b> If f : (X, τ) → (Y, τ′) is a homeomorphism then V ↦ f(V) is a bijection τ → τ′ (inverse W ↦ f<sup>−1</sup>(W)), and since f is a bijection, V ⊆ V′ ⇔ f(V) ⊆ f(V′). Also f(Ø) = Ø and f(X) = Y.</p>
+<p><b>(i) Not homeomorphic.</b> τ<sub>1</sub> is countable. σ<sub>2</sub> is uncountable: the sets (−r, r), r &gt; 0, are pairwise distinct. A homeomorphism would give a bijection between them. ∎</p>
+<p><b>(ii) Yes, (ℝ, τ<sub>1</sub>) ≅ (ℝ, τ<sub>2</sub>).</b> Split ℝ into "layers" L<sub>1</sub> = (−1, 1), L<sub>n</sub> = (−n, −(n−1)] ∪ [n−1, n) for n ≥ 2, and L′<sub>1</sub> = [−1, 1], L′<sub>n</sub> = [−n, −(n−1)) ∪ (n−1, n] for n ≥ 2. Then (−n, n) = L<sub>1</sub> ∪ ⋯ ∪ L<sub>n</sub>, [−n, n] = L′<sub>1</sub> ∪ ⋯ ∪ L′<sub>n</sub>, and each family partitions ℝ. Define f : ℝ → ℝ:</p>
+<ul>
+<li>on L<sub>1</sub>: f(±1/m) = ±1/(m − 1) for integers m ≥ 2, and f(x) = x for every other x ∈ (−1, 1). This is a bijection (−1, 1) → [−1, 1]: the points ±1/m (m ≥ 2) are sent bijectively onto ±1/k (k ≥ 1), which now include ±1, and all other points are fixed.</li>
+<li>on L<sub>n</sub>, n ≥ 2: f(x) = −(2n − 1) − x for x ∈ (−n, −(n−1)], and f(x) = (2n − 1) − x for x ∈ [n−1, n). These reflections map (−n, −(n−1)] onto [−n, −(n−1)) and [n−1, n) onto (n−1, n], i.e. L<sub>n</sub> bijectively onto L′<sub>n</sub>.</li>
+</ul>
+<p>So f is a bijection ℝ → ℝ with f(L<sub>n</sub>) = L′<sub>n</sub> for all n. Hence f(Ø) = Ø, f(ℝ) = ℝ, f((−n, n)) = [−n, n], so f maps τ<sub>1</sub> onto τ<sub>2</sub>, and f<sup>−1</sup>([−n, n]) = (−n, n), so preimages of τ<sub>2</sub>-open sets are τ<sub>1</sub>-open. f is a homeomorphism. ∎</p>
+<p><b>(iii) No, (ℝ, σ<sub>2</sub>) ≇ (ℝ, σ<sub>9</sub>).</b> In σ<sub>9</sub>, the sets (−1, 1) ⊊ [−1, 1] have no member of σ<sub>9</sub> strictly between them (a member V with (−1, 1) ⊆ V ⊆ [−1, 1] is neither Ø nor ℝ, so it is (−r, r) or [−r, r]; the inclusions force r = 1, so V is (−1, 1) or [−1, 1]). Suppose f : (ℝ, σ<sub>2</sub>) → (ℝ, σ<sub>9</sub>) were a homeomorphism. Then A = f<sup>−1</sup>((−1, 1)) and B = f<sup>−1</sup>([−1, 1]) are in σ<sub>2</sub>, A ⊊ B, and neither is Ø or ℝ (as f(Ø) = Ø, f(ℝ) = ℝ). So A = (−r, r), B = (−s, s) with r &lt; s. Then C = (−(r+s)/2, (r+s)/2) ∈ σ<sub>2</sub> satisfies A ⊊ C ⊊ B, so f(C) ∈ σ<sub>9</sub> satisfies (−1, 1) ⊊ f(C) ⊊ [−1, 1], which is impossible. ∎</p>
+
+<div class="lbl anch" id="c4-s-add2">Additional problem (2)</div><div class="toprob"><a href="#c4-p-add2">&uarr; Problem</a></div>
+<div class="stmt">(2) Generalizing the previous problem, let $X$ be $\mathbb{R}^n$ in the Zariski topology.  Let $A = \{(x_1,\ldots,x_{n-1},0) \in \mathbb{R}^n\}$.  In other words, $A = Z(x_n)$.  Show that $A$ (with the subspace topology) is homeomorphic with $\mathbb{R}^{n-1}$ in the Zariski topology.</div>
+<p>(Zariski topology on ℝ<sup>m</sup>: the closed sets are Z(S) = {p : f(p) = 0 ∀ f ∈ S}, S a set of polynomials in m variables. If the topology is instead defined by the basis U<sub>f</sub> = {p : f(p) ≠ 0}, as in class, the two agree: the complement of an open set ⋃<sub>α</sub> U<sub>f<sub>α</sub></sub> is Z({f<sub>α</sub>}), and conversely the complement of Z(S) is ⋃<sub>f ∈ S</sub> U<sub>f</sub>. Take n ≥ 2.) Give A the subspace topology; by Exercise 4.1 #5 its closed sets are the sets F ∩ A with F Zariski-closed in ℝ<sup>n</sup>. Define φ : ℝ<sup>n−1</sup> → A, φ(a) = (a, 0). It is a bijection (inverse: drop the last coordinate).</p>
+<p>Because φ is a bijection, φ(ℝ<sup>n−1</sup> \ E) = A \ φ(E) and φ<sup>−1</sup>(A \ G) = ℝ<sup>n−1</sup> \ φ<sup>−1</sup>(G); so φ is a homeomorphism iff φ maps closed sets to closed sets and φ<sup>−1</sup> of closed sets are closed. We check both.</p>
+<p><b>Preimages of closed sets are closed.</b> A closed set of A is Z(S) ∩ A. For f ∈ S let f̄(x<sub>1</sub>, …, x<sub>n−1</sub>) = f(x<sub>1</sub>, …, x<sub>n−1</sub>, 0), a polynomial in n − 1 variables, and S̄ = {f̄ : f ∈ S}. Then a ∈ φ<sup>−1</sup>(Z(S) ∩ A) ⇔ f(a, 0) = 0 ∀ f ∈ S ⇔ a ∈ Z(S̄). So φ<sup>−1</sup>(Z(S) ∩ A) = Z(S̄) is closed in ℝ<sup>n−1</sup>.</p>
+<p><b>Images of closed sets are closed.</b> Let E = Z(T) ⊆ ℝ<sup>n−1</sup>, T a set of polynomials in x<sub>1</sub>, …, x<sub>n−1</sub>. Regard each g ∈ T as a polynomial ĝ in n variables not involving x<sub>n</sub>, and let T̂ = {ĝ}. Then (a, t) ∈ Z(T̂) ⇔ a ∈ Z(T), so Z(T̂) ∩ A = {(a, 0) : a ∈ Z(T)} = φ(E), which is closed in A.</p>
+<p>Hence φ is a homeomorphism and A ≅ ℝ<sup>n−1</sup> (Zariski). For n = 2 this recovers problem (1), since the Zariski topology on ℝ is the finite-closed topology (a nonzero one-variable polynomial has finitely many roots, and a finite set {r<sub>1</sub>, …, r<sub>k</sub>} is Z((x − r<sub>1</sub>)⋯(x − r<sub>k</sub>))). ∎</p>
+
+<div class="lbl anch" id="c4-s-add3">Additional problem (3)</div><div class="toprob"><a href="#c4-p-add3">&uarr; Problem</a></div>
+<div class="stmt">(3) Prove that if $X$ and $Y$ are homeomorphic, and $X$ is irreducible, then $Y$ is irreducible.</div>
+<p>(Irreducible: non-empty, and not the union of two proper closed subsets.) Let f : X → Y be a homeomorphism. Y ≠ Ø since X ≠ Ø. Suppose Y = A ∪ B with A, B closed in Y and A ≠ Y ≠ B. Then f<sup>−1</sup>(A) is closed in X, because X \ f<sup>−1</sup>(A) = f<sup>−1</sup>(Y \ A) is open (condition (iii) of Definition 4.2.1); likewise f<sup>−1</sup>(B). Also X = f<sup>−1</sup>(Y) = f<sup>−1</sup>(A) ∪ f<sup>−1</sup>(B). And f<sup>−1</sup>(A) ≠ X: since f is onto, f(f<sup>−1</sup>(A)) = A ≠ Y = f(X). Likewise f<sup>−1</sup>(B) ≠ X. So X is a union of two proper closed subsets, contradicting irreducibility of X. Hence Y is irreducible. ∎ (Only continuity and surjectivity of f were used: a continuous image of an irreducible space is irreducible.)</p>
+
+<div class="lbl anch" id="c4-s-add4">Additional problem (4)</div><div class="toprob"><a href="#c4-p-add4">&uarr; Problem</a></div>
+<div class="stmt">(4) Let $X$ be $\mathbb{R}^3$ in the Zariski topology.  Let $A = \{(x,y,0) \in \mathbb{R}^3\}$.  So $A$ is the $xy$-plane.  Let $B = \{(x,y,x^2+y^2) \in \mathbb{R}^3\}$.  So $B$ is a paraboloid.  Give $A$ and $B$ each the subspace topology, as subsets of $X$.  Prove that $A$ and $B$ are homeomorphic.  (Remark: $A$ and $B$ are examples of algebraic varieties; these are the main objects of study in algebraic geometry.)</div>
+<p>By Exercise 4.1 #5 the closed sets of A are the sets Z(S) ∩ A, and the closed sets of B are the sets Z(S) ∩ B, where S is any set of polynomials in x, y, z. Define ψ : A → B, ψ(x, y, 0) = (x, y, x<sup>2</sup> + y<sup>2</sup>). It is a bijection with inverse (x, y, z) ↦ (x, y, 0). As in problem (2), since ψ is a bijection, it suffices to show that ψ<sup>−1</sup> of each closed set of B is closed in A and that ψ of each closed set of A is closed in B (images and preimages of complements are complements).</p>
+<p><b>Preimages of closed sets are closed.</b> Let F = Z(S) ∩ B. For f ∈ S let f′(x, y, z) = f(x, y, x<sup>2</sup> + y<sup>2</sup>). This is a polynomial in x, y, z that does not involve z. Let S′ = {f′ : f ∈ S}. Then (x, y, 0) ∈ ψ<sup>−1</sup>(F) ⇔ f(x, y, x<sup>2</sup> + y<sup>2</sup>) = 0 for all f ∈ S ⇔ f′(x, y, 0) = 0 for all f ∈ S ⇔ (x, y, 0) ∈ Z(S′). So ψ<sup>−1</sup>(F) = Z(S′) ∩ A, which is closed in A.</p>
+<p><b>Images of closed sets are closed.</b> Let E = Z(T) ∩ A. For g ∈ T let g*(x, y, z) = g(x, y, 0). This is a polynomial that does not involve z. Let T* = {g* : g ∈ T}. A point (x, y, x<sup>2</sup> + y<sup>2</sup>) of B is in Z(T*) ⇔ g(x, y, 0) = 0 for all g ∈ T ⇔ (x, y, 0) ∈ E ⇔ (x, y, x<sup>2</sup> + y<sup>2</sup>) ∈ ψ(E). So ψ(E) = Z(T*) ∩ B, which is closed in B.</p>
+<p>Hence ψ is a homeomorphism, so A ≅ B. ∎ (Combined with problem (2), both are homeomorphic to ℝ<sup>2</sup> in the Zariski topology.)</p>
+
+<div class="lbl anch" id="c4-s-add5">Additional problem (5), first version: two letters (called (5a) here)</div><div class="toprob"><a href="#c4-p-add5">&uarr; Problem</a></div>
+<div class="stmt">(5) Take $\mathbb{R}^2$ in the Euclidean topology, that is, the topology whose basis is the collection of all sets of the form $\{(x,y) \in \mathbb{R}^2 \mid (x-a)^2 + (y-b)^2 &lt; r^2\}$ for some $a,b,r$ in $\mathbb{R}$.  Take two letters of the alphabet—your choice which—and find subsets of $\mathbb{R}^2$ that look like them.  Give each subset the subspace topology.  Are your two sets homeomorphic to each other?  Prove that your answer is correct.</div>
+<p><b>Choice:</b> the letters <b>I</b> and <b>T</b>, with<br>
+I = {(x, 0) : 0 ≤ x ≤ 1} (a segment), &nbsp; T = H ∪ V, where H = {(x, 1) : −1 ≤ x ≤ 1} (the bar) and V = {(0, y) : 0 ≤ y ≤ 1} (the stem).<br>
+<b>Answer: I and T are not homeomorphic.</b></p>
+<p><b>Invariant.</b> Call a space <i>3-splittable</i> if it is the union of three nonempty, pairwise disjoint open subsets. If f : P → Q is a homeomorphism and P = U<sub>1</sub> ∪ U<sub>2</sub> ∪ U<sub>3</sub> is such a splitting, then Q = f(U<sub>1</sub>) ∪ f(U<sub>2</sub>) ∪ f(U<sub>3</sub>) is one too, since f is a bijection and maps open sets to open sets. So being 3-splittable is preserved by homeomorphisms.</p>
+<p><b>T minus its junction point is 3-splittable.</b> Let c = (0, 1) and T′ = T \ {c}. Put U<sub>1</sub> = T′ ∩ {x &lt; 0}, U<sub>2</sub> = T′ ∩ {x &gt; 0}, U<sub>3</sub> = T′ ∩ {y &lt; 1}. The open half-planes are open in ℝ<sup>2</sup> (each point has a small disk inside), so each U<sub>i</sub> is open in T′. Concretely, U<sub>1</sub> = [−1, 0) × {1}, U<sub>2</sub> = (0, 1] × {1}, and U<sub>3</sub> = {0} × [0, 1). These are nonempty and pairwise disjoint, and their union is T′, because every point of T′ is either on the bar with x ≠ 0 or on the stem with y &lt; 1.</p>
+<p><b>No I minus a point is 3-splittable.</b> The map (x, 0) ↦ x is a homeomorphism I → [0, 1] (it and its inverse preserve distances; use Lemma B). Let q ∈ I. By Lemma A, I \ {q} ≅ [0, 1] \ {t} for some t ∈ [0, 1]. Now [0, 1] \ {t} = J<sub>1</sub> ∪ J<sub>2</sub> with J<sub>1</sub> = [0, t) and J<sub>2</sub> = (t, 1]. These are intervals, possibly empty, and intervals are connected (Section 4.3). Suppose [0, 1] \ {t} = U<sub>1</sub> ∪ U<sub>2</sub> ∪ U<sub>3</sub> is a 3-splitting. Each U<sub>i</sub> is open, and its complement (the union of the other two) is open too, so U<sub>i</sub> ∩ J<sub>k</sub> is clopen in J<sub>k</sub>. Since J<sub>k</sub> is connected, U<sub>i</sub> ∩ J<sub>k</sub> is either Ø or J<sub>k</sub>. A nonempty U<sub>i</sub> meets some J<sub>k</sub>, so it contains that whole J<sub>k</sub>. The U<sub>i</sub> are pairwise disjoint, so different U<sub>i</sub> contain different J<sub>k</sub>. There are at most two J<sub>k</sub>, so at most two of the U<sub>i</sub> are nonempty, a contradiction. So I \ {q} is not 3-splittable, for every q.</p>
+<p><b>Conclusion.</b> Suppose f : T → I were a homeomorphism. By Lemma A, f would restrict to a homeomorphism T′ = T \ {c} → I \ {f(c)}. The first space is 3-splittable and the second is not, which contradicts the invariance shown above. Hence I ≇ T. ∎</p>
+
+<div class="lbl anch" id="c4-s-add5-2">Additional problem (5), second version: Euclidean vs Zariski (called (5b) here)</div><div class="toprob"><a href="#c4-p-add5">&uarr; Problem</a></div>
+<div class="stmt">(5) Let $X$ be $\mathbb{R}^2$ in the Euclidean topology, that is, the topology whose basis is the collection of all sets of the form $\{(x,y) \in \mathbb{R}^2 \mid (x-a)^2 + (y-b)^2 &lt; r^2\}$ for some $a,b,r$ in $\mathbb{R}$.  Let $Y$ be $\mathbb{R}^2$ in the Zariski topology.  Is $X$ homeomorphic to $Y$?  Prove that your answer is correct.</div>
+<p><b>No.</b> We show that in Y any two nonempty open sets intersect, while X has two disjoint nonempty open sets. A homeomorphism maps open sets to open sets and, being a bijection, maps disjoint nonempty sets to disjoint nonempty sets, so this property is preserved and X ≇ Y.</p>
+<p><b>In X.</b> The open disks D<sub>1</sub> = {(x − 0)<sup>2</sup> + y<sup>2</sup> &lt; 1} and D<sub>2</sub> = {(x − 3)<sup>2</sup> + y<sup>2</sup> &lt; 1} are basic open sets. They are nonempty and disjoint, since a common point would be within distance 1 of both (0, 0) and (3, 0), and that is impossible because those points are distance 3 apart.</p>
+<p><b>Lemma P.</b> A nonzero polynomial h ∈ ℝ[x, y] is nonzero at some point of ℝ<sup>2</sup>.<br>
+<i>Proof.</i> Write h = Σ<sub>k</sub> a<sub>k</sub>(x) y<sup>k</sup> with some a<sub>m</sub> ≠ 0 as a polynomial. A nonzero one-variable polynomial has finitely many roots, so there is an x<sub>0</sub> with a<sub>m</sub>(x<sub>0</sub>) ≠ 0. Then h(x<sub>0</sub>, y) is a nonzero polynomial in y, so it has finitely many roots, and there is a y<sub>0</sub> with h(x<sub>0</sub>, y<sub>0</sub>) ≠ 0. ∎</p>
+<p><b>In Y.</b> Let U<sub>1</sub> = ℝ<sup>2</sup> \ Z(S<sub>1</sub>) and U<sub>2</sub> = ℝ<sup>2</sup> \ Z(S<sub>2</sub>) be nonempty Zariski-open sets. Pick p<sub>1</sub> ∈ U<sub>1</sub>. Then p<sub>1</sub> ∉ Z(S<sub>1</sub>), so some f ∈ S<sub>1</sub> has f(p<sub>1</sub>) ≠ 0; in particular f is a nonzero polynomial. Likewise some g ∈ S<sub>2</sub> is a nonzero polynomial. The product fg is a nonzero polynomial: its leading term (in total degree, then in powers of x) is the product of the leading terms of f and g, which is nonzero. By Lemma P there is a point p with f(p)g(p) ≠ 0. Then f(p) ≠ 0, so p ∉ Z(S<sub>1</sub>), i.e. p ∈ U<sub>1</sub>; likewise p ∈ U<sub>2</sub>. So U<sub>1</sub> ∩ U<sub>2</sub> ≠ Ø.</p>
+<p>Now suppose h : X → Y were a homeomorphism. Then h(D<sub>1</sub>) and h(D<sub>2</sub>) would be nonempty open sets of Y, and they would be disjoint because h is injective. This contradicts the result for Y. Hence X ≇ Y. ∎ (Equivalently: X is Hausdorff and Y is not; or Y is irreducible and X is not, which links to problem (3).)</p>
+
+<div class="lbl anch" id="c4-s-add6">Additional problem (6)</div><div class="toprob"><a href="#c4-p-add6">&uarr; Problem</a></div>
+<div class="stmt">(6) Let $U$ be a nonempty open subset of $\mathbb{R}$.  Prove that the subspace topology on $U$ is not the same as the discrete topology.</div>
+<p>Pick p ∈ U. We show that {p}, which is open in the discrete topology, is not open in the subspace topology. Suppose it were. Then {p} = V ∩ U for some V open in ℝ. Since U is also open in ℝ, {p} = V ∩ U is open in ℝ. But every open set of ℝ that contains p contains an interval (p − ε, p + ε) with ε &gt; 0, and so it contains p + ε/2 ≠ p. This is a contradiction. So {p} is not open in U, and the subspace topology on U is not discrete. ∎ (Note that U ≠ Ø is needed: on Ø the two topologies coincide.)</p>
+
+<div class="lbl anch" id="c4-s-add7">Additional problem (7)</div><div class="toprob"><a href="#c4-p-add7">&uarr; Problem</a></div>
+<div class="stmt">(7) Let $\mathbb{Q}$ be the rational numbers.  Prove that the subspace topology on $\mathbb{Q}$ (as a subspace of $\mathbb{R}$) is not the same as the discrete topology.</div>
+<p>Take q = 0 ∈ ℚ (any rational works). We show {q} is not open in the subspace ℚ. Suppose {q} = V ∩ ℚ with V open in ℝ. Since q ∈ V, there is ε &gt; 0 with (q − ε, q + ε) ⊆ V. Choose an integer n &gt; 1/ε. Then q + 1/n is rational, lies in (q − ε, q + ε) ⊆ V, and is not q. So q + 1/n ∈ V ∩ ℚ = {q}, a contradiction. Hence {q} is open in the discrete topology on ℚ but not in the subspace topology, so the two topologies differ. ∎ (Here, unlike in (6), ℚ is not open in ℝ, so the nonempty open sets of the subspace ℚ are not open in ℝ. The proof only needs density: every interval around q contains other rationals.)</p>
+</div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

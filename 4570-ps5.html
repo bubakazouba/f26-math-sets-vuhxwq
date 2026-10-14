@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 4570 PS5</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 4570  ·  Problem Set 5 (with solutions)</h1>
+<div class="hdr"><p class="small">Source: MIT 18.700 Linear Algebra, Fall 2013 (MIT OpenCourseWare, CC BY-NC-SA), Problem Set 5. Problems 3-6 are Axler (2nd ed) p.94 ex.19, p.95 ex.20, p.96 ex.21, p.96 ex.23, inlined. Solutions by Claude.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<div class="item prob" id="p-1"><p><b>1.</b> Given distinct $x_1,x_2,x_3\in F$ and arbitrary $a,b,c\in F$, find all polynomials</p>
+<p>$p(x)=u_0+u_1x+u_2x^2+u_3x^3$ of degree $\leq 3$ with $p(x_1)=a,\ p(x_2)=b,\ p(x_3)=c$.</p>
+<p>(a) Write the augmented matrix.  (b) Row-reduce to RREF.  (c) Write all such polynomials.</p><div class="tosol"><a href="#s-1">Solution &darr;</a></div></div>
+<div class="item prob" id="p-2"><p><b>2.</b> Recurrence $a_0=0,\ a_1=1,\ a_{n+1}=a_n+2a_{n-1}$; let $A$ have rows $(1,2),(1,0)$.</p>
+<p>(a) Find eigenvalues/eigenvectors of $A$.  (b) Write $(1,0)$ as a combination of them.</p>
+<p>(c) Find a formula for $A^n(1,0)$ not using $A$.</p><div class="tosol"><a href="#s-2">Solution &darr;</a></div></div>
+<div class="item prob" id="p-3"><p><b>3.</b> (Axler 2nd ed, p.94 ex.19)  Give an operator whose matrix (in some basis) has only nonzero diagonal entries, yet the operator is not invertible.</p><div class="tosol"><a href="#s-3">Solution &darr;</a></div></div>
+<div class="item prob" id="p-4"><p><b>4.</b> (Axler 2nd ed, p.95 ex.20)  Suppose $T\in\mathcal{L}(V)$ has $\dim V$ distinct eigenvalues, and $S\in\mathcal{L}(V)$ has the same eigenvectors as $T$ (not necessarily the same eigenvalues). Prove $ST=TS$.</p><div class="tosol"><a href="#s-4">Solution &darr;</a></div></div>
+<div class="item prob" id="p-5"><p><b>5.</b> (Axler 2nd ed, p.96 ex.21)  Suppose $P\in\mathcal{L}(V)$ and $P^2=P$. Prove $V=\mathrm{null}\,P\oplus\mathrm{range}\,P$.</p><div class="tosol"><a href="#s-5">Solution &darr;</a></div></div>
+<div class="item prob" id="p-6"><p><b>6.</b> (Axler 2nd ed, p.96 ex.23)  Give an example of $T\in\mathcal{L}(\mathbb{R}^4)$ with no (real) eigenvalues.</p><div class="tosol"><a href="#s-6">Solution &darr;</a></div></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<div class="item sol" id="s-1"><div class="toprob"><a href="#p-1">&uarr; Problem</a></div><p class="lead"><b>Solution 1.</b> A one-parameter family: $p=L+u_3\,(x-x_1)(x-x_2)(x-x_3)$.</p>
+<p>(a) Since $p(x_i)=u_0+u_1x_i+u_2x_i^2+u_3x_i^3$, the three conditions are the augmented matrix</p>
+<pre class="mono">        [ 1  x1  x1^2  x1^3 | a ]
+        [ 1  x2  x2^2  x2^3 | b ]
+        [ 1  x3  x3^2  x3^3 | c ]</pre>
+<p>(b) The left $3\times 3$ block (columns $u_0,u_1,u_2$) is a Vandermonde matrix; as $x_1,x_2,x_3$ are distinct it is invertible, so columns $1,2,3$ are pivot columns and $u_3$ is free. Row reduction gives the RREF</p>
+<pre class="mono">        [ 1  0  0    e3 | A ]
+        [ 0  1  0   -e2 | B ]
+        [ 0  0  1    e1 | C ]</pre>
+<p>where $e_1=x_1+x_2+x_3$, $e_2=x_1x_2+x_1x_3+x_2x_3$, $e_3=x_1x_2x_3$ come from $(x-x_1)(x-x_2)(x-x_3)=x^3-e_1x^2+e_2x-e_3$, and $A,B,C$ are the coefficients of the Lagrange interpolant $L(x)=A+Bx+Cx^2$ of degree $\leq 2$ (below).</p>
+<p>(c) Reading off the RREF: $u_3$ is arbitrary and $u_0=A-e_3u_3,\ u_1=B+e_2u_3,\ u_2=C-e_1u_3$, i.e. $p(x)=L(x)+u_3\,(x-x_1)(x-x_2)(x-x_3),\qquad u_3\in F$ arbitrary, where $L$ is the unique interpolant of degree $\leq 2$ through the three points: $L(x)=a\frac{(x-x_2)(x-x_3)}{(x_1-x_2)(x_1-x_3)}+b\frac{(x-x_1)(x-x_3)}{(x_2-x_1)(x_2-x_3)}+c\frac{(x-x_1)(x-x_2)}{(x_3-x_1)(x_3-x_2)}.$ (Any two solutions differ by a degree-$\leq 3$ polynomial vanishing at $x_1,x_2,x_3$, i.e. a multiple of $(x-x_1)(x-x_2)(x-x_3)$.)  ∎</p></div>
+<div class="item sol" id="s-2"><div class="toprob"><a href="#p-2">&uarr; Problem</a></div><p class="lead"><b>Solution 2.</b> $A$ (rows $(1,2),(1,0)$) has characteristic polynomial $\lambda^2-\lambda-2=(\lambda-2)(\lambda+1)$.</p>
+<p>(a) Eigenvalue $\lambda=2$: eigenvector $(2,1)$; eigenvalue $\lambda=-1$: eigenvector $(1,-1)$.</p>
+<p>(b) $(1,0)=\frac{1}{3}(2,1)+\frac{1}{3}(1,-1)$  (solve $2\alpha+\beta=1,\ \alpha-\beta=0$).</p>
+<p>(c) $A^n(1,0)=\frac{1}{3}\,2^n(2,1)+\frac{1}{3}(-1)^n(1,-1)=(\frac{2^{n+1}+(-1)^n}{3},\ \frac{2^n-(-1)^n}{3}).$ Since $(a_{n+1},a_n)=A^n(a_1,a_0)=A^n(1,0)$, this gives the closed form $a_n=\frac{2^n-(-1)^n}{3}$ (check: $a_0=0,a_1=1,a_2=1,a_3=3,a_4=5,\dots$).  ∎</p></div>
+<div class="item sol" id="s-3"><div class="toprob"><a href="#p-3">&uarr; Problem</a></div><p class="lead"><b>Solution 3.</b> Take $T$ on $\mathbb{R}^2$ with matrix having rows $(1,1)$ and $(1,1)$ (standard basis).</p>
+<p>Its diagonal entries are $1,1$ (both nonzero), but $\det=1\cdot 1-1\cdot 1=0$, so $T$ is not invertible.  ∎</p></div>
+<div class="item sol" id="s-4"><div class="toprob"><a href="#p-4">&uarr; Problem</a></div><p class="lead"><b>Solution 4.</b> $ST=TS$.</p>
+<p>Because $T$ has $n=\dim V$ distinct eigenvalues, $V$ has a basis $v_1,\dots,v_n$ of eigenvectors of $T$, say $Tv_i=\lambda_i v_i$. 'S has the same eigenvectors' means each $v_i$ is also an eigenvector of $S$: $Sv_i=\mu_i v_i$. Then $ST v_i=S(\lambda_i v_i)=\lambda_i\mu_i v_i$ and $TS v_i=T(\mu_i v_i)=\mu_i\lambda_i v_i$, so $ST v_i=TS v_i$ for every basis vector. Two operators agreeing on a basis are equal, hence $ST=TS$.  ∎</p></div>
+<div class="item sol" id="s-5"><div class="toprob"><a href="#p-5">&uarr; Problem</a></div><p class="lead"><b>Solution 5.</b> $V=\mathrm{null}\,P\oplus\mathrm{range}\,P$.</p>
+<p>Sum: for any $v$, write $v=(v-Pv)+Pv$. Here $Pv\in\mathrm{range}\,P$, and $v-Pv\in\mathrm{null}\,P$ since $P(v-Pv)=Pv-P^2v=Pv-Pv=0$. So $V=\mathrm{null}\,P+\mathrm{range}\,P$. Direct: if $v\in\mathrm{null}\,P\cap\mathrm{range}\,P$, then $v=Pw$ for some $w$, so $v=Pw=P^2w=Pv=0$. Hence the intersection is $\{0\}$, and the sum is direct: $V=\mathrm{null}\,P\oplus\mathrm{range}\,P$.  ∎</p></div>
+<div class="item sol" id="s-6"><div class="toprob"><a href="#p-6">&uarr; Problem</a></div><p class="lead"><b>Solution 6.</b> Two $90°$ rotation blocks.</p>
+<p>Let $T\in\mathcal{L}(\mathbb{R}^4)$ have matrix</p>
+<pre class="mono">        [ 0 -1  0  0 ]
+    T = [ 1  0  0  0 ]
+        [ 0  0  0 -1 ]
+        [ 0  0  1  0 ]</pre>
+<p>Its characteristic polynomial is $(\lambda^2+1)^2$, which has no real roots. So $T$ has no real eigenvalues. (Geometrically $T$ rotates each of the two coordinate planes by $90°$, fixing no real line.)  ∎</p></div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>

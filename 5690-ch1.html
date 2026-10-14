@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>MATH 5690 Ch 1</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
+</head><body><main>
+<nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a></nav>
+<h1>MATH 5690 (Topology)  ·  Chapter 1 Homework</h1>
+<div class="hdr"><p class="small">Problems first; ALL solutions together at the end. The comps problem is quoted verbatim from the CSULA topology comprehensive exam (solution by Claude - comps have no key). The assigned main-textbook problems are inlined verbatim (cropped from Morris, Topology Without Tears); official solutions are appended. (Chapter 1 is covered by Quiz 1.) The comps problem and the two class problems have no official key and</p>
+<p class="small">are solved below; the Section 1.1-1.3 main-textbook solutions are the instructor's official set, appended.</p></div>
+<h2 class="part" id="problems">Problems</h2>
+<h3 class="grp">Assigned problems (Chapter 1)</h3>
+<p>$\bullet$ Fall 2003 topology comps, Problem 1(a, c).</p>
+<p>$\bullet$ Main textbook: Section 1.1 #2, 3, 4, 9(all parts);  Section 1.2 #1, 2, 5;  Section 1.3 #1, 3, 4, 6.</p>
+<p>$\bullet$ HW from class: two problems (below).</p>
+<h4 class="sub">Comprehensive-exam problem  (Fall 2003, #1a,c)  - verbatim</h4>
+<div class="item prob" id="c1-p-comps"><p>On $\mathbb{R}$ consider the family $\sigma=\{D\subseteq\mathbb{R}: D=\emptyset$ or $D^c$ is countable$\}$.</p>
+<p>(a) Prove that $\sigma$ is a topology on $\mathbb{R}$.</p>
+<p>(c) Prove that $\sigma$ is not a subset of the usual topology $\tau$ and that $\tau$ is not a subset of $\sigma$ (i.e. $\sigma$ is neither strictly finer nor strictly coarser than $\tau$).</p><div class="tosol"><a href="#c1-s-comps">Solution &darr;</a></div></div>
+<h4 class="sub">HW from class  - verbatim</h4>
+<div class="item prob" id="c1-p-class1"><p><b>(1)</b> Prove that you can form a topology on $\mathbb{R}$ (the set of real numbers), by taking the closed sets to be precisely the empty set as well as any set whose complement is bounded.</p><div class="tosol"><a href="#c1-s-class1">Solution (Claude) 1 &darr;</a> &middot; <a href="#c1-s-class">Solution (Claude) 2 &darr;</a></div></div>
+<div class="item prob" id="c1-p-class2"><p><b>(2)</b> Let $X$ be a set, and let $\mathcal{B}$ be a bornology on $X$. Prove that you can form a topology on $X$ by taking the closed sets to be precisely the empty set as well as any set whose complement is in $\mathcal{B}$. Observe that both (1) as well as the statement that the cofinite topology is a topology follow from (2).</p><div class="tosol"><a href="#c1-s-class2">Solution (Claude) 1 &darr;</a> &middot; <a href="#c1-s-class">Solution (Claude) 2 &darr;</a></div></div>
+<h3 class="grp">MAIN-TEXTBOOK PROBLEMS  (Morris, Topology Without Tears - assigned exercises, verbatim)</h3>
+
+<h4 class="sub">Exercises 1.1</h4>
+<div class="item prob" id="c1-p-s1-1-2"><p><b>$\bullet$  #2.</b> Let $X=\{a,b,c,d,e,f\}$. Which of the following collections of subsets of $X$ is a topology on $X$? (Justify your answers.)</p>
+<p>(a) $\tau_1=\{X,\emptyset,\{c\},\{b,d,e\},\{b,c,d,e\},\{b\}\}$;</p>
+<p>(b) $\tau_2=\{X,\emptyset,\{a\},\{b,d,e\},\{a,b,d\},\{a,b,d,e\}\}$;</p>
+<p>(c) $\tau_3=\{X,\emptyset,\{b\},\{a,b,c\},\{d,e,f\},\{b,d,e,f\}\}$.</p><div class="tosol"><a href="#c1-off-ch1-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c1-p-s1-1-3"><p><b>$\bullet$  #3.</b> If $X=\{a,b,c,d,e,f\}$ and $\tau$ is the discrete topology on $X$, which of the following statements are true?</p>
+<p>(a) $X\in\tau$;  (b) $\{X\}\in\tau$;  (c) $\{\emptyset\}\in\tau$;  (d) $\emptyset\in\tau$;  (e) $\emptyset\in X$;  (f) $\{\emptyset\}\in X$;  (g) $\{a\}\in\tau$;  (h) $a\in\tau$;</p>
+<p>(i) $\emptyset\subseteq X$;  (j) $\{a\}\in X$;  (k) $\{\emptyset\}\subseteq X$;  (l) $a\in X$;  (m) $X\subseteq\tau$;  (n) $\{a\}\subseteq\tau$;  (o) $\{X\}\subseteq\tau$;  (p) $a\subseteq\tau$.</p>
+<p>[Hint. Precisely six of the above are true.]</p><div class="tosol"><a href="#c1-off-ch1-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c1-p-s1-1-4"><p><b>$\bullet$  #4.</b> Let $(X,\tau)$ be any topological space. Verify that the intersection of any finite number of members of $\tau$ is a member of $\tau$.</p>
+<p>[Hint. To prove this result use "mathematical induction".]</p><div class="tosol"><a href="#c1-off-ch1-maintext-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="c1-p-s1-1-9"><p><b>$\bullet$  #9.</b> Let $\mathbb{R}$ be the set of all real numbers. Precisely three of the following ten collections of subsets of $\mathbb{R}$ are topologies. Identify these and justify your answer.</p>
+<p>(i) $\tau_1$ consists of $\mathbb{R}$, $\emptyset$, and every interval $(a,b)$, for $a$ and $b$ any real numbers with $a&lt;b$;</p>
+<p>(ii) $\tau_2$ consists of $\mathbb{R}$, $\emptyset$, and every interval $(-r,r)$, for $r$ any positive real number;</p>
+<p>(iii) $\tau_3$ consists of $\mathbb{R}$, $\emptyset$, and every interval $(-r,r)$, for $r$ any positive rational number;</p>
+<p>(iv) $\tau_4$ consists of $\mathbb{R}$, $\emptyset$, and every interval $[-r,r]$, for $r$ any positive rational number;</p>
+<p>(v) $\tau_5$ consists of $\mathbb{R}$, $\emptyset$, and every interval $(-r,r)$, for $r$ any positive irrational number;</p>
+<p>(vi) $\tau_6$ consists of $\mathbb{R}$, $\emptyset$, and every interval $[-r,r]$, for $r$ any positive irrational number;</p>
+<p>(vii) $\tau_7$ consists of $\mathbb{R}$, $\emptyset$, and every interval $[-r,r)$, for $r$ any positive real number;</p>
+<p>(viii) $\tau_8$ consists of $\mathbb{R}$, $\emptyset$, and every interval $(-r,r]$, for $r$ any positive real number;</p>
+<p>(ix) $\tau_9$ consists of $\mathbb{R}$, $\emptyset$, every interval $[-r,r]$, and every interval $(-r,r)$, for $r$ any positive real number;</p>
+<p>(x) $\tau_{10}$ consists of $\mathbb{R}$, $\emptyset$, every interval $[-n,n]$, and every interval $(-r,r)$, for $n$ any positive integer and $r$ any positive real number.</p><div class="tosol"><a href="#c1-off-ch1-maintext-p2">Official solution &darr;</a> &middot; <a href="#c1-s-s1-1-9">Solution (Claude) &darr;</a></div></div>
+<h4 class="sub">Exercises 1.2</h4>
+<div class="item prob" id="c1-p-s1-2-1"><p><b>$\bullet$  #1.</b> List all 64 subsets of the set $X$ in Example 1.1.2. Write down, next to each set, whether it is</p>
+<p>(i) clopen; (ii) neither open nor closed; (iii) open but not closed; (iv) closed but not open.</p><div class="tosol"><a href="#c1-off-ch1-maintext-p3">Official solution &darr;</a></div></div>
+<div class="item prob" id="c1-p-s1-2-2"><p><b>$\bullet$  #2.</b> Let $(X,\tau)$ be a topological space with the property that every subset is closed. Prove that it is a discrete space.</p><div class="tosol"><a href="#c1-off-ch1-maintext-p3">Official solution &darr;</a></div></div>
+<div class="item prob" id="c1-p-s1-2-5"><p><b>$\bullet$  #5.</b> Let $X$ be an infinite set and $\tau$ a topology on $X$ with the property that the only infinite subset of $X$ which is open is $X$ itself. Is $(X,\tau)$ necessarily an indiscrete space?</p><div class="tosol"><a href="#c1-off-ch1-maintext-p4">Official solution &darr;</a></div></div>
+<h4 class="sub">Exercises 1.3</h4>
+<div class="item prob" id="c1-p-s1-3-1"><p><b>$\bullet$  #1.</b> Let $f$ be a function from a set $X$ into a set $Y$. Then we stated in Example 1.3.9 that $\quad\quad f^{-1}(\bigcup_{j\in J} B_j)=\bigcup_{j\in J} f^{-1}(B_j)$<span class="sp"></span>(1) and $\quad\quad f^{-1}(B_1\cap B_2)=f^{-1}(B_1)\cap f^{-1}(B_2)$<span class="sp"></span>(2) for any subsets $B_j$ of $Y$, and any index set $J$.</p>
+<p>(a) Prove that (1) is true. [Hint. Start your proof by letting $x$ be any element of the set on the left-hand side and show that it is in the set on the right-hand side. Then do the reverse.]</p>
+<p>(b) Prove that (2) is true.</p>
+<p>(c) Find (concrete) sets $A_1,A_2,X$, and $Y$ and a function $f:X\to Y$ such that $f(A_1\cap A_2)\neq f(A_1)\cap f(A_2)$, where $A_1\subseteq X$ and $A_2\subseteq X$.</p><div class="tosol"><a href="#c1-off-ch1-maintext-p4">Official solution &darr;</a> &middot; <a href="#c1-s-s1-3-1">Solution (Claude) &darr;</a></div></div>
+<div class="item prob" id="c1-p-s1-3-3"><p><b>$\bullet$  #3.</b> A topological space $(X,\tau)$ is said to be a $T_1$-space if every singleton set $\{x\}$ is closed in $(X,\tau)$. Show that precisely two of the following nine topological spaces are $T_1$-spaces. (Justify your answer.)</p>
+<p>(i) a discrete space;  (ii) an indiscrete space with at least two points;</p>
+<p>(iii) an infinite set with the finite-closed topology;  (iv) Example 1.1.2;</p>
+<p>(v) Exercises 1.1 #5 (i);  (vi) Exercises 1.1 #5 (ii);  (vii) Exercises 1.1 #5 (iii);</p>
+<p>(viii) Exercises 1.1 #6 (i);  (ix) Exercises 1.1 #6 (ii).</p><div class="tosol"><a href="#c1-off-ch1-maintext-p4">Official solution &darr;</a></div></div>
+<div class="item prob" id="c1-p-s1-3-4"><p><b>$\bullet$  #4.</b> Let $\tau$ be the finite-closed topology on a set $X$. If $\tau$ is also the discrete topology, prove that the set $X$ is finite.</p><div class="tosol"><a href="#c1-off-ch1-maintext-p5">Official solution &darr;</a></div></div>
+<div class="item prob" id="c1-p-s1-3-6"><p><b>$\bullet$  #6.</b> Let $X$ be any infinite set. The countable-closed topology is defined to be the topology having as its closed sets $X$ and all countable subsets of $X$. Prove that this is indeed a topology on $X$.</p><div class="tosol"><a href="#c1-off-ch1-maintext-p5">Official solution &darr;</a></div></div>
+<h2 class="part solp" id="solutions">Solutions</h2>
+<p class="small">My worked solutions to the comprehensive-exam problem (and any class problem with no official key) follow; the instructor's official solutions to the main-textbook / worksheet problems are appended after.</p>
+<h4 class="sub">Comps Fall 2003 #1(a,c)  - solution</h4>
+<div class="item sol" id="c1-s-comps"><div class="toprob"><a href="#c1-p-comps">&uarr; Problem</a></div><p>(a) $\emptyset\in\sigma$ by definition and $\mathbb{R}\in\sigma$ (since $\mathbb{R}^c=\emptyset$ is countable). Unions: for a family $\{D_i\}\subseteq\sigma$ not all empty, some $D_{i_0}$ has $D_{i_0}^c$ countable, and $(\bigcup_i D_i)^c=\bigcap_i D_i^c\subseteq D_{i_0}^c$ is countable. Finite intersections: if no $D_k=\emptyset$, then $(D_1\cap\cdots\cap D_n)^c=D_1^c\cup\cdots\cup D_n^c$ is a finite union of countable sets, hence countable. So $\sigma$ is a topology (the cocountable topology).</p>
+<p>(c) $\sigma\nsubseteq\tau$: $\mathbb{R}\setminus\mathbb{Q}\in\sigma$ (complement $\mathbb{Q}$ countable) but it is not open in $\tau$ (empty interior). $\tau\nsubseteq\sigma$: $(0,1)\in\tau$, but $(0,1)^c=(-\infty,0]\cup[1,\infty)$ is uncountable, so $(0,1)\notin\sigma$. Neither contains the other.  ∎</p></div>
+<h4 class="sub">HW from class  - solution</h4>
+<div class="item sol" id="c1-s-class"><div class="toprob"><a href="#c1-p-class1">&uarr; Problem</a></div><p>Note on the typo: as written, Problem (1) says the CLOSED sets. Taking the closed sets to be $\emptyset$ and the sets with bounded complement does NOT give a topology - arbitrary intersections of closed sets can fail. E.g. $C_n=\mathbb{R}\setminus\{n\}$ ($n\in\mathbb{Z}_+$) are closed, but $\bigcap_n C_n=\mathbb{R}\setminus\mathbb{Z}_+$ has unbounded complement, so it is not closed. The intended statement is OPEN sets; with `open' both problems are correct, so that is what we prove.</p>
+<p>(2) Let $\mathcal{B}$ be a bornology on $X$ (it covers $X$, is closed under subsets, and is closed under finite unions). Take the open sets to be $\mathcal{O}=\{\emptyset\}\cup\{U\subseteq X: X\setminus U\in\mathcal{B}\}$. Check the axioms:</p>
+<p>$\bullet$ $\emptyset\in\mathcal{O}$ by definition; $X\in\mathcal{O}$ since $X\setminus X=\emptyset\in\mathcal{B}$ ($\emptyset$ is a subset of any member of $\mathcal{B}$).</p>
+<p>$\bullet$ Arbitrary unions: for $\{U_i\}\subseteq\mathcal{O}$ (not all $\emptyset$), $X\setminus\bigcup_i U_i=\bigcap_i(X\setminus U_i)\subseteq X\setminus U_{i_0}\in\mathcal{B}$, so it is in $\mathcal{B}$ (subsets); hence $\bigcup_i U_i\in\mathcal{O}$.</p>
+<p>$\bullet$ Finite intersections: $X\setminus(U_1\cap\cdots\cap U_n)=(X\setminus U_1)\cup\cdots\cup(X\setminus U_n)\in\mathcal{B}$ (finite unions); so $\bigcap U_k\in\mathcal{O}$. So $\mathcal{O}$ is a topology. (1) is the case $\mathcal{B}=\{$bounded subsets of $\mathbb{R}\}$; the cofinite topology is $\mathcal{B}=\{$finite subsets of $X\}$ - which is why both follow from (2).  ∎</p></div>
+<div class="offhdr"><b>Official solutions (Krebs)</b>: ch1_maintext.pdf, 6 pages (shown as page images)</div>
+<div class="off" id="c1-off-ch1-maintext-p1"><div class="toprob"><a href="#c1-p-s1-1-2">&uarr; Problem 1.1 #2</a> &middot; <a href="#c1-p-s1-1-3">&uarr; Problem 1.1 #3</a> &middot; <a href="#c1-p-s1-1-4">&uarr; Problem 1.1 #4</a></div><div class="offcap">ch1_maintext.pdf, page 1</div><img src="img/5690-ch1_maintext-p1.png" width="1275" height="1650" loading="lazy" alt="ch1_maintext.pdf page 1"></div>
+<div class="off" id="c1-off-ch1-maintext-p2"><div class="toprob"><a href="#c1-p-s1-1-9">&uarr; Problem</a></div><div class="offcap">ch1_maintext.pdf, page 2</div><img src="img/5690-ch1_maintext-p2.png" width="1275" height="1650" loading="lazy" alt="ch1_maintext.pdf page 2"></div>
+<div class="off" id="c1-off-ch1-maintext-p3"><div class="toprob"><a href="#c1-p-s1-2-1">&uarr; Problem 1.2 #1</a> &middot; <a href="#c1-p-s1-2-2">&uarr; Problem 1.2 #2</a></div><div class="offcap">ch1_maintext.pdf, page 3</div><img src="img/5690-ch1_maintext-p3.png" width="1275" height="1650" loading="lazy" alt="ch1_maintext.pdf page 3"></div>
+<div class="off" id="c1-off-ch1-maintext-p4"><div class="toprob"><a href="#c1-p-s1-2-5">&uarr; Problem 1.2 #5</a> &middot; <a href="#c1-p-s1-3-1">&uarr; Problem 1.3 #1</a> &middot; <a href="#c1-p-s1-3-3">&uarr; Problem 1.3 #3</a></div><div class="offcap">ch1_maintext.pdf, page 4</div><img src="img/5690-ch1_maintext-p4.png" width="1275" height="1650" loading="lazy" alt="ch1_maintext.pdf page 4"></div>
+<div class="off" id="c1-off-ch1-maintext-p5"><div class="toprob"><a href="#c1-p-s1-3-4">&uarr; Problem 1.3 #4</a> &middot; <a href="#c1-p-s1-3-6">&uarr; Problem 1.3 #6</a></div><div class="offcap">ch1_maintext.pdf, page 5</div><img src="img/5690-ch1_maintext-p5.png" width="1275" height="1650" loading="lazy" alt="ch1_maintext.pdf page 5"></div>
+<div class="off" id="c1-off-ch1-maintext-p6"><div class="offcap">ch1_maintext.pdf, page 6</div><img src="img/5690-ch1_maintext-p6.png" width="1275" height="1650" loading="lazy" alt="ch1_maintext.pdf page 6"></div>
+<div class="frag">
+<h3>Chapter 1: backup solutions (Claude, not official)</h3>
+
+<p><i>Covered by the official file (ch1_maintext.pdf) and therefore not repeated here: Section 1.1 #2, #3, #4, #9 (i), (iii) to (viii); Section 1.2 #1, #2, #5; Section 1.3 #1(c), #3, #4, #6. The official 1.1 #9 gives only the verdict for (ii), (ix), (x) ("argument similar to question 6", "check the definitions"), and the official 1.3 #1 says of (a), (b) only "already proved as claims", so full proofs of those parts are given below. Also note: in the official 1.2 #5, the last sentence should read "But (X, τ) is <b>not</b> an indiscrete space".</i></p>
+
+<div class="lbl anch" id="c1-s-s1-1-9">Section 1.1 #9 (ii), (ix), (x)</div><div class="toprob"><a href="#c1-p-s1-1-9">&uarr; Problem</a></div>
+<div class="stmt">9.* Let ℝ be the set of all real numbers. Precisely three of the following ten collections of subsets of ℝ are topologies. Identify these and justify your answer.<br>
+(ii) τ<sub>2</sub> consists of ℝ, Ø, and every interval (−r, r), for r any positive real number;<br>
+(ix) τ<sub>9</sub> consists of ℝ, Ø, every interval [−r, r], and every interval (−r, r), for r any positive real number;<br>
+(x) τ<sub>10</sub> consists of ℝ, Ø, every interval [−n, n], and every interval (−r, r), for n any positive integer and r any positive real number.</div>
+<p>These are the three topologies. (The other seven fail; see the official file.) All three proofs rest on two observations.</p>
+<p><b>Observation 1 (chain).</b> In each of τ<sub>2</sub>, τ<sub>9</sub>, τ<sub>10</sub>, any two members are comparable under ⊆. Indeed Ø and ℝ are comparable with everything, and for intervals centred at 0: if r &lt; s then (−r, r) ⊆ [−r, r] ⊆ (−s, s) ⊆ [−s, s], while (−r, r) ⊆ [−r, r]. Hence for any two members U, V, the intersection U ∩ V is simply the smaller of the two, which is again a member. So all three collections are closed under finite intersections (by induction, or directly: a finite chain has a smallest element).</p>
+<p><b>Observation 2 (unions).</b> Let {U<sub>j</sub> : j ∈ J} be any subfamily of one of these collections and W = ⋃<sub>j∈J</sub> U<sub>j</sub>. If some U<sub>j</sub> = ℝ then W = ℝ. Discard all U<sub>j</sub> = Ø (they do not change W); if nothing is left, W = Ø. Otherwise each remaining U<sub>j</sub> is an interval (−r<sub>j</sub>, r<sub>j</sub>) or [−r<sub>j</sub>, r<sub>j</sub>] with r<sub>j</sub> &gt; 0. Let s = sup<sub>j</sub> r<sub>j</sub> ∈ (0, ∞].</p>
+<ul>
+<li>If s = ∞: for any x ∈ ℝ there is j with r<sub>j</sub> &gt; |x|, so x ∈ (−r<sub>j</sub>, r<sub>j</sub>) ⊆ U<sub>j</sub>. Thus W = ℝ.</li>
+<li>If s &lt; ∞: every U<sub>j</sub> ⊆ [−r<sub>j</sub>, r<sub>j</sub>] ⊆ [−s, s], so W ⊆ [−s, s]. If |x| &lt; s, some r<sub>j</sub> &gt; |x|, so x ∈ U<sub>j</sub>; hence (−s, s) ⊆ W. Finally s ∈ W iff some U<sub>j</sub> contains s iff some U<sub>j</sub> has r<sub>j</sub> ≥ s and is closed, i.e. (since r<sub>j</sub> ≤ s) some U<sub>j</sub> equals [−s, s]; and by symmetry −s ∈ W iff s ∈ W. So W = [−s, s] if [−s, s] is one of the U<sub>j</sub>, and W = (−s, s) otherwise.</li>
+</ul>
+<p><b>(ii)</b> In τ<sub>2</sub> there are no closed intervals, so a union is Ø, ℝ or (−s, s) with s a positive real, all in τ<sub>2</sub>. ℝ, Ø ∈ τ<sub>2</sub> by definition, and finite intersections are in τ<sub>2</sub> by Observation 1. So τ<sub>2</sub> is a topology.</p>
+<p><b>(ix)</b> A union is Ø, ℝ, (−s, s) or [−s, s] with s &gt; 0 real, all in τ<sub>9</sub>. With Observation 1, τ<sub>9</sub> is a topology.</p>
+<p><b>(x)</b> A union is Ø, ℝ, (−s, s) (s &gt; 0 real, in τ<sub>10</sub>), or [−s, s] where [−s, s] is itself one of the U<sub>j</sub>, hence a member of τ<sub>10</sub> (so s is a positive integer). With Observation 1, τ<sub>10</sub> is a topology. ∎</p>
+
+<div class="lbl anch" id="c1-s-s1-3-1">Section 1.3 #1(a), (b)</div><div class="toprob"><a href="#c1-p-s1-3-1">&uarr; Problem</a></div>
+<div class="stmt">1. Let f be a function from a set X into a set Y. Then we stated in Example 1.3.9 that<br>
+f<sup>−1</sup>(⋃<sub>j∈J</sub> B<sub>j</sub>) = ⋃<sub>j∈J</sub> f<sup>−1</sup>(B<sub>j</sub>) &nbsp;&nbsp;&nbsp;(1)<br>
+and<br>
+f<sup>−1</sup>(B<sub>1</sub> ∩ B<sub>2</sub>) = f<sup>−1</sup>(B<sub>1</sub>) ∩ f<sup>−1</sup>(B<sub>2</sub>) &nbsp;&nbsp;&nbsp;(2)<br>
+for any subsets B<sub>j</sub> of Y, and any index set J.<br>
+(a) Prove that (1) is true.<br>
+[Hint. Start your proof by letting x be any element of the set on the left-hand side and show that it is in the set on the right-hand side. Then do the reverse.]<br>
+(b) Prove that (2) is true.</div>
+<p>Recall f<sup>−1</sup>(B) = {x ∈ X : f(x) ∈ B}.</p>
+<p><b>(a)</b> Let x ∈ f<sup>−1</sup>(⋃<sub>j∈J</sub> B<sub>j</sub>). Then f(x) ∈ ⋃<sub>j∈J</sub> B<sub>j</sub>, so f(x) ∈ B<sub>k</sub> for some k ∈ J. Then x ∈ f<sup>−1</sup>(B<sub>k</sub>) ⊆ ⋃<sub>j∈J</sub> f<sup>−1</sup>(B<sub>j</sub>). Conversely let x ∈ ⋃<sub>j∈J</sub> f<sup>−1</sup>(B<sub>j</sub>). Then x ∈ f<sup>−1</sup>(B<sub>k</sub>) for some k ∈ J, so f(x) ∈ B<sub>k</sub> ⊆ ⋃<sub>j∈J</sub> B<sub>j</sub>, so x ∈ f<sup>−1</sup>(⋃<sub>j∈J</sub> B<sub>j</sub>). Each side is contained in the other, so they are equal. (If J = Ø both sides are Ø.) ∎</p>
+<p><b>(b)</b> x ∈ f<sup>−1</sup>(B<sub>1</sub> ∩ B<sub>2</sub>) ⇔ f(x) ∈ B<sub>1</sub> ∩ B<sub>2</sub> ⇔ (f(x) ∈ B<sub>1</sub> and f(x) ∈ B<sub>2</sub>) ⇔ (x ∈ f<sup>−1</sup>(B<sub>1</sub>) and x ∈ f<sup>−1</sup>(B<sub>2</sub>)) ⇔ x ∈ f<sup>−1</sup>(B<sub>1</sub>) ∩ f<sup>−1</sup>(B<sub>2</sub>). Every step is an equivalence, so the two sets have exactly the same elements. ∎</p>
+
+<div class="lbl anch" id="c1-s-class1">HW from class (1)</div><div class="toprob"><a href="#c1-p-class1">&uarr; Problem</a></div>
+<div class="stmt">(1) Prove that you can form a topology on ℝ (the set of real numbers), by taking the open sets to be precisely the empty set as well as any set whose complement is bounded.</div>
+<p>Let τ = {Ø} ∪ {U ⊆ ℝ : ℝ \ U is bounded}. We check the three axioms.</p>
+<p><b>(i)</b> Ø ∈ τ by definition; ℝ ∈ τ because ℝ \ ℝ = Ø is bounded.</p>
+<p><b>(ii) Unions.</b> Let {U<sub>j</sub> : j ∈ J} ⊆ τ and W = ⋃ U<sub>j</sub>. If every U<sub>j</sub> is Ø (or J = Ø), then W = Ø ∈ τ. Otherwise there is some k with U<sub>k</sub> ≠ Ø, so ℝ \ U<sub>k</sub> is bounded. Since U<sub>k</sub> ⊆ W, we get ℝ \ W ⊆ ℝ \ U<sub>k</sub>, and a subset of a bounded set is bounded. So W ∈ τ.</p>
+<p><b>(iii) Finite intersections.</b> Let U, V ∈ τ. If U = Ø or V = Ø then U ∩ V = Ø ∈ τ. Otherwise ℝ \ U ⊆ [−a, a] and ℝ \ V ⊆ [−b, b] for some a, b ≥ 0, and by De Morgan ℝ \ (U ∩ V) = (ℝ \ U) ∪ (ℝ \ V) ⊆ [−c, c] with c = max(a, b). So U ∩ V ∈ τ. (Induction gives any finite intersection, as in Exercises 1.1 #4.)</p>
+<p>Hence τ is a topology on ℝ (the cobounded topology). Note Ø had to be added by hand: its complement ℝ is not bounded. ∎</p>
+
+<div class="lbl anch" id="c1-s-class2">HW from class (2)</div><div class="toprob"><a href="#c1-p-class2">&uarr; Problem</a></div>
+<div class="stmt">(2) Let X be a set, and let B be a bornology on X.  Prove that you can form a topology on X by taking the closed sets to be precisely the empty set as well as any set whose complement is in B.  Observe that both (1) as well as the statement that the cofinite topology is a topology follow from (2).</div>
+<p><b>Definition used.</b> A bornology on X is a collection B of subsets of X such that (B1) B covers X (every x ∈ X lies in some member of B; equivalently every singleton is in B, given B2); (B2) if A ∈ B and A′ ⊆ A then A′ ∈ B; (B3) if A, A′ ∈ B then A ∪ A′ ∈ B. (The course notes were not available to me; this is the standard definition.)</p>
+<p><b>A warning about the wording.</b> Read literally ("closed sets = Ø and every set whose complement is in B"), the open sets would be X together with the members of B, and that is <b>not</b> a topology in general: for X = ℝ and B = bounded sets, the sets (0, n) would all be open but their union (0, ∞) is neither bounded nor ℝ. It also would not specialize to (1), whose open sets are Ø and the sets with bounded complement. The same slip happened in (1) ("closed" should have been "open"). The intended statement, which does specialize to (1) and to the cofinite topology, is:</p>
+<p><i>the <b>open</b> sets are Ø together with every U ⊆ X with X \ U ∈ B; equivalently, the closed sets are X together with the members of B.</i></p>
+<p>We prove that. Let τ = {Ø} ∪ {U ⊆ X : X \ U ∈ B}.</p>
+<p><b>(i)</b> Ø ∈ τ by definition. For X: if X = Ø then X = Ø ∈ τ. If X ≠ Ø, pick x ∈ X; by (B1) some A ∈ B contains x, and by (B2) Ø ⊆ A gives Ø ∈ B. Since X \ X = Ø ∈ B, X ∈ τ.</p>
+<p><b>(ii) Unions.</b> Let {U<sub>j</sub>} ⊆ τ and W = ⋃ U<sub>j</sub>. If no U<sub>j</sub> has complement in B, every U<sub>j</sub> is Ø, so W = Ø ∈ τ. Otherwise pick k with X \ U<sub>k</sub> ∈ B. Since U<sub>k</sub> ⊆ W, X \ W ⊆ X \ U<sub>k</sub>, so X \ W ∈ B by (B2). Thus W ∈ τ.</p>
+<p><b>(iii) Finite intersections.</b> Let U, V ∈ τ. If either is Ø, U ∩ V = Ø ∈ τ. Otherwise X \ U, X \ V ∈ B and X \ (U ∩ V) = (X \ U) ∪ (X \ V) ∈ B by (B3). So U ∩ V ∈ τ.</p>
+<p>So τ is a topology on X; its closed sets are exactly X and the members of B. ∎</p>
+<p><b>The two consequences.</b></p>
+<ul>
+<li><b>(1) follows.</b> The bounded subsets of ℝ form a bornology: {x} ⊆ [x, x] is bounded (B1); a subset of a bounded set is bounded (B2); if A ⊆ [−a, a] and A′ ⊆ [−b, b] then A ∪ A′ ⊆ [−max(a,b), max(a,b)] (B3). With this B, τ is exactly the topology of (1).</li>
+<li><b>Cofinite topology follows.</b> For any non-empty set X, the finite subsets of X form a bornology: singletons are finite (B1), subsets of finite sets are finite (B2), and a union of two finite sets is finite (B3). With this B, τ = {Ø} ∪ {U : X \ U finite}, which is the finite-closed topology of Definition 1.3.1. So that is indeed a topology.</li>
+</ul>
+</div>
+<footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
+</main></body></html>
