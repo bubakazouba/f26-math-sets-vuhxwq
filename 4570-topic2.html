@@ -5,37 +5,498 @@
 <meta name="googlebot" content="noindex, nofollow">
 <title>MATH 4570 Topic 2</title>
 <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
 </head><body><main>
 <nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a><a href="#hw">Homework</a><a href="#extra">Extra practice</a></nav>
 <h1>MATH 4570 Topic 2: Spanning sets, Linear Independence, Bases, Dimension</h1>
-<div class="hdr"><p class="small">All files are Krebs' own, from his Fall 2026 MATH 4570 homework doc, shown as page images. Problems first, his solutions at the end.</p><p class="quiz"><b>For:</b> Quiz 2 (Mon Sep 28) &middot; <a href="index.html#quizzes">all quiz dates</a></p></div>
+<div class="hdr"><p class="small">Krebs' Fall 2026 MATH 4570 homework and extra practice problems, retyped verbatim from his PDFs. Homework solutions are Krebs' official ones (his pages, shown as images); extra-practice solutions are Claude's and labeled so. Tap "Solution" under a problem to jump to it, and "Problem" to jump back.</p><p class="quiz"><b>For:</b> Quiz 2 (Mon Sep 28) &middot; <a href="index.html#quizzes">all quiz dates</a></p></div>
 <h2 class="part" id="problems">Problems</h2>
 <h3 class="grp" id="hw">Homework for Topic 2</h3>
-<div class="off" id="t2-hw-p1"><div class="offcap">Homework for Topic 2, page 1 of 2</div><img src="img/4570-t2-hw-p1.png" width="1275" height="1650" loading="lazy" alt="Homework for Topic 2 page 1"></div>
-<div class="off" id="t2-hw-p2"><div class="offcap">Homework for Topic 2, page 2 of 2</div><img src="img/4570-t2-hw-p2.png" width="1275" height="1650" loading="lazy" alt="Homework for Topic 2 page 2"></div>
+<div class="hdr"><p>Recall from HW 1: Let $V$ be a vector space over a field $F$. Let $W_1$ and $W_2$ be subspaces of $V$. Define the <b>sum</b> of $W_1$ and $W_2$ to be the set</p>
+<p>$$W_1 + W_2 = \{x + y \mid x \in W_1 \text{ and } y \in W_2\}$$</p></div>
+<div class="item prob" id="t2-p-hw-1a"><p class="lead">1(a)</p><p>Let $V = M_{2,2}(\mathbb{R})$ and</p>
+<p>$$W_1 = \left\{ \begin{pmatrix} a &amp; b \\ c &amp; a \end{pmatrix} \mid a, b, c \in \mathbb{R} \right\}$$</p>
+<p>and</p>
+<p>$$W_2 = \left\{ \begin{pmatrix} 0 &amp; a \\ -a &amp; b \end{pmatrix} \mid a, b \in \mathbb{R} \right\}$$</p>
+<p>(a) Prove that $W_1$ and $W_2$ are subspaces of $M_{2,2}(\mathbb{R})$.</p><div class="tosol"><a href="#t2-off-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-1b"><p class="lead">1(b)</p><p>(b) Find the dimensions of $W_1$, $W_2$, $W_1 \cap W_2$ and $W_1 + W_2$.</p><div class="tosol"><a href="#t2-off-p2">Official solution 1 &darr;</a> &middot; <a href="#t2-off-p3">Official solution 2 &darr;</a> &middot; <a href="#t2-off-p4">Official solution 3 &darr;</a> &middot; <a href="#t2-off-p5">Official solution 4 &darr;</a> &middot; <a href="#t2-off-p6">Official solution 5 &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-2"><p class="lead">2</p><p>Let $V$ be a vector space over a field $F$. Let $v_1, v_2, \cdots, v_n$ be vectors in $V$. Prove that if one of the $v_i$ is the zero vector, then the vectors $v_1, v_2, \ldots, v_n$ are linearly dependent.</p><div class="tosol"><a href="#t2-off-p7">Official solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-3"><p class="lead">3</p><p>Let $F$ be either $\mathbb{R}$ or $\mathbb{C}$. Prove that $P_n(F)$ has dimension $n + 1$.</p><div class="tosol"><a href="#t2-off-p7">Official solution 1 &darr;</a> &middot; <a href="#t2-off-p8">Official solution 2 &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-4"><p class="lead">4</p><p>Let $P(\mathbb{R})$ denote the set of all polynomials with coefficients from $\mathbb{R}$. You may assume that $P(\mathbb{R})$ is a vector space over $\mathbb{R}$. Show that $P(\mathbb{R})$ is not finite dimensional.</p><div class="tosol"><a href="#t2-off-p8">Official solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-5"><p class="lead">5</p><p>Let $V$ be a vector space over a field $F$. Let $x, y \in V$. Then $\{x, y\}$ is a linearly dependent set if and only if $x$ or $y$ is a multiple of the other.</p><div class="tosol"><a href="#t2-off-p9">Official solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-6"><p class="lead">6</p><p>Let $V$ be a vector space over a field $F$. Let $x \in V$ with $x \neq \mathbf{0}$. Then $\{x\}$ is a linearly independent set.</p><div class="tosol"><a href="#t2-off-p9">Official solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-7a"><p class="lead">7(a)</p><p>Let $V$ be a vector space over a field $F$.</p>
+<p>(a) Let $S$ be a finite set of linearly independent vectors from $V$ and let $v \in V$ where $v \notin S$. Then $S \cup \{v\}$ is linearly dependent if and only if $v \in \operatorname{span}(S)$.</p><div class="tosol"><a href="#t2-off-p10">Official solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-7b"><p class="lead">7(b)</p><p>(b) Suppose that $V \neq \{\mathbf{0}\}$ is spanned by some finite set $S$. Prove that some subset of $S$ is a basis for $V$. Thus $V$ is finite-dimensional.</p><div class="tosol"><a href="#t2-off-p10">Official solution 1 &darr;</a> &middot; <a href="#t2-off-p11">Official solution 2 &darr;</a> &middot; <a href="#t2-off-p12">Official solution 3 &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-8a"><p class="lead">8(a)</p><p>Let $W_1$ and $W_2$ be subspaces of a vector space $V$. Suppose that $\dim(W_1) = m$ and $\dim(W_2) = n$ and $m \leq n$.</p>
+<p>(a) Prove that $\dim(W_1 \cap W_2) \leq m = \min(\dim(W_1), \dim(W_2))$</p><div class="tosol"><a href="#t2-off-p12">Official solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-8b"><p class="lead">8(b)</p><p>(b) Prove that $\dim(W_1 + W_2) \leq m + n$</p><div class="tosol"><a href="#t2-off-p12">Official solution 1 &darr;</a> &middot; <a href="#t2-off-p13">Official solution 2 &darr;</a></div></div>
+<div class="item prob" id="t2-p-hw-9"><p class="lead">9</p><p>(This problem shows how to extend a basis from a subspace of a finite-dimensional vector space to the entire space.) Let $V$ be a finite-dimensional vector space of dimension $n \neq 0$ over a field $F$. Let $W$ be a subspace of $V$ with $W \neq \{\mathbf{0}\}$. In class we showed that $W$ must be finite-dimensional and hence have a basis $\beta = \{w_1, w_2, \ldots, w_k\}$ with $1 \leq k \leq n$. Prove that there exist vectors $v_{k+1}, \ldots, v_n$ from $V \setminus W$ such that $\beta' = \{w_1, w_2, \ldots, w_k, v_{k+1}, \ldots, v_n\}$ is a basis for $V$.</p><div class="tosol"><a href="#t2-off-p13">Official solution 1 &darr;</a> &middot; <a href="#t2-off-p14">Official solution 2 &darr;</a></div></div>
 <h3 class="grp" id="extra">Extra practice problems for Topic 2</h3>
-<div class="off" id="t2-extra-p1"><div class="offcap">Extra practice problems for Topic 2, page 1 of 7</div><img src="img/4570-t2-extra-p1.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 2 page 1"></div>
-<div class="off" id="t2-extra-p2"><div class="offcap">Extra practice problems for Topic 2, page 2 of 7</div><img src="img/4570-t2-extra-p2.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 2 page 2"></div>
-<div class="off" id="t2-extra-p3"><div class="offcap">Extra practice problems for Topic 2, page 3 of 7</div><img src="img/4570-t2-extra-p3.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 2 page 3"></div>
-<div class="off" id="t2-extra-p4"><div class="offcap">Extra practice problems for Topic 2, page 4 of 7</div><img src="img/4570-t2-extra-p4.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 2 page 4"></div>
-<div class="off" id="t2-extra-p5"><div class="offcap">Extra practice problems for Topic 2, page 5 of 7</div><img src="img/4570-t2-extra-p5.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 2 page 5"></div>
-<div class="off" id="t2-extra-p6"><div class="offcap">Extra practice problems for Topic 2, page 6 of 7</div><img src="img/4570-t2-extra-p6.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 2 page 6"></div>
-<div class="off" id="t2-extra-p7"><div class="offcap">Extra practice problems for Topic 2, page 7 of 7</div><img src="img/4570-t2-extra-p7.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 2 page 7"></div>
+<div class="hdr"><p>These problems were generated by AI, and although I looked at them quickly to see if they seemed OK, no guarantees. Please let me know if something doesn't make sense, so I can fix it.</p></div>
+<div class="item prob" id="t2-p-ex-p1-1"><p class="lead">1</p><p><b>Part 1: Computational problems</b></p>
+<p>Let</p>
+<p>$$v_1 = (2, 1) \qquad \text{and} \qquad v_2 = (-1, 1).$$</p>
+<p>For each of the following vectors $w$, find constants $c_1, c_2 \in \mathbb{R}$ such that</p>
+<p>$$w = c_1 v_1 + c_2 v_2 :$$</p>
+<p>$$(1, 5), \qquad (4, -1), \qquad (0, 3).$$</p><div class="tosol"><a href="#t2-s-ex-p1-1">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-2a"><p class="lead">2(a)</p><p>Let</p>
+<p>$$v_1 = (1, 0, 1), \qquad v_2 = (0, 1, 1), \qquad v_3 = (1, 1, 0).$$</p>
+<p>(a) Find constants $c_1, c_2, c_3 \in \mathbb{R}$ such that</p>
+<p>$$(4, 2, 6) = c_1 v_1 + c_2 v_2 + c_3 v_3.$$</p><div class="tosol"><a href="#t2-s-ex-p1-2a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-2b"><p class="lead">2(b)</p><p>(b) Find constants $c_1, c_2, c_3 \in \mathbb{R}$ such that</p>
+<p>$$(-1, 3, 2) = c_1 v_1 + c_2 v_2 + c_3 v_3.$$</p><div class="tosol"><a href="#t2-s-ex-p1-2b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-2c"><p class="lead">2(c)</p><p>(c) Find $\operatorname{span}\{v_1, v_2, v_3\}$.</p><div class="tosol"><a href="#t2-s-ex-p1-2c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-3"><p class="lead">3</p><p>Let</p>
+<p>$$S = \{(1, 2, -1), (2, -1, 3)\}.$$</p>
+<p>Determine which of the following vectors belong to $\operatorname{span}(S)$. For each vector that does belong to $\operatorname{span}(S)$, find coefficients expressing it as a linear combination of the vectors in $S$:</p>
+<p>$$(3, 1, 2), \qquad (0, 5, -5), \qquad (4, 3, 1), \qquad (-1, 8, -7).$$</p><div class="tosol"><a href="#t2-s-ex-p1-3">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-4"><p class="lead">4</p><p>Let</p>
+<p>$$A = \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 1 \end{pmatrix}, \qquad B = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}, \qquad C = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; -1 \end{pmatrix}.$$</p>
+<p>Determine which of the following matrices belong to $\operatorname{span}\{A, B, C\}$. For each one that does, find coefficients expressing it as a linear combination of $A$, $B$, and $C$:</p>
+<p>$$\begin{pmatrix} 2 &amp; 3 \\ 4 &amp; 0 \end{pmatrix}, \qquad \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, \qquad \begin{pmatrix} 3 &amp; -1 \\ 2 &amp; 4 \end{pmatrix}.$$</p><div class="tosol"><a href="#t2-s-ex-p1-4">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-5a"><p class="lead">5(a)</p><p>Let</p>
+<p>$$p_1(x) = 1 + x, \qquad p_2(x) = x + x^2, \qquad p_3(x) = 1 - x^2.$$</p>
+<p>(a) Find constants $c_1, c_2, c_3 \in \mathbb{R}$ such that</p>
+<p>$$2 + 5x + 3x^2 = c_1 p_1(x) + c_2 p_2(x) + c_3 p_3(x).$$</p><div class="tosol"><a href="#t2-s-ex-p1-5a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-5b"><p class="lead">5(b)</p><p>(b) Determine whether</p>
+<p>$$x^3 + x$$</p>
+<p>belongs to $\operatorname{span}\{p_1, p_2, p_3\}$.</p><div class="tosol"><a href="#t2-s-ex-p1-5b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-5c"><p class="lead">5(c)</p><p>(c) Find $\operatorname{span}\{p_1, p_2, p_3\}$.</p><div class="tosol"><a href="#t2-s-ex-p1-5c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-6a"><p class="lead">6(a)</p><p>In the vector space $C(\mathbb{R}, \mathbb{R})$, let</p>
+<p>$$f_1(x) = 1, \qquad f_2(x) = \sin x, \qquad f_3(x) = \cos x.$$</p>
+<p>For each of the following functions $g$, find $c_1, c_2, c_3 \in \mathbb{R}$ such that</p>
+<p>$$g = c_1 f_1 + c_2 f_2 + c_3 f_3,$$</p>
+<p>or state that no such constants exist:</p>
+<p>(a) $$g(x) = 3 - 2\sin x + 5\cos x$$</p><div class="tosol"><a href="#t2-s-ex-p1-6a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-6b"><p class="lead">6(b)</p><p>(b) $$g(x) = \sin x - \cos x$$</p><div class="tosol"><a href="#t2-s-ex-p1-6b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-6c"><p class="lead">6(c)</p><p>(c) $$g(x) = \sin(2x)$$</p><div class="tosol"><a href="#t2-s-ex-p1-6c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-6d"><p class="lead">6(d)</p><p>(d) $$g(x) = 4\cos x + 1$$</p><div class="tosol"><a href="#t2-s-ex-p1-6d">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-7"><p class="lead">7</p><p>In $C(\mathbb{R}, \mathbb{R})$, let</p>
+<p>$$f_1(x) = e^x, \qquad f_2(x) = e^{-x}.$$</p>
+<p>Determine which of the following functions belong to $\operatorname{span}\{f_1, f_2\}$. For each one that does, find the appropriate coefficients:</p>
+<p>$$3e^x - 2e^{-x}, \qquad \cosh x, \qquad \sinh x, \qquad e^{2x}, \qquad 0.$$</p>
+<p>You may use</p>
+<p>$$\cosh x = \frac{e^x + e^{-x}}{2}, \qquad \sinh x = \frac{e^x - e^{-x}}{2}.$$</p><div class="tosol"><a href="#t2-s-ex-p1-7">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-8"><p class="lead">8</p><p>For each value of $a \in \mathbb{R}$, determine whether the following vectors are linearly independent:</p>
+<p>$$(1, 1, 0), \qquad (0, 1, 1), \qquad (1, 0, a).$$</p><div class="tosol"><a href="#t2-s-ex-p1-8">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-9a"><p class="lead">9(a)</p><p>Determine whether each of the following sets is linearly independent.</p>
+<p>(a) $$\{(1, 2, 0), (0, 1, 3), (2, 5, 3)\} \subseteq \mathbb{R}^3$$</p><div class="tosol"><a href="#t2-s-ex-p1-9a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-9b"><p class="lead">9(b)</p><p>(b) $$\{(1, 0, 1), (2, 1, 0), (0, 1, 2)\} \subseteq \mathbb{R}^3$$</p><div class="tosol"><a href="#t2-s-ex-p1-9b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-9c"><p class="lead">9(c)</p><p>(c) $$\{(1, 0, 0, 1), (0, 1, 1, 0), (1, 1, 1, 1)\} \subseteq \mathbb{R}^4$$</p><div class="tosol"><a href="#t2-s-ex-p1-9c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-9d"><p class="lead">9(d)</p><p>(d) $$\{(1, 2), (3, -1)\} \subseteq \mathbb{R}^2$$</p><div class="tosol"><a href="#t2-s-ex-p1-9d">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-10a"><p class="lead">10(a)</p><p>Determine whether each of the following sets of matrices is linearly independent.</p>
+<p>(a) $$\left\{ \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix} \right\}$$</p><div class="tosol"><a href="#t2-s-ex-p1-10a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-10b"><p class="lead">10(b)</p><p>(b) $$\left\{ \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \right\}$$</p><div class="tosol"><a href="#t2-s-ex-p1-10b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-10c"><p class="lead">10(c)</p><p>(c) $$\left\{ \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 1 &amp; 0 \\ -1 &amp; 1 \end{pmatrix} \right\}$$</p><div class="tosol"><a href="#t2-s-ex-p1-10c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-11a"><p class="lead">11(a)</p><p>Determine whether each of the following sets of polynomials is linearly independent.</p>
+<p>(a) $$\{1 + x,\ x + x^2,\ 1 - x^2\} \subseteq P_2(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-11a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-11b"><p class="lead">11(b)</p><p>(b) $$\{1 + x,\ 1 - x,\ x\} \subseteq P_1(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-11b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-11c"><p class="lead">11(c)</p><p>(c) $$\{1 + x,\ x + x^2,\ x^2 + x^3,\ 1 - x^3\} \subseteq P_3(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-11c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-11d"><p class="lead">11(d)</p><p>(d) $$\{1,\ (x - 1),\ (x - 1)^2,\ (x - 1)^3\} \subseteq P_3(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-11d">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-12a"><p class="lead">12(a)</p><p>For each of the following sets, determine whether it is a basis for the indicated vector space.</p>
+<p>(a) $$\{(1, 2), (3, 1)\} \quad \text{for } \mathbb{R}^2$$</p><div class="tosol"><a href="#t2-s-ex-p1-12a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-12b"><p class="lead">12(b)</p><p>(b) $$\{(1, 0, 1), (0, 1, 1), (1, 1, 2)\} \quad \text{for } \mathbb{R}^3$$</p><div class="tosol"><a href="#t2-s-ex-p1-12b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-12c"><p class="lead">12(c)</p><p>(c) $$\{1 + x,\ x + x^2,\ 1 - x^2\} \quad \text{for } P_2(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-12c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-12d"><p class="lead">12(d)</p><p>(d) $$\left\{ \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} \right\} \quad \text{for } M_{2,2}(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-12d">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-13a"><p class="lead">13(a)</p><p>From each of the following spanning sets, select a subset that is a basis for the indicated vector space.</p>
+<p>(a) $$\{(1, 0), (0, 1), (1, 1), (2, -1)\} \quad \text{for } \mathbb{R}^2$$</p><div class="tosol"><a href="#t2-s-ex-p1-13a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-13b"><p class="lead">13(b)</p><p>(b) $$\{(1, 0, 0), (0, 1, 0), (1, 1, 0), (0, 0, 1), (1, 1, 1)\} \quad \text{for } \mathbb{R}^3$$</p><div class="tosol"><a href="#t2-s-ex-p1-13b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-13c"><p class="lead">13(c)</p><p>(c) $$\{1, x, x^2, 1 + x, x + x^2, 1 + x + x^2\} \quad \text{for } P_2(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-13c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-13d"><p class="lead">13(d)</p><p>(d) $$\left\{ \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \right\} \quad \text{for } M_{2,2}(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-13d">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-14a"><p class="lead">14(a)</p><p>Extend each of the following linearly independent sets to a basis for the indicated vector space.</p>
+<p>(a) $$\{(1, 1, 0)\} \quad \text{in } \mathbb{R}^3$$</p><div class="tosol"><a href="#t2-s-ex-p1-14a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-14b"><p class="lead">14(b)</p><p>(b) $$\{(1, 0, 1), (0, 1, 1)\} \quad \text{in } \mathbb{R}^3$$</p><div class="tosol"><a href="#t2-s-ex-p1-14b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-14c"><p class="lead">14(c)</p><p>(c) $$\{1 + x\} \quad \text{in } P_2(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-14c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-14d"><p class="lead">14(d)</p><p>(d) $$\left\{ \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \right\} \quad \text{in } M_{2,2}(\mathbb{R})$$</p><div class="tosol"><a href="#t2-s-ex-p1-14d">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-15a"><p class="lead">15(a)</p><p>Find the dimension of each vector space.</p>
+<p>(a) $$W = \{(a, b, c, d) \in \mathbb{R}^4 \mid a + b + c + d = 0\}$$</p><div class="tosol"><a href="#t2-s-ex-p1-15a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-15b"><p class="lead">15(b)</p><p>(b) $$W = \{(a, b, c, d) \in \mathbb{R}^4 \mid a + b = 0,\ c - d = 0\}$$</p><div class="tosol"><a href="#t2-s-ex-p1-15b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-15c"><p class="lead">15(c)</p><p>(c) $$W = \left\{ \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \in M_{2,2}(\mathbb{R}) \;\middle|\; a = d \right\}$$</p><div class="tosol"><a href="#t2-s-ex-p1-15c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-15d"><p class="lead">15(d)</p><p>(d) $$W = \left\{ \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \in M_{2,2}(\mathbb{R}) \;\middle|\; a + d = 0,\ b = c \right\}$$</p><div class="tosol"><a href="#t2-s-ex-p1-15d">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-15e"><p class="lead">15(e)</p><p>(e) $$W = \{p(x) \in P_4(\mathbb{R}) \mid p(0) = 0\}$$</p><div class="tosol"><a href="#t2-s-ex-p1-15e">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-15f"><p class="lead">15(f)</p><p>(f) $$W = \{p(x) \in P_4(\mathbb{R}) \mid p(1) = 0\}$$</p><div class="tosol"><a href="#t2-s-ex-p1-15f">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-16"><p class="lead">16</p><p>Let</p>
+<p>$$W_1 = \left\{ \begin{pmatrix} a &amp; b \\ c &amp; a \end{pmatrix} \;\middle|\; a, b, c \in \mathbb{R} \right\}$$</p>
+<p>and</p>
+<p>$$W_2 = \left\{ \begin{pmatrix} d &amp; e \\ -e &amp; 0 \end{pmatrix} \;\middle|\; d, e \in \mathbb{R} \right\}.$$</p>
+<p>Find bases and dimensions for</p>
+<p>$$W_1, \qquad W_2, \qquad W_1 \cap W_2, \qquad W_1 + W_2.$$</p><div class="tosol"><a href="#t2-s-ex-p1-16">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-17"><p class="lead">17</p><p>Let $V = P_3(\mathbb{R})$, and let</p>
+<p>$$W_1 = \{p(x) \in P_3(\mathbb{R}) \mid p(1) = 0\}$$</p>
+<p>and</p>
+<p>$$W_2 = \{p(x) \in P_3(\mathbb{R}) \mid p(-1) = 0\}.$$</p>
+<p>Find bases and dimensions for</p>
+<p>$$W_1, \qquad W_2, \qquad W_1 \cap W_2, \qquad W_1 + W_2.$$</p><div class="tosol"><a href="#t2-s-ex-p1-17">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-18a"><p class="lead">18(a)</p><p>Let</p>
+<p>$$\beta = \{(1, 1), (1, -1)\}.$$</p>
+<p>Find the coordinates of each vector relative to the ordered basis $\beta$:</p>
+<p>(a) $(4, 2)$</p><div class="tosol"><a href="#t2-s-ex-p1-18a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-18b"><p class="lead">18(b)</p><p>(b) $(1, 5)$</p><div class="tosol"><a href="#t2-s-ex-p1-18b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-18c"><p class="lead">18(c)</p><p>(c) $(-3, -1)$</p><div class="tosol"><a href="#t2-s-ex-p1-18c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-19a"><p class="lead">19(a)</p><p>Let</p>
+<p>$$\beta = \{1 + x,\ x - x^2,\ 1 - x^2\}.$$</p>
+<p>NOTE: This is a change to what had been here before; the pravious $\beta$ was not a basis. Find the coordinates relative to $\beta$ of each of the following polynomials:</p>
+<p>(a) $2 + 3x + x^2$</p><div class="tosol"><a href="#t2-s-ex-p1-19a">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-19b"><p class="lead">19(b)</p><p>(b) $1 - x + 4x^2$</p><div class="tosol"><a href="#t2-s-ex-p1-19b">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p1-19c"><p class="lead">19(c)</p><p>(c) $5x - 2x^2$</p><div class="tosol"><a href="#t2-s-ex-p1-19c">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-1"><p class="lead">1</p><p><b>Part 2: Proof problems</b></p>
+<p>Let $V$ be a vector space over a field $F$, and let</p>
+<p>$$v_1, v_2, \ldots, v_n \in V.$$</p>
+<p>Prove that</p>
+<p>$$\operatorname{span}\{v_1, v_2, \ldots, v_n\}$$</p>
+<p>is a subspace of $V$.</p><div class="tosol"><a href="#t2-s-ex-p2-1">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-2"><p class="lead">2</p><p>Let $V$ be a vector space over a field $F$, and let</p>
+<p>$$v_1, v_2, \ldots, v_n \in V.$$</p>
+<p>Prove that $\operatorname{span}\{v_1, \ldots, v_n\}$ is the smallest subspace of $V$ containing all of the vectors $v_1, \ldots, v_n$. More precisely, prove that if $U$ is a subspace of $V$ and</p>
+<p>$$v_1, \ldots, v_n \in U,$$</p>
+<p>then</p>
+<p>$$\operatorname{span}\{v_1, \ldots, v_n\} \subseteq U.$$</p><div class="tosol"><a href="#t2-s-ex-p2-2">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-3"><p class="lead">3</p><p>Let $V$ be a vector space over a field $F$. Prove that every set of vectors containing the zero vector is linearly dependent.</p><div class="tosol"><a href="#t2-s-ex-p2-3">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-4"><p class="lead">4</p><p>Let $V$ be a vector space over a field $F$, and let $v \in V$. Prove that the one-element set</p>
+<p>$$\{v\}$$</p>
+<p>is linearly independent if and only if $v \neq \mathbf{0}$.</p><div class="tosol"><a href="#t2-s-ex-p2-4">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-5"><p class="lead">5</p><p>Let $V$ be a vector space over a field $F$. Prove that every subset of a linearly independent set is linearly independent.</p><div class="tosol"><a href="#t2-s-ex-p2-5">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-6"><p class="lead">6</p><p>Let $V$ be a vector space over a field $F$. Prove that every set containing a linearly dependent subset is itself linearly dependent.</p><div class="tosol"><a href="#t2-s-ex-p2-6">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-7"><p class="lead">7</p><p>Let $V$ be a vector space over a field $F$, and let $v, w \in V$. Prove that</p>
+<p>$$\{v, w\}$$</p>
+<p>is linearly dependent if and only if at least one of $v$ and $w$ is a scalar multiple of the other.</p><div class="tosol"><a href="#t2-s-ex-p2-7">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-8"><p class="lead">8</p><p>Let $V$ be a vector space over a field $F$, and suppose that</p>
+<p>$$v_1, \ldots, v_n$$</p>
+<p>are linearly independent. Let $v \in V$. Prove that</p>
+<p>$$\{v_1, \ldots, v_n, v\}$$</p>
+<p>is linearly dependent if and only if</p>
+<p>$$v \in \operatorname{span}\{v_1, \ldots, v_n\}.$$</p><div class="tosol"><a href="#t2-s-ex-p2-8">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-9"><p class="lead">9</p><p>Let</p>
+<p>$$\beta = \{v_1, \ldots, v_n\}$$</p>
+<p>be a basis for a vector space $V$ over a field $F$. Prove that every $v \in V$ can be written in exactly one way as</p>
+<p>$$v = c_1 v_1 + \cdots + c_n v_n, \qquad c_1, \ldots, c_n \in F.$$</p><div class="tosol"><a href="#t2-s-ex-p2-9">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-10"><p class="lead">10</p><p>Let $V \neq \{\mathbf{0}\}$ be a vector space over a field $F$, and suppose that a finite set $S$ spans $V$. Prove that some subset of $S$ is a basis for $V$.</p><div class="tosol"><a href="#t2-s-ex-p2-10">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-11"><p class="lead">11</p><p>Let $V$ be a finite-dimensional vector space, and let</p>
+<p>$$S = \{v_1, \ldots, v_k\}$$</p>
+<p>be a linearly independent subset of $V$. Prove that $S$ can be extended to a basis for $V$.</p><div class="tosol"><a href="#t2-s-ex-p2-11">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-12"><p class="lead">12</p><p>Let $V$ be a finite-dimensional vector space, and let $W$ be a subspace of $V$. Prove that</p>
+<p>$$\dim(W) \leq \dim(V).$$</p>
+<p>Prove also that equality holds if and only if $W = V$.</p><div class="tosol"><a href="#t2-s-ex-p2-12">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-13"><p class="lead">13</p><p>Let $W_1$ and $W_2$ be finite-dimensional subspaces of a vector space $V$. Prove that</p>
+<p>$$\dim(W_1 \cap W_2) \leq \min\{\dim(W_1), \dim(W_2)\}.$$</p><div class="tosol"><a href="#t2-s-ex-p2-13">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-14"><p class="lead">14</p><p>Let $W_1$ and $W_2$ be finite-dimensional subspaces of a vector space $V$. Prove that</p>
+<p>$$\dim(W_1 + W_2) \leq \dim(W_1) + \dim(W_2).$$</p><div class="tosol"><a href="#t2-s-ex-p2-14">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-15"><p class="lead">15</p><p>Let $F$ be either $\mathbb{R}$ or $\mathbb{C}$. Prove that</p>
+<p>$$\dim P_n(F) = n + 1.$$</p><div class="tosol"><a href="#t2-s-ex-p2-15">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-16"><p class="lead">16</p><p>Let $P(\mathbb{R})$ be the vector space of all real polynomials. Prove that $P(\mathbb{R})$ is not finite-dimensional.</p><div class="tosol"><a href="#t2-s-ex-p2-16">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-17"><p class="lead">17</p><p>Let $C(\mathbb{R}, \mathbb{R})$ be the vector space of all continuous functions from $\mathbb{R}$ to $\mathbb{R}$. Prove that</p>
+<p>$$1, x, x^2, \ldots, x^n$$</p>
+<p>are linearly independent elements of $C(\mathbb{R}, \mathbb{R})$ for every nonnegative integer $n$.</p><div class="tosol"><a href="#t2-s-ex-p2-17">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-18"><p class="lead">18</p><p>Use the preceding problem to prove that $C(\mathbb{R}, \mathbb{R})$ is not finite-dimensional.</p><div class="tosol"><a href="#t2-s-ex-p2-18">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-19"><p class="lead">19</p><p>Let</p>
+<p>$$W = \{p(x) \in P_n(\mathbb{R}) \mid p(0) = 0\}.$$</p>
+<p>Prove that $W$ is a subspace of $P_n(\mathbb{R})$, and then find and prove a formula for $\dim(W)$.</p><div class="tosol"><a href="#t2-s-ex-p2-19">Solution &darr;</a></div></div>
+<div class="item prob" id="t2-p-ex-p2-20"><p class="lead">20</p><p>Let</p>
+<p>$$W = \{p(x) \in P_n(\mathbb{R}) \mid p(1) = 0\}.$$</p>
+<p>Prove that $W$ is a subspace of $P_n(\mathbb{R})$, and then find and prove a formula for $\dim(W)$.</p><div class="tosol"><a href="#t2-s-ex-p2-20">Solution &darr;</a></div></div>
 <h2 class="part solp" id="solutions">Solutions</h2>
-<div class="offhdr"><b>Krebs' solutions</b> to Homework for Topic 2. His extra practice problems come without solutions.</div><div class="off" id="t2-sol-p1"><div class="offcap">Solutions to Homework for Topic 2, page 1 of 14</div><img src="img/4570-t2-sol-p1.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 1"></div>
-<div class="off" id="t2-sol-p2"><div class="offcap">Solutions to Homework for Topic 2, page 2 of 14</div><img src="img/4570-t2-sol-p2.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 2"></div>
-<div class="off" id="t2-sol-p3"><div class="offcap">Solutions to Homework for Topic 2, page 3 of 14</div><img src="img/4570-t2-sol-p3.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 3"></div>
-<div class="off" id="t2-sol-p4"><div class="offcap">Solutions to Homework for Topic 2, page 4 of 14</div><img src="img/4570-t2-sol-p4.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 4"></div>
-<div class="off" id="t2-sol-p5"><div class="offcap">Solutions to Homework for Topic 2, page 5 of 14</div><img src="img/4570-t2-sol-p5.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 5"></div>
-<div class="off" id="t2-sol-p6"><div class="offcap">Solutions to Homework for Topic 2, page 6 of 14</div><img src="img/4570-t2-sol-p6.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 6"></div>
-<div class="off" id="t2-sol-p7"><div class="offcap">Solutions to Homework for Topic 2, page 7 of 14</div><img src="img/4570-t2-sol-p7.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 7"></div>
-<div class="off" id="t2-sol-p8"><div class="offcap">Solutions to Homework for Topic 2, page 8 of 14</div><img src="img/4570-t2-sol-p8.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 8"></div>
-<div class="off" id="t2-sol-p9"><div class="offcap">Solutions to Homework for Topic 2, page 9 of 14</div><img src="img/4570-t2-sol-p9.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 9"></div>
-<div class="off" id="t2-sol-p10"><div class="offcap">Solutions to Homework for Topic 2, page 10 of 14</div><img src="img/4570-t2-sol-p10.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 10"></div>
-<div class="off" id="t2-sol-p11"><div class="offcap">Solutions to Homework for Topic 2, page 11 of 14</div><img src="img/4570-t2-sol-p11.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 11"></div>
-<div class="off" id="t2-sol-p12"><div class="offcap">Solutions to Homework for Topic 2, page 12 of 14</div><img src="img/4570-t2-sol-p12.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 12"></div>
-<div class="off" id="t2-sol-p13"><div class="offcap">Solutions to Homework for Topic 2, page 13 of 14</div><img src="img/4570-t2-sol-p13.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 13"></div>
-<div class="off" id="t2-sol-p14"><div class="offcap">Solutions to Homework for Topic 2, page 14 of 14</div><img src="img/4570-t2-sol-p14.png" width="1241" height="1754" loading="lazy" alt="Solutions to Homework for Topic 2 page 14"></div>
+<h3 class="grp">Krebs' official solutions: Homework for Topic 2</h3><div class="offhdr">14 pages, shown as page images. Each page links back to the problem(s) it solves.</div>
+<div class="off" id="t2-off-p1"><div class="toprob"><a href="#t2-p-hw-1a">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 2, page 1 of 14</div><img src="img/4570-t2-sol-p1.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 1"></div>
+<div class="off" id="t2-off-p2"><div class="toprob"><a href="#t2-p-hw-1b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 2, page 2 of 14</div><img src="img/4570-t2-sol-p2.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 2"></div>
+<div class="off" id="t2-off-p3"><div class="toprob"><a href="#t2-p-hw-1b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 2, page 3 of 14</div><img src="img/4570-t2-sol-p3.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 3"></div>
+<div class="off" id="t2-off-p4"><div class="toprob"><a href="#t2-p-hw-1b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 2, page 4 of 14</div><img src="img/4570-t2-sol-p4.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 4"></div>
+<div class="off" id="t2-off-p5"><div class="toprob"><a href="#t2-p-hw-1b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 2, page 5 of 14</div><img src="img/4570-t2-sol-p5.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 5"></div>
+<div class="off" id="t2-off-p6"><div class="toprob"><a href="#t2-p-hw-1b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 2, page 6 of 14</div><img src="img/4570-t2-sol-p6.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 6"></div>
+<div class="off" id="t2-off-p7"><div class="toprob"><a href="#t2-p-hw-2">&uarr; Problem hw-2</a> &middot; <a href="#t2-p-hw-3">&uarr; Problem hw-3</a></div><div class="offcap">Solutions to Homework for Topic 2, page 7 of 14</div><img src="img/4570-t2-sol-p7.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 7"></div>
+<div class="off" id="t2-off-p8"><div class="toprob"><a href="#t2-p-hw-3">&uarr; Problem hw-3</a> &middot; <a href="#t2-p-hw-4">&uarr; Problem hw-4</a></div><div class="offcap">Solutions to Homework for Topic 2, page 8 of 14</div><img src="img/4570-t2-sol-p8.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 8"></div>
+<div class="off" id="t2-off-p9"><div class="toprob"><a href="#t2-p-hw-5">&uarr; Problem hw-5</a> &middot; <a href="#t2-p-hw-6">&uarr; Problem hw-6</a></div><div class="offcap">Solutions to Homework for Topic 2, page 9 of 14</div><img src="img/4570-t2-sol-p9.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 9"></div>
+<div class="off" id="t2-off-p10"><div class="toprob"><a href="#t2-p-hw-7a">&uarr; Problem hw-7a</a> &middot; <a href="#t2-p-hw-7b">&uarr; Problem hw-7b</a></div><div class="offcap">Solutions to Homework for Topic 2, page 10 of 14</div><img src="img/4570-t2-sol-p10.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 10"></div>
+<div class="off" id="t2-off-p11"><div class="toprob"><a href="#t2-p-hw-7b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 2, page 11 of 14</div><img src="img/4570-t2-sol-p11.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 11"></div>
+<div class="off" id="t2-off-p12"><div class="toprob"><a href="#t2-p-hw-7b">&uarr; Problem hw-7b</a> &middot; <a href="#t2-p-hw-8a">&uarr; Problem hw-8a</a> &middot; <a href="#t2-p-hw-8b">&uarr; Problem hw-8b</a></div><div class="offcap">Solutions to Homework for Topic 2, page 12 of 14</div><img src="img/4570-t2-sol-p12.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 12"></div>
+<div class="off" id="t2-off-p13"><div class="toprob"><a href="#t2-p-hw-8b">&uarr; Problem hw-8b</a> &middot; <a href="#t2-p-hw-9">&uarr; Problem hw-9</a></div><div class="offcap">Solutions to Homework for Topic 2, page 13 of 14</div><img src="img/4570-t2-sol-p13.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 13"></div>
+<div class="off" id="t2-off-p14"><div class="toprob"><a href="#t2-p-hw-9">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 2, page 14 of 14</div><img src="img/4570-t2-sol-p14.png" width="1241" height="1754" loading="lazy" alt="Krebs solutions page 14"></div>
+<h3 class="grp">Solutions by Claude (not official)</h3><div class="offhdr">Krebs posted no solutions for his extra practice problems; these are Claude's. Homework problems his official solutions skip are also here.</div>
+<h4 class="sub">Extra practice problems for Topic 2</h4>
+<div class="item sol" id="t2-s-ex-p1-1"><div class="toprob"><a href="#t2-p-ex-p1-1">&uarr; Problem</a></div><p class="lead">1 (Claude, not official)</p><p>Write $w = (w_1, w_2)$. Then $c_1 v_1 + c_2 v_2 = (2c_1 - c_2,\ c_1 + c_2)$, so we must solve</p>
+<p>$$2c_1 - c_2 = w_1, \qquad c_1 + c_2 = w_2.$$</p>
+<p>Adding the equations gives $3c_1 = w_1 + w_2$, so $c_1 = \frac{w_1 + w_2}{3}$, and then $c_2 = w_2 - c_1 = \frac{2w_2 - w_1}{3}$.</p>
+<p><b>$w = (1,5)$:</b> $c_1 = \frac{6}{3} = 2$, $c_2 = \frac{10 - 1}{3} = 3$. Check: $2(2,1) + 3(-1,1) = (4 - 3, 2 + 3) = (1, 5)$.</p>
+<p><b>$w = (4,-1)$:</b> $c_1 = \frac{3}{3} = 1$, $c_2 = \frac{-2 - 4}{3} = -2$. Check: $(2,1) - 2(-1,1) = (2 + 2, 1 - 2) = (4, -1)$.</p>
+<p><b>$w = (0,3)$:</b> $c_1 = \frac{3}{3} = 1$, $c_2 = \frac{6 - 0}{3} = 2$. Check: $(2,1) + 2(-1,1) = (2 - 2, 1 + 2) = (0, 3)$.</p>
+<p><b>Answer:</b> $(1,5) = 2v_1 + 3v_2$, $(4,-1) = v_1 - 2v_2$, $(0,3) = v_1 + 2v_2$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-2a"><div class="toprob"><a href="#t2-p-ex-p1-2a">&uarr; Problem</a></div><p class="lead">2(a) (Claude, not official)</p><p>In general, $c_1 v_1 + c_2 v_2 + c_3 v_3 = (c_1 + c_3,\ c_2 + c_3,\ c_1 + c_2)$. To get $(a, b, c)$ we solve</p>
+<p>$$c_1 + c_3 = a, \qquad c_2 + c_3 = b, \qquad c_1 + c_2 = c.$$</p>
+<p>Adding all three equations: $2(c_1 + c_2 + c_3) = a + b + c$, so $s := c_1 + c_2 + c_3 = \frac{a+b+c}{2}$. Subtracting each equation from $s$:</p>
+<p>$$c_1 = s - b = \tfrac{a - b + c}{2}, \qquad c_2 = s - a = \tfrac{-a + b + c}{2}, \qquad c_3 = s - c = \tfrac{a + b - c}{2}.$$</p>
+<p>With $(a,b,c) = (4,2,6)$: $s = 6$, so $c_1 = 6 - 2 = 4$, $c_2 = 6 - 4 = 2$, $c_3 = 6 - 6 = 0$.</p>
+<p>Check: $4(1,0,1) + 2(0,1,1) + 0(1,1,0) = (4, 2, 6)$.</p>
+<p><b>Answer:</b> $c_1 = 4,\ c_2 = 2,\ c_3 = 0$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-2b"><div class="toprob"><a href="#t2-p-ex-p1-2b">&uarr; Problem</a></div><p class="lead">2(b) (Claude, not official)</p><p>Using the general formulas from part (a) with $(a,b,c) = (-1,3,2)$: $s = \frac{-1 + 3 + 2}{2} = 2$, so $c_1 = s - b = -1$, $c_2 = s - a = 3$, $c_3 = s - c = 0$.</p>
+<p>Check: $-(1,0,1) + 3(0,1,1) + 0(1,1,0) = (-1, 3, -1 + 3) = (-1, 3, 2)$.</p>
+<p><b>Answer:</b> $c_1 = -1,\ c_2 = 3,\ c_3 = 0$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-2c"><div class="toprob"><a href="#t2-p-ex-p1-2c">&uarr; Problem</a></div><p class="lead">2(c) (Claude, not official)</p><p>From the computation in part (a), for <b>every</b> $(a,b,c) \in \mathbb{R}^3$ the scalars</p>
+<p>$$c_1 = \tfrac{a - b + c}{2}, \qquad c_2 = \tfrac{-a + b + c}{2}, \qquad c_3 = \tfrac{a + b - c}{2}$$</p>
+<p>satisfy $c_1 v_1 + c_2 v_2 + c_3 v_3 = (a, b, c)$. (Check: $c_1 + c_3 = \frac{2a}{2} = a$, $c_2 + c_3 = \frac{2b}{2} = b$, $c_1 + c_2 = \frac{2c}{2} = c$.) Hence $\mathbb{R}^3 \subseteq \operatorname{span}\{v_1, v_2, v_3\}$, and the reverse inclusion is clear since $\operatorname{span}\{v_1,v_2,v_3\} \subseteq \mathbb{R}^3$.</p>
+<p><b>Answer:</b> $\operatorname{span}\{v_1, v_2, v_3\} = \mathbb{R}^3$. (Equivalently, $\det\begin{pmatrix} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 0 \end{pmatrix} = -2 \neq 0$.)</p></div>
+<div class="item sol" id="t2-s-ex-p1-3"><div class="toprob"><a href="#t2-p-ex-p1-3">&uarr; Problem</a></div><p class="lead">3 (Claude, not official)</p><p>We have $c_1(1,2,-1) + c_2(2,-1,3) = (c_1 + 2c_2,\ 2c_1 - c_2,\ -c_1 + 3c_2)$. For a target $(a,b,c)$ we solve the first two equations $c_1 + 2c_2 = a$, $2c_1 - c_2 = b$ (which always have the unique solution $c_1 = \frac{a + 2b}{5}$, $c_2 = \frac{2a - b}{5}$) and then test whether the third equation $-c_1 + 3c_2 = c$ holds.</p>
+<p><b>$(3,1,2)$:</b> $c_1 = \frac{3+2}{5} = 1$, $c_2 = \frac{6-1}{5} = 1$. Third coordinate: $-1 + 3 = 2$. Yes. $(3,1,2) = 1\cdot(1,2,-1) + 1\cdot(2,-1,3)$.</p>
+<p><b>$(0,5,-5)$:</b> $c_1 = \frac{0+10}{5} = 2$, $c_2 = \frac{0-5}{5} = -1$. Third: $-2 - 3 = -5$. Yes. $(0,5,-5) = 2(1,2,-1) - (2,-1,3)$.</p>
+<p><b>$(4,3,1)$:</b> $c_1 = \frac{4+6}{5} = 2$, $c_2 = \frac{8-3}{5} = 1$. Third: $-2 + 3 = 1$. Yes. $(4,3,1) = 2(1,2,-1) + (2,-1,3)$.</p>
+<p><b>$(-1,8,-7)$:</b> the first two equations force $c_1 = \frac{-1+16}{5} = 3$, $c_2 = \frac{-2-8}{5} = -2$, but then the third coordinate is $-3 - 6 = -9 \neq -7$. Since the first two equations have only this solution, no choice of $c_1, c_2$ works: $(-1,8,-7) \notin \operatorname{span}(S)$.</p>
+<p>(Shortcut: $(1,2,-1) \times (2,-1,3) = (5,-5,-5)$, so $\operatorname{span}(S)$ is the plane $a - b - c = 0$. The first three vectors satisfy it; $-1 - 8 + 7 = -2 \neq 0$.)</p>
+<p><b>Answer:</b> $(3,1,2)$, $(0,5,-5)$, $(4,3,1)$ are in $\operatorname{span}(S)$ with coefficients $(1,1)$, $(2,-1)$, $(2,1)$ respectively; $(-1,8,-7)$ is not.</p></div>
+<div class="item sol" id="t2-s-ex-p1-4"><div class="toprob"><a href="#t2-p-ex-p1-4">&uarr; Problem</a></div><p class="lead">4 (Claude, not official)</p><p><b>Note:</b> none of the three matrices turns out to be in the span (the problem was AI-generated and probably intended at least one to be). Here is the full analysis.</p>
+<p>For $x, y, z \in \mathbb{R}$,</p>
+<p>$$xA + yB + zC = \begin{pmatrix} x + z &amp; y + z \\ x + y &amp; x - z \end{pmatrix}.$$</p>
+<p>Setting this equal to $\begin{pmatrix} p &amp; q \\ r &amp; s \end{pmatrix}$ gives $x + z = p$, $y + z = q$, $x + y = r$, $x - z = s$. The first and fourth equations force $x = \frac{p+s}{2}$, $z = \frac{p-s}{2}$; the third then forces $y = r - \frac{p+s}{2}$. Substituting into the second: $y + z = r - \frac{p+s}{2} + \frac{p-s}{2} = r - s$. So a solution exists <b>if and only if</b> $q = r - s$, i.e.</p>
+<p>$$\begin{pmatrix} p &amp; q \\ r &amp; s \end{pmatrix} \in \operatorname{span}\{A,B,C\} \iff q - r + s = 0.$$</p>
+<p>(Check on the spanning matrices: $A$: $0 - 1 + 1 = 0$; $B$: $1 - 1 + 0 = 0$; $C$: $1 - 0 - 1 = 0$.)</p>
+<p><b>$\begin{pmatrix} 2 &amp; 3 \\ 4 &amp; 0 \end{pmatrix}$:</b> $q - r + s = 3 - 4 + 0 = -1 \neq 0$. Concretely: $x = 1$, $z = 1$, $y = 3$ are forced, but then $y + z = 4 \neq 3$. <b>Not</b> in the span.</p>
+<p><b>$\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$:</b> $q - r + s = 0 - 0 + 1 = 1 \neq 0$. Concretely: $x = 1$, $z = 0$, $y = -1$ are forced, but then $y + z = -1 \neq 0$. <b>Not</b> in the span.</p>
+<p><b>$\begin{pmatrix} 3 &amp; -1 \\ 2 &amp; 4 \end{pmatrix}$:</b> $q - r + s = -1 - 2 + 4 = 1 \neq 0$. Concretely: $x = \frac72$, $z = -\frac12$, $y = -\frac32$ are forced, but then $y + z = -2 \neq -1$. <b>Not</b> in the span.</p>
+<p><b>Answer:</b> none of the three matrices belongs to $\operatorname{span}\{A, B, C\}$. ($A, B, C$ are linearly independent, so their span is the 3-dimensional subspace $\{q - r + s = 0\}$ of the 4-dimensional $M_{2,2}(\mathbb{R})$, and all three given matrices lie off it.)</p></div>
+<div class="item sol" id="t2-s-ex-p1-5a"><div class="toprob"><a href="#t2-p-ex-p1-5a">&uarr; Problem</a></div><p class="lead">5(a) (Claude, not official)</p><p>$c_1(1+x) + c_2(x + x^2) + c_3(1 - x^2) = (c_1 + c_3) + (c_1 + c_2)x + (c_2 - c_3)x^2$. Comparing coefficients with $2 + 5x + 3x^2$:</p>
+<p>$$c_1 + c_3 = 2, \qquad c_1 + c_2 = 5, \qquad c_2 - c_3 = 3.$$</p>
+<p>The third equation is the second minus the first, so it is redundant. Let $c_3 = t$; then $c_1 = 2 - t$ and $c_2 = 3 + t$. Every $t \in \mathbb{R}$ works; the solution is not unique because $p_3 = p_1 - p_2$ (the three polynomials are linearly dependent).</p>
+<p>Taking $t = 0$: $c_1 = 2$, $c_2 = 3$, $c_3 = 0$. Check: $2(1 + x) + 3(x + x^2) = 2 + 5x + 3x^2$.</p>
+<p><b>Answer:</b> e.g. $c_1 = 2,\ c_2 = 3,\ c_3 = 0$; in general $(c_1, c_2, c_3) = (2 - t,\ 3 + t,\ t)$ for any $t \in \mathbb{R}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-5b"><div class="toprob"><a href="#t2-p-ex-p1-5b">&uarr; Problem</a></div><p class="lead">5(b) (Claude, not official)</p><p>Any linear combination $c_1 p_1 + c_2 p_2 + c_3 p_3$ is a polynomial of degree at most 2, i.e. its coefficient of $x^3$ is $0$. The polynomial $x^3 + x$ has coefficient $1 \neq 0$ of $x^3$. So no choice of constants gives $x^3 + x$.</p>
+<p><b>Answer:</b> $x^3 + x \notin \operatorname{span}\{p_1, p_2, p_3\}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-5c"><div class="toprob"><a href="#t2-p-ex-p1-5c">&uarr; Problem</a></div><p class="lead">5(c) (Claude, not official)</p><p><b>Claim:</b> $\operatorname{span}\{p_1, p_2, p_3\} = \{a + bx + cx^2 \in P_2(\mathbb{R}) \mid a - b + c = 0\} = \{p \in P_2(\mathbb{R}) \mid p(-1) = 0\}$.</p>
+<p>($\subseteq$) $p_1(-1) = 1 - 1 = 0$, $p_2(-1) = -1 + 1 = 0$, $p_3(-1) = 1 - 1 = 0$. If $p(-1) = 0$ and $q(-1) = 0$ then $(\alpha p + \beta q)(-1) = 0$, so every linear combination of $p_1, p_2, p_3$ vanishes at $-1$.</p>
+<p>($\supseteq$) Let $p = a + bx + cx^2$ with $a - b + c = 0$, i.e. $a = b - c$. Then</p>
+<p>$$p = (b - c) + bx + cx^2 = (b - c)(1 + x) + c(x + x^2) = (b - c)\,p_1 + c\,p_2,$$</p>
+<p>since $(b - c)(1 + x) + c(x + x^2) = (b - c) + bx + cx^2$. So $p \in \operatorname{span}\{p_1,p_2\} \subseteq \operatorname{span}\{p_1,p_2,p_3\}$.</p>
+<p><b>Answer:</b> $\operatorname{span}\{p_1,p_2,p_3\} = \{a + bx + cx^2 \mid a - b + c = 0\}$, a 2-dimensional subspace of $P_2(\mathbb{R})$ with basis $\{p_1, p_2\}$ (note $p_3 = p_1 - p_2$). In particular it is <b>not</b> all of $P_2(\mathbb{R})$: e.g. $1 \notin$ span since $1 \neq 0$ at $x=-1$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-6a"><div class="toprob"><a href="#t2-p-ex-p1-6a">&uarr; Problem</a></div><p class="lead">6(a) (Claude, not official)</p><p>Directly, $g = 3 \cdot 1 + (-2)\sin x + 5 \cos x = 3f_1 - 2f_2 + 5f_3$.</p>
+<p><b>Answer:</b> $c_1 = 3,\ c_2 = -2,\ c_3 = 5$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-6b"><div class="toprob"><a href="#t2-p-ex-p1-6b">&uarr; Problem</a></div><p class="lead">6(b) (Claude, not official)</p><p>$g = 0 \cdot 1 + 1 \cdot \sin x + (-1)\cos x$.</p>
+<p><b>Answer:</b> $c_1 = 0,\ c_2 = 1,\ c_3 = -1$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-6c"><div class="toprob"><a href="#t2-p-ex-p1-6c">&uarr; Problem</a></div><p class="lead">6(c) (Claude, not official)</p><p><b>No such constants exist.</b> Suppose $\sin(2x) = c_1 + c_2 \sin x + c_3 \cos x$ for all $x \in \mathbb{R}$. Evaluate at specific points:</p>
+<p>$x = 0$: $0 = c_1 + c_3$.<br>$x = \pi$: $0 = c_1 - c_3$.<br>$x = \frac{\pi}{2}$: $\sin \pi = 0 = c_1 + c_2$.</p>
+<p>The first two give $c_1 = c_3 = 0$, and then the third gives $c_2 = 0$. So the identity would say $\sin(2x) = 0$ for all $x$; but at $x = \frac{\pi}{4}$, $\sin\frac{\pi}{2} = 1 \neq 0$. Contradiction.</p>
+<p><b>Answer:</b> $\sin(2x) \notin \operatorname{span}\{1, \sin x, \cos x\}$. (It equals $2\sin x\cos x$, a product, not a linear combination.)</p></div>
+<div class="item sol" id="t2-s-ex-p1-6d"><div class="toprob"><a href="#t2-p-ex-p1-6d">&uarr; Problem</a></div><p class="lead">6(d) (Claude, not official)</p><p>$g = 1 \cdot 1 + 0 \cdot \sin x + 4 \cos x$.</p>
+<p><b>Answer:</b> $c_1 = 1,\ c_2 = 0,\ c_3 = 4$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-7"><div class="toprob"><a href="#t2-p-ex-p1-7">&uarr; Problem</a></div><p class="lead">7 (Claude, not official)</p><p><b>$3e^x - 2e^{-x}$:</b> $= 3f_1 + (-2)f_2$. In the span, coefficients $(3, -2)$.</p>
+<p><b>$\cosh x$:</b> $= \frac12 e^x + \frac12 e^{-x} = \frac12 f_1 + \frac12 f_2$. In the span, coefficients $(\frac12, \frac12)$.</p>
+<p><b>$\sinh x$:</b> $= \frac12 e^x - \frac12 e^{-x} = \frac12 f_1 - \frac12 f_2$. In the span, coefficients $(\frac12, -\frac12)$.</p>
+<p><b>$e^{2x}$:</b> <b>not</b> in the span. Suppose $e^{2x} = c_1 e^x + c_2 e^{-x}$ for all $x \in \mathbb{R}$. Multiply both sides by $e^{-x} &gt; 0$: $e^{x} = c_1 + c_2 e^{-2x}$ for all $x$. As $x \to \infty$, the right side tends to the finite number $c_1$ (since $e^{-2x} \to 0$), while the left side $e^x \to \infty$. Contradiction.</p>
+<p><b>$0$:</b> $0 = 0 \cdot f_1 + 0 \cdot f_2$. In the span (every span contains the zero vector), coefficients $(0, 0)$.</p>
+<p><b>Remark (uniqueness):</b> $f_1, f_2$ are linearly independent: if $c_1 e^x + c_2 e^{-x} = 0$ for all $x$, then $x = 0$ gives $c_1 + c_2 = 0$ and $x = \ln 2$ gives $2c_1 + \frac{c_2}{2} = 0$, forcing $c_1 = c_2 = 0$. So the coefficients found above are the only ones.</p></div>
+<div class="item sol" id="t2-s-ex-p1-8"><div class="toprob"><a href="#t2-p-ex-p1-8">&uarr; Problem</a></div><p class="lead">8 (Claude, not official)</p><p>Suppose $c_1(1,1,0) + c_2(0,1,1) + c_3(1,0,a) = (0,0,0)$. Componentwise:</p>
+<p>$$c_1 + c_3 = 0, \qquad c_1 + c_2 = 0, \qquad c_2 + a c_3 = 0.$$</p>
+<p>From the first, $c_1 = -c_3$; from the second, $c_2 = -c_1 = c_3$. Substituting into the third: $c_3 + a c_3 = (1 + a)c_3 = 0$.</p>
+<p><b>If $a \neq -1$:</b> then $1 + a \neq 0$, so $c_3 = 0$, hence $c_1 = c_2 = 0$. Only the trivial combination gives $0$: the vectors are <b>linearly independent</b>.</p>
+<p><b>If $a = -1$:</b> take $c_3 = 1$, $c_1 = -1$, $c_2 = 1$: $-(1,1,0) + (0,1,1) + (1,0,-1) = (0,0,0)$, a nontrivial relation. The vectors are <b>linearly dependent</b>.</p>
+<p>(Check: $\det\begin{pmatrix} 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; a \end{pmatrix} = a + 1$.)</p>
+<p><b>Answer:</b> linearly independent if and only if $a \neq -1$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-9a"><div class="toprob"><a href="#t2-p-ex-p1-9a">&uarr; Problem</a></div><p class="lead">9(a) (Claude, not official)</p><p>Solve $c_1(1,2,0) + c_2(0,1,3) + c_3(2,5,3) = 0$: $c_1 + 2c_3 = 0$, $2c_1 + c_2 + 5c_3 = 0$, $3c_2 + 3c_3 = 0$. From the first and third, $c_1 = -2c_3$, $c_2 = -c_3$; the second becomes $-4c_3 - c_3 + 5c_3 = 0$, true for every $c_3$. Taking $c_3 = -1$: $c_1 = 2$, $c_2 = 1$, i.e.</p>
+<p>$$2(1,2,0) + (0,1,3) - (2,5,3) = (0,0,0).$$</p>
+<p><b>Answer:</b> linearly <b>dependent</b> (the third vector is $2v_1 + v_2$).</p></div>
+<div class="item sol" id="t2-s-ex-p1-9b"><div class="toprob"><a href="#t2-p-ex-p1-9b">&uarr; Problem</a></div><p class="lead">9(b) (Claude, not official)</p><p>Solve $c_1(1,0,1) + c_2(2,1,0) + c_3(0,1,2) = 0$: $c_1 + 2c_2 = 0$, $c_2 + c_3 = 0$, $c_1 + 2c_3 = 0$. Then $c_1 = -2c_2$ and $c_3 = -c_2$, so the third equation gives $-2c_2 - 2c_2 = -4c_2 = 0$, so $c_2 = 0$, and then $c_1 = c_3 = 0$.</p>
+<p><b>Answer:</b> linearly <b>independent</b>. (The determinant of the matrix with these rows is $4 \neq 0$.)</p></div>
+<div class="item sol" id="t2-s-ex-p1-9c"><div class="toprob"><a href="#t2-p-ex-p1-9c">&uarr; Problem</a></div><p class="lead">9(c) (Claude, not official)</p><p>$(1,0,0,1) + (0,1,1,0) = (1,1,1,1)$, so</p>
+<p>$$1\cdot(1,0,0,1) + 1\cdot(0,1,1,0) + (-1)\cdot(1,1,1,1) = (0,0,0,0)$$</p>
+<p>is a nontrivial relation.</p>
+<p><b>Answer:</b> linearly <b>dependent</b>.</p></div>
+<div class="item sol" id="t2-s-ex-p1-9d"><div class="toprob"><a href="#t2-p-ex-p1-9d">&uarr; Problem</a></div><p class="lead">9(d) (Claude, not official)</p><p>Solve $c_1(1,2) + c_2(3,-1) = 0$: $c_1 + 3c_2 = 0$ and $2c_1 - c_2 = 0$. The second gives $c_2 = 2c_1$; then $c_1 + 6c_1 = 7c_1 = 0$, so $c_1 = 0$ and $c_2 = 0$.</p>
+<p><b>Answer:</b> linearly <b>independent</b> (neither vector is a multiple of the other).</p></div>
+<div class="item sol" id="t2-s-ex-p1-10a"><div class="toprob"><a href="#t2-p-ex-p1-10a">&uarr; Problem</a></div><p class="lead">10(a) (Claude, not official)</p><p>$\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} + \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix}$, so</p>
+<p>$$1\cdot\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} + 1\cdot\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} + (-1)\cdot\begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix} = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}$$</p>
+<p>is a nontrivial relation.</p>
+<p><b>Answer:</b> linearly <b>dependent</b>.</p></div>
+<div class="item sol" id="t2-s-ex-p1-10b"><div class="toprob"><a href="#t2-p-ex-p1-10b">&uarr; Problem</a></div><p class="lead">10(b) (Claude, not official)</p><p>$$c_1\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} + c_2\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} + c_3\begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix} + c_4\begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = \begin{pmatrix} c_1 &amp; c_2 \\ c_3 &amp; c_4 \end{pmatrix}.$$</p>
+<p>This equals the zero matrix only if $c_1 = c_2 = c_3 = c_4 = 0$.</p>
+<p><b>Answer:</b> linearly <b>independent</b> (this is the standard basis of $M_{2,2}(\mathbb{R})$).</p></div>
+<div class="item sol" id="t2-s-ex-p1-10c"><div class="toprob"><a href="#t2-p-ex-p1-10c">&uarr; Problem</a></div><p class="lead">10(c) (Claude, not official)</p><p>Suppose $c_1\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix} + c_2\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} + c_3\begin{pmatrix} 1 &amp; 0 \\ -1 &amp; 1 \end{pmatrix} = 0$, i.e. $\begin{pmatrix} c_1 + c_3 &amp; c_1 + c_2 \\ c_2 - c_3 &amp; c_1 + c_3 \end{pmatrix} = 0$. So $c_3 = -c_1$, $c_2 = -c_1$, and $c_2 - c_3 = -c_1 + c_1 = 0$ automatically. Taking $c_1 = -1$ gives $c_2 = c_3 = 1$:</p>
+<p>$$-\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix} + \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} + \begin{pmatrix} 1 &amp; 0 \\ -1 &amp; 1 \end{pmatrix} = \begin{pmatrix} -1 + 0 + 1 &amp; -1 + 1 + 0 \\ 0 + 1 - 1 &amp; -1 + 0 + 1 \end{pmatrix} = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}.$$</p>
+<p><b>Answer:</b> linearly <b>dependent</b> (the first matrix is the sum of the other two).</p></div>
+<div class="item sol" id="t2-s-ex-p1-11a"><div class="toprob"><a href="#t2-p-ex-p1-11a">&uarr; Problem</a></div><p class="lead">11(a) (Claude, not official)</p><p>$(1 + x) - (x + x^2) = 1 - x^2$, so $1\cdot(1 + x) + (-1)(x + x^2) + (-1)(1 - x^2) = 0$ is a nontrivial relation.</p>
+<p><b>Answer:</b> linearly <b>dependent</b>.</p></div>
+<div class="item sol" id="t2-s-ex-p1-11b"><div class="toprob"><a href="#t2-p-ex-p1-11b">&uarr; Problem</a></div><p class="lead">11(b) (Claude, not official)</p><p>$(1 + x) - (1 - x) = 2x$, so $1\cdot(1 + x) + (-1)(1 - x) + (-2)x = 0$ is a nontrivial relation. (Alternatively: $\dim P_1(\mathbb{R}) = 2$, and any 3 vectors in a 2-dimensional space are dependent.)</p>
+<p><b>Answer:</b> linearly <b>dependent</b>.</p></div>
+<div class="item sol" id="t2-s-ex-p1-11c"><div class="toprob"><a href="#t2-p-ex-p1-11c">&uarr; Problem</a></div><p class="lead">11(c) (Claude, not official)</p><p>Suppose $c_1(1+x) + c_2(x + x^2) + c_3(x^2 + x^3) + c_4(1 - x^3) = 0$. Collecting coefficients:</p>
+<p>$$(c_1 + c_4) + (c_1 + c_2)x + (c_2 + c_3)x^2 + (c_3 - c_4)x^3 = 0.$$</p>
+<p>So $c_4 = -c_1$, $c_2 = -c_1$, $c_3 = -c_2 = c_1$, and the last equation gives $c_3 - c_4 = c_1 + c_1 = 2c_1 = 0$. Hence $c_1 = 0$ and then $c_2 = c_3 = c_4 = 0$.</p>
+<p><b>Answer:</b> linearly <b>independent</b> (and since $\dim P_3(\mathbb{R}) = 4$, it is in fact a basis of $P_3(\mathbb{R})$).</p></div>
+<div class="item sol" id="t2-s-ex-p1-11d"><div class="toprob"><a href="#t2-p-ex-p1-11d">&uarr; Problem</a></div><p class="lead">11(d) (Claude, not official)</p><p>Suppose $c_0 + c_1(x - 1) + c_2(x - 1)^2 + c_3(x - 1)^3 = 0$ (the zero polynomial). The only term containing $x^3$ is $c_3(x-1)^3$, so the $x^3$-coefficient is $c_3 = 0$. Then the only term containing $x^2$ is $c_2(x-1)^2$, so $c_2 = 0$. Then the $x$-coefficient is $c_1 = 0$, leaving $c_0 = 0$.</p>
+<p><b>Answer:</b> linearly <b>independent</b> (polynomials of distinct degrees $0,1,2,3$; it is a basis of $P_3(\mathbb{R})$).</p></div>
+<div class="item sol" id="t2-s-ex-p1-12a"><div class="toprob"><a href="#t2-p-ex-p1-12a">&uarr; Problem</a></div><p class="lead">12(a) (Claude, not official)</p><p><b>Spanning:</b> given $(a,b)$, solve $c_1(1,2) + c_2(3,1) = (a,b)$: $c_1 + 3c_2 = a$, $2c_1 + c_2 = b$. This gives $c_1 = \frac{3b - a}{5}$, $c_2 = \frac{2a - b}{5}$ (check: $c_1 + 3c_2 = \frac{3b - a + 6a - 3b}{5} = a$ and $2c_1 + c_2 = \frac{6b - 2a + 2a - b}{5} = b$). So the set spans $\mathbb{R}^2$.</p>
+<p><b>Independent:</b> with $(a,b) = (0,0)$ the formulas give the unique solution $c_1 = c_2 = 0$.</p>
+<p><b>Answer:</b> yes, it is a basis for $\mathbb{R}^2$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-12b"><div class="toprob"><a href="#t2-p-ex-p1-12b">&uarr; Problem</a></div><p class="lead">12(b) (Claude, not official)</p><p>$(1,0,1) + (0,1,1) = (1,1,2)$, so the set is linearly dependent and therefore not a basis. (It spans only the 2-dimensional plane $\{(a,b,c) \mid c = a + b\}$.)</p>
+<p><b>Answer:</b> no, not a basis.</p></div>
+<div class="item sol" id="t2-s-ex-p1-12c"><div class="toprob"><a href="#t2-p-ex-p1-12c">&uarr; Problem</a></div><p class="lead">12(c) (Claude, not official)</p><p>$(1 + x) - (x + x^2) = 1 - x^2$, so the set is linearly dependent (see 11(a)), hence not a basis. Its span is only $\{p \in P_2(\mathbb{R}) \mid p(-1) = 0\}$ (see 5(c)); for example $1$ is not in it.</p>
+<p><b>Answer:</b> no, not a basis.</p></div>
+<div class="item sol" id="t2-s-ex-p1-12d"><div class="toprob"><a href="#t2-p-ex-p1-12d">&uarr; Problem</a></div><p class="lead">12(d) (Claude, not official)</p><p>For scalars $c_1, \dots, c_4$,</p>
+<p>$$c_1\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} + c_2\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} + c_3\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} + c_4\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} = \begin{pmatrix} c_1 + c_2 &amp; c_3 + c_4 \\ c_3 - c_4 &amp; c_1 - c_2 \end{pmatrix}.$$</p>
+<p>Setting this equal to an arbitrary $\begin{pmatrix} p &amp; q \\ r &amp; s \end{pmatrix}$ gives $c_1 + c_2 = p$, $c_1 - c_2 = s$, $c_3 + c_4 = q$, $c_3 - c_4 = r$, which has the unique solution</p>
+<p>$$c_1 = \tfrac{p + s}{2}, \quad c_2 = \tfrac{p - s}{2}, \quad c_3 = \tfrac{q + r}{2}, \quad c_4 = \tfrac{q - r}{2}.$$</p>
+<p>Existence for every matrix means the set spans $M_{2,2}(\mathbb{R})$; uniqueness for the zero matrix ($p=q=r=s=0$ forces all $c_i = 0$) means it is linearly independent.</p>
+<p><b>Answer:</b> yes, it is a basis for $M_{2,2}(\mathbb{R})$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-13a"><div class="toprob"><a href="#t2-p-ex-p1-13a">&uarr; Problem</a></div><p class="lead">13(a) (Claude, not official)</p><p>Method: go through the list in order, keeping a vector only if it is not in the span of the vectors already kept. The kept vectors are linearly independent (each new one is outside the span of the previous ones) and span the same space as the whole list (each discarded vector is a combination of kept ones).</p>
+<p>Keep $(1,0)$. Keep $(0,1)$ (not a multiple of $(1,0)$). Discard $(1,1) = (1,0) + (0,1)$. Discard $(2,-1) = 2(1,0) - (0,1)$.</p>
+<p>$\{(1,0),(0,1)\}$ is independent ($c_1(1,0) + c_2(0,1) = (c_1, c_2)$) and spans $\mathbb{R}^2$ ($(a,b) = a(1,0) + b(0,1)$).</p>
+<p><b>Answer:</b> $\{(1,0), (0,1)\}$. (Other answers are possible, e.g. $\{(1,1), (2,-1)\}$.)</p></div>
+<div class="item sol" id="t2-s-ex-p1-13b"><div class="toprob"><a href="#t2-p-ex-p1-13b">&uarr; Problem</a></div><p class="lead">13(b) (Claude, not official)</p><p>Method: go through the list in order, keeping a vector only if it is not in the span of the vectors already kept. The kept vectors are linearly independent (each new one is outside the span of the previous ones) and span the same space as the whole list (each discarded vector is a combination of kept ones).</p>
+<p>Keep $(1,0,0)$ and $(0,1,0)$. Discard $(1,1,0) = (1,0,0) + (0,1,0)$. Keep $(0,0,1)$ (its third coordinate is nonzero, while every vector in $\operatorname{span}\{(1,0,0),(0,1,0)\}$ has third coordinate $0$). Discard $(1,1,1) = (1,0,0) + (0,1,0) + (0,0,1)$.</p>
+<p><b>Answer:</b> $\{(1,0,0), (0,1,0), (0,0,1)\}$, the standard basis: $(a,b,c) = a(1,0,0) + b(0,1,0) + c(0,0,1)$ uniquely.</p></div>
+<div class="item sol" id="t2-s-ex-p1-13c"><div class="toprob"><a href="#t2-p-ex-p1-13c">&uarr; Problem</a></div><p class="lead">13(c) (Claude, not official)</p><p>Method: go through the list in order, keeping a vector only if it is not in the span of the vectors already kept. The kept vectors are linearly independent (each new one is outside the span of the previous ones) and span the same space as the whole list (each discarded vector is a combination of kept ones).</p>
+<p>Keep $1$, $x$, $x^2$ (each has a degree not reached by the earlier ones). The remaining three are $1 + x$, $x + x^2$, $1 + x + x^2$, all in $\operatorname{span}\{1, x, x^2\}$, so discard them.</p>
+<p><b>Answer:</b> $\{1, x, x^2\}$, the standard basis of $P_2(\mathbb{R})$: every $a + bx + cx^2$ is uniquely $a\cdot 1 + b\cdot x + c\cdot x^2$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-13d"><div class="toprob"><a href="#t2-p-ex-p1-13d">&uarr; Problem</a></div><p class="lead">13(d) (Claude, not official)</p><p>Method: go through the list in order, keeping a vector only if it is not in the span of the vectors already kept. The kept vectors are linearly independent (each new one is outside the span of the previous ones) and span the same space as the whole list (each discarded vector is a combination of kept ones).</p>
+<p>Keep $\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}$ and $\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}$. Discard $\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} + \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}$. Keep $\begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}$ and $\begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$ (each has a nonzero entry in a position where all previously kept matrices are $0$).</p>
+<p><b>Answer:</b> $\left\{\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\right\}$, the standard basis (independent and spanning by the computation in 10(b)).</p></div>
+<div class="item sol" id="t2-s-ex-p1-14a"><div class="toprob"><a href="#t2-p-ex-p1-14a">&uarr; Problem</a></div><p class="lead">14(a) (Claude, not official)</p><p>$\dim \mathbb{R}^3 = 3$, so we need two more vectors. Add $(0,1,0)$ and $(0,0,1)$.</p>
+<p>Independence: $c_1(1,1,0) + c_2(0,1,0) + c_3(0,0,1) = (c_1,\ c_1 + c_2,\ c_3) = 0$ forces $c_1 = 0$, then $c_2 = 0$, and $c_3 = 0$. Three linearly independent vectors in the 3-dimensional space $\mathbb{R}^3$ form a basis. (Spanning directly: $(a,b,c) = a(1,1,0) + (b - a)(0,1,0) + c(0,0,1)$.)</p>
+<p><b>Answer:</b> $\{(1,1,0), (0,1,0), (0,0,1)\}$ (one of many valid answers).</p></div>
+<div class="item sol" id="t2-s-ex-p1-14b"><div class="toprob"><a href="#t2-p-ex-p1-14b">&uarr; Problem</a></div><p class="lead">14(b) (Claude, not official)</p><p>We need one more vector. Add $(0,0,1)$.</p>
+<p>Independence: $c_1(1,0,1) + c_2(0,1,1) + c_3(0,0,1) = (c_1,\ c_2,\ c_1 + c_2 + c_3) = 0$ forces $c_1 = c_2 = 0$ and then $c_3 = 0$. Three independent vectors in $\mathbb{R}^3$ form a basis. (Spanning directly: $(a,b,c) = a(1,0,1) + b(0,1,1) + (c - a - b)(0,0,1)$.)</p>
+<p><b>Answer:</b> $\{(1,0,1), (0,1,1), (0,0,1)\}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-14c"><div class="toprob"><a href="#t2-p-ex-p1-14c">&uarr; Problem</a></div><p class="lead">14(c) (Claude, not official)</p><p>$\dim P_2(\mathbb{R}) = 3$; add $x$ and $x^2$.</p>
+<p>Independence: $c_1(1 + x) + c_2 x + c_3 x^2 = c_1 + (c_1 + c_2)x + c_3 x^2 = 0$ forces $c_1 = 0$, $c_2 = 0$, $c_3 = 0$. Three independent vectors in a 3-dimensional space form a basis. (Spanning directly: $a + bx + cx^2 = a(1 + x) + (b - a)x + cx^2$.)</p>
+<p><b>Answer:</b> $\{1 + x,\ x,\ x^2\}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-14d"><div class="toprob"><a href="#t2-p-ex-p1-14d">&uarr; Problem</a></div><p class="lead">14(d) (Claude, not official)</p><p>$\dim M_{2,2}(\mathbb{R}) = 4$; add $\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}$ and $\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}$.</p>
+<p>Independence: $c_1\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} + c_2\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} + c_3\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} + c_4\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} = \begin{pmatrix} c_1 + c_3 &amp; c_2 + c_4 \\ c_2 &amp; c_1 \end{pmatrix} = 0$ forces $c_2 = 0$ and $c_1 = 0$ (bottom row), then $c_3 = 0$ and $c_4 = 0$. Four independent vectors in a 4-dimensional space form a basis.</p>
+<p>(Spanning directly: $\begin{pmatrix} p &amp; q \\ r &amp; s \end{pmatrix} = s\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} + r\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} + (p - s)\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} + (q - r)\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}$.)</p>
+<p><b>Answer:</b> $\left\{\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}\right\}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-15a"><div class="toprob"><a href="#t2-p-ex-p1-15a">&uarr; Problem</a></div><p class="lead">15(a) (Claude, not official)</p><p>The condition is $d = -a - b - c$ with $a, b, c$ free, so</p>
+<p>$$(a, b, c, d) = a(1,0,0,-1) + b(0,1,0,-1) + c(0,0,1,-1).$$</p>
+<p>These three vectors lie in $W$ and span it. They are independent: if $a(1,0,0,-1) + b(0,1,0,-1) + c(0,0,1,-1) = 0$, the first three coordinates give $a = b = c = 0$.</p>
+<p><b>Answer:</b> $\dim W = 3$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-15b"><div class="toprob"><a href="#t2-p-ex-p1-15b">&uarr; Problem</a></div><p class="lead">15(b) (Claude, not official)</p><p>The conditions are $b = -a$, $d = c$, with $a, c$ free:</p>
+<p>$$(a, -a, c, c) = a(1,-1,0,0) + c(0,0,1,1).$$</p>
+<p>These two vectors are in $W$, span $W$, and are independent (looking at coordinates 1 and 3, $a(1,-1,0,0) + c(0,0,1,1) = 0$ forces $a = c = 0$).</p>
+<p><b>Answer:</b> $\dim W = 2$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-15c"><div class="toprob"><a href="#t2-p-ex-p1-15c">&uarr; Problem</a></div><p class="lead">15(c) (Claude, not official)</p><p>$$\begin{pmatrix} a &amp; b \\ c &amp; a \end{pmatrix} = a\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} + b\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} + c\begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}.$$</p>
+<p>These three matrices lie in $W$ and span it; they are independent since the combination above is the zero matrix only when $a = b = c = 0$.</p>
+<p><b>Answer:</b> $\dim W = 3$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-15d"><div class="toprob"><a href="#t2-p-ex-p1-15d">&uarr; Problem</a></div><p class="lead">15(d) (Claude, not official)</p><p>The conditions give $d = -a$, $c = b$:</p>
+<p>$$\begin{pmatrix} a &amp; b \\ b &amp; -a \end{pmatrix} = a\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} + b\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}.$$</p>
+<p>The two matrices lie in $W$, span it, and are independent (the combination is $0$ only if $a = b = 0$).</p>
+<p><b>Answer:</b> $\dim W = 2$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-15e"><div class="toprob"><a href="#t2-p-ex-p1-15e">&uarr; Problem</a></div><p class="lead">15(e) (Claude, not official)</p><p>Write $p(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + a_4 x^4$. Then $p(0) = a_0$, so $p \in W \iff a_0 = 0 \iff p = a_1 x + a_2 x^2 + a_3 x^3 + a_4 x^4$. Thus $\{x, x^2, x^3, x^4\}$ spans $W$ (and each lies in $W$), and it is independent as a subset of the standard basis $\{1, x, x^2, x^3, x^4\}$.</p>
+<p><b>Answer:</b> $\dim W = 4$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-15f"><div class="toprob"><a href="#t2-p-ex-p1-15f">&uarr; Problem</a></div><p class="lead">15(f) (Claude, not official)</p><p>Write $p(x) = a_0 + a_1 x + \dots + a_4 x^4$. Then $p(1) = a_0 + a_1 + a_2 + a_3 + a_4$, so $p \in W \iff a_0 = -(a_1 + a_2 + a_3 + a_4)$, and then</p>
+<p>$$p(x) = a_1(x - 1) + a_2(x^2 - 1) + a_3(x^3 - 1) + a_4(x^4 - 1).$$</p>
+<p>So $\{x - 1, x^2 - 1, x^3 - 1, x^4 - 1\}$ (all in $W$) spans $W$. Independence: if $\sum_{k=1}^4 c_k (x^k - 1) = 0$, the coefficient of $x^k$ ($k = 1,\dots,4$) on the left is $c_k$, so every $c_k = 0$.</p>
+<p><b>Answer:</b> $\dim W = 4$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-16"><div class="toprob"><a href="#t2-p-ex-p1-16">&uarr; Problem</a></div><p class="lead">16 (Claude, not official)</p><p><b>$W_1$:</b> $\begin{pmatrix} a &amp; b \\ c &amp; a \end{pmatrix} = a\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} + b\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} + c\begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}$, so $\beta_1 = \left\{\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}\right\}$ spans $W_1$; it is independent since the combination is the zero matrix only if $a = b = c = 0$. <b>Basis $\beta_1$, $\dim W_1 = 3$.</b></p>
+<p><b>$W_2$:</b> $\begin{pmatrix} d &amp; e \\ -e &amp; 0 \end{pmatrix} = d\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} + e\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}$, so $\beta_2 = \left\{\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}\right\}$ spans $W_2$; independent since $d\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} + e\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} = \begin{pmatrix} d &amp; e \\ -e &amp; 0 \end{pmatrix} = 0$ forces $d = e = 0$. <b>Basis $\beta_2$, $\dim W_2 = 2$.</b></p>
+<p><b>$W_1 \cap W_2$:</b> a matrix in $W_2$ has the form $\begin{pmatrix} d &amp; e \\ -e &amp; 0 \end{pmatrix}$; it lies in $W_1$ exactly when its two diagonal entries are equal, i.e. $d = 0$ (the off-diagonal entries of a $W_1$ matrix are unrestricted). So $W_1 \cap W_2 = \left\{ e\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} \mid e \in \mathbb{R} \right\}$. The single nonzero matrix $\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}$ is independent and spans it. <b>Basis $\left\{\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}\right\}$, $\dim(W_1 \cap W_2) = 1$.</b></p>
+<p><b>$W_1 + W_2$:</b> $W_1 + W_2 \subseteq M_{2,2}(\mathbb{R})$. Conversely, $E_{11} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} \in W_2$, $E_{12} = \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} \in W_1$, $E_{21} = \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix} \in W_1$, and $E_{22} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} - \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}$ is (element of $W_1$) $+$ (element of $W_2$). Since $W_1 + W_2$ is a subspace containing $E_{11}, E_{12}, E_{21}, E_{22}$, it contains their span, which is $M_{2,2}(\mathbb{R})$. So $W_1 + W_2 = M_{2,2}(\mathbb{R})$. <b>Basis $\{E_{11}, E_{12}, E_{21}, E_{22}\}$, $\dim(W_1 + W_2) = 4$.</b></p>
+<p>(Consistency check: $\dim W_1 + \dim W_2 - \dim(W_1 \cap W_2) = 3 + 2 - 1 = 4$.)</p></div>
+<div class="item sol" id="t2-s-ex-p1-17"><div class="toprob"><a href="#t2-p-ex-p1-17">&uarr; Problem</a></div><p class="lead">17 (Claude, not official)</p><p>Write $p(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3$.</p>
+<p><b>$W_1$:</b> $p(1) = a_0 + a_1 + a_2 + a_3 = 0 \iff a_0 = -(a_1 + a_2 + a_3)$, and then $p = a_1(x - 1) + a_2(x^2 - 1) + a_3(x^3 - 1)$. So $\{x - 1, x^2 - 1, x^3 - 1\} \subseteq W_1$ spans $W_1$; it is independent because in $c_1(x-1) + c_2(x^2-1) + c_3(x^3-1)$ the coefficient of $x^k$ is $c_k$. <b>Basis $\{x - 1, x^2 - 1, x^3 - 1\}$, $\dim W_1 = 3$.</b></p>
+<p><b>$W_2$:</b> $p(-1) = a_0 - a_1 + a_2 - a_3 = 0 \iff a_0 = a_1 - a_2 + a_3$, and then $p = a_1(x + 1) + a_2(x^2 - 1) + a_3(x^3 + 1)$. Same argument: <b>basis $\{x + 1, x^2 - 1, x^3 + 1\}$, $\dim W_2 = 3$.</b></p>
+<p><b>$W_1 \cap W_2$:</b> $p(1) = 0$ and $p(-1) = 0$ mean $a_0 + a_1 + a_2 + a_3 = 0$ and $a_0 - a_1 + a_2 - a_3 = 0$. Adding and subtracting: $a_0 + a_2 = 0$ and $a_1 + a_3 = 0$. So $a_2 = -a_0$, $a_3 = -a_1$, and</p>
+<p>$$p = a_0(1 - x^2) + a_1(x - x^3).$$</p>
+<p>$\{1 - x^2, x - x^3\}$ lies in $W_1 \cap W_2$, spans it, and is independent ($c_0(1 - x^2) + c_1(x - x^3) = 0$ gives $c_0 = 0$ from the constant term and $c_1 = 0$ from the $x$ term). <b>Basis $\{1 - x^2,\ x - x^3\}$ (equivalently $\{x^2 - 1, x^3 - x\}$), $\dim(W_1 \cap W_2) = 2$.</b></p>
+<p><b>$W_1 + W_2$:</b> it is a subspace of $P_3(\mathbb{R})$ containing $x - 1 \in W_1$ and $x + 1 \in W_2$, hence containing $1 = \frac12[(x+1) - (x-1)]$ and $x = \frac12[(x+1) + (x-1)]$; it contains $x^2 = (x^2 - 1) + 1$ and $x^3 = (x^3 - 1) + 1$. So it contains $\operatorname{span}\{1, x, x^2, x^3\} = P_3(\mathbb{R})$, i.e. $W_1 + W_2 = P_3(\mathbb{R})$. <b>Basis $\{1, x, x^2, x^3\}$, $\dim(W_1 + W_2) = 4$.</b></p>
+<p>(Consistency check: $3 + 3 - 2 = 4$.)</p></div>
+<div class="item sol" id="t2-s-ex-p1-18a"><div class="toprob"><a href="#t2-p-ex-p1-18a">&uarr; Problem</a></div><p class="lead">18(a) (Claude, not official)</p><p>For $v = (a,b)$ solve $c_1(1,1) + c_2(1,-1) = (a,b)$: $c_1 + c_2 = a$, $c_1 - c_2 = b$, so $c_1 = \frac{a+b}{2}$, $c_2 = \frac{a-b}{2}$, and $[v]_\beta = \begin{pmatrix} c_1 \\ c_2 \end{pmatrix}$.</p>
+<p>$c_1 = \frac{4+2}{2} = 3$, $c_2 = \frac{4-2}{2} = 1$. Check: $3(1,1) + (1,-1) = (4,2)$.</p>
+<p><b>Answer:</b> $[(4,2)]_\beta = \begin{pmatrix} 3 \\ 1 \end{pmatrix}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-18b"><div class="toprob"><a href="#t2-p-ex-p1-18b">&uarr; Problem</a></div><p class="lead">18(b) (Claude, not official)</p><p>For $v = (a,b)$ solve $c_1(1,1) + c_2(1,-1) = (a,b)$: $c_1 + c_2 = a$, $c_1 - c_2 = b$, so $c_1 = \frac{a+b}{2}$, $c_2 = \frac{a-b}{2}$, and $[v]_\beta = \begin{pmatrix} c_1 \\ c_2 \end{pmatrix}$.</p>
+<p>$c_1 = \frac{1+5}{2} = 3$, $c_2 = \frac{1-5}{2} = -2$. Check: $3(1,1) - 2(1,-1) = (1, 5)$.</p>
+<p><b>Answer:</b> $[(1,5)]_\beta = \begin{pmatrix} 3 \\ -2 \end{pmatrix}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-18c"><div class="toprob"><a href="#t2-p-ex-p1-18c">&uarr; Problem</a></div><p class="lead">18(c) (Claude, not official)</p><p>For $v = (a,b)$ solve $c_1(1,1) + c_2(1,-1) = (a,b)$: $c_1 + c_2 = a$, $c_1 - c_2 = b$, so $c_1 = \frac{a+b}{2}$, $c_2 = \frac{a-b}{2}$, and $[v]_\beta = \begin{pmatrix} c_1 \\ c_2 \end{pmatrix}$.</p>
+<p>$c_1 = \frac{-3-1}{2} = -2$, $c_2 = \frac{-3+1}{2} = -1$. Check: $-2(1,1) - (1,-1) = (-3, -1)$.</p>
+<p><b>Answer:</b> $[(-3,-1)]_\beta = \begin{pmatrix} -2 \\ -1 \end{pmatrix}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-19a"><div class="toprob"><a href="#t2-p-ex-p1-19a">&uarr; Problem</a></div><p class="lead">19(a) (Claude, not official)</p><p>For $p = a + bx + cx^2$ solve $c_1(1 + x) + c_2(x - x^2) + c_3(1 - x^2) = p$. The left side is $(c_1 + c_3) + (c_1 + c_2)x + (-c_2 - c_3)x^2$, so</p>
+<p>$$c_1 + c_3 = a, \qquad c_1 + c_2 = b, \qquad -c_2 - c_3 = c.$$</p>
+<p>Adding all three: $2c_1 = a + b + c$. Hence $c_1 = \frac{a+b+c}{2}$, $c_2 = b - c_1 = \frac{-a+b-c}{2}$, $c_3 = a - c_1 = \frac{a-b-c}{2}$. (Since this solution exists and is unique for every $p$, $\beta$ really is a basis of $P_2(\mathbb{R})$.)</p>
+<p>$(a,b,c) = (2,3,1)$: $c_1 = 3$, $c_2 = \frac{-2+3-1}{2} = 0$, $c_3 = \frac{2-3-1}{2} = -1$. Check: $3(1+x) + 0 - (1 - x^2) = 2 + 3x + x^2$.</p>
+<p><b>Answer:</b> $[2 + 3x + x^2]_\beta = \begin{pmatrix} 3 \\ 0 \\ -1 \end{pmatrix}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-19b"><div class="toprob"><a href="#t2-p-ex-p1-19b">&uarr; Problem</a></div><p class="lead">19(b) (Claude, not official)</p><p>For $p = a + bx + cx^2$ solve $c_1(1 + x) + c_2(x - x^2) + c_3(1 - x^2) = p$. The left side is $(c_1 + c_3) + (c_1 + c_2)x + (-c_2 - c_3)x^2$, so</p>
+<p>$$c_1 + c_3 = a, \qquad c_1 + c_2 = b, \qquad -c_2 - c_3 = c.$$</p>
+<p>Adding all three: $2c_1 = a + b + c$. Hence $c_1 = \frac{a+b+c}{2}$, $c_2 = b - c_1 = \frac{-a+b-c}{2}$, $c_3 = a - c_1 = \frac{a-b-c}{2}$. (Since this solution exists and is unique for every $p$, $\beta$ really is a basis of $P_2(\mathbb{R})$.)</p>
+<p>$(a,b,c) = (1,-1,4)$: $c_1 = 2$, $c_2 = \frac{-1-1-4}{2} = -3$, $c_3 = \frac{1+1-4}{2} = -1$. Check: $2(1+x) - 3(x - x^2) - (1 - x^2) = (2 - 1) + (2 - 3)x + (3 + 1)x^2 = 1 - x + 4x^2$.</p>
+<p><b>Answer:</b> $[1 - x + 4x^2]_\beta = \begin{pmatrix} 2 \\ -3 \\ -1 \end{pmatrix}$.</p></div>
+<div class="item sol" id="t2-s-ex-p1-19c"><div class="toprob"><a href="#t2-p-ex-p1-19c">&uarr; Problem</a></div><p class="lead">19(c) (Claude, not official)</p><p>For $p = a + bx + cx^2$ solve $c_1(1 + x) + c_2(x - x^2) + c_3(1 - x^2) = p$. The left side is $(c_1 + c_3) + (c_1 + c_2)x + (-c_2 - c_3)x^2$, so</p>
+<p>$$c_1 + c_3 = a, \qquad c_1 + c_2 = b, \qquad -c_2 - c_3 = c.$$</p>
+<p>Adding all three: $2c_1 = a + b + c$. Hence $c_1 = \frac{a+b+c}{2}$, $c_2 = b - c_1 = \frac{-a+b-c}{2}$, $c_3 = a - c_1 = \frac{a-b-c}{2}$. (Since this solution exists and is unique for every $p$, $\beta$ really is a basis of $P_2(\mathbb{R})$.)</p>
+<p>$(a,b,c) = (0,5,-2)$: $c_1 = \frac{3}{2}$, $c_2 = \frac{0+5+2}{2} = \frac{7}{2}$, $c_3 = \frac{0-5+2}{2} = -\frac{3}{2}$. Check: $\frac32(1+x) + \frac72(x - x^2) - \frac32(1 - x^2) = 0 + 5x + (-\frac72 + \frac32)x^2 = 5x - 2x^2$.</p>
+<p><b>Answer:</b> $[5x - 2x^2]_\beta = \begin{pmatrix} 3/2 \\ 7/2 \\ -3/2 \end{pmatrix}$.</p></div>
+<div class="item sol" id="t2-s-ex-p2-1"><div class="toprob"><a href="#t2-p-ex-p2-1">&uarr; Problem</a></div><p class="lead">1 (Claude, not official)</p><p>Let $W = \operatorname{span}\{v_1, \ldots, v_n\} = \{a_1 v_1 + \cdots + a_n v_n \mid a_1, \ldots, a_n \in F\}$. We check the three conditions of the subspace test.</p>
+<p><b>(1) $\mathbf{0} \in W$:</b> $\mathbf{0} = 0v_1 + \cdots + 0v_n$ (since $0v = \mathbf{0}$ for every $v$).</p>
+<p><b>(2) Closed under addition:</b> let $x = \sum_{i=1}^n a_i v_i$ and $y = \sum_{i=1}^n b_i v_i$ be in $W$. By commutativity and associativity of $+$ and the distributive law $(a_i + b_i)v_i = a_i v_i + b_i v_i$,</p>
+<p>$$x + y = \sum_{i=1}^n (a_i + b_i) v_i,$$</p>
+<p>and $a_i + b_i \in F$, so $x + y \in W$.</p>
+<p><b>(3) Closed under scalar multiplication:</b> let $c \in F$ and $x = \sum a_i v_i \in W$. By the distributive law $c(u + w) = cu + cw$ and $c(a_i v_i) = (c a_i)v_i$,</p>
+<p>$$cx = \sum_{i=1}^n (c a_i) v_i \in W.$$</p>
+<p>Hence $W$ is a subspace of $V$. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-2"><div class="toprob"><a href="#t2-p-ex-p2-2">&uarr; Problem</a></div><p class="lead">2 (Claude, not official)</p><p>First, $\operatorname{span}\{v_1, \ldots, v_n\}$ is a subspace (Problem 1) and contains each $v_j$, since $v_j = 0v_1 + \cdots + 1v_j + \cdots + 0v_n$.</p>
+<p>Now let $U$ be any subspace with $v_1, \ldots, v_n \in U$, and let $x = a_1 v_1 + \cdots + a_n v_n$ be an arbitrary element of the span. Since $U$ is closed under scalar multiplication, $a_i v_i \in U$ for each $i$. Since $U$ is closed under addition, by induction on $k$ the partial sums $a_1 v_1 + \cdots + a_k v_k$ lie in $U$ for $k = 1, \ldots, n$ (the case $k = 1$ was just shown; if the $k$-th partial sum is in $U$, adding $a_{k+1}v_{k+1} \in U$ keeps it in $U$). For $k = n$ this gives $x \in U$.</p>
+<p>So $\operatorname{span}\{v_1, \ldots, v_n\} \subseteq U$. Thus the span is a subspace containing the $v_i$ that is contained in every such subspace, i.e. it is the smallest one. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-3"><div class="toprob"><a href="#t2-p-ex-p2-3">&uarr; Problem</a></div><p class="lead">3 (Claude, not official)</p><p>Recall that a set $S \subseteq V$ is linearly dependent if there exist finitely many <b>distinct</b> vectors $u_1, \ldots, u_k \in S$ and scalars $a_1, \ldots, a_k$, <b>not all zero</b>, with $a_1 u_1 + \cdots + a_k u_k = \mathbf{0}$.</p>
+<p>Let $S$ contain $\mathbf{0}$. Take $k = 1$, $u_1 = \mathbf{0}$, and $a_1 = 1 \neq 0$. Then $a_1 u_1 = 1 \cdot \mathbf{0} = \mathbf{0}$. This is a linear dependence relation among vectors of $S$ with a nonzero coefficient, so $S$ is linearly dependent. $\blacksquare$</p>
+<p>(If one prefers to use all the vectors of a finite list $v_1, \ldots, v_n$ with $v_j = \mathbf{0}$: $0v_1 + \cdots + 1 \cdot v_j + \cdots + 0v_n = \mathbf{0}$ is a nontrivial relation.)</p></div>
+<div class="item sol" id="t2-s-ex-p2-4"><div class="toprob"><a href="#t2-p-ex-p2-4">&uarr; Problem</a></div><p class="lead">4 (Claude, not official)</p><p><b>($\Rightarrow$)</b> We prove the contrapositive. If $v = \mathbf{0}$, then $\{v\} = \{\mathbf{0}\}$ contains the zero vector, so it is linearly dependent by Problem 3 (explicitly, $1 \cdot \mathbf{0} = \mathbf{0}$ with $1 \neq 0$).</p>
+<p><b>($\Leftarrow$)</b> Suppose $v \neq \mathbf{0}$ and $a v = \mathbf{0}$ for some $a \in F$. If $a \neq 0$, then $a^{-1}$ exists in $F$ and</p>
+<p>$$v = 1 \cdot v = (a^{-1}a)v = a^{-1}(av) = a^{-1}\mathbf{0} = \mathbf{0},$$</p>
+<p>a contradiction. Hence $a = 0$. So the only linear combination of $v$ equal to $\mathbf{0}$ is the trivial one, and $\{v\}$ is linearly independent. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-5"><div class="toprob"><a href="#t2-p-ex-p2-5">&uarr; Problem</a></div><p class="lead">5 (Claude, not official)</p><p>Let $S$ be linearly independent and $T \subseteq S$. Suppose $u_1, \ldots, u_k$ are distinct vectors of $T$ and $a_1 u_1 + \cdots + a_k u_k = \mathbf{0}$. Since $T \subseteq S$, the $u_i$ are also distinct vectors of $S$, and the independence of $S$ forces $a_1 = \cdots = a_k = 0$. Hence the only linear dependence relation among vectors of $T$ is the trivial one, so $T$ is linearly independent. (If $T = \emptyset$, it is linearly independent vacuously.) $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-6"><div class="toprob"><a href="#t2-p-ex-p2-6">&uarr; Problem</a></div><p class="lead">6 (Claude, not official)</p><p>Let $T \subseteq S$ with $T$ linearly dependent. Then there are distinct $u_1, \ldots, u_k \in T$ and scalars $a_1, \ldots, a_k$, not all zero, with $a_1 u_1 + \cdots + a_k u_k = \mathbf{0}$. The vectors $u_1, \ldots, u_k$ are also distinct elements of $S$, so this same equation is a nontrivial linear dependence relation among vectors of $S$. Hence $S$ is linearly dependent. $\blacksquare$</p>
+<p>(Equivalently, this is the contrapositive of Problem 5: if $S$ were independent, its subset $T$ would be independent.)</p></div>
+<div class="item sol" id="t2-s-ex-p2-7"><div class="toprob"><a href="#t2-p-ex-p2-7">&uarr; Problem</a></div><p class="lead">7 (Claude, not official)</p><p><b>A caveat about the statement.</b> If $v = w$, then the *set* $\{v, w\}$ is just $\{v\}$; for $v = w \neq \mathbf{0}$ this set is linearly independent (Problem 4), even though $v = 1 \cdot w$ is a multiple of $w$. So the statement must be read as being about the <b>pair (list)</b> $v, w$: “$v, w$ are linearly dependent” means there are $a, b \in F$, not both $0$, with $av + bw = \mathbf{0}$. When $v \neq w$ the two readings agree. We prove it in this sense.</p>
+<p><b>($\Rightarrow$)</b> Suppose $av + bw = \mathbf{0}$ with $a, b$ not both zero. If $a \neq 0$, then $v = -a^{-1}b\, w = (-a^{-1}b)w$, a scalar multiple of $w$. If $a = 0$, then $b \neq 0$ and $bw = \mathbf{0}$; so $w = (-b^{-1}a)v$ (indeed $-b^{-1}a = 0$ and $w = b^{-1}(bw) = \mathbf{0} = 0 \cdot v$), a scalar multiple of $v$. In either case one is a multiple of the other.</p>
+<p><b>($\Leftarrow$)</b> If $v = cw$ for some $c \in F$, then $1 \cdot v + (-c)w = \mathbf{0}$, and the coefficient $1$ is nonzero, so $v, w$ are linearly dependent. If $w = cv$, then $(-c)v + 1 \cdot w = \mathbf{0}$ is likewise a nontrivial relation. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-8"><div class="toprob"><a href="#t2-p-ex-p2-8">&uarr; Problem</a></div><p class="lead">8 (Claude, not official)</p><p><b>A caveat about the statement.</b> If $v$ equals one of the $v_i$, the *set* $\{v_1, \ldots, v_n, v\}$ is just $\{v_1, \ldots, v_n\}$, which is independent, although $v \in \operatorname{span}\{v_1,\dots,v_n\}$. So the statement is correct when read as being about the <b>list</b> $v_1, \ldots, v_n, v$ (or under the extra hypothesis $v \notin \{v_1, \ldots, v_n\}$, as in HW 2 problem 7(a)). We prove it in that sense: “dependent” means $c_1 v_1 + \cdots + c_n v_n + c v = \mathbf{0}$ for some scalars not all zero.</p>
+<p><b>($\Rightarrow$)</b> Suppose $c_1 v_1 + \cdots + c_n v_n + c v = \mathbf{0}$ with $c_1, \ldots, c_n, c$ not all zero. If $c = 0$, then $c_1 v_1 + \cdots + c_n v_n = \mathbf{0}$ with not all $c_i$ zero, contradicting the independence of $v_1, \ldots, v_n$. So $c \neq 0$, and solving for $v$:</p>
+<p>$$v = (-c^{-1}c_1)v_1 + \cdots + (-c^{-1}c_n)v_n \in \operatorname{span}\{v_1, \ldots, v_n\}.$$</p>
+<p><b>($\Leftarrow$)</b> If $v = b_1 v_1 + \cdots + b_n v_n$, then</p>
+<p>$$b_1 v_1 + \cdots + b_n v_n + (-1)v = \mathbf{0},$$</p>
+<p>and the coefficient of $v$ is $-1 \neq 0$, so this is a nontrivial relation: $v_1, \ldots, v_n, v$ are linearly dependent. (If $v \notin \{v_1, \dots, v_n\}$, these $n+1$ vectors are distinct, since the independent $v_i$ are distinct, so the *set* is dependent too.) $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-9"><div class="toprob"><a href="#t2-p-ex-p2-9">&uarr; Problem</a></div><p class="lead">9 (Claude, not official)</p><p><b>Existence:</b> since $\beta$ is a basis, it spans $V$, so every $v \in V$ is $v = c_1 v_1 + \cdots + c_n v_n$ for some $c_i \in F$.</p>
+<p><b>Uniqueness:</b> suppose also $v = d_1 v_1 + \cdots + d_n v_n$. Subtracting the two expressions,</p>
+<p>$$\mathbf{0} = v - v = (c_1 - d_1)v_1 + \cdots + (c_n - d_n)v_n.$$</p>
+<p>Since $\beta$ is linearly independent, every coefficient is zero: $c_i - d_i = 0$, i.e. $c_i = d_i$ for all $i$. So the representation is unique. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-10"><div class="toprob"><a href="#t2-p-ex-p2-10">&uarr; Problem</a></div><p class="lead">10 (Claude, not official)</p><p>Since $S$ is finite, it has only finitely many subsets, and at least one of them is linearly independent (e.g. $\emptyset$; in fact, since $V \neq \{\mathbf{0}\}$ and $S$ spans $V$, $S$ contains some $u \neq \mathbf{0}$, and $\{u\}$ is independent by Problem 4). Choose a linearly independent subset $\beta \subseteq S$ with the <b>largest possible number of elements</b>.</p>
+<p><b>Claim: $S \subseteq \operatorname{span}(\beta)$.</b> Let $u \in S$. If $u \in \beta$, then $u \in \operatorname{span}(\beta)$. If $u \notin \beta$, then $\beta \cup \{u\}$ is a subset of $S$ with more elements than $\beta$, so by the maximality of $\beta$ it is linearly dependent. Since $\beta$ is independent and $u \notin \beta$, Problem 8 (equivalently HW 2 #7(a)) gives $u \in \operatorname{span}(\beta)$.</p>
+<p><b>$\beta$ spans $V$.</b> $\operatorname{span}(\beta)$ is a subspace of $V$ (Problem 1) that contains every vector of $S$, so by Problem 2 it contains $\operatorname{span}(S) = V$. Hence $\operatorname{span}(\beta) = V$.</p>
+<p>So $\beta \subseteq S$ is linearly independent and spans $V$: it is a basis for $V$. (It is nonempty because $V \neq \{\mathbf{0}\} = \operatorname{span}(\emptyset)$.) In particular $V$ is finite-dimensional. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-11"><div class="toprob"><a href="#t2-p-ex-p2-11">&uarr; Problem</a></div><p class="lead">11 (Claude, not official)</p><p>Let $n = \dim V$. We use the theorem from class (a consequence of the Replacement Theorem): <b>in an $n$-dimensional space, every linearly independent set has at most $n$ elements.</b></p>
+<p>Build sets $S_0 \subseteq S_1 \subseteq \cdots$ as follows. Let $S_0 = S$. Given a linearly independent set $S_j$ with $k + j$ elements:</p>
+<p>If $\operatorname{span}(S_j) = V$, stop: $S_j$ is linearly independent and spans $V$, so it is a basis containing $S$.</p>
+<p>Otherwise choose $u \in V$ with $u \notin \operatorname{span}(S_j)$, and let $S_{j+1} = S_j \cup \{u\}$. Note $u \notin S_j$ (every element of $S_j$ is in its span), so $S_{j+1}$ has $k + j + 1$ elements, and by Problem 8 (since $u \notin \operatorname{span}(S_j)$), $S_{j+1}$ is linearly independent.</p>
+<p>Each $S_j$ is a linearly independent subset of $V$, so $k + j \leq n$. Therefore the process cannot continue past $j = n - k$; it must stop at some stage $j \leq n - k$, and at that stage $S_j \supseteq S$ is a basis for $V$. (If $V = \{\mathbf{0}\}$, then $S = \emptyset$ and it is already a basis.) $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-12"><div class="toprob"><a href="#t2-p-ex-p2-12">&uarr; Problem</a></div><p class="lead">12 (Claude, not official)</p><p>Let $n = \dim V$. As in Problem 11, we use: <b>every linearly independent subset of $V$ has at most $n$ elements.</b></p>
+<p><b>$W$ is finite-dimensional with $\dim W \leq n$.</b> If $W = \{\mathbf{0}\}$, then $\dim W = 0 \leq n$. Otherwise, pick $w_1 \in W$, $w_1 \neq \mathbf{0}$; $\{w_1\}$ is independent (Problem 4). Inductively, given an independent set $\{w_1, \ldots, w_j\} \subseteq W$: if it spans $W$, stop; if not, pick $w_{j+1} \in W \setminus \operatorname{span}\{w_1, \ldots, w_j\}$, and $\{w_1, \ldots, w_{j+1}\}$ is independent by Problem 8. Each of these sets is an independent subset of $V$, so $j \leq n$; hence the process stops at some $k \leq n$ with $\{w_1, \ldots, w_k\}$ independent and spanning $W$. That is a basis of $W$, so $\dim W = k \leq n = \dim V$.</p>
+<p><b>Equality iff $W = V$.</b> If $W = V$ then clearly $\dim W = \dim V$. Conversely, suppose $\dim W = n$ and let $\beta = \{w_1, \ldots, w_n\}$ be a basis of $W$. If $\beta$ did not span $V$, there would be $v \in V \setminus \operatorname{span}(\beta)$, and by Problem 8, $\beta \cup \{v\}$ would be a linearly independent subset of $V$ with $n + 1$ elements, which is impossible. So $\operatorname{span}(\beta) = V$. Since $\beta \subseteq W$ and $W$ is a subspace, $V = \operatorname{span}(\beta) \subseteq W \subseteq V$, so $W = V$. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-13"><div class="toprob"><a href="#t2-p-ex-p2-13">&uarr; Problem</a></div><p class="lead">13 (Claude, not official)</p><p><b>$W_1 \cap W_2$ is a subspace.</b> $\mathbf{0} \in W_1$ and $\mathbf{0} \in W_2$, so $\mathbf{0} \in W_1 \cap W_2$. If $x, y \in W_1 \cap W_2$ and $c \in F$, then $x + y$ and $cx$ lie in $W_1$ (a subspace) and in $W_2$ (a subspace), hence in $W_1 \cap W_2$.</p>
+<p>Since $W_1 \cap W_2 \subseteq W_1$, it is a subspace of the finite-dimensional vector space $W_1$. Applying Problem 12 with $W_1$ in the role of $V$: $W_1 \cap W_2$ is finite-dimensional and $\dim(W_1 \cap W_2) \leq \dim(W_1)$. By the same argument with $W_2$, $\dim(W_1 \cap W_2) \leq \dim(W_2)$. A number that is at most both values is at most their minimum:</p>
+<p>$$\dim(W_1 \cap W_2) \leq \min\{\dim(W_1), \dim(W_2)\}. \qquad \blacksquare$$</p></div>
+<div class="item sol" id="t2-s-ex-p2-14"><div class="toprob"><a href="#t2-p-ex-p2-14">&uarr; Problem</a></div><p class="lead">14 (Claude, not official)</p><p>Let $m = \dim W_1$, $n = \dim W_2$, with bases $\beta_1 = \{u_1, \ldots, u_m\}$ of $W_1$ and $\beta_2 = \{w_1, \ldots, w_n\}$ of $W_2$ (either may be empty if the subspace is $\{\mathbf{0}\}$). Let $S = \beta_1 \cup \beta_2$, a finite set with $|S| \leq m + n$.</p>
+<p><b>$S$ spans $W_1 + W_2$.</b> If $x \in W_1 + W_2$, then $x = y + z$ with $y \in W_1$, $z \in W_2$; writing $y = \sum a_i u_i$ and $z = \sum b_j w_j$ gives $x = \sum a_i u_i + \sum b_j w_j \in \operatorname{span}(S)$. Conversely, any linear combination of $S$ splits as (a combination of the $u_i$, which lies in $W_1$) plus (a combination of the $w_j$, which lies in $W_2$), so it lies in $W_1 + W_2$. Hence $W_1 + W_2 = \operatorname{span}(S)$.</p>
+<p><b>Conclusion.</b> If $W_1 + W_2 = \{\mathbf{0}\}$, its dimension is $0 \leq m + n$. Otherwise, $W_1 + W_2 \neq \{\mathbf{0}\}$ is spanned by the finite set $S$, so by Problem 10 some subset $\beta \subseteq S$ is a basis of $W_1 + W_2$. Therefore</p>
+<p>$$\dim(W_1 + W_2) = |\beta| \leq |S| \leq m + n = \dim(W_1) + \dim(W_2). \qquad \blacksquare$$</p></div>
+<div class="item sol" id="t2-s-ex-p2-15"><div class="toprob"><a href="#t2-p-ex-p2-15">&uarr; Problem</a></div><p class="lead">15 (Claude, not official)</p><p>We show $\beta = \{1, x, x^2, \ldots, x^n\}$ is a basis of $P_n(F)$; it has $n + 1$ elements.</p>
+<p><b>Spanning:</b> every $f \in P_n(F)$ has the form $f = a_0 + a_1 x + \cdots + a_n x^n = a_0 \cdot 1 + a_1 \cdot x + \cdots + a_n \cdot x^n$ with $a_i \in F$, which is a linear combination of $\beta$.</p>
+<p><b>Independence:</b> suppose $c_0 + c_1 x + \cdots + c_n x^n = \mathbf{0}$, the zero polynomial, so $p(t) := c_0 + c_1 t + \cdots + c_n t^n = 0$ for every $t \in F$. If some $c_i \neq 0$, then $p$ is a nonzero polynomial of degree at most $n$, which has at most $n$ roots in the field $F$. But every element of $F$ is a root, and $F = \mathbb{R}$ or $\mathbb{C}$ is infinite. Contradiction. Hence $c_0 = c_1 = \cdots = c_n = 0$.</p>
+<p>(This is where $F = \mathbb{R}$ or $\mathbb{C}$ is used: over a finite field such as $\mathbb{Z}_2$, the polynomials $x^2$ and $x$ define the same function, so if polynomials are treated as functions the argument fails. If polynomials are defined as formal expressions, equal polynomials have equal coefficients and independence is immediate.)</p>
+<p>So $\beta$ is a basis with $n + 1$ elements, and $\dim P_n(F) = n + 1$. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-16"><div class="toprob"><a href="#t2-p-ex-p2-16">&uarr; Problem</a></div><p class="lead">16 (Claude, not official)</p><p>Suppose, for contradiction, that $P(\mathbb{R})$ is finite-dimensional. It is not $\{\mathbf{0}\}$ (it contains the polynomial $1$), so it has a finite basis, in particular a finite spanning set $\{f_1, \ldots, f_k\}$ with $k \geq 1$. Let $d = \max\{\deg f_1, \ldots, \deg f_k\}$ (counting the zero polynomial as degree $0$).</p>
+<p>For any scalars $c_1, \ldots, c_k$, each $f_i$ has zero coefficient of $x^j$ for every $j &gt; d$, so $c_1 f_1 + \cdots + c_k f_k$ also has zero coefficient of $x^j$ for all $j &gt; d$; i.e. every element of $\operatorname{span}\{f_1, \ldots, f_k\}$ has degree at most $d$.</p>
+<p>But $x^{d+1} \in P(\mathbb{R})$ has coefficient $1 \neq 0$ of $x^{d+1}$, so $x^{d+1} \notin \operatorname{span}\{f_1, \ldots, f_k\}$, contradicting that $\{f_1, \ldots, f_k\}$ spans $P(\mathbb{R})$. Hence $P(\mathbb{R})$ is not finite-dimensional. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-17"><div class="toprob"><a href="#t2-p-ex-p2-17">&uarr; Problem</a></div><p class="lead">17 (Claude, not official)</p><p>Each $x^k$ is a polynomial function, hence continuous, so it lies in $C(\mathbb{R}, \mathbb{R})$. Suppose</p>
+<p>$$c_0 + c_1 x + c_2 x^2 + \cdots + c_n x^n = 0 \quad \text{for all } x \in \mathbb{R}$$</p>
+<p>(the zero vector of $C(\mathbb{R}, \mathbb{R})$ is the function that is identically $0$). Call the left side $p(x)$.</p>
+<p><b>Proof by differentiation.</b> Since $p$ is identically zero, so is each derivative $p^{(k)}$. For $0 \leq k \leq n$,</p>
+<p>$$p^{(k)}(x) = \sum_{j=k}^{n} c_j \frac{j!}{(j-k)!} x^{j-k}, \qquad \text{so} \qquad p^{(k)}(0) = k!\, c_k$$</p>
+<p>(every term with $j &gt; k$ contains a positive power of $x$ and vanishes at $0$). Hence $k!\,c_k = 0$, so $c_k = 0$ for each $k = 0, 1, \ldots, n$.</p>
+<p>Thus the only linear combination of $1, x, \ldots, x^n$ equal to the zero function is the trivial one, so they are linearly independent. (Alternatively: a nonzero polynomial of degree $\leq n$ has at most $n$ real roots, but $p$ vanishes at infinitely many points.) $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-18"><div class="toprob"><a href="#t2-p-ex-p2-18">&uarr; Problem</a></div><p class="lead">18 (Claude, not official)</p><p>Suppose, for contradiction, that $C(\mathbb{R}, \mathbb{R})$ is finite-dimensional, say $\dim C(\mathbb{R}, \mathbb{R}) = d$. By the theorem from class, every linearly independent subset of a $d$-dimensional space has at most $d$ elements.</p>
+<p>By Problem 17 with $n = d$, the $d + 1$ functions $1, x, x^2, \ldots, x^d$ (which are distinct) are linearly independent in $C(\mathbb{R}, \mathbb{R})$. That is an independent set with $d + 1 &gt; d$ elements, a contradiction. Hence $C(\mathbb{R}, \mathbb{R})$ is not finite-dimensional. $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-19"><div class="toprob"><a href="#t2-p-ex-p2-19">&uarr; Problem</a></div><p class="lead">19 (Claude, not official)</p><p><b>Subspace.</b> The zero polynomial $z$ satisfies $z(0) = 0$, so $z \in W$. If $p, q \in W$ and $c \in \mathbb{R}$, then $(p + q)(0) = p(0) + q(0) = 0 + 0 = 0$ and $(cp)(0) = c\,p(0) = c \cdot 0 = 0$, so $p + q \in W$ and $cp \in W$. Hence $W$ is a subspace.</p>
+<p><b>Claim: $\dim W = n$</b>, with basis $\{x, x^2, \ldots, x^n\}$.</p>
+<p>Each $x^k$ with $k \geq 1$ satisfies $0^k = 0$, so it lies in $W$. If $p = a_0 + a_1 x + \cdots + a_n x^n \in W$, then $0 = p(0) = a_0$, so $p = a_1 x + \cdots + a_n x^n \in \operatorname{span}\{x, \ldots, x^n\}$; so the set spans $W$. It is linearly independent because it is a subset of the basis $\{1, x, \ldots, x^n\}$ of $P_n(\mathbb{R})$ (Problems 15 and 5). It has $n$ elements, so $\dim W = n$.</p>
+<p>(For $n = 0$: $W = \{\mathbf{0}\}$ and the basis is empty, consistent with $\dim W = 0$. Also note $\dim W = n &lt; n + 1 = \dim P_n(\mathbb{R})$, consistent with Problem 12 since $1 \notin W$.) $\blacksquare$</p></div>
+<div class="item sol" id="t2-s-ex-p2-20"><div class="toprob"><a href="#t2-p-ex-p2-20">&uarr; Problem</a></div><p class="lead">20 (Claude, not official)</p><p><b>Subspace.</b> The zero polynomial vanishes at $1$. If $p(1) = q(1) = 0$ and $c \in \mathbb{R}$, then $(p + q)(1) = p(1) + q(1) = 0$ and $(cp)(1) = c\,p(1) = 0$. So $W$ is a subspace.</p>
+<p><b>Claim: $\dim W = n$</b>, with basis $\{x - 1,\ x^2 - 1,\ \ldots,\ x^n - 1\}$.</p>
+<p>*These lie in $W$:* $1^k - 1 = 0$.</p>
+<p>*Spanning:* let $p = a_0 + a_1 x + \cdots + a_n x^n \in W$. Then $0 = p(1) = a_0 + a_1 + \cdots + a_n$, so $a_0 = -(a_1 + \cdots + a_n)$ and</p>
+<p>$$p = a_0 + \sum_{k=1}^n a_k x^k = \sum_{k=1}^n a_k x^k - \sum_{k=1}^n a_k = \sum_{k=1}^n a_k (x^k - 1).$$</p>
+<p>*Independence:* if $\sum_{k=1}^n c_k (x^k - 1) = 0$, then $-\left(\sum_{k=1}^n c_k\right) + \sum_{k=1}^n c_k x^k$ is the zero polynomial, so for each $k \geq 1$ the coefficient of $x^k$, namely $c_k$, is $0$.</p>
+<p>So the $n$ polynomials $x^k - 1$ ($1 \leq k \leq n$) form a basis of $W$ and $\dim W = n$. (Another valid basis: $\{(x-1), (x-1)^2, \ldots, (x-1)^n\}$.) $\blacksquare$</p></div>
 <footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
 </main></body></html>

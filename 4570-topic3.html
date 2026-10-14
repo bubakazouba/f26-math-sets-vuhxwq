@@ -5,54 +5,679 @@
 <meta name="googlebot" content="noindex, nofollow">
 <title>MATH 4570 Topic 3</title>
 <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});document.documentElement.dataset.katex='done';if(location.hash){var e=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(e)e.scrollIntoView();}"></script>
 </head><body><main>
 <nav class="top"><a href="index.html">&larr; All problem sets</a><a href="#problems">Problems</a><a href="#solutions">Solutions</a><a href="#hw">Homework</a><a href="#extra">Extra practice</a></nav>
 <h1>MATH 4570 Topic 3: Linear Transformations</h1>
-<div class="hdr"><p class="small">All files are Krebs' own, from his Fall 2026 MATH 4570 homework doc, shown as page images. Problems first, his solutions at the end.</p><p class="quiz"><b>For:</b> Quiz 3 (Wed Oct 14) &middot; <a href="index.html#quizzes">all quiz dates</a></p></div>
+<div class="hdr"><p class="small">Krebs' Fall 2026 MATH 4570 homework and extra practice problems, retyped verbatim from his PDFs. Homework solutions are Krebs' official ones (his pages, shown as images); extra-practice solutions are Claude's and labeled so. Tap "Solution" under a problem to jump to it, and "Problem" to jump back.</p><p class="quiz"><b>For:</b> Quiz 3 (Wed Oct 14) &middot; <a href="index.html#quizzes">all quiz dates</a></p></div>
 <h2 class="part" id="problems">Problems</h2>
 <h3 class="grp" id="hw">Homework for Topic 3</h3>
-<div class="off" id="t3-hw-p1"><div class="offcap">Homework for Topic 3, page 1 of 2</div><img src="img/4570-t3-hw-p1.png" width="1275" height="1650" loading="lazy" alt="Homework for Topic 3 page 1"></div>
-<div class="off" id="t3-hw-p2"><div class="offcap">Homework for Topic 3, page 2 of 2</div><img src="img/4570-t3-hw-p2.png" width="1275" height="1650" loading="lazy" alt="Homework for Topic 3 page 2"></div>
+<div class="item prob" id="t3-p-hw-1a"><p class="lead">1(a)</p><p>Let $V$ and $W$ be vector spaces over a field $F$. Let $\mathbf{0_V}$ and $\mathbf{0_W}$ be the zero vectors of $V$ and $W$ respectively. Let $T : V \to W$ be a function. Prove the following.</p>
+<p>(a) If $T$ is a linear transformation, then $T(\mathbf{0_V}) = \mathbf{0_W}$.</p><div class="tosol"><a href="#t3-off-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-1b"><p class="lead">1(b)</p><p>(b) $T$ is a linear transformation if and only if</p>
+<p>$$T(\alpha x + \beta y) = \alpha T(x) + \beta T(y)$$</p>
+<p>for all $x, y \in V$ and $\alpha, \beta \in F$.</p><div class="tosol"><a href="#t3-off-p1">Official solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-1c"><p class="lead">1(c)</p><p>(c) $T$ is a linear transformation if and only if</p>
+<p>$$T\Big(\sum_{i=1}^{n} \alpha_i x_i\Big) = \sum_{i=1}^{n} \alpha_i T(x_i)$$</p>
+<p>for all $x_1, \ldots, x_n \in V$ and $\alpha_1, \ldots, \alpha_n \in F$.</p><div class="tosol"><a href="#t3-off-p1">Official solution 1 &darr;</a> &middot; <a href="#t3-off-p2">Official solution 2 &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-2a"><p class="lead">2(a)</p><p>Verify whether or not $T : V \to W$ is a linear transformation. If $T$ is a linear transformation then: (i) compute a basis for the nullspace of $T$, (ii) compute the nullity of $T$, (iii) determine if $T$ one-to-one, (iv) compute the rank of $T$, (v) determine if $T$ is onto, and (vi) compute the range of $T$.</p>
+<p>(a) $T : \mathbb{R}^3 \to \mathbb{R}^2$ given by $T(a, b, c) = (a - b, 2c)$</p><div class="tosol"><a href="#t3-off-p3">Official solution 1 &darr;</a> &middot; <a href="#t3-off-p4">Official solution 2 &darr;</a> &middot; <a href="#t3-off-p5">Official solution 3 &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-2b"><p class="lead">2(b)</p><p>(b) $T : \mathbb{R}^2 \to \mathbb{R}^2$ given by $T(a, b) = (a - b, b^2)$</p><div class="tosol"><a href="#t3-off-p6">Official solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-2c"><p class="lead">2(c)</p><p>(c) $T : M_{2,3}(\mathbb{R}) \to M_{2,2}(\mathbb{R})$ given by</p>
+<p>$$T\begin{pmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \end{pmatrix} = \begin{pmatrix} 2a - b &amp; c + 2d \\ 0 &amp; 0 \end{pmatrix}$$</p><div class="tosol"><a href="#t3-off-p7">Official solution 1 &darr;</a> &middot; <a href="#t3-off-p8">Official solution 2 &darr;</a> &middot; <a href="#t3-off-p9">Official solution 3 &darr;</a> &middot; <a href="#t3-off-p10">Official solution 4 &darr;</a> &middot; <a href="#t3-off-p11">Official solution 5 &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-2d"><p class="lead">2(d)</p><p>(d) $T : P_2(\mathbb{R}) \to P_3(\mathbb{R})$ given by $T(a + bx + cx^2) = a + bx^3$</p><div class="tosol"><a href="#t3-off-p12">Official solution 1 &darr;</a> &middot; <a href="#t3-off-p13">Official solution 2 &darr;</a> &middot; <a href="#t3-off-p14">Official solution 3 &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-2e"><p class="lead">2(e)</p><p>(e) $T : P_2(\mathbb{R}) \to P_2(\mathbb{R})$ given by $T(a + bx + cx^2) = (1 + a) + (1 + b)x + (1 + c)x^2$</p><div class="tosol"><a href="#t3-off-p15">Official solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-3"><p class="lead">3</p><p>Let $a$ and $b$ be real numbers where $a &lt; b$. Let $C(\mathbb{R})$ be the vector space of continuous functions on the real line as in HW # 1. Let $T : C(\mathbb{R}) \to \mathbb{R}$ given by</p>
+<p>$$T(f) = \int_a^b f(t)\,dt$$</p>
+<p>Verify whether or not $T$ is linear.</p><div class="tosol"><a href="#t3-off-p16">Official solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-4a"><p class="lead">4(a)</p><p>Let $F$ be a field. Recall that if $A \in M_{m,n}(F)$ then we can make a linear transformation $L_A : F^n \to F^m$ where $L_A(x) = Ax$ is left-sided matrix multiplication. In each problem, calculate $L_A(x)$ for the given $A$ and $x$.</p>
+<p>(a) $F = \mathbb{R}$, $L_A : \mathbb{R}^2 \to \mathbb{R}^2$, $A = \begin{pmatrix} 1 &amp; \pi \\ \frac{1}{2} &amp; -10 \end{pmatrix}$, $x = \begin{pmatrix} 17 \\ -5 \end{pmatrix}$</p><div class="tosol"><a href="#t3-off-p17">Official solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-4b"><p class="lead">4(b)</p><p>(b) $F = \mathbb{C}$, $L_A : \mathbb{C}^3 \to \mathbb{C}^2$, $A = \begin{pmatrix} -i &amp; 1 &amp; 0 \\ 1 + i &amp; 0 &amp; -1 \end{pmatrix}$, $x = \begin{pmatrix} -2i \\ 4 \\ 1.57 \end{pmatrix}$</p><div class="tosol"><a href="#t3-off-p17">Official solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-5"><p class="lead">5</p><p>Let $V$ and $W$ be vector spaces over a field $F$. Let $T : V \to W$ be a linear transformation. Let $v_1, \ldots, v_n \in V$ such that $\mathrm{span}(\{v_1, \ldots, v_n\}) = V$, then $\mathrm{span}(\{T(v_1), \ldots, T(v_n)\}) = R(T)$.</p><div class="tosol"><a href="#t3-off-p18">Official solution 1 &darr;</a> &middot; <a href="#t3-off-p19">Official solution 2 &darr;</a> &middot; <a href="#t3-off-p20">Official solution 3 &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-6a"><p class="lead">6(a)</p><p>Let $V$ and $W$ be vector spaces over a field $F$. Let $T : V \to W$ be a linear transformation. Let $\mathbf{0_V}$ and $\mathbf{0_W}$ be the zero vectors of $V$ and $W$ respectively.</p>
+<p>(a) Prove that $T$ is one-to-one if and only if $N(T) = \{\mathbf{0_V}\}$.</p><div class="tosol"><a href="#t3-off-p21">Official solution 1 &darr;</a> &middot; <a href="#t3-off-p22">Official solution 2 &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-6b"><p class="lead">6(b)</p><p>(b) Suppose that $V$ and $W$ are both finite-dimensional and $\dim(V) = \dim(W)$. Prove that $T$ is one-to-one if and only if $T$ is onto.</p><div class="tosol"><a href="#t3-off-p23">Official solution 1 &darr;</a> &middot; <a href="#t3-off-p24">Official solution 2 &darr;</a> &middot; <a href="#t3-off-p25">Official solution 3 &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-6c"><p class="lead">6(c)</p><p>(c) Suppose that $V$ and $W$ are both finite-dimensional. Prove that if $T$ is one-to-one and onto then $\dim(V) = \dim(W)$.</p><div class="tosol"><a href="#t3-off-p25">Official solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-7a"><p class="lead">7(a)</p><p>Let $V$ and $W$ be finite dimensional vector spaces and let $T : V \to W$ be a linear transformation.</p>
+<p>(a) If $\dim(V) &lt; \dim(W)$, then $T$ is not onto.</p><div class="tosol"><a href="#t3-off-p26">Official solution 1 &darr;</a> &middot; <a href="#t3-off-p27">Official solution 2 &darr;</a></div></div>
+<div class="item prob" id="t3-p-hw-7b"><p class="lead">7(b)</p><p>(b) If $\dim(V) &gt; \dim(W)$, then $T$ is not one-to-one.</p><div class="tosol"><a href="#t3-off-p28">Official solution &darr;</a></div></div>
 <h3 class="grp" id="extra">Extra practice problems for Topic 3</h3>
-<div class="off" id="t3-extra-p1"><div class="offcap">Extra practice problems for Topic 3, page 1 of 10</div><img src="img/4570-t3-extra-p1.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 1"></div>
-<div class="off" id="t3-extra-p2"><div class="offcap">Extra practice problems for Topic 3, page 2 of 10</div><img src="img/4570-t3-extra-p2.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 2"></div>
-<div class="off" id="t3-extra-p3"><div class="offcap">Extra practice problems for Topic 3, page 3 of 10</div><img src="img/4570-t3-extra-p3.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 3"></div>
-<div class="off" id="t3-extra-p4"><div class="offcap">Extra practice problems for Topic 3, page 4 of 10</div><img src="img/4570-t3-extra-p4.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 4"></div>
-<div class="off" id="t3-extra-p5"><div class="offcap">Extra practice problems for Topic 3, page 5 of 10</div><img src="img/4570-t3-extra-p5.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 5"></div>
-<div class="off" id="t3-extra-p6"><div class="offcap">Extra practice problems for Topic 3, page 6 of 10</div><img src="img/4570-t3-extra-p6.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 6"></div>
-<div class="off" id="t3-extra-p7"><div class="offcap">Extra practice problems for Topic 3, page 7 of 10</div><img src="img/4570-t3-extra-p7.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 7"></div>
-<div class="off" id="t3-extra-p8"><div class="offcap">Extra practice problems for Topic 3, page 8 of 10</div><img src="img/4570-t3-extra-p8.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 8"></div>
-<div class="off" id="t3-extra-p9"><div class="offcap">Extra practice problems for Topic 3, page 9 of 10</div><img src="img/4570-t3-extra-p9.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 9"></div>
-<div class="off" id="t3-extra-p10"><div class="offcap">Extra practice problems for Topic 3, page 10 of 10</div><img src="img/4570-t3-extra-p10.png" width="1275" height="1650" loading="lazy" alt="Extra practice problems for Topic 3 page 10"></div>
+<div class="hdr"><p>These problems were generated by AI, and although I looked at them quickly to see if they seemed OK, no guarantees. Please let me know if something doesn’t make sense, so I can fix it.</p></div>
+<div class="item prob" id="t3-p-ex-p1-1a"><p class="lead">1(a)</p><p><b>Part One: Computational problems</b></p>
+<p>Determine whether each function is a linear transformation. If it is not linear, identify a condition in the definition of linearity that fails.</p>
+<p>(a) $$T : \mathbb{R}^2 \longrightarrow \mathbb{R}^2, \qquad T(a, b) = (2a - b, a + 3b)$$</p><div class="tosol"><a href="#t3-s-ex-p1-1a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-1b"><p class="lead">1(b)</p><p>(b) $$T : \mathbb{R}^2 \longrightarrow \mathbb{R}^2, \qquad T(a, b) = (a - b, b^2)$$</p><div class="tosol"><a href="#t3-s-ex-p1-1b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-1c"><p class="lead">1(c)</p><p>(c) $$T : \mathbb{R}^3 \longrightarrow \mathbb{R}^2, \qquad T(a, b, c) = (a + b + c, a - c)$$</p><div class="tosol"><a href="#t3-s-ex-p1-1c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-1d"><p class="lead">1(d)</p><p>(d) $$T : \mathbb{R}^2 \longrightarrow \mathbb{R}^2, \qquad T(a, b) = (a + 1, b)$$</p><div class="tosol"><a href="#t3-s-ex-p1-1d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-1e"><p class="lead">1(e)</p><p>(e) $$T : \mathbb{R}^2 \longrightarrow \mathbb{R}, \qquad T(a, b) = ab$$</p><div class="tosol"><a href="#t3-s-ex-p1-1e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-1f"><p class="lead">1(f)</p><p>(f) $$T : \mathbb{R}^3 \longrightarrow \mathbb{R}^3, \qquad T(a, b, c) = (a, 0, c)$$</p><div class="tosol"><a href="#t3-s-ex-p1-1f">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-1g"><p class="lead">1(g)</p><p>(g) $$T : \mathbb{C}^2 \longrightarrow \mathbb{C}, \qquad T(z_1, z_2) = iz_1 + (1 - i)z_2$$</p><div class="tosol"><a href="#t3-s-ex-p1-1g">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-1h"><p class="lead">1(h)</p><p>(h) $$T : \mathbb{C} \longrightarrow \mathbb{C}, \qquad T(z) = \overline{z},$$</p>
+<p>where both vector spaces are regarded as vector spaces over $\mathbb{C}$.</p><div class="tosol"><a href="#t3-s-ex-p1-1h">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-1i"><p class="lead">1(i)</p><p>(i) $$T : \mathbb{C} \longrightarrow \mathbb{C}, \qquad T(z) = \overline{z},$$</p>
+<p>where both vector spaces are instead regarded as vector spaces over $\mathbb{R}$.</p><div class="tosol"><a href="#t3-s-ex-p1-1i">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-2a"><p class="lead">2(a)</p><p>For each linear transformation below, do all of the following:</p>
+<p>(i) find a basis for $\mathcal{N}(T)$;</p>
+<p>(ii) find $\mathrm{nullity}(T)$;</p>
+<p>(iii) determine whether $T$ is one-to-one;</p>
+<p>(iv) find a basis for $\mathcal{R}(T)$;</p>
+<p>(v) find $\mathrm{rank}(T)$; and</p>
+<p>(vi) determine whether $T$ is onto.</p>
+<p>(a) $$T : \mathbb{R}^4 \longrightarrow \mathbb{R}^3, \qquad T(a, b, c, d) = (a + b, b + c, c + d)$$</p><div class="tosol"><a href="#t3-s-ex-p1-2a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-2b"><p class="lead">2(b)</p><p>(b) $$T : \mathbb{R}^3 \longrightarrow \mathbb{R}^3, \qquad T(a, b, c) = (a + b, b + c, a - c)$$</p><div class="tosol"><a href="#t3-s-ex-p1-2b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-2c"><p class="lead">2(c)</p><p>(c) $$T : \mathbb{R}^2 \longrightarrow \mathbb{R}^3, \qquad T(a, b) = (2a - b, a + 3b, 5a + 2b)$$</p><div class="tosol"><a href="#t3-s-ex-p1-2c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-2d"><p class="lead">2(d)</p><p>(d) $$T : \mathbb{R}^3 \longrightarrow \mathbb{R}^2, \qquad T(a, b, c) = (a - b, 2c)$$</p><div class="tosol"><a href="#t3-s-ex-p1-2d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-2e"><p class="lead">2(e)</p><p>(e) $$T : \mathbb{R}^3 \longrightarrow \mathbb{R}, \qquad T(a, b, c) = a - 2b + 3c$$</p><div class="tosol"><a href="#t3-s-ex-p1-2e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-2f"><p class="lead">2(f)</p><p>(f) $$T : \mathbb{R}^2 \longrightarrow \mathbb{R}^3, \qquad T(a, b) = (a + b, 2a + 2b, 3a + 3b)$$</p><div class="tosol"><a href="#t3-s-ex-p1-2f">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-3a"><p class="lead">3(a)</p><p>For $k \in \mathbb{R}$, define</p>
+<p>$$T_k : \mathbb{R}^2 \longrightarrow \mathbb{R}^2$$</p>
+<p>by</p>
+<p>$$T_k(a, b) = (a + kb, ka + b).$$</p>
+<p>(a) Determine all values of $k$ for which $T_k$ is one-to-one.</p><div class="tosol"><a href="#t3-s-ex-p1-3a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-3b"><p class="lead">3(b)</p><p>(b) Determine all values of $k$ for which $T_k$ is onto.</p><div class="tosol"><a href="#t3-s-ex-p1-3b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-3c"><p class="lead">3(c)</p><p>(c) For each exceptional value of $k$, find bases for</p>
+<p>$$\mathcal{N}(T_k) \qquad \text{and} \qquad \mathcal{R}(T_k).$$</p><div class="tosol"><a href="#t3-s-ex-p1-3c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-3d"><p class="lead">3(d)</p><p>(d) Find the rank and nullity of $T_k$ for every $k \in \mathbb{R}$.</p><div class="tosol"><a href="#t3-s-ex-p1-3d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-4a"><p class="lead">4(a)</p><p>Determine whether each function involving matrices is linear. For each one that is linear, find a basis for its nullspace and range, find its rank and nullity, and determine whether it is one-to-one and whether it is onto.</p>
+<p>(a) $$T : M_{2,2}(\mathbb{R}) \longrightarrow \mathbb{R}^2, \qquad T\left(\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\right) = (a + d, b - c)$$</p><div class="tosol"><a href="#t3-s-ex-p1-4a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-4b"><p class="lead">4(b)</p><p>(b) $$T : M_{2,2}(\mathbb{R}) \longrightarrow M_{2,2}(\mathbb{R}), \qquad T(A) = A + A^{\mathsf{T}}$$</p><div class="tosol"><a href="#t3-s-ex-p1-4b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-4c"><p class="lead">4(c)</p><p>(c) $$T : M_{2,2}(\mathbb{R}) \longrightarrow M_{2,2}(\mathbb{R}), \qquad T(A) = A - A^{\mathsf{T}}$$</p><div class="tosol"><a href="#t3-s-ex-p1-4c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-4d"><p class="lead">4(d)</p><p>(d) $$T : M_{2,2}(\mathbb{R}) \longrightarrow P_2(\mathbb{R}), \qquad T\left(\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\right) = a + (b + c)x + dx^2$$</p><div class="tosol"><a href="#t3-s-ex-p1-4d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-4e"><p class="lead">4(e)</p><p>(e) $$T : M_{2,2}(\mathbb{R}) \longrightarrow \mathbb{R}, \qquad T(A) = \det(A)$$</p><div class="tosol"><a href="#t3-s-ex-p1-4e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-4f"><p class="lead">4(f)</p><p>(f) $$T : M_{2,2}(\mathbb{R}) \longrightarrow \mathbb{R}, \qquad T(A) = \mathrm{trace}(A)$$</p><div class="tosol"><a href="#t3-s-ex-p1-4f">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-5a"><p class="lead">5(a)</p><p>Determine whether each function involving polynomials is linear. For each one that is linear, find a basis for its nullspace and range, find its rank and nullity, and determine whether it is one-to-one and whether it is onto.</p>
+<p>(a) $$D : P_3(\mathbb{R}) \longrightarrow P_2(\mathbb{R}), \qquad D(p) = p'$$</p><div class="tosol"><a href="#t3-s-ex-p1-5a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-5b"><p class="lead">5(b)</p><p>(b) $$T : P_2(\mathbb{R}) \longrightarrow P_3(\mathbb{R}), \qquad T(p) = xp$$</p><div class="tosol"><a href="#t3-s-ex-p1-5b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-5c"><p class="lead">5(c)</p><p>(c) $$T : P_3(\mathbb{R}) \longrightarrow \mathbb{R}^2, \qquad T(p) = \big(p(0), p(1)\big)$$</p><div class="tosol"><a href="#t3-s-ex-p1-5c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-5d"><p class="lead">5(d)</p><p>(d) $$T : P_2(\mathbb{R}) \longrightarrow P_2(\mathbb{R}), \qquad T(p) = p + xp'$$</p><div class="tosol"><a href="#t3-s-ex-p1-5d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-5e"><p class="lead">5(e)</p><p>(e) $$T : P_2(\mathbb{R}) \longrightarrow P_4(\mathbb{R}), \qquad T(p) = p^2$$</p><div class="tosol"><a href="#t3-s-ex-p1-5e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-5f"><p class="lead">5(f)</p><p>(f) $$T : P_3(\mathbb{R}) \longrightarrow P_3(\mathbb{R}), \qquad T(p) = p - p(0)$$</p><div class="tosol"><a href="#t3-s-ex-p1-5f">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-5g"><p class="lead">5(g)</p><p>(g) $$T : P_2(\mathbb{R}) \longrightarrow P_2(\mathbb{R}), \qquad T(p) = p + 1$$</p><div class="tosol"><a href="#t3-s-ex-p1-5g">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-6a"><p class="lead">6(a)</p><p>Let $C(\mathbb{R})$ denote the vector space of continuous real-valued functions on $\mathbb{R}$. Determine whether each function is linear. When it is linear, describe its nullspace and range and determine whether it is one-to-one or onto.</p>
+<p>(a) $$T : C(\mathbb{R}) \longrightarrow \mathbb{R}, \qquad T(f) = f(0)$$</p><div class="tosol"><a href="#t3-s-ex-p1-6a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-6b"><p class="lead">6(b)</p><p>(b) $$T : C(\mathbb{R}) \longrightarrow \mathbb{R}^2, \qquad T(f) = \big(f(0), f(1)\big)$$</p><div class="tosol"><a href="#t3-s-ex-p1-6b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-6c"><p class="lead">6(c)</p><p>(c) For fixed real numbers $a &lt; b$,</p>
+<p>$$T : C(\mathbb{R}) \longrightarrow \mathbb{R}, \qquad T(f) = \int_a^b f(t)\,dt$$</p><div class="tosol"><a href="#t3-s-ex-p1-6c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-6d"><p class="lead">6(d)</p><p>(d) $$T : C(\mathbb{R}) \longrightarrow C(\mathbb{R}), \qquad T(f)(x) = xf(x)$$</p><div class="tosol"><a href="#t3-s-ex-p1-6d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-6e"><p class="lead">6(e)</p><p>(e) $$T : C(\mathbb{R}) \longrightarrow C(\mathbb{R}), \qquad T(f)(x) = f(x) + 1$$</p><div class="tosol"><a href="#t3-s-ex-p1-6e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-6f"><p class="lead">6(f)</p><p>(f) $$T : C(\mathbb{R}) \longrightarrow C(\mathbb{R}), \qquad T(f)(x) = f(x)^2$$</p><div class="tosol"><a href="#t3-s-ex-p1-6f">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-6g"><p class="lead">6(g)</p><p>(g) $$T : C(\mathbb{R}) \longrightarrow C(\mathbb{R}), \qquad T(f)(x) = f(x + 1)$$</p><div class="tosol"><a href="#t3-s-ex-p1-6g">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-7a"><p class="lead">7(a)</p><p>For each matrix $A$, calculate $L_A(x) = Ax$.</p>
+<p>(a) $$A = \begin{pmatrix} 2 &amp; -1 \\ 3 &amp; 4 \end{pmatrix}, \qquad x = \begin{pmatrix} 5 \\ -2 \end{pmatrix}$$</p><div class="tosol"><a href="#t3-s-ex-p1-7a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-7b"><p class="lead">7(b)</p><p>(b) $$A = \begin{pmatrix} 1 &amp; 0 &amp; -2 \\ 3 &amp; 1 &amp; 4 \end{pmatrix}, \qquad x = \begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix}$$</p><div class="tosol"><a href="#t3-s-ex-p1-7b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-7c"><p class="lead">7(c)</p><p>(c) $$A = \begin{pmatrix} 1 &amp; 2 \\ 0 &amp; -1 \\ 4 &amp; 3 \end{pmatrix}, \qquad x = \begin{pmatrix} a \\ b \end{pmatrix}$$</p><div class="tosol"><a href="#t3-s-ex-p1-7c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-7d"><p class="lead">7(d)</p><p>(d) Over the field $\mathbb{C}$,</p>
+<p>$$A = \begin{pmatrix} i &amp; 1 - i \\ 2 + i &amp; -1 \end{pmatrix}, \qquad x = \begin{pmatrix} 1 + 2i \\ 3 - i \end{pmatrix}.$$</p><div class="tosol"><a href="#t3-s-ex-p1-7d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-7e"><p class="lead">7(e)</p><p>(e) Over the field $\mathbb{Z}_5$,</p>
+<p>$$A = \begin{pmatrix} 2 &amp; 4 &amp; 1 \\ 3 &amp; 0 &amp; 2 \end{pmatrix}, \qquad x = \begin{pmatrix} 4 \\ 2 \\ 3 \end{pmatrix}.$$</p>
+<p>Write each coordinate of the answer as one of $0, 1, 2, 3, 4$.</p><div class="tosol"><a href="#t3-s-ex-p1-7e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-8a"><p class="lead">8(a)</p><p>Let</p>
+<p>$$v_1 = (1, 1), \qquad v_2 = (1, -1).$$</p>
+<p>There is a unique linear transformation</p>
+<p>$$T : \mathbb{R}^2 \longrightarrow P_2(\mathbb{R})$$</p>
+<p>such that</p>
+<p>$$T(v_1) = 1 + x \qquad \text{and} \qquad T(v_2) = x + x^2.$$</p>
+<p>(a) Express an arbitrary vector $(a, b) \in \mathbb{R}^2$ as a linear combination of $v_1$ and $v_2$.</p><div class="tosol"><a href="#t3-s-ex-p1-8a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-8b"><p class="lead">8(b)</p><p>(b) Find a formula for $T(a, b)$.</p><div class="tosol"><a href="#t3-s-ex-p1-8b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-8c"><p class="lead">8(c)</p><p>(c) Calculate</p>
+<p>$$T(3, 1), \qquad T(2, -4), \qquad T(0, 1).$$</p><div class="tosol"><a href="#t3-s-ex-p1-8c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-8d"><p class="lead">8(d)</p><p>(d) Find a basis for $\mathcal{N}(T)$ and a basis for $\mathcal{R}(T)$.</p><div class="tosol"><a href="#t3-s-ex-p1-8d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-8e"><p class="lead">8(e)</p><p>(e) Find the rank and nullity of $T$.</p><div class="tosol"><a href="#t3-s-ex-p1-8e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-8f"><p class="lead">8(f)</p><p>(f) Determine whether $T$ is one-to-one and whether it is onto.</p><div class="tosol"><a href="#t3-s-ex-p1-8f">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-9a"><p class="lead">9(a)</p><p>Let</p>
+<p>$$\beta = \{1 + x,\ x + x^2,\ x^2\}.$$</p>
+<p>There is a unique linear transformation</p>
+<p>$$T : P_2(\mathbb{R}) \longrightarrow \mathbb{R}^2$$</p>
+<p>such that</p>
+<p>$$T(1 + x) = (1, 0), \qquad T(x + x^2) = (0, 1), \qquad T(x^2) = (1, 1).$$</p>
+<p>(a) Verify that $\beta$ is a basis for $P_2(\mathbb{R})$.</p><div class="tosol"><a href="#t3-s-ex-p1-9a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-9b"><p class="lead">9(b)</p><p>(b) Express an arbitrary polynomial</p>
+<p>$$p(x) = a + bx + cx^2$$</p>
+<p>as a linear combination of the elements of $\beta$.</p><div class="tosol"><a href="#t3-s-ex-p1-9b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-9c"><p class="lead">9(c)</p><p>(c) Find a formula for $T(a + bx + cx^2)$.</p><div class="tosol"><a href="#t3-s-ex-p1-9c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-9d"><p class="lead">9(d)</p><p>(d) Calculate</p>
+<p>$$T(1), \qquad T(x), \qquad T(x^2), \qquad T(2 - 3x + 4x^2).$$</p><div class="tosol"><a href="#t3-s-ex-p1-9d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-9e"><p class="lead">9(e)</p><p>(e) Find bases for $\mathcal{N}(T)$ and $\mathcal{R}(T)$.</p><div class="tosol"><a href="#t3-s-ex-p1-9e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-9f"><p class="lead">9(f)</p><p>(f) Find the rank and nullity of $T$.</p><div class="tosol"><a href="#t3-s-ex-p1-9f">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-9g"><p class="lead">9(g)</p><p>(g) Determine whether $T$ is one-to-one and whether it is onto.</p><div class="tosol"><a href="#t3-s-ex-p1-9g">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-10a"><p class="lead">10(a)</p><p>In each part, use the rank-nullity theorem to find the missing quantity.</p>
+<p>(a) $$T : \mathbb{R}^7 \longrightarrow \mathbb{R}^4, \qquad \mathrm{rank}(T) = 3.$$</p>
+<p>Find $\mathrm{nullity}(T)$.</p><div class="tosol"><a href="#t3-s-ex-p1-10a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-10b"><p class="lead">10(b)</p><p>(b) $$T : P_5(\mathbb{R}) \longrightarrow \mathbb{R}^3, \qquad \mathrm{nullity}(T) = 4.$$</p>
+<p>Find $\mathrm{rank}(T)$.</p><div class="tosol"><a href="#t3-s-ex-p1-10b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-10c"><p class="lead">10(c)</p><p>(c) $$T : M_{2,2}(\mathbb{R}) \longrightarrow P_3(\mathbb{R}), \qquad \mathrm{rank}(T) = 4.$$</p>
+<p>Find $\mathrm{nullity}(T)$, and determine whether $T$ is one-to-one and whether it is onto.</p><div class="tosol"><a href="#t3-s-ex-p1-10c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-10d"><p class="lead">10(d)</p><p>(d) $$T : \mathbb{R}^3 \longrightarrow P_4(\mathbb{R}), \qquad \mathrm{nullity}(T) = 0.$$</p>
+<p>Find $\mathrm{rank}(T)$, and determine whether $T$ can be onto.</p><div class="tosol"><a href="#t3-s-ex-p1-10d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-10e"><p class="lead">10(e)</p><p>(e) $$T : P_4(\mathbb{R}) \longrightarrow \mathbb{R}^2$$</p>
+<p>is onto. Find $\mathrm{rank}(T)$ and $\mathrm{nullity}(T)$.</p><div class="tosol"><a href="#t3-s-ex-p1-10e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-10f"><p class="lead">10(f)</p><p>(f) $$T : \mathbb{R}^6 \longrightarrow \mathbb{R}^6$$</p>
+<p>has nullity 2. Find its rank, and determine whether it is one-to-one or onto.</p><div class="tosol"><a href="#t3-s-ex-p1-10f">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-11a"><p class="lead">11(a)</p><p>For each pair of vector spaces, determine whether the spaces are isomorphic. If they are, give an explicit isomorphism.</p>
+<p>(a) $$\mathbb{R}^3 \quad \text{and} \quad P_2(\mathbb{R})$$</p><div class="tosol"><a href="#t3-s-ex-p1-11a">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-11b"><p class="lead">11(b)</p><p>(b) $$\mathbb{R}^4 \quad \text{and} \quad M_{2,2}(\mathbb{R})$$</p><div class="tosol"><a href="#t3-s-ex-p1-11b">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-11c"><p class="lead">11(c)</p><p>(c) $$P_3(\mathbb{R}) \quad \text{and} \quad M_{2,2}(\mathbb{R})$$</p><div class="tosol"><a href="#t3-s-ex-p1-11c">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-11d"><p class="lead">11(d)</p><p>(d) $$\mathbb{R}^3 \quad \text{and} \quad M_{2,2}(\mathbb{R})$$</p><div class="tosol"><a href="#t3-s-ex-p1-11d">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p1-11e"><p class="lead">11(e)</p><p>(e) $$P_4(\mathbb{R}) \quad \text{and} \quad \mathbb{R}^5$$</p><div class="tosol"><a href="#t3-s-ex-p1-11e">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-1"><p class="lead">1</p><p><b>Part Two: Proof problems</b></p>
+<p>Let $V$ and $W$ be vector spaces over a field $F$, with zero vectors $0_V$ and $0_W$, respectively. Let</p>
+<p>$$T : V \longrightarrow W$$</p>
+<p>be linear. Prove that</p>
+<p>$$T(0_V) = 0_W.$$</p><div class="tosol"><a href="#t3-s-ex-p2-1">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-2"><p class="lead">2</p><p>Let $T : V \to W$ be linear. Prove that</p>
+<p>$$T(-v) = -T(v)$$</p>
+<p>for every $v \in V$.</p><div class="tosol"><a href="#t3-s-ex-p2-2">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-3"><p class="lead">3</p><p>Let $T : V \to W$ be linear. Prove that</p>
+<p>$$T(v - w) = T(v) - T(w)$$</p>
+<p>for every $v, w \in V$.</p><div class="tosol"><a href="#t3-s-ex-p2-3">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-4"><p class="lead">4</p><p>Let $T : V \to W$ be a function. Prove that $T$ is linear if and only if</p>
+<p>$$T(\alpha v + \beta w) = \alpha T(v) + \beta T(w)$$</p>
+<p>for every $v, w \in V$ and every $\alpha, \beta \in F$.</p><div class="tosol"><a href="#t3-s-ex-p2-4">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-5"><p class="lead">5</p><p>Let $T : V \to W$ be linear. Prove that for every positive integer $n$,</p>
+<p>$$T\left(\sum_{i=1}^{n} \alpha_i v_i\right) = \sum_{i=1}^{n} \alpha_i T(v_i)$$</p>
+<p>whenever</p>
+<p>$$v_1, \ldots, v_n \in V \qquad \text{and} \qquad \alpha_1, \ldots, \alpha_n \in F.$$</p><div class="tosol"><a href="#t3-s-ex-p2-5">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-6"><p class="lead">6</p><p>Let $T : V \to W$ be linear. Prove that the nullspace</p>
+<p>$$\mathcal{N}(T) = \{v \in V \mid T(v) = 0_W\}$$</p>
+<p>is a subspace of $V$.</p><div class="tosol"><a href="#t3-s-ex-p2-6">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-7"><p class="lead">7</p><p>Let $T : V \to W$ be linear. Prove that the range</p>
+<p>$$\mathcal{R}(T) = \{T(v) \mid v \in V\}$$</p>
+<p>is a subspace of $W$.</p><div class="tosol"><a href="#t3-s-ex-p2-7">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-8"><p class="lead">8</p><p>Let $T : V \to W$ be linear, and suppose that</p>
+<p>$$\mathrm{span}\{v_1, \ldots, v_n\} = V.$$</p>
+<p>Prove that</p>
+<p>$$\mathcal{R}(T) = \mathrm{span}\{T(v_1), \ldots, T(v_n)\}.$$</p><div class="tosol"><a href="#t3-s-ex-p2-8">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-9"><p class="lead">9</p><p>Let $T : V \to W$ be linear. Prove that $T$ is one-to-one if and only if</p>
+<p>$$\mathcal{N}(T) = \{0_V\}.$$</p><div class="tosol"><a href="#t3-s-ex-p2-9">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-10"><p class="lead">10</p><p>Let $T : V \to W$ be one-to-one and linear. Suppose that</p>
+<p>$$v_1, \ldots, v_n$$</p>
+<p>are linearly independent vectors in $V$. Prove that</p>
+<p>$$T(v_1), \ldots, T(v_n)$$</p>
+<p>are linearly independent vectors in $W$.</p><div class="tosol"><a href="#t3-s-ex-p2-10">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-11"><p class="lead">11</p><p>Let $T : V \to W$ be linear, and suppose that</p>
+<p>$$T(v_1), \ldots, T(v_n)$$</p>
+<p>are linearly independent. Prove that</p>
+<p>$$v_1, \ldots, v_n$$</p>
+<p>are linearly independent.</p><div class="tosol"><a href="#t3-s-ex-p2-11">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-12"><p class="lead">12</p><p>Let $T : V \to W$ be onto and linear. Suppose that</p>
+<p>$$\mathrm{span}\{v_1, \ldots, v_n\} = V.$$</p>
+<p>Prove that</p>
+<p>$$\mathrm{span}\{T(v_1), \ldots, T(v_n)\} = W.$$</p><div class="tosol"><a href="#t3-s-ex-p2-12">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-13"><p class="lead">13</p><p>Let</p>
+<p>$$\beta = \{v_1, \ldots, v_n\}$$</p>
+<p>be a basis for $V$, and let $T, S : V \to W$ be linear transformations. Suppose that</p>
+<p>$$T(v_i) = S(v_i)$$</p>
+<p>for every $i = 1, \ldots, n$. Prove that</p>
+<p>$$T = S.$$</p><div class="tosol"><a href="#t3-s-ex-p2-13">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-14"><p class="lead">14</p><p>Let</p>
+<p>$$\beta = \{v_1, \ldots, v_n\}$$</p>
+<p>be a basis for $V$, and let</p>
+<p>$$w_1, \ldots, w_n \in W.$$</p>
+<p>Prove that there is exactly one linear transformation</p>
+<p>$$T : V \longrightarrow W$$</p>
+<p>such that</p>
+<p>$$T(v_i) = w_i$$</p>
+<p>for every $i = 1, \ldots, n$.</p><div class="tosol"><a href="#t3-s-ex-p2-14">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-15"><p class="lead">15</p><p>Let $V$ and $W$ be finite-dimensional vector spaces, and let</p>
+<p>$$T : V \longrightarrow W$$</p>
+<p>be linear. Suppose that</p>
+<p>$$\dim(V) &lt; \dim(W).$$</p>
+<p>Prove that $T$ cannot be onto.</p><div class="tosol"><a href="#t3-s-ex-p2-15">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-16"><p class="lead">16</p><p>Let $V$ and $W$ be finite-dimensional vector spaces, and let</p>
+<p>$$T : V \longrightarrow W$$</p>
+<p>be linear. Suppose that</p>
+<p>$$\dim(V) &gt; \dim(W).$$</p>
+<p>Prove that $T$ cannot be one-to-one.</p><div class="tosol"><a href="#t3-s-ex-p2-16">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-17"><p class="lead">17</p><p>Let $V$ and $W$ be finite-dimensional vector spaces satisfying</p>
+<p>$$\dim(V) = \dim(W),$$</p>
+<p>and let $T : V \to W$ be linear. Prove that the following are equivalent:</p>
+<p>(a) $T$ is one-to-one;</p>
+<p>(b) $T$ is onto;</p>
+<p>(c) $\mathrm{rank}(T) = \dim(V)$;</p>
+<p>(d) $\mathrm{nullity}(T) = 0$.</p><div class="tosol"><a href="#t3-s-ex-p2-17">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-18"><p class="lead">18</p><p>Let $V$ and $W$ be finite-dimensional vector spaces. Suppose that</p>
+<p>$$T : V \longrightarrow W$$</p>
+<p>is both one-to-one and onto. Prove that</p>
+<p>$$\dim(V) = \dim(W).$$</p><div class="tosol"><a href="#t3-s-ex-p2-18">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-19"><p class="lead">19</p><p>Prove that finite-dimensional vector spaces $V$ and $W$ over the same field are isomorphic if and only if</p>
+<p>$$\dim(V) = \dim(W).$$</p><div class="tosol"><a href="#t3-s-ex-p2-19">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-20"><p class="lead">20</p><p>Let</p>
+<p>$$T : P_n(\mathbb{R}) \longrightarrow P_{n-1}(\mathbb{R})$$</p>
+<p>be defined by</p>
+<p>$$T(p) = p'.$$</p>
+<p>Prove that $T$ is linear. Find $\mathcal{N}(T)$ and $\mathcal{R}(T)$, and use these descriptions to prove that</p>
+<p>$$\mathrm{nullity}(T) = 1 \qquad \text{and} \qquad \mathrm{rank}(T) = n.$$</p><div class="tosol"><a href="#t3-s-ex-p2-20">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-21"><p class="lead">21</p><p>Fix real numbers $a &lt; b$, and define</p>
+<p>$$T : C(\mathbb{R}) \longrightarrow \mathbb{R}$$</p>
+<p>by</p>
+<p>$$T(f) = \int_a^b f(t)\,dt.$$</p>
+<p>Prove that $T$ is linear. Determine whether $T$ is one-to-one and whether it is onto, proving both answers.</p><div class="tosol"><a href="#t3-s-ex-p2-21">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-22"><p class="lead">22</p><p>Define</p>
+<p>$$T : C(\mathbb{R}) \longrightarrow \mathbb{R}^2$$</p>
+<p>by</p>
+<p>$$T(f) = \big(f(0), f(1)\big).$$</p>
+<p>Prove that $T$ is linear and onto. Prove that $T$ is not one-to-one.</p><div class="tosol"><a href="#t3-s-ex-p2-22">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-23"><p class="lead">23</p><p>Let $A \in M_{m,n}(F)$, and define</p>
+<p>$$L_A : F^n \longrightarrow F^m$$</p>
+<p>by</p>
+<p>$$L_A(x) = Ax.$$</p>
+<p>Prove that $L_A$ is a linear transformation.</p><div class="tosol"><a href="#t3-s-ex-p2-23">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-24"><p class="lead">24</p><p>Let $T : V \to W$ be a linear transformation and let $U$ be a subspace of $V$. Define</p>
+<p>$$T(U) = \{T(u) \mid u \in U\}.$$</p>
+<p>Prove that $T(U)$ is a subspace of $W$.</p><div class="tosol"><a href="#t3-s-ex-p2-24">Solution &darr;</a></div></div>
+<div class="item prob" id="t3-p-ex-p2-25"><p class="lead">25</p><p>Let $T : V \to W$ be a linear transformation and let $Z$ be a subspace of $W$. Define</p>
+<p>$$T^{-1}(Z) = \{v \in V \mid T(v) \in Z\}.$$</p>
+<p>Prove that $T^{-1}(Z)$ is a subspace of $V$.</p><div class="tosol"><a href="#t3-s-ex-p2-25">Solution &darr;</a></div></div>
 <h2 class="part solp" id="solutions">Solutions</h2>
-<div class="offhdr"><b>Krebs' solutions</b> to Homework for Topic 3. His extra practice problems come without solutions.</div><div class="off" id="t3-sol-p1"><div class="offcap">Solutions to Homework for Topic 3, page 1 of 28</div><img src="img/4570-t3-sol-p1.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 1"></div>
-<div class="off" id="t3-sol-p2"><div class="offcap">Solutions to Homework for Topic 3, page 2 of 28</div><img src="img/4570-t3-sol-p2.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 2"></div>
-<div class="off" id="t3-sol-p3"><div class="offcap">Solutions to Homework for Topic 3, page 3 of 28</div><img src="img/4570-t3-sol-p3.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 3"></div>
-<div class="off" id="t3-sol-p4"><div class="offcap">Solutions to Homework for Topic 3, page 4 of 28</div><img src="img/4570-t3-sol-p4.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 4"></div>
-<div class="off" id="t3-sol-p5"><div class="offcap">Solutions to Homework for Topic 3, page 5 of 28</div><img src="img/4570-t3-sol-p5.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 5"></div>
-<div class="off" id="t3-sol-p6"><div class="offcap">Solutions to Homework for Topic 3, page 6 of 28</div><img src="img/4570-t3-sol-p6.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 6"></div>
-<div class="off" id="t3-sol-p7"><div class="offcap">Solutions to Homework for Topic 3, page 7 of 28</div><img src="img/4570-t3-sol-p7.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 7"></div>
-<div class="off" id="t3-sol-p8"><div class="offcap">Solutions to Homework for Topic 3, page 8 of 28</div><img src="img/4570-t3-sol-p8.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 8"></div>
-<div class="off" id="t3-sol-p9"><div class="offcap">Solutions to Homework for Topic 3, page 9 of 28</div><img src="img/4570-t3-sol-p9.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 9"></div>
-<div class="off" id="t3-sol-p10"><div class="offcap">Solutions to Homework for Topic 3, page 10 of 28</div><img src="img/4570-t3-sol-p10.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 10"></div>
-<div class="off" id="t3-sol-p11"><div class="offcap">Solutions to Homework for Topic 3, page 11 of 28</div><img src="img/4570-t3-sol-p11.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 11"></div>
-<div class="off" id="t3-sol-p12"><div class="offcap">Solutions to Homework for Topic 3, page 12 of 28</div><img src="img/4570-t3-sol-p12.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 12"></div>
-<div class="off" id="t3-sol-p13"><div class="offcap">Solutions to Homework for Topic 3, page 13 of 28</div><img src="img/4570-t3-sol-p13.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 13"></div>
-<div class="off" id="t3-sol-p14"><div class="offcap">Solutions to Homework for Topic 3, page 14 of 28</div><img src="img/4570-t3-sol-p14.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 14"></div>
-<div class="off" id="t3-sol-p15"><div class="offcap">Solutions to Homework for Topic 3, page 15 of 28</div><img src="img/4570-t3-sol-p15.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 15"></div>
-<div class="off" id="t3-sol-p16"><div class="offcap">Solutions to Homework for Topic 3, page 16 of 28</div><img src="img/4570-t3-sol-p16.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 16"></div>
-<div class="off" id="t3-sol-p17"><div class="offcap">Solutions to Homework for Topic 3, page 17 of 28</div><img src="img/4570-t3-sol-p17.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 17"></div>
-<div class="off" id="t3-sol-p18"><div class="offcap">Solutions to Homework for Topic 3, page 18 of 28</div><img src="img/4570-t3-sol-p18.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 18"></div>
-<div class="off" id="t3-sol-p19"><div class="offcap">Solutions to Homework for Topic 3, page 19 of 28</div><img src="img/4570-t3-sol-p19.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 19"></div>
-<div class="off" id="t3-sol-p20"><div class="offcap">Solutions to Homework for Topic 3, page 20 of 28</div><img src="img/4570-t3-sol-p20.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 20"></div>
-<div class="off" id="t3-sol-p21"><div class="offcap">Solutions to Homework for Topic 3, page 21 of 28</div><img src="img/4570-t3-sol-p21.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 21"></div>
-<div class="off" id="t3-sol-p22"><div class="offcap">Solutions to Homework for Topic 3, page 22 of 28</div><img src="img/4570-t3-sol-p22.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 22"></div>
-<div class="off" id="t3-sol-p23"><div class="offcap">Solutions to Homework for Topic 3, page 23 of 28</div><img src="img/4570-t3-sol-p23.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 23"></div>
-<div class="off" id="t3-sol-p24"><div class="offcap">Solutions to Homework for Topic 3, page 24 of 28</div><img src="img/4570-t3-sol-p24.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 24"></div>
-<div class="off" id="t3-sol-p25"><div class="offcap">Solutions to Homework for Topic 3, page 25 of 28</div><img src="img/4570-t3-sol-p25.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 25"></div>
-<div class="off" id="t3-sol-p26"><div class="offcap">Solutions to Homework for Topic 3, page 26 of 28</div><img src="img/4570-t3-sol-p26.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 26"></div>
-<div class="off" id="t3-sol-p27"><div class="offcap">Solutions to Homework for Topic 3, page 27 of 28</div><img src="img/4570-t3-sol-p27.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 27"></div>
-<div class="off" id="t3-sol-p28"><div class="offcap">Solutions to Homework for Topic 3, page 28 of 28</div><img src="img/4570-t3-sol-p28.png" width="1275" height="1650" loading="lazy" alt="Solutions to Homework for Topic 3 page 28"></div>
+<h3 class="grp">Krebs' official solutions: Homework for Topic 3</h3><div class="offhdr">28 pages, shown as page images. Each page links back to the problem(s) it solves.</div>
+<div class="off" id="t3-off-p1"><div class="toprob"><a href="#t3-p-hw-1a">&uarr; Problem hw-1a</a> &middot; <a href="#t3-p-hw-1b">&uarr; Problem hw-1b</a> &middot; <a href="#t3-p-hw-1c">&uarr; Problem hw-1c</a></div><div class="offcap">Solutions to Homework for Topic 3, page 1 of 28</div><img src="img/4570-t3-sol-p1.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 1"></div>
+<div class="off" id="t3-off-p2"><div class="toprob"><a href="#t3-p-hw-1c">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 2 of 28</div><img src="img/4570-t3-sol-p2.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 2"></div>
+<div class="off" id="t3-off-p3"><div class="toprob"><a href="#t3-p-hw-2a">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 3 of 28</div><img src="img/4570-t3-sol-p3.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 3"></div>
+<div class="off" id="t3-off-p4"><div class="toprob"><a href="#t3-p-hw-2a">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 4 of 28</div><img src="img/4570-t3-sol-p4.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 4"></div>
+<div class="off" id="t3-off-p5"><div class="toprob"><a href="#t3-p-hw-2a">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 5 of 28</div><img src="img/4570-t3-sol-p5.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 5"></div>
+<div class="off" id="t3-off-p6"><div class="toprob"><a href="#t3-p-hw-2b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 6 of 28</div><img src="img/4570-t3-sol-p6.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 6"></div>
+<div class="off" id="t3-off-p7"><div class="toprob"><a href="#t3-p-hw-2c">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 7 of 28</div><img src="img/4570-t3-sol-p7.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 7"></div>
+<div class="off" id="t3-off-p8"><div class="toprob"><a href="#t3-p-hw-2c">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 8 of 28</div><img src="img/4570-t3-sol-p8.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 8"></div>
+<div class="off" id="t3-off-p9"><div class="toprob"><a href="#t3-p-hw-2c">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 9 of 28</div><img src="img/4570-t3-sol-p9.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 9"></div>
+<div class="off" id="t3-off-p10"><div class="toprob"><a href="#t3-p-hw-2c">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 10 of 28</div><img src="img/4570-t3-sol-p10.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 10"></div>
+<div class="off" id="t3-off-p11"><div class="toprob"><a href="#t3-p-hw-2c">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 11 of 28</div><img src="img/4570-t3-sol-p11.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 11"></div>
+<div class="off" id="t3-off-p12"><div class="toprob"><a href="#t3-p-hw-2d">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 12 of 28</div><img src="img/4570-t3-sol-p12.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 12"></div>
+<div class="off" id="t3-off-p13"><div class="toprob"><a href="#t3-p-hw-2d">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 13 of 28</div><img src="img/4570-t3-sol-p13.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 13"></div>
+<div class="off" id="t3-off-p14"><div class="toprob"><a href="#t3-p-hw-2d">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 14 of 28</div><img src="img/4570-t3-sol-p14.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 14"></div>
+<div class="off" id="t3-off-p15"><div class="toprob"><a href="#t3-p-hw-2e">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 15 of 28</div><img src="img/4570-t3-sol-p15.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 15"></div>
+<div class="off" id="t3-off-p16"><div class="toprob"><a href="#t3-p-hw-3">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 16 of 28</div><img src="img/4570-t3-sol-p16.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 16"></div>
+<div class="off" id="t3-off-p17"><div class="toprob"><a href="#t3-p-hw-4a">&uarr; Problem hw-4a</a> &middot; <a href="#t3-p-hw-4b">&uarr; Problem hw-4b</a></div><div class="offcap">Solutions to Homework for Topic 3, page 17 of 28</div><img src="img/4570-t3-sol-p17.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 17"></div>
+<div class="off" id="t3-off-p18"><div class="toprob"><a href="#t3-p-hw-5">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 18 of 28</div><img src="img/4570-t3-sol-p18.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 18"></div>
+<div class="off" id="t3-off-p19"><div class="toprob"><a href="#t3-p-hw-5">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 19 of 28</div><img src="img/4570-t3-sol-p19.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 19"></div>
+<div class="off" id="t3-off-p20"><div class="toprob"><a href="#t3-p-hw-5">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 20 of 28</div><img src="img/4570-t3-sol-p20.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 20"></div>
+<div class="off" id="t3-off-p21"><div class="toprob"><a href="#t3-p-hw-6a">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 21 of 28</div><img src="img/4570-t3-sol-p21.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 21"></div>
+<div class="off" id="t3-off-p22"><div class="toprob"><a href="#t3-p-hw-6a">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 22 of 28</div><img src="img/4570-t3-sol-p22.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 22"></div>
+<div class="off" id="t3-off-p23"><div class="toprob"><a href="#t3-p-hw-6b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 23 of 28</div><img src="img/4570-t3-sol-p23.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 23"></div>
+<div class="off" id="t3-off-p24"><div class="toprob"><a href="#t3-p-hw-6b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 24 of 28</div><img src="img/4570-t3-sol-p24.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 24"></div>
+<div class="off" id="t3-off-p25"><div class="toprob"><a href="#t3-p-hw-6b">&uarr; Problem hw-6b</a> &middot; <a href="#t3-p-hw-6c">&uarr; Problem hw-6c</a></div><div class="offcap">Solutions to Homework for Topic 3, page 25 of 28</div><img src="img/4570-t3-sol-p25.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 25"></div>
+<div class="off" id="t3-off-p26"><div class="toprob"><a href="#t3-p-hw-7a">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 26 of 28</div><img src="img/4570-t3-sol-p26.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 26"></div>
+<div class="off" id="t3-off-p27"><div class="toprob"><a href="#t3-p-hw-7a">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 27 of 28</div><img src="img/4570-t3-sol-p27.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 27"></div>
+<div class="off" id="t3-off-p28"><div class="toprob"><a href="#t3-p-hw-7b">&uarr; Problem</a></div><div class="offcap">Solutions to Homework for Topic 3, page 28 of 28</div><img src="img/4570-t3-sol-p28.png" width="1275" height="1650" loading="lazy" alt="Krebs solutions page 28"></div>
+<h3 class="grp">Solutions by Claude (not official)</h3><div class="offhdr">Krebs posted no solutions for his extra practice problems; these are Claude's. Homework problems his official solutions skip are also here.</div>
+<h4 class="sub">Extra practice problems for Topic 3</h4>
+<div class="item sol" id="t3-s-ex-p1-1a"><div class="toprob"><a href="#t3-p-ex-p1-1a">&uarr; Problem</a></div><p class="lead">1(a) (Claude, not official)</p><p><b>Linear.</b></p>
+<p>Let $x = (a, b)$, $y = (c, d) \in \mathbb{R}^2$ and $\alpha \in \mathbb{R}$.</p>
+<p>Additivity: $T(x + y) = T(a + c, b + d) = (2(a + c) - (b + d),\ (a + c) + 3(b + d)) = (2a - b, a + 3b) + (2c - d, c + 3d) = T(x) + T(y)$.</p>
+<p>Homogeneity: $T(\alpha x) = T(\alpha a, \alpha b) = (2\alpha a - \alpha b,\ \alpha a + 3\alpha b) = \alpha(2a - b, a + 3b) = \alpha T(x)$.</p>
+<p>(Equivalently, $T = L_A$ with $A = \begin{pmatrix} 2 &amp; -1 \\ 1 &amp; 3 \end{pmatrix}$, and every $L_A$ is linear.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-1b"><div class="toprob"><a href="#t3-p-ex-p1-1b">&uarr; Problem</a></div><p class="lead">1(b) (Claude, not official)</p><p><b>Not linear.</b> Homogeneity (and additivity) fails because of the $b^2$.</p>
+<p>Take $x = (0, 1)$ and $\alpha = 2$. Then $T(2x) = T(0, 2) = (-2, 4)$, but $2T(x) = 2(-1, 1) = (-2, 2)$. Since $(-2, 4) \neq (-2, 2)$, $T(\alpha x) \neq \alpha T(x)$.</p>
+<p>Additivity fails too: $T((0,1) + (0,1)) = (-2, 4)$ while $T(0,1) + T(0,1) = (-2, 2)$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-1c"><div class="toprob"><a href="#t3-p-ex-p1-1c">&uarr; Problem</a></div><p class="lead">1(c) (Claude, not official)</p><p><b>Linear.</b></p>
+<p>Let $x = (a, b, c)$, $y = (a', b', c')$ and $\alpha \in \mathbb{R}$.</p>
+<p>$T(x + y) = ((a + a') + (b + b') + (c + c'),\ (a + a') - (c + c')) = (a + b + c, a - c) + (a' + b' + c', a' - c') = T(x) + T(y)$.</p>
+<p>$T(\alpha x) = (\alpha a + \alpha b + \alpha c,\ \alpha a - \alpha c) = \alpha (a + b + c, a - c) = \alpha T(x)$.</p>
+<p>(Equivalently, $T = L_A$ with $A = \begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 0 &amp; -1 \end{pmatrix}$.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-1d"><div class="toprob"><a href="#t3-p-ex-p1-1d">&uarr; Problem</a></div><p class="lead">1(d) (Claude, not official)</p><p><b>Not linear.</b></p>
+<p>A linear map must send $\mathbf{0}$ to $\mathbf{0}$, but $T(0, 0) = (1, 0) \neq (0, 0)$.</p>
+<p>Concretely, additivity fails: $T((0,0) + (0,0)) = T(0,0) = (1, 0)$, while $T(0,0) + T(0,0) = (2, 0)$. Homogeneity also fails: $T(2 \cdot (0,0)) = (1,0) \neq 2T(0,0) = (2, 0)$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-1e"><div class="toprob"><a href="#t3-p-ex-p1-1e">&uarr; Problem</a></div><p class="lead">1(e) (Claude, not official)</p><p><b>Not linear.</b></p>
+<p>Homogeneity fails: $T(2 \cdot (1, 1)) = T(2, 2) = 4$, but $2T(1, 1) = 2 \cdot 1 = 2$.</p>
+<p>Additivity fails as well: $T((1, 0) + (0, 1)) = T(1, 1) = 1$, but $T(1, 0) + T(0, 1) = 0 + 0 = 0$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-1f"><div class="toprob"><a href="#t3-p-ex-p1-1f">&uarr; Problem</a></div><p class="lead">1(f) (Claude, not official)</p><p><b>Linear.</b></p>
+<p>For $x = (a, b, c)$, $y = (a', b', c')$, $\alpha \in \mathbb{R}$:</p>
+<p>$T(x + y) = (a + a', 0, c + c') = (a, 0, c) + (a', 0, c') = T(x) + T(y)$, and $T(\alpha x) = (\alpha a, 0, \alpha c) = \alpha (a, 0, c) = \alpha T(x)$.</p>
+<p>(It is $L_A$ with $A = \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix}$, the projection onto the $ac$-plane.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-1g"><div class="toprob"><a href="#t3-p-ex-p1-1g">&uarr; Problem</a></div><p class="lead">1(g) (Claude, not official)</p><p><b>Linear</b> (over $\mathbb{C}$).</p>
+<p>Let $z = (z_1, z_2)$, $w = (w_1, w_2) \in \mathbb{C}^2$ and $\alpha \in \mathbb{C}$.</p>
+<p>$T(z + w) = i(z_1 + w_1) + (1 - i)(z_2 + w_2) = [iz_1 + (1 - i)z_2] + [iw_1 + (1 - i)w_2] = T(z) + T(w)$.</p>
+<p>$T(\alpha z) = i(\alpha z_1) + (1 - i)(\alpha z_2) = \alpha[iz_1 + (1 - i)z_2] = \alpha T(z)$, using that multiplication in $\mathbb{C}$ is commutative and associative.</p>
+<p>(It is $L_A$ with the $1 \times 2$ complex matrix $A = \begin{pmatrix} i &amp; 1 - i \end{pmatrix}$.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-1h"><div class="toprob"><a href="#t3-p-ex-p1-1h">&uarr; Problem</a></div><p class="lead">1(h) (Claude, not official)</p><p><b>Not linear over $\mathbb{C}$.</b> Additivity holds ($\overline{z + w} = \overline{z} + \overline{w}$), but homogeneity with complex scalars fails.</p>
+<p>Take $\alpha = i$ and $z = 1$: $T(i \cdot 1) = \overline{i} = -i$, but $i \cdot T(1) = i \cdot \overline{1} = i$. Since $-i \neq i$, $T(\alpha z) \neq \alpha T(z)$.</p>
+<p>In general $T(\alpha z) = \overline{\alpha}\,\overline{z}$, which equals $\alpha \overline{z}$ only when $\alpha$ is real or $z = 0$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-1i"><div class="toprob"><a href="#t3-p-ex-p1-1i">&uarr; Problem</a></div><p class="lead">1(i) (Claude, not official)</p><p><b>Linear over $\mathbb{R}$.</b></p>
+<p>Write $z = a + bi$, $w = c + di$. Additivity: $\overline{z + w} = (a + c) - (b + d)i = (a - bi) + (c - di) = \overline{z} + \overline{w}$.</p>
+<p>Homogeneity: now the scalars are only real numbers. For $\alpha \in \mathbb{R}$, $\overline{\alpha z} = \overline{\alpha a + \alpha b i} = \alpha a - \alpha b i = \alpha(a - bi) = \alpha \overline{z}$.</p>
+<p>So $T$ is linear over $\mathbb{R}$. (Viewing $\mathbb{C}$ as $\mathbb{R}^2$ via $a + bi \leftrightarrow (a, b)$, $T$ is $(a, b) \mapsto (a, -b)$, reflection across the real axis.) The comparison with (h) shows that whether a map is linear depends on the field of scalars.</p></div>
+<div class="item sol" id="t3-s-ex-p1-2a"><div class="toprob"><a href="#t3-p-ex-p1-2a">&uarr; Problem</a></div><p class="lead">2(a) (Claude, not official)</p><p>(i) $(a, b, c, d) \in \mathcal{N}(T)$ iff $a + b = 0$, $b + c = 0$, $c + d = 0$. Take $a = t$ free: then $b = -t$, $c = t$, $d = -t$, so $(a, b, c, d) = t(1, -1, 1, -1)$. A basis for $\mathcal{N}(T)$ is $\{(1, -1, 1, -1)\}$.</p>
+<p>(ii) $\mathrm{nullity}(T) = 1$.</p>
+<p>(iii) Not one-to-one, since $\mathcal{N}(T) \neq \{\mathbf{0}\}$ (e.g. $T(1,-1,1,-1) = (0,0,0) = T(0,0,0,0)$).</p>
+<p>(iv) By rank-nullity, $\mathrm{rank}(T) = 4 - 1 = 3$, so $\mathcal{R}(T)$ is a 3-dimensional subspace of $\mathbb{R}^3$, i.e. $\mathcal{R}(T) = \mathbb{R}^3$. A basis is $\{(1,0,0), (0,1,0), (0,0,1)\}$. (Directly: $T(e_1) = (1,0,0)$, $T(e_2) = (1,1,0)$, $T(e_3) = (0,1,1)$ are linearly independent and lie in $\mathcal{R}(T)$, so they are also a basis.)</p>
+<p>(v) $\mathrm{rank}(T) = 3$.</p>
+<p>(vi) Onto, since $\mathcal{R}(T) = \mathbb{R}^3$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-2b"><div class="toprob"><a href="#t3-p-ex-p1-2b">&uarr; Problem</a></div><p class="lead">2(b) (Claude, not official)</p><p>(i) Solve $a + b = 0$, $b + c = 0$, $a - c = 0$. From the first two, $a = -b$ and $c = -b$; then $a - c = -b + b = 0$ automatically. With $b = t$: $(a, b, c) = t(-1, 1, -1)$. A basis for $\mathcal{N}(T)$ is $\{(1, -1, 1)\}$.</p>
+<p>(ii) $\mathrm{nullity}(T) = 1$.</p>
+<p>(iii) Not one-to-one (nonzero nullspace).</p>
+<p>(iv) $\mathcal{R}(T) = \mathrm{span}\{T(e_1), T(e_2), T(e_3)\} = \mathrm{span}\{(1, 0, 1), (1, 1, 0), (0, 1, -1)\}$. Since $(0, 1, -1) = (1, 1, 0) - (1, 0, 1)$, and $(1,0,1)$, $(1,1,0)$ are not multiples of each other, a basis for $\mathcal{R}(T)$ is $\{(1, 0, 1), (1, 1, 0)\}$. (Equivalently $\mathcal{R}(T) = \{(x, y, z) : z = x - y\}$.)</p>
+<p>(v) $\mathrm{rank}(T) = 2$ (check: $2 + 1 = 3 = \dim \mathbb{R}^3$).</p>
+<p>(vi) Not onto, since $\mathrm{rank}(T) = 2 &lt; 3$. For example $(0, 0, 1) \notin \mathcal{R}(T)$ because $1 \neq 0 - 0$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-2c"><div class="toprob"><a href="#t3-p-ex-p1-2c">&uarr; Problem</a></div><p class="lead">2(c) (Claude, not official)</p><p>(i) Solve $2a - b = 0$, $a + 3b = 0$, $5a + 2b = 0$. The first gives $b = 2a$; substituting into the second, $a + 6a = 7a = 0$, so $a = 0$ and $b = 0$. Thus $\mathcal{N}(T) = \{(0, 0)\}$, whose basis is the empty set $\emptyset$.</p>
+<p>(ii) $\mathrm{nullity}(T) = 0$.</p>
+<p>(iii) One-to-one, since $\mathcal{N}(T) = \{\mathbf{0}\}$.</p>
+<p>(iv) $\mathcal{R}(T) = \mathrm{span}\{T(1,0), T(0,1)\} = \mathrm{span}\{(2, 1, 5), (-1, 3, 2)\}$. These two vectors are not scalar multiples of each other, so a basis for $\mathcal{R}(T)$ is $\{(2, 1, 5), (-1, 3, 2)\}$.</p>
+<p>(v) $\mathrm{rank}(T) = 2$.</p>
+<p>(vi) Not onto: $\mathcal{R}(T)$ has dimension $2 &lt; 3 = \dim \mathbb{R}^3$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-2d"><div class="toprob"><a href="#t3-p-ex-p1-2d">&uarr; Problem</a></div><p class="lead">2(d) (Claude, not official)</p><p>(This is the same map as Homework 3, Problem 2(a).)</p>
+<p>(i) $a - b = 0$ and $2c = 0$ give $c = 0$, $a = b = t$: $(a, b, c) = t(1, 1, 0)$. A basis for $\mathcal{N}(T)$ is $\{(1, 1, 0)\}$.</p>
+<p>(ii) $\mathrm{nullity}(T) = 1$.</p>
+<p>(iii) Not one-to-one.</p>
+<p>(iv) $\mathrm{rank}(T) = 3 - 1 = 2 = \dim \mathbb{R}^2$, so $\mathcal{R}(T) = \mathbb{R}^2$. A basis is $\{(1, 0), (0, 1)\}$; indeed $T(1, 0, 0) = (1, 0)$ and $T(0, 0, \tfrac12) = (0, 1)$.</p>
+<p>(v) $\mathrm{rank}(T) = 2$.</p>
+<p>(vi) Onto.</p></div>
+<div class="item sol" id="t3-s-ex-p1-2e"><div class="toprob"><a href="#t3-p-ex-p1-2e">&uarr; Problem</a></div><p class="lead">2(e) (Claude, not official)</p><p>(i) $a - 2b + 3c = 0$ iff $a = 2b - 3c$, with $b = s$, $c = t$ free: $(a, b, c) = s(2, 1, 0) + t(-3, 0, 1)$. The vectors $(2,1,0)$ and $(-3,0,1)$ are linearly independent (look at the 2nd and 3rd coordinates), so a basis for $\mathcal{N}(T)$ is $\{(2, 1, 0), (-3, 0, 1)\}$.</p>
+<p>(ii) $\mathrm{nullity}(T) = 2$.</p>
+<p>(iii) Not one-to-one.</p>
+<p>(iv) For any $r \in \mathbb{R}$, $T(r, 0, 0) = r$, so $\mathcal{R}(T) = \mathbb{R}$, with basis $\{1\}$.</p>
+<p>(v) $\mathrm{rank}(T) = 1$ (check: $1 + 2 = 3$).</p>
+<p>(vi) Onto.</p></div>
+<div class="item sol" id="t3-s-ex-p1-2f"><div class="toprob"><a href="#t3-p-ex-p1-2f">&uarr; Problem</a></div><p class="lead">2(f) (Claude, not official)</p><p>Note $T(a, b) = (a + b)(1, 2, 3)$.</p>
+<p>(i) $T(a, b) = \mathbf{0}$ iff $a + b = 0$ iff $(a, b) = t(1, -1)$. A basis for $\mathcal{N}(T)$ is $\{(1, -1)\}$.</p>
+<p>(ii) $\mathrm{nullity}(T) = 1$.</p>
+<p>(iii) Not one-to-one.</p>
+<p>(iv) $\mathcal{R}(T) = \{s(1, 2, 3) : s \in \mathbb{R}\}$ (every $s$ occurs, e.g. $T(s, 0) = s(1,2,3)$). A basis is $\{(1, 2, 3)\}$.</p>
+<p>(v) $\mathrm{rank}(T) = 1$.</p>
+<p>(vi) Not onto ($1 &lt; 3$); e.g. $(1, 0, 0) \notin \mathcal{R}(T)$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-3a"><div class="toprob"><a href="#t3-p-ex-p1-3a">&uarr; Problem</a></div><p class="lead">3(a) (Claude, not official)</p><p>Compute $\mathcal{N}(T_k)$: we need $a + kb = 0$ and $ka + b = 0$. The first gives $a = -kb$; substituting into the second, $-k^2 b + b = (1 - k^2) b = 0$.</p>
+<p>If $k^2 \neq 1$, then $b = 0$, hence $a = 0$, so $\mathcal{N}(T_k) = \{\mathbf{0}\}$.</p>
+<p>If $k = 1$, the equations are both $a + b = 0$, and $(1, -1) \in \mathcal{N}(T_1)$. If $k = -1$, both equations say $a - b = 0$, and $(1, 1) \in \mathcal{N}(T_{-1})$.</p>
+<p>Since a linear map is one-to-one iff its nullspace is $\{\mathbf{0}\}$: <b>$T_k$ is one-to-one exactly when $k \neq 1$ and $k \neq -1$.</b> (Equivalently, $\det\begin{pmatrix} 1 &amp; k \\ k &amp; 1 \end{pmatrix} = 1 - k^2 \neq 0$.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-3b"><div class="toprob"><a href="#t3-p-ex-p1-3b">&uarr; Problem</a></div><p class="lead">3(b) (Claude, not official)</p><p>$T_k$ maps $\mathbb{R}^2$ to $\mathbb{R}^2$, so domain and codomain have the same finite dimension. By the rank-nullity theorem (Homework 3, Problem 6(b)), $T_k$ is onto iff it is one-to-one.</p>
+<p>Hence <b>$T_k$ is onto exactly when $k \neq \pm 1$.</b> For $k = \pm 1$ the range is 1-dimensional (see part (c)), so $T_{\pm 1}$ is not onto.</p></div>
+<div class="item sol" id="t3-s-ex-p1-3c"><div class="toprob"><a href="#t3-p-ex-p1-3c">&uarr; Problem</a></div><p class="lead">3(c) (Claude, not official)</p><p>The exceptional values are $k = 1$ and $k = -1$.</p>
+<p><b>$k = 1$:</b> $T_1(a, b) = (a + b, a + b) = (a + b)(1, 1)$.</p>
+<p>$\mathcal{N}(T_1) = \{(a, b) : a + b = 0\} = \mathrm{span}\{(1, -1)\}$, basis $\{(1, -1)\}$.</p>
+<p>$\mathcal{R}(T_1) = \{s(1, 1) : s \in \mathbb{R}\}$, basis $\{(1, 1)\}$.</p>
+<p><b>$k = -1$:</b> $T_{-1}(a, b) = (a - b, -a + b) = (a - b)(1, -1)$.</p>
+<p>$\mathcal{N}(T_{-1}) = \{(a, b) : a = b\} = \mathrm{span}\{(1, 1)\}$, basis $\{(1, 1)\}$.</p>
+<p>$\mathcal{R}(T_{-1}) = \{s(1, -1) : s \in \mathbb{R}\}$, basis $\{(1, -1)\}$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-3d"><div class="toprob"><a href="#t3-p-ex-p1-3d">&uarr; Problem</a></div><p class="lead">3(d) (Claude, not official)</p><p>- If $k \neq \pm 1$: $\mathrm{nullity}(T_k) = 0$ and $\mathrm{rank}(T_k) = 2$.</p>
+<p>- If $k = 1$ or $k = -1$: $\mathrm{nullity}(T_k) = 1$ and $\mathrm{rank}(T_k) = 1$.</p>
+<p>In every case $\mathrm{rank} + \mathrm{nullity} = 2 = \dim \mathbb{R}^2$, as rank-nullity requires.</p></div>
+<div class="item sol" id="t3-s-ex-p1-4a"><div class="toprob"><a href="#t3-p-ex-p1-4a">&uarr; Problem</a></div><p class="lead">4(a) (Claude, not official)</p><p><b>Linear.</b> If $A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}$, $A' = \begin{pmatrix} a' &amp; b' \\ c' &amp; d' \end{pmatrix}$ and $\alpha, \beta \in \mathbb{R}$, then $\alpha A + \beta A'$ has entries $\alpha a + \beta a'$, etc., and</p>
+<p>$T(\alpha A + \beta A') = (\alpha(a + d) + \beta(a' + d'),\ \alpha(b - c) + \beta(b' - c')) = \alpha T(A) + \beta T(A')$.</p>
+<p><b>Nullspace.</b> $a + d = 0$ and $b - c = 0$, so $d = -a$, $c = b$:</p>
+<p>$$\begin{pmatrix} a &amp; b \\ b &amp; -a \end{pmatrix} = a\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} + b\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}.$$</p>
+<p>These two matrices are linearly independent (different positions), so a basis for $\mathcal{N}(T)$ is $\left\{\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\right\}$ and $\mathrm{nullity}(T) = 2$.</p>
+<p><b>Range.</b> $T\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} = (1, 0)$ and $T\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} = (0, 1)$, so $\mathcal{R}(T) = \mathbb{R}^2$ with basis $\{(1, 0), (0, 1)\}$; $\mathrm{rank}(T) = 2$. (Check: $2 + 2 = 4 = \dim M_{2,2}(\mathbb{R})$.)</p>
+<p><b>Not one-to-one</b> (nullity $2 \neq 0$); <b>onto</b>.</p></div>
+<div class="item sol" id="t3-s-ex-p1-4b"><div class="toprob"><a href="#t3-p-ex-p1-4b">&uarr; Problem</a></div><p class="lead">4(b) (Claude, not official)</p><p><b>Linear.</b> Transpose is linear: $(\alpha A + \beta B)^{\mathsf T} = \alpha A^{\mathsf T} + \beta B^{\mathsf T}$. So $T(\alpha A + \beta B) = \alpha A + \beta B + \alpha A^{\mathsf T} + \beta B^{\mathsf T} = \alpha T(A) + \beta T(B)$.</p>
+<p>For $A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}$: $T(A) = \begin{pmatrix} 2a &amp; b + c \\ b + c &amp; 2d \end{pmatrix}$.</p>
+<p><b>Nullspace.</b> $2a = 0$, $b + c = 0$, $2d = 0$, so $A = b\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}$ (the skew-symmetric matrices). Basis $\left\{\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}\right\}$, $\mathrm{nullity}(T) = 1$.</p>
+<p><b>Range.</b> Every $T(A)$ is symmetric, since $(A + A^{\mathsf T})^{\mathsf T} = A^{\mathsf T} + A$. Conversely, if $S$ is symmetric then $T(\tfrac12 S) = \tfrac12 S + \tfrac12 S^{\mathsf T} = S$. So $\mathcal{R}(T)$ is the space of symmetric $2 \times 2$ matrices, with basis</p>
+<p>$$\left\{\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\right\},$$</p>
+<p>and $\mathrm{rank}(T) = 3$ (check: $3 + 1 = 4$).</p>
+<p><b>Not one-to-one</b> (nullity 1); <b>not onto</b> (rank $3 &lt; 4$; e.g. $\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}$ is not symmetric, so not in the range).</p></div>
+<div class="item sol" id="t3-s-ex-p1-4c"><div class="toprob"><a href="#t3-p-ex-p1-4c">&uarr; Problem</a></div><p class="lead">4(c) (Claude, not official)</p><p><b>Linear</b>, by the same argument as (b): $T(\alpha A + \beta B) = \alpha A + \beta B - \alpha A^{\mathsf T} - \beta B^{\mathsf T} = \alpha T(A) + \beta T(B)$.</p>
+<p>For $A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}$: $T(A) = \begin{pmatrix} 0 &amp; b - c \\ c - b &amp; 0 \end{pmatrix} = (b - c)\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}$.</p>
+<p><b>Nullspace.</b> $T(A) = 0$ iff $b = c$, i.e. $A$ is symmetric. Basis</p>
+<p>$$\left\{\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\right\},$$</p>
+<p>$\mathrm{nullity}(T) = 3$.</p>
+<p><b>Range.</b> $\mathcal{R}(T) = \left\{ s\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} : s \in \mathbb{R} \right\}$ (every $s$ is $b - c$ for $b = s$, $c = 0$), the skew-symmetric matrices. Basis $\left\{\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}\right\}$, $\mathrm{rank}(T) = 1$ (check: $1 + 3 = 4$).</p>
+<p><b>Not one-to-one; not onto.</b></p></div>
+<div class="item sol" id="t3-s-ex-p1-4d"><div class="toprob"><a href="#t3-p-ex-p1-4d">&uarr; Problem</a></div><p class="lead">4(d) (Claude, not official)</p><p><b>Linear.</b> Each coefficient of the output ($a$, $b + c$, $d$) is a linear expression in the entries, so $T(\alpha A + \beta A') = (\alpha a + \beta a') + (\alpha(b + c) + \beta(b' + c'))x + (\alpha d + \beta d')x^2 = \alpha T(A) + \beta T(A')$.</p>
+<p><b>Nullspace.</b> $a = 0$, $b + c = 0$, $d = 0$: $A = b\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}$. Basis $\left\{\begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}\right\}$, $\mathrm{nullity}(T) = 1$.</p>
+<p><b>Range.</b> $T\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} = 1$, $T\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} = x$, $T\begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = x^2$, so $\mathcal{R}(T) = P_2(\mathbb{R})$ with basis $\{1, x, x^2\}$; $\mathrm{rank}(T) = 3$ (check: $3 + 1 = 4$).</p>
+<p><b>Not one-to-one; onto.</b></p></div>
+<div class="item sol" id="t3-s-ex-p1-4e"><div class="toprob"><a href="#t3-p-ex-p1-4e">&uarr; Problem</a></div><p class="lead">4(e) (Claude, not official)</p><p><b>Not linear.</b></p>
+<p>Homogeneity fails: with $I = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$, $\det(2I) = 4$ but $2\det(I) = 2$. (In general $\det(\alpha A) = \alpha^2 \det(A)$ for $2 \times 2$ matrices.)</p>
+<p>Additivity fails too: $\det\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} + \det\begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = 0 + 0 = 0$, but $\det\left(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} + \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\right) = \det(I) = 1$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-4f"><div class="toprob"><a href="#t3-p-ex-p1-4f">&uarr; Problem</a></div><p class="lead">4(f) (Claude, not official)</p><p><b>Linear.</b> $\mathrm{trace}(\alpha A + \beta B) = (\alpha a_{11} + \beta b_{11}) + (\alpha a_{22} + \beta b_{22}) = \alpha\,\mathrm{trace}(A) + \beta\,\mathrm{trace}(B)$.</p>
+<p><b>Nullspace.</b> $\mathrm{trace}\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = a + d = 0$ iff $d = -a$:</p>
+<p>$$\begin{pmatrix} a &amp; b \\ c &amp; -a \end{pmatrix} = a\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} + b\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} + c\begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}.$$</p>
+<p>These three are linearly independent, so they form a basis of $\mathcal{N}(T)$; $\mathrm{nullity}(T) = 3$.</p>
+<p><b>Range.</b> $T\begin{pmatrix} r &amp; 0 \\ 0 &amp; 0 \end{pmatrix} = r$ for every $r \in \mathbb{R}$, so $\mathcal{R}(T) = \mathbb{R}$ with basis $\{1\}$; $\mathrm{rank}(T) = 1$ (check: $1 + 3 = 4$).</p>
+<p><b>Not one-to-one; onto.</b></p></div>
+<div class="item sol" id="t3-s-ex-p1-5a"><div class="toprob"><a href="#t3-p-ex-p1-5a">&uarr; Problem</a></div><p class="lead">5(a) (Claude, not official)</p><p><b>Linear</b>, since $(\alpha p + \beta q)' = \alpha p' + \beta q'$.</p>
+<p>$D(a + bx + cx^2 + dx^3) = b + 2cx + 3dx^2$.</p>
+<p><b>Nullspace.</b> $b = 2c = 3d = 0$ iff $b = c = d = 0$, i.e. $p$ is constant. Basis $\{1\}$, $\mathrm{nullity}(D) = 1$.</p>
+<p><b>Range.</b> Any $q = e + fx + gx^2 \in P_2(\mathbb{R})$ equals $D\left(ex + \tfrac{f}{2}x^2 + \tfrac{g}{3}x^3\right)$. So $\mathcal{R}(D) = P_2(\mathbb{R})$, basis $\{1, x, x^2\}$, $\mathrm{rank}(D) = 3$ (check: $3 + 1 = 4 = \dim P_3(\mathbb{R})$).</p>
+<p><b>Not one-to-one</b> (e.g. $D(1) = D(0) = 0$); <b>onto</b>.</p></div>
+<div class="item sol" id="t3-s-ex-p1-5b"><div class="toprob"><a href="#t3-p-ex-p1-5b">&uarr; Problem</a></div><p class="lead">5(b) (Claude, not official)</p><p><b>Linear</b>, since $x(\alpha p + \beta q) = \alpha(xp) + \beta(xq)$.</p>
+<p>$T(a + bx + cx^2) = ax + bx^2 + cx^3$.</p>
+<p><b>Nullspace.</b> $ax + bx^2 + cx^3 = 0$ iff $a = b = c = 0$. So $\mathcal{N}(T) = \{0\}$, basis $\emptyset$, $\mathrm{nullity}(T) = 0$.</p>
+<p><b>Range.</b> $\mathcal{R}(T) = \mathrm{span}\{T(1), T(x), T(x^2)\} = \mathrm{span}\{x, x^2, x^3\}$, the polynomials in $P_3(\mathbb{R})$ with zero constant term. Basis $\{x, x^2, x^3\}$, $\mathrm{rank}(T) = 3$.</p>
+<p><b>One-to-one; not onto</b> (rank $3 &lt; 4$; e.g. the constant $1$ is not of the form $xp$).</p></div>
+<div class="item sol" id="t3-s-ex-p1-5c"><div class="toprob"><a href="#t3-p-ex-p1-5c">&uarr; Problem</a></div><p class="lead">5(c) (Claude, not official)</p><p><b>Linear</b>: $(\alpha p + \beta q)(0) = \alpha p(0) + \beta q(0)$ and similarly at $1$, so $T(\alpha p + \beta q) = \alpha T(p) + \beta T(q)$.</p>
+<p>For $p = a + bx + cx^2 + dx^3$: $T(p) = (a,\ a + b + c + d)$.</p>
+<p><b>Nullspace.</b> $a = 0$ and $a + b + c + d = 0$, so $b = -c - d$ with $c, d$ free:</p>
+<p>$$p = (-c - d)x + cx^2 + dx^3 = c(x^2 - x) + d(x^3 - x).$$</p>
+<p>$x^2 - x$ and $x^3 - x$ are linearly independent (different degrees), so a basis of $\mathcal{N}(T)$ is $\{x^2 - x,\ x^3 - x\}$ and $\mathrm{nullity}(T) = 2$.</p>
+<p><b>Range.</b> $T(1 - x) = (1, 0)$ and $T(x) = (0, 1)$, so $\mathcal{R}(T) = \mathbb{R}^2$, basis $\{(1, 0), (0, 1)\}$, $\mathrm{rank}(T) = 2$ (check: $2 + 2 = 4$).</p>
+<p><b>Not one-to-one; onto.</b></p></div>
+<div class="item sol" id="t3-s-ex-p1-5d"><div class="toprob"><a href="#t3-p-ex-p1-5d">&uarr; Problem</a></div><p class="lead">5(d) (Claude, not official)</p><p><b>Linear</b>: $T(\alpha p + \beta q) = \alpha p + \beta q + x(\alpha p' + \beta q') = \alpha T(p) + \beta T(q)$.</p>
+<p>For $p = a + bx + cx^2$: $p' = b + 2cx$, so $T(p) = a + bx + cx^2 + bx + 2cx^2 = a + 2bx + 3cx^2$.</p>
+<p><b>Nullspace.</b> $a = 2b = 3c = 0$ forces $p = 0$. $\mathcal{N}(T) = \{0\}$, basis $\emptyset$, $\mathrm{nullity}(T) = 0$.</p>
+<p><b>Range.</b> $T(1) = 1$, $T(\tfrac12 x) = x$, $T(\tfrac13 x^2) = x^2$, so $\mathcal{R}(T) = P_2(\mathbb{R})$, basis $\{1, x, x^2\}$, $\mathrm{rank}(T) = 3$.</p>
+<p><b>One-to-one and onto.</b></p></div>
+<div class="item sol" id="t3-s-ex-p1-5e"><div class="toprob"><a href="#t3-p-ex-p1-5e">&uarr; Problem</a></div><p class="lead">5(e) (Claude, not official)</p><p><b>Not linear.</b></p>
+<p>Homogeneity fails: $T(2 \cdot 1) = 4$ but $2T(1) = 2$.</p>
+<p>Additivity fails: $T(1 + x) = 1 + 2x + x^2$, but $T(1) + T(x) = 1 + x^2$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-5f"><div class="toprob"><a href="#t3-p-ex-p1-5f">&uarr; Problem</a></div><p class="lead">5(f) (Claude, not official)</p><p>(Here $p(0)$ means the constant polynomial with that value.)</p>
+<p><b>Linear</b>: $T(\alpha p + \beta q) = \alpha p + \beta q - (\alpha p(0) + \beta q(0)) = \alpha T(p) + \beta T(q)$.</p>
+<p>For $p = a + bx + cx^2 + dx^3$, $p(0) = a$, so $T(p) = bx + cx^2 + dx^3$.</p>
+<p><b>Nullspace.</b> $b = c = d = 0$: the constant polynomials. Basis $\{1\}$, $\mathrm{nullity}(T) = 1$.</p>
+<p><b>Range.</b> $\mathcal{R}(T) = \mathrm{span}\{x, x^2, x^3\}$ (each is its own image: $T(x^k) = x^k$ for $k \geq 1$). Basis $\{x, x^2, x^3\}$, $\mathrm{rank}(T) = 3$ (check: $3 + 1 = 4$).</p>
+<p><b>Not one-to-one; not onto</b> (e.g. $1 \notin \mathcal{R}(T)$, since every output has zero constant term).</p></div>
+<div class="item sol" id="t3-s-ex-p1-5g"><div class="toprob"><a href="#t3-p-ex-p1-5g">&uarr; Problem</a></div><p class="lead">5(g) (Claude, not official)</p><p><b>Not linear.</b> $T(0) = 1 \neq 0$, so the zero polynomial is not sent to zero.</p>
+<p>Concretely, additivity fails: $T(0 + 0) = 1$ but $T(0) + T(0) = 2$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-6a"><div class="toprob"><a href="#t3-p-ex-p1-6a">&uarr; Problem</a></div><p class="lead">6(a) (Claude, not official)</p><p><b>Linear</b>: $T(\alpha f + \beta g) = (\alpha f + \beta g)(0) = \alpha f(0) + \beta g(0) = \alpha T(f) + \beta T(g)$.</p>
+<p><b>Nullspace:</b> $\mathcal{N}(T) = \{f \in C(\mathbb{R}) : f(0) = 0\}$.</p>
+<p><b>Range:</b> for any $r \in \mathbb{R}$, the constant function $f(x) = r$ is continuous and $T(f) = r$. So $\mathcal{R}(T) = \mathbb{R}$.</p>
+<p><b>Onto.</b> <b>Not one-to-one</b>: $f(x) = x$ is a nonzero function in $\mathcal{N}(T)$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-6b"><div class="toprob"><a href="#t3-p-ex-p1-6b">&uarr; Problem</a></div><p class="lead">6(b) (Claude, not official)</p><p><b>Linear</b>: $T(\alpha f + \beta g) = (\alpha f(0) + \beta g(0),\ \alpha f(1) + \beta g(1)) = \alpha T(f) + \beta T(g)$.</p>
+<p><b>Nullspace:</b> $\mathcal{N}(T) = \{f \in C(\mathbb{R}) : f(0) = 0 \text{ and } f(1) = 0\}$.</p>
+<p><b>Range:</b> given $(s, t) \in \mathbb{R}^2$, the continuous function $f(x) = s + (t - s)x$ has $f(0) = s$, $f(1) = t$. So $\mathcal{R}(T) = \mathbb{R}^2$.</p>
+<p><b>Onto.</b> <b>Not one-to-one</b>: $f(x) = x(x - 1)$ is nonzero (e.g. $f(2) = 2$) but lies in $\mathcal{N}(T)$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-6c"><div class="toprob"><a href="#t3-p-ex-p1-6c">&uarr; Problem</a></div><p class="lead">6(c) (Claude, not official)</p><p><b>Linear</b> (linearity of the integral): $\int_a^b (\alpha f + \beta g)(t)\,dt = \alpha\int_a^b f(t)\,dt + \beta\int_a^b g(t)\,dt$.</p>
+<p><b>Nullspace:</b> $\mathcal{N}(T) = \{f \in C(\mathbb{R}) : \int_a^b f(t)\,dt = 0\}$.</p>
+<p><b>Range:</b> for $r \in \mathbb{R}$, the constant function $f = \frac{r}{b - a}$ gives $T(f) = \frac{r}{b - a}(b - a) = r$ (here $b - a &gt; 0$). So $\mathcal{R}(T) = \mathbb{R}$, and $T$ is <b>onto</b>.</p>
+<p><b>Not one-to-one:</b> let $m = \frac{a + b}{2}$ and $f(t) = t - m$. Then $f \neq 0$, but</p>
+<p>$$\int_a^b (t - m)\,dt = \left[\tfrac{(t - m)^2}{2}\right]_a^b = \tfrac{(b - m)^2 - (a - m)^2}{2} = 0,$$</p>
+<p>since $b - m = m - a = \frac{b - a}{2}$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-6d"><div class="toprob"><a href="#t3-p-ex-p1-6d">&uarr; Problem</a></div><p class="lead">6(d) (Claude, not official)</p><p><b>Linear</b>: $T(f)$ is continuous (product of continuous functions), and $T(\alpha f + \beta g)(x) = x(\alpha f(x) + \beta g(x)) = \alpha\,xf(x) + \beta\,xg(x) = (\alpha T(f) + \beta T(g))(x)$ for all $x$.</p>
+<p><b>Nullspace: $\mathcal{N}(T) = \{0\}$</b>, so $T$ is <b>one-to-one</b>. Proof: if $xf(x) = 0$ for all $x$, then $f(x) = 0$ for every $x \neq 0$; by continuity, $f(0) = \lim_{x \to 0} f(x) = 0$. So $f = 0$.</p>
+<p><b>Range:</b> $\mathcal{R}(T) = \{g \in C(\mathbb{R}) : g(0) = 0 \text{ and } \lim_{x \to 0} \tfrac{g(x)}{x} \text{ exists}\}$.</p>
+<p>Proof: if $g = T(f)$, then $g(0) = 0 \cdot f(0) = 0$ and $\frac{g(x)}{x} = f(x) \to f(0)$ as $x \to 0$. Conversely, if $g$ has these properties, set $f(x) = \frac{g(x)}{x}$ for $x \neq 0$ and $f(0) = \lim_{x \to 0}\frac{g(x)}{x}$; then $f$ is continuous on $\mathbb{R}$ and $xf(x) = g(x)$ for all $x$ (at $x = 0$ both sides are $0$).</p>
+<p><b>Not onto:</b> the constant function $1$ is not in the range, because every $T(f)$ vanishes at $0$. (Even $g(x) = |x|$, which vanishes at $0$, is not in the range, since $|x|/x$ has no limit at $0$.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-6e"><div class="toprob"><a href="#t3-p-ex-p1-6e">&uarr; Problem</a></div><p class="lead">6(e) (Claude, not official)</p><p><b>Not linear.</b> The zero function is sent to the constant function $1$, not to the zero function: $T(0)(x) = 0 + 1 = 1$.</p>
+<p>Concretely, additivity fails: $T(0 + 0) = 1$ but $T(0) + T(0) = 2$ (as functions).</p></div>
+<div class="item sol" id="t3-s-ex-p1-6f"><div class="toprob"><a href="#t3-p-ex-p1-6f">&uarr; Problem</a></div><p class="lead">6(f) (Claude, not official)</p><p><b>Not linear.</b> Let $f$ be the constant function $1$. Then $T(2f)(x) = 2^2 = 4$, but $(2T(f))(x) = 2 \cdot 1 = 2$. So $T(2f) \neq 2T(f)$ (homogeneity fails).</p>
+<p>Additivity fails as well: with $f(x) = 1$ and $g(x) = x$, $T(f + g)(x) = (1 + x)^2 = 1 + 2x + x^2$, while $T(f)(x) + T(g)(x) = 1 + x^2$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-6g"><div class="toprob"><a href="#t3-p-ex-p1-6g">&uarr; Problem</a></div><p class="lead">6(g) (Claude, not official)</p><p><b>Linear</b>: $T(f)$ is continuous (composition of continuous $f$ with $x \mapsto x + 1$), and $T(\alpha f + \beta g)(x) = \alpha f(x + 1) + \beta g(x + 1) = (\alpha T(f) + \beta T(g))(x)$.</p>
+<p><b>Nullspace: $\{0\}$.</b> If $f(x + 1) = 0$ for all $x$, then for any $y \in \mathbb{R}$, taking $x = y - 1$ gives $f(y) = 0$. So $f = 0$, and $T$ is <b>one-to-one</b>.</p>
+<p><b>Range: all of $C(\mathbb{R})$.</b> Given $g \in C(\mathbb{R})$, let $f(x) = g(x - 1)$, which is continuous; then $T(f)(x) = f(x + 1) = g(x)$. So $T$ is <b>onto</b>. (In fact $T$ is invertible, with inverse $f \mapsto f(\cdot - 1)$.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-7a"><div class="toprob"><a href="#t3-p-ex-p1-7a">&uarr; Problem</a></div><p class="lead">7(a) (Claude, not official)</p><p>$$Ax = \begin{pmatrix} 2(5) + (-1)(-2) \\ 3(5) + 4(-2) \end{pmatrix} = \begin{pmatrix} 10 + 2 \\ 15 - 8 \end{pmatrix} = \begin{pmatrix} 12 \\ 7 \end{pmatrix}.$$</p></div>
+<div class="item sol" id="t3-s-ex-p1-7b"><div class="toprob"><a href="#t3-p-ex-p1-7b">&uarr; Problem</a></div><p class="lead">7(b) (Claude, not official)</p><p>$$Ax = \begin{pmatrix} 1(2) + 0(-1) + (-2)(3) \\ 3(2) + 1(-1) + 4(3) \end{pmatrix} = \begin{pmatrix} 2 + 0 - 6 \\ 6 - 1 + 12 \end{pmatrix} = \begin{pmatrix} -4 \\ 17 \end{pmatrix}.$$</p></div>
+<div class="item sol" id="t3-s-ex-p1-7c"><div class="toprob"><a href="#t3-p-ex-p1-7c">&uarr; Problem</a></div><p class="lead">7(c) (Claude, not official)</p><p>$$Ax = \begin{pmatrix} 1 \cdot a + 2b \\ 0 \cdot a + (-1)b \\ 4a + 3b \end{pmatrix} = \begin{pmatrix} a + 2b \\ -b \\ 4a + 3b \end{pmatrix}.$$</p></div>
+<div class="item sol" id="t3-s-ex-p1-7d"><div class="toprob"><a href="#t3-p-ex-p1-7d">&uarr; Problem</a></div><p class="lead">7(d) (Claude, not official)</p><p>First entry: $i(1 + 2i) + (1 - i)(3 - i)$.</p>
+<p>$i(1 + 2i) = i + 2i^2 = -2 + i$.</p>
+<p>$(1 - i)(3 - i) = 3 - i - 3i + i^2 = 3 - 4i - 1 = 2 - 4i$.</p>
+<p>Sum: $(-2 + i) + (2 - 4i) = -3i$.</p>
+<p>Second entry: $(2 + i)(1 + 2i) + (-1)(3 - i)$.</p>
+<p>$(2 + i)(1 + 2i) = 2 + 4i + i + 2i^2 = 2 + 5i - 2 = 5i$.</p>
+<p>$-(3 - i) = -3 + i$.</p>
+<p>Sum: $-3 + 6i$.</p>
+<p>$$L_A(x) = \begin{pmatrix} -3i \\ -3 + 6i \end{pmatrix}.$$</p></div>
+<div class="item sol" id="t3-s-ex-p1-7e"><div class="toprob"><a href="#t3-p-ex-p1-7e">&uarr; Problem</a></div><p class="lead">7(e) (Claude, not official)</p><p>First entry: $2 \cdot 4 + 4 \cdot 2 + 1 \cdot 3 = 8 + 8 + 3 = 19 \equiv 4 \pmod 5$.</p>
+<p>Second entry: $3 \cdot 4 + 0 \cdot 2 + 2 \cdot 3 = 12 + 0 + 6 = 18 \equiv 3 \pmod 5$.</p>
+<p>$$L_A(x) = \begin{pmatrix} 4 \\ 3 \end{pmatrix} \text{ in } \mathbb{Z}_5^2.$$</p></div>
+<div class="item sol" id="t3-s-ex-p1-8a"><div class="toprob"><a href="#t3-p-ex-p1-8a">&uarr; Problem</a></div><p class="lead">8(a) (Claude, not official)</p><p>We want $c_1, c_2$ with $c_1(1, 1) + c_2(1, -1) = (a, b)$, i.e. $c_1 + c_2 = a$ and $c_1 - c_2 = b$. Adding: $2c_1 = a + b$; subtracting: $2c_2 = a - b$. So</p>
+<p>$$(a, b) = \frac{a + b}{2}\,v_1 + \frac{a - b}{2}\,v_2.$$</p>
+<p>Check: $\frac{a + b}{2}(1, 1) + \frac{a - b}{2}(1, -1) = \left(\frac{a + b + a - b}{2}, \frac{a + b - a + b}{2}\right) = (a, b)$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-8b"><div class="toprob"><a href="#t3-p-ex-p1-8b">&uarr; Problem</a></div><p class="lead">8(b) (Claude, not official)</p><p>By linearity and part (a),</p>
+<p>$$T(a, b) = \frac{a + b}{2}(1 + x) + \frac{a - b}{2}(x + x^2) = \frac{a + b}{2} + a\,x + \frac{a - b}{2}\,x^2,$$</p>
+<p>since the $x$-coefficient is $\frac{a + b}{2} + \frac{a - b}{2} = a$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-8c"><div class="toprob"><a href="#t3-p-ex-p1-8c">&uarr; Problem</a></div><p class="lead">8(c) (Claude, not official)</p><p>Using $T(a, b) = \frac{a + b}{2} + ax + \frac{a - b}{2}x^2$:</p>
+<p>$T(3, 1) = 2 + 3x + x^2$.</p>
+<p>$T(2, -4) = -1 + 2x + 3x^2$.</p>
+<p>$T(0, 1) = \frac12 + 0x - \frac12 x^2 = \frac12 - \frac12 x^2$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-8d"><div class="toprob"><a href="#t3-p-ex-p1-8d">&uarr; Problem</a></div><p class="lead">8(d) (Claude, not official)</p><p><b>Nullspace.</b> $T(a, b) = 0$ iff $\frac{a + b}{2} = 0$, $a = 0$, $\frac{a - b}{2} = 0$, which forces $a = b = 0$. So $\mathcal{N}(T) = \{(0, 0)\}$, with basis $\emptyset$.</p>
+<p><b>Range.</b> Since $\{v_1, v_2\}$ spans $\mathbb{R}^2$, $\mathcal{R}(T) = \mathrm{span}\{T(v_1), T(v_2)\} = \mathrm{span}\{1 + x, x + x^2\}$. These two polynomials are linearly independent (neither is a scalar multiple of the other: only the second has an $x^2$ term, only the first has a constant term). So a basis of $\mathcal{R}(T)$ is $\{1 + x,\ x + x^2\}$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-8e"><div class="toprob"><a href="#t3-p-ex-p1-8e">&uarr; Problem</a></div><p class="lead">8(e) (Claude, not official)</p><p>$\mathrm{rank}(T) = 2$ and $\mathrm{nullity}(T) = 0$ (check: $2 + 0 = 2 = \dim \mathbb{R}^2$).</p></div>
+<div class="item sol" id="t3-s-ex-p1-8f"><div class="toprob"><a href="#t3-p-ex-p1-8f">&uarr; Problem</a></div><p class="lead">8(f) (Claude, not official)</p><p><b>One-to-one</b>, since $\mathcal{N}(T) = \{\mathbf{0}\}$.</p>
+<p><b>Not onto</b>, since $\mathrm{rank}(T) = 2 &lt; 3 = \dim P_2(\mathbb{R})$. For example, $1 \notin \mathcal{R}(T)$: if $c_1(1 + x) + c_2(x + x^2) = 1$, comparing $x^2$ gives $c_2 = 0$, constants give $c_1 = 1$, but then the $x$-coefficient is $1 \neq 0$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-9a"><div class="toprob"><a href="#t3-p-ex-p1-9a">&uarr; Problem</a></div><p class="lead">9(a) (Claude, not official)</p><p>Since $\dim P_2(\mathbb{R}) = 3$ and $\beta$ has 3 elements, it suffices to show $\beta$ is linearly independent.</p>
+<p>Suppose $c_1(1 + x) + c_2(x + x^2) + c_3x^2 = 0$. Collecting terms: $c_1 + (c_1 + c_2)x + (c_2 + c_3)x^2 = 0$, so $c_1 = 0$, $c_1 + c_2 = 0$, $c_2 + c_3 = 0$. Hence $c_1 = 0$, then $c_2 = 0$, then $c_3 = 0$.</p>
+<p>So $\beta$ is a linearly independent set of $3 = \dim P_2(\mathbb{R})$ vectors, hence a basis. (Part (b) also shows directly that $\beta$ spans.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-9b"><div class="toprob"><a href="#t3-p-ex-p1-9b">&uarr; Problem</a></div><p class="lead">9(b) (Claude, not official)</p><p>Solve $c_1(1 + x) + c_2(x + x^2) + c_3x^2 = a + bx + cx^2$:</p>
+<p>constant: $c_1 = a$; $x$: $c_1 + c_2 = b$, so $c_2 = b - a$; $x^2$: $c_2 + c_3 = c$, so $c_3 = c - b + a$.</p>
+<p>$$a + bx + cx^2 = a(1 + x) + (b - a)(x + x^2) + (a - b + c)x^2.$$</p>
+<p>Check: $a + ax + (b - a)x + (b - a)x^2 + (a - b + c)x^2 = a + bx + cx^2$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-9c"><div class="toprob"><a href="#t3-p-ex-p1-9c">&uarr; Problem</a></div><p class="lead">9(c) (Claude, not official)</p><p>By linearity and (b):</p>
+<p>$$T(a + bx + cx^2) = a(1, 0) + (b - a)(0, 1) + (a - b + c)(1, 1) = (2a - b + c,\ c).$$</p>
+<p>(First coordinate: $a + (a - b + c) = 2a - b + c$; second: $(b - a) + (a - b + c) = c$.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-9d"><div class="toprob"><a href="#t3-p-ex-p1-9d">&uarr; Problem</a></div><p class="lead">9(d) (Claude, not official)</p><p>Using $T(a + bx + cx^2) = (2a - b + c, c)$:</p>
+<p>$T(1) = (2, 0)$ (take $a = 1$, $b = c = 0$)</p>
+<p>$T(x) = (-1, 0)$ (take $b = 1$)</p>
+<p>$T(x^2) = (1, 1)$ (take $c = 1$; this matches the given value)</p>
+<p>$T(2 - 3x + 4x^2) = (4 + 3 + 4,\ 4) = (11, 4)$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-9e"><div class="toprob"><a href="#t3-p-ex-p1-9e">&uarr; Problem</a></div><p class="lead">9(e) (Claude, not official)</p><p><b>Nullspace.</b> $(2a - b + c, c) = (0, 0)$ iff $c = 0$ and $b = 2a$. So $p = a + 2ax = a(1 + 2x)$, and a basis of $\mathcal{N}(T)$ is $\{1 + 2x\}$. (Check: $T(1 + 2x) = (2 - 2, 0) = (0, 0)$.)</p>
+<p><b>Range.</b> $T(1 + x) = (1, 0)$ and $T(x + x^2) = (0, 1)$ are in $\mathcal{R}(T)$ and span $\mathbb{R}^2$, so $\mathcal{R}(T) = \mathbb{R}^2$ with basis $\{(1, 0), (0, 1)\}$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-9f"><div class="toprob"><a href="#t3-p-ex-p1-9f">&uarr; Problem</a></div><p class="lead">9(f) (Claude, not official)</p><p>$\mathrm{rank}(T) = 2$, $\mathrm{nullity}(T) = 1$ (check: $2 + 1 = 3 = \dim P_2(\mathbb{R})$).</p></div>
+<div class="item sol" id="t3-s-ex-p1-9g"><div class="toprob"><a href="#t3-p-ex-p1-9g">&uarr; Problem</a></div><p class="lead">9(g) (Claude, not official)</p><p><b>Not one-to-one</b> (nullity $1$; e.g. $T(1 + 2x) = T(0) = (0, 0)$). <b>Onto</b>, since $\mathcal{R}(T) = \mathbb{R}^2$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-10a"><div class="toprob"><a href="#t3-p-ex-p1-10a">&uarr; Problem</a></div><p class="lead">10(a) (Claude, not official)</p><p>Rank-nullity: $\mathrm{rank}(T) + \mathrm{nullity}(T) = \dim(\text{domain}) = 7$. So $\mathrm{nullity}(T) = 7 - 3 = 4$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-10b"><div class="toprob"><a href="#t3-p-ex-p1-10b">&uarr; Problem</a></div><p class="lead">10(b) (Claude, not official)</p><p>$\dim P_5(\mathbb{R}) = 6$ (basis $1, x, \ldots, x^5$). So $\mathrm{rank}(T) = 6 - 4 = 2$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-10c"><div class="toprob"><a href="#t3-p-ex-p1-10c">&uarr; Problem</a></div><p class="lead">10(c) (Claude, not official)</p><p>$\dim M_{2,2}(\mathbb{R}) = 4$, so $\mathrm{nullity}(T) = 4 - 4 = 0$. Hence $\mathcal{N}(T) = \{0\}$ and $T$ is <b>one-to-one</b>.</p>
+<p>$\mathcal{R}(T)$ is a 4-dimensional subspace of $P_3(\mathbb{R})$, which also has dimension 4, so $\mathcal{R}(T) = P_3(\mathbb{R})$ and $T$ is <b>onto</b>. (So $T$ is an isomorphism.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-10d"><div class="toprob"><a href="#t3-p-ex-p1-10d">&uarr; Problem</a></div><p class="lead">10(d) (Claude, not official)</p><p>$\mathrm{rank}(T) = 3 - 0 = 3$.</p>
+<p>$T$ <b>cannot be onto</b>: $\dim P_4(\mathbb{R}) = 5$, and $\mathcal{R}(T)$ has dimension $3 &lt; 5$. (More generally, no linear map from a 3-dimensional space can be onto a 5-dimensional space.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-10e"><div class="toprob"><a href="#t3-p-ex-p1-10e">&uarr; Problem</a></div><p class="lead">10(e) (Claude, not official)</p><p>Onto means $\mathcal{R}(T) = \mathbb{R}^2$, so $\mathrm{rank}(T) = 2$. Since $\dim P_4(\mathbb{R}) = 5$, $\mathrm{nullity}(T) = 5 - 2 = 3$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-10f"><div class="toprob"><a href="#t3-p-ex-p1-10f">&uarr; Problem</a></div><p class="lead">10(f) (Claude, not official)</p><p>$\mathrm{rank}(T) = 6 - 2 = 4$.</p>
+<p><b>Not one-to-one</b> (nullity $2 \neq 0$). <b>Not onto</b> (rank $4 &lt; 6$). (Consistent with the fact that for $T : V \to V$ with $V$ finite-dimensional, one-to-one and onto are equivalent.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-11a"><div class="toprob"><a href="#t3-p-ex-p1-11a">&uarr; Problem</a></div><p class="lead">11(a) (Claude, not official)</p><p><b>Isomorphic</b> (both have dimension 3).</p>
+<p>Explicit isomorphism: $T : \mathbb{R}^3 \to P_2(\mathbb{R})$, $T(a, b, c) = a + bx + cx^2$.</p>
+<p>It is linear: $T(\alpha(a, b, c) + \beta(a', b', c')) = (\alpha a + \beta a') + (\alpha b + \beta b')x + (\alpha c + \beta c')x^2 = \alpha T(a, b, c) + \beta T(a', b', c')$.</p>
+<p>One-to-one: $a + bx + cx^2 = 0$ forces $a = b = c = 0$.</p>
+<p>Onto: every $a + bx + cx^2$ is $T(a, b, c)$.</p>
+<p>(Its inverse sends a polynomial to its coefficient vector.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-11b"><div class="toprob"><a href="#t3-p-ex-p1-11b">&uarr; Problem</a></div><p class="lead">11(b) (Claude, not official)</p><p><b>Isomorphic</b> (both have dimension 4).</p>
+<p>$T : \mathbb{R}^4 \to M_{2,2}(\mathbb{R})$, $T(a, b, c, d) = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}$.</p>
+<p>Linear: matrix addition and scalar multiplication are entrywise, so $T(\alpha u + \beta v) = \alpha T(u) + \beta T(v)$. One-to-one: $T(a, b, c, d) = 0$ forces all entries zero. Onto: every $2 \times 2$ matrix is $T$ of its list of entries.</p></div>
+<div class="item sol" id="t3-s-ex-p1-11c"><div class="toprob"><a href="#t3-p-ex-p1-11c">&uarr; Problem</a></div><p class="lead">11(c) (Claude, not official)</p><p><b>Isomorphic</b> (both have dimension 4).</p>
+<p>$T : P_3(\mathbb{R}) \to M_{2,2}(\mathbb{R})$, $T(a + bx + cx^2 + dx^3) = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}$.</p>
+<p>Linear: the coefficients of $\alpha p + \beta q$ are $\alpha$ times those of $p$ plus $\beta$ times those of $q$, and matrix operations are entrywise. One-to-one: $T(p) = 0$ forces all coefficients of $p$ to be $0$. Onto: $\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = T(a + bx + cx^2 + dx^3)$.</p></div>
+<div class="item sol" id="t3-s-ex-p1-11d"><div class="toprob"><a href="#t3-p-ex-p1-11d">&uarr; Problem</a></div><p class="lead">11(d) (Claude, not official)</p><p><b>Not isomorphic.</b> $\dim \mathbb{R}^3 = 3$ while $\dim M_{2,2}(\mathbb{R}) = 4$.</p>
+<p>If $T : \mathbb{R}^3 \to M_{2,2}(\mathbb{R})$ were an isomorphism, it would be one-to-one, so $\mathrm{nullity}(T) = 0$, and onto, so $\mathrm{rank}(T) = 4$; but rank-nullity gives $\mathrm{rank}(T) + \mathrm{nullity}(T) = 3$, a contradiction. (Equivalently: finite-dimensional spaces are isomorphic iff they have the same dimension.)</p></div>
+<div class="item sol" id="t3-s-ex-p1-11e"><div class="toprob"><a href="#t3-p-ex-p1-11e">&uarr; Problem</a></div><p class="lead">11(e) (Claude, not official)</p><p><b>Isomorphic</b> (both have dimension 5).</p>
+<p>$T : P_4(\mathbb{R}) \to \mathbb{R}^5$, $T(a_0 + a_1x + a_2x^2 + a_3x^3 + a_4x^4) = (a_0, a_1, a_2, a_3, a_4)$.</p>
+<p>Linear (coefficients of a linear combination are the linear combination of coefficients), one-to-one (only the zero polynomial has all coefficients $0$), and onto (every 5-tuple is the coefficient list of some polynomial of degree at most 4).</p></div>
+<div class="item sol" id="t3-s-ex-p2-1"><div class="toprob"><a href="#t3-p-ex-p2-1">&uarr; Problem</a></div><p class="lead">1 (Claude, not official)</p><p><b>Proof.</b> Since $0_V + 0_V = 0_V$ and $T$ is additive,</p>
+<p>$$T(0_V) = T(0_V + 0_V) = T(0_V) + T(0_V).$$</p>
+<p>Add $-T(0_V)$ (the additive inverse of $T(0_V)$ in $W$) to both sides:</p>
+<p>$$0_W = T(0_V) - T(0_V) = \big(T(0_V) + T(0_V)\big) - T(0_V) = T(0_V).$$</p>
+<p>So $T(0_V) = 0_W$. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-2"><div class="toprob"><a href="#t3-p-ex-p2-2">&uarr; Problem</a></div><p class="lead">2 (Claude, not official)</p><p><b>Proof.</b> Let $v \in V$. Using additivity and Problem 1,</p>
+<p>$$T(v) + T(-v) = T(v + (-v)) = T(0_V) = 0_W.$$</p>
+<p>So $T(-v)$ is an additive inverse of $T(v)$ in $W$. Additive inverses in a vector space are unique, hence $T(-v) = -T(v)$. $\blacksquare$</p>
+<p>(Alternative: $-v = (-1)v$, so $T(-v) = T((-1)v) = (-1)T(v) = -T(v)$, using the standard fact $(-1)u = -u$ in any vector space.)</p></div>
+<div class="item sol" id="t3-s-ex-p2-3"><div class="toprob"><a href="#t3-p-ex-p2-3">&uarr; Problem</a></div><p class="lead">3 (Claude, not official)</p><p><b>Proof.</b> By definition $v - w = v + (-w)$. By additivity and Problem 2,</p>
+<p>$$T(v - w) = T(v + (-w)) = T(v) + T(-w) = T(v) + (-T(w)) = T(v) - T(w). \ \blacksquare$$</p></div>
+<div class="item sol" id="t3-s-ex-p2-4"><div class="toprob"><a href="#t3-p-ex-p2-4">&uarr; Problem</a></div><p class="lead">4 (Claude, not official)</p><p>Recall $T$ is linear means (1) $T(x + y) = T(x) + T(y)$ for all $x, y \in V$, and (2) $T(cx) = cT(x)$ for all $x \in V$, $c \in F$.</p>
+<p><b>($\Rightarrow$)</b> Suppose $T$ is linear, and let $v, w \in V$, $\alpha, \beta \in F$. Then</p>
+<p>$$T(\alpha v + \beta w) \overset{(1)}{=} T(\alpha v) + T(\beta w) \overset{(2)}{=} \alpha T(v) + \beta T(w).$$</p>
+<p><b>($\Leftarrow$)</b> Suppose $T(\alpha v + \beta w) = \alpha T(v) + \beta T(w)$ for all $v, w, \alpha, \beta$.</p>
+<p>- Taking $\alpha = \beta = 1$: $T(v + w) = T(v) + T(w)$, which is (1).</p>
+<p>- Taking $\beta = 0$ and $w = v$: $T(\alpha v + 0v) = \alpha T(v) + 0T(v)$. Since $0v = 0_V$ and $0T(v) = 0_W$, this reads $T(\alpha v) = \alpha T(v)$, which is (2).</p>
+<p>So $T$ is linear. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-5"><div class="toprob"><a href="#t3-p-ex-p2-5">&uarr; Problem</a></div><p class="lead">5 (Claude, not official)</p><p><b>Proof by induction on $n$.</b></p>
+<p>*Base case $n = 1$:* $T(\alpha_1 v_1) = \alpha_1 T(v_1)$ by homogeneity.</p>
+<p>*Inductive step:* Suppose the formula holds for some $k \geq 1$ (for all choices of $k$ vectors and scalars). Let $v_1, \ldots, v_{k+1} \in V$ and $\alpha_1, \ldots, \alpha_{k+1} \in F$. Then</p>
+<p>$$\begin{aligned}<br>T\left(\sum_{i=1}^{k+1} \alpha_i v_i\right) &amp;= T\left(\sum_{i=1}^{k} \alpha_i v_i + \alpha_{k+1} v_{k+1}\right) \\<br>&amp;= T\left(\sum_{i=1}^{k} \alpha_i v_i\right) + T(\alpha_{k+1} v_{k+1}) &amp;&amp; \text{(additivity)} \\<br>&amp;= \sum_{i=1}^{k} \alpha_i T(v_i) + \alpha_{k+1} T(v_{k+1}) &amp;&amp; \text{(induction hypothesis, homogeneity)} \\<br>&amp;= \sum_{i=1}^{k+1} \alpha_i T(v_i).<br>\end{aligned}$$</p>
+<p>So the formula holds for $k + 1$. By induction it holds for every positive integer $n$. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-6"><div class="toprob"><a href="#t3-p-ex-p2-6">&uarr; Problem</a></div><p class="lead">6 (Claude, not official)</p><p><b>Proof.</b> We check the three subspace conditions.</p>
+<p>1. *Zero vector:* $T(0_V) = 0_W$ (Problem 1), so $0_V \in \mathcal{N}(T)$.</p>
+<p>2. *Closed under addition:* if $u, v \in \mathcal{N}(T)$, then $T(u + v) = T(u) + T(v) = 0_W + 0_W = 0_W$, so $u + v \in \mathcal{N}(T)$.</p>
+<p>3. *Closed under scalar multiplication:* if $v \in \mathcal{N}(T)$ and $c \in F$, then $T(cv) = cT(v) = c\,0_W = 0_W$, so $cv \in \mathcal{N}(T)$.</p>
+<p>Hence $\mathcal{N}(T)$ is a subspace of $V$. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-7"><div class="toprob"><a href="#t3-p-ex-p2-7">&uarr; Problem</a></div><p class="lead">7 (Claude, not official)</p><p><b>Proof.</b></p>
+<p>1. *Zero vector:* $0_W = T(0_V)$ with $0_V \in V$, so $0_W \in \mathcal{R}(T)$.</p>
+<p>2. *Closed under addition:* if $y_1, y_2 \in \mathcal{R}(T)$, write $y_1 = T(v_1)$, $y_2 = T(v_2)$ with $v_1, v_2 \in V$. Then $y_1 + y_2 = T(v_1) + T(v_2) = T(v_1 + v_2)$, and $v_1 + v_2 \in V$, so $y_1 + y_2 \in \mathcal{R}(T)$.</p>
+<p>3. *Closed under scalar multiplication:* if $y = T(v) \in \mathcal{R}(T)$ and $c \in F$, then $cy = cT(v) = T(cv)$ with $cv \in V$, so $cy \in \mathcal{R}(T)$.</p>
+<p>Hence $\mathcal{R}(T)$ is a subspace of $W$. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-8"><div class="toprob"><a href="#t3-p-ex-p2-8">&uarr; Problem</a></div><p class="lead">8 (Claude, not official)</p><p>Let $S = \mathrm{span}\{T(v_1), \ldots, T(v_n)\}$. We show both inclusions.</p>
+<p><b>$S \subseteq \mathcal{R}(T)$.</b> Let $y \in S$, so $y = c_1T(v_1) + \cdots + c_nT(v_n)$ for some $c_i \in F$. By linearity (Problem 5), $y = T(c_1v_1 + \cdots + c_nv_n)$, and $c_1v_1 + \cdots + c_nv_n \in V$. So $y \in \mathcal{R}(T)$.</p>
+<p><b>$\mathcal{R}(T) \subseteq S$.</b> Let $y \in \mathcal{R}(T)$, so $y = T(x)$ for some $x \in V$. Since $V = \mathrm{span}\{v_1, \ldots, v_n\}$, $x = c_1v_1 + \cdots + c_nv_n$ for some $c_i \in F$. Then $y = T(x) = c_1T(v_1) + \cdots + c_nT(v_n) \in S$.</p>
+<p>Therefore $\mathcal{R}(T) = S$. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-9"><div class="toprob"><a href="#t3-p-ex-p2-9">&uarr; Problem</a></div><p class="lead">9 (Claude, not official)</p><p><b>($\Rightarrow$)</b> Suppose $T$ is one-to-one. Since $T(0_V) = 0_W$, we have $0_V \in \mathcal{N}(T)$, so $\{0_V\} \subseteq \mathcal{N}(T)$. Conversely, if $x \in \mathcal{N}(T)$, then $T(x) = 0_W = T(0_V)$, and since $T$ is one-to-one, $x = 0_V$. So $\mathcal{N}(T) \subseteq \{0_V\}$. Hence $\mathcal{N}(T) = \{0_V\}$.</p>
+<p><b>($\Leftarrow$)</b> Suppose $\mathcal{N}(T) = \{0_V\}$, and let $x, y \in V$ with $T(x) = T(y)$. Then $T(x - y) = T(x) - T(y) = 0_W$ (Problem 3), so $x - y \in \mathcal{N}(T) = \{0_V\}$. Thus $x - y = 0_V$, i.e. $x = y$. So $T$ is one-to-one. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-10"><div class="toprob"><a href="#t3-p-ex-p2-10">&uarr; Problem</a></div><p class="lead">10 (Claude, not official)</p><p><b>Proof.</b> Suppose $c_1T(v_1) + \cdots + c_nT(v_n) = 0_W$ for scalars $c_1, \ldots, c_n \in F$. By linearity,</p>
+<p>$$T(c_1v_1 + \cdots + c_nv_n) = 0_W.$$</p>
+<p>So $c_1v_1 + \cdots + c_nv_n \in \mathcal{N}(T)$. Since $T$ is one-to-one, $\mathcal{N}(T) = \{0_V\}$ (Problem 9), hence $c_1v_1 + \cdots + c_nv_n = 0_V$. Because $v_1, \ldots, v_n$ are linearly independent, $c_1 = \cdots = c_n = 0$.</p>
+<p>Thus the only linear combination of $T(v_1), \ldots, T(v_n)$ equal to $0_W$ is the trivial one, so they are linearly independent. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-11"><div class="toprob"><a href="#t3-p-ex-p2-11">&uarr; Problem</a></div><p class="lead">11 (Claude, not official)</p><p><b>Proof.</b> Suppose $c_1v_1 + \cdots + c_nv_n = 0_V$. Apply $T$ and use linearity and $T(0_V) = 0_W$:</p>
+<p>$$c_1T(v_1) + \cdots + c_nT(v_n) = T(c_1v_1 + \cdots + c_nv_n) = T(0_V) = 0_W.$$</p>
+<p>Since $T(v_1), \ldots, T(v_n)$ are linearly independent, $c_1 = \cdots = c_n = 0$. Hence $v_1, \ldots, v_n$ are linearly independent. $\blacksquare$</p>
+<p>(Note: no injectivity is needed for this direction.)</p></div>
+<div class="item sol" id="t3-s-ex-p2-12"><div class="toprob"><a href="#t3-p-ex-p2-12">&uarr; Problem</a></div><p class="lead">12 (Claude, not official)</p><p><b>Proof.</b> By Problem 8, since $\{v_1, \ldots, v_n\}$ spans $V$,</p>
+<p>$$\mathrm{span}\{T(v_1), \ldots, T(v_n)\} = \mathcal{R}(T).$$</p>
+<p>Since $T$ is onto, $\mathcal{R}(T) = W$. Therefore $\mathrm{span}\{T(v_1), \ldots, T(v_n)\} = W$. $\blacksquare$</p>
+<p>(Directly: given $w \in W$, pick $x \in V$ with $T(x) = w$, write $x = \sum c_i v_i$, and then $w = \sum c_i T(v_i)$.)</p></div>
+<div class="item sol" id="t3-s-ex-p2-13"><div class="toprob"><a href="#t3-p-ex-p2-13">&uarr; Problem</a></div><p class="lead">13 (Claude, not official)</p><p><b>Proof.</b> Two functions with the same domain and codomain are equal when they agree at every point. Let $v \in V$. Since $\beta$ spans $V$, $v = a_1v_1 + \cdots + a_nv_n$ for some $a_i \in F$. By linearity of $T$ and $S$,</p>
+<p>$$T(v) = \sum_{i=1}^n a_i T(v_i) = \sum_{i=1}^n a_i S(v_i) = S(v).$$</p>
+<p>Since $v$ was arbitrary, $T = S$. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-14"><div class="toprob"><a href="#t3-p-ex-p2-14">&uarr; Problem</a></div><p class="lead">14 (Claude, not official)</p><p><b>Existence.</b> Since $\beta$ is a basis, every $v \in V$ can be written <b>uniquely</b> as $v = a_1v_1 + \cdots + a_nv_n$ with $a_i \in F$. Define</p>
+<p>$$T(v) = a_1w_1 + \cdots + a_nw_n.$$</p>
+<p>Uniqueness of the coefficients makes $T$ a well-defined function $V \to W$.</p>
+<p>*$T(v_i) = w_i$:* the unique expansion of $v_i$ has coefficient $1$ on $v_i$ and $0$ elsewhere, so $T(v_i) = w_i$.</p>
+<p>*$T$ is linear:* let $v = \sum a_iv_i$, $u = \sum b_iv_i$, and $\alpha, \beta' \in F$. Then $\alpha v + \beta' u = \sum (\alpha a_i + \beta' b_i)v_i$, and by uniqueness these are the coefficients of $\alpha v + \beta' u$. Hence</p>
+<p>$$T(\alpha v + \beta' u) = \sum (\alpha a_i + \beta' b_i)w_i = \alpha \sum a_iw_i + \beta' \sum b_iw_i = \alpha T(v) + \beta' T(u).$$</p>
+<p>By Problem 4, $T$ is linear.</p>
+<p><b>Uniqueness.</b> If $T'$ is another linear transformation with $T'(v_i) = w_i = T(v_i)$ for all $i$, then $T' = T$ by Problem 13. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-15"><div class="toprob"><a href="#t3-p-ex-p2-15">&uarr; Problem</a></div><p class="lead">15 (Claude, not official)</p><p><b>Proof.</b> By the rank-nullity theorem,</p>
+<p>$$\dim \mathcal{R}(T) = \dim V - \dim \mathcal{N}(T) \leq \dim V &lt; \dim W.$$</p>
+<p>If $T$ were onto, then $\mathcal{R}(T) = W$ and $\dim \mathcal{R}(T) = \dim W$, contradicting $\dim \mathcal{R}(T) &lt; \dim W$. So $T$ is not onto. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-16"><div class="toprob"><a href="#t3-p-ex-p2-16">&uarr; Problem</a></div><p class="lead">16 (Claude, not official)</p><p><b>Proof.</b> $\mathcal{R}(T)$ is a subspace of $W$, so $\dim \mathcal{R}(T) \leq \dim W$. By rank-nullity,</p>
+<p>$$\dim \mathcal{N}(T) = \dim V - \dim \mathcal{R}(T) \geq \dim V - \dim W &gt; 0.$$</p>
+<p>So $\mathcal{N}(T) \neq \{0_V\}$, and by Problem 9, $T$ is not one-to-one. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-17"><div class="toprob"><a href="#t3-p-ex-p2-17">&uarr; Problem</a></div><p class="lead">17 (Claude, not official)</p><p>Let $n = \dim V = \dim W$. Rank-nullity says $\mathrm{rank}(T) + \mathrm{nullity}(T) = n$.</p>
+<p><b>(a) $\Leftrightarrow$ (d).</b> By Problem 9, $T$ is one-to-one iff $\mathcal{N}(T) = \{0_V\}$ iff $\mathrm{nullity}(T) = 0$ (the only subspace of dimension $0$ is the zero subspace).</p>
+<p><b>(d) $\Leftrightarrow$ (c).</b> From $\mathrm{rank}(T) = n - \mathrm{nullity}(T)$: $\mathrm{nullity}(T) = 0$ iff $\mathrm{rank}(T) = n = \dim V$.</p>
+<p><b>(c) $\Leftrightarrow$ (b).</b> If $\mathrm{rank}(T) = \dim V = \dim W$, then $\mathcal{R}(T)$ is a subspace of the finite-dimensional space $W$ with the same dimension as $W$, so $\mathcal{R}(T) = W$ (a subspace of full dimension is the whole space): $T$ is onto. Conversely, if $T$ is onto, $\mathcal{R}(T) = W$, so $\mathrm{rank}(T) = \dim W = \dim V$.</p>
+<p>Chaining (a) $\Leftrightarrow$ (d) $\Leftrightarrow$ (c) $\Leftrightarrow$ (b), all four are equivalent. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-18"><div class="toprob"><a href="#t3-p-ex-p2-18">&uarr; Problem</a></div><p class="lead">18 (Claude, not official)</p><p>(Here $T$ is understood to be linear, as throughout.)</p>
+<p><b>Proof.</b> Since $T$ is one-to-one, $\mathcal{N}(T) = \{0_V\}$ (Problem 9), so $\mathrm{nullity}(T) = 0$. Since $T$ is onto, $\mathcal{R}(T) = W$, so $\mathrm{rank}(T) = \dim W$. By rank-nullity,</p>
+<p>$$\dim V = \mathrm{nullity}(T) + \mathrm{rank}(T) = 0 + \dim W = \dim W. \ \blacksquare$$</p>
+<p>(Note: the statement does not say "linear"; for an arbitrary bijection of sets the conclusion is false, e.g. there are set bijections $\mathbb{R} \to \mathbb{R}^2$. In context $T$ is a linear transformation.)</p></div>
+<div class="item sol" id="t3-s-ex-p2-19"><div class="toprob"><a href="#t3-p-ex-p2-19">&uarr; Problem</a></div><p class="lead">19 (Claude, not official)</p><p>Recall $V$ and $W$ are isomorphic if there is a linear transformation $T : V \to W$ that is one-to-one and onto (an isomorphism).</p>
+<p><b>($\Rightarrow$)</b> If $T : V \to W$ is an isomorphism, then $\dim V = \dim W$ by Problem 18.</p>
+<p><b>($\Leftarrow$)</b> Suppose $\dim V = \dim W = n$. If $n = 0$, then $V = \{0_V\}$, $W = \{0_W\}$, and $0_V \mapsto 0_W$ is an isomorphism. If $n \geq 1$, choose bases $\{v_1, \ldots, v_n\}$ of $V$ and $\{w_1, \ldots, w_n\}$ of $W$. By Problem 14 there is a linear $T : V \to W$ with $T(v_i) = w_i$ for all $i$.</p>
+<p>*Onto:* by Problem 8, $\mathcal{R}(T) = \mathrm{span}\{T(v_1), \ldots, T(v_n)\} = \mathrm{span}\{w_1, \ldots, w_n\} = W$.</p>
+<p>*One-to-one:* if $T(\sum a_iv_i) = 0_W$, then $\sum a_iw_i = 0_W$, and since the $w_i$ are linearly independent, every $a_i = 0$; so $\mathcal{N}(T) = \{0_V\}$ and $T$ is one-to-one by Problem 9. (Alternatively, use Problem 17 since $\dim V = \dim W$.)</p>
+<p>So $T$ is an isomorphism and $V \cong W$. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-20"><div class="toprob"><a href="#t3-p-ex-p2-20">&uarr; Problem</a></div><p class="lead">20 (Claude, not official)</p><p>(Small caveat on the statement: we need $n \geq 1$, since $P_{-1}(\mathbb{R})$ is not defined. With $n \geq 1$ everything below holds.)</p>
+<p><b>Linear.</b> For $p, q \in P_n(\mathbb{R})$ and $\alpha, \beta \in \mathbb{R}$, $(\alpha p + \beta q)' = \alpha p' + \beta q'$ by the sum and constant-multiple rules for derivatives. Also, if $\deg p \leq n$ then $\deg p' \leq n - 1$, so $T$ does map into $P_{n-1}(\mathbb{R})$.</p>
+<p>Write $p = a_0 + a_1x + \cdots + a_nx^n$. Then $T(p) = a_1 + 2a_2x + \cdots + na_nx^{n-1}$.</p>
+<p><b>Nullspace.</b> $T(p) = 0$ iff $ka_k = 0$ for $k = 1, \ldots, n$ iff $a_1 = \cdots = a_n = 0$ (as $k \neq 0$ in $\mathbb{R}$) iff $p = a_0$ is constant. So</p>
+<p>$$\mathcal{N}(T) = \{a_0 : a_0 \in \mathbb{R}\} = \mathrm{span}\{1\}.$$</p>
+<p>The set $\{1\}$ is linearly independent (it is a nonzero vector), so it is a basis, and $\mathrm{nullity}(T) = 1$.</p>
+<p><b>Range.</b> Let $q = b_0 + b_1x + \cdots + b_{n-1}x^{n-1} \in P_{n-1}(\mathbb{R})$. Define</p>
+<p>$$p = b_0x + \frac{b_1}{2}x^2 + \cdots + \frac{b_{n-1}}{n}x^n = \sum_{k=0}^{n-1} \frac{b_k}{k + 1}x^{k+1} \in P_n(\mathbb{R}).$$</p>
+<p>Then $p' = \sum_{k=0}^{n-1} b_kx^k = q$. So every $q$ is in the range: $\mathcal{R}(T) = P_{n-1}(\mathbb{R})$. Since $\{1, x, \ldots, x^{n-1}\}$ is a basis of $P_{n-1}(\mathbb{R})$, $\mathrm{rank}(T) = n$.</p>
+<p>(Consistent with rank-nullity: $\dim P_n(\mathbb{R}) = n + 1 = 1 + n$.) $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-21"><div class="toprob"><a href="#t3-p-ex-p2-21">&uarr; Problem</a></div><p class="lead">21 (Claude, not official)</p><p><b>Linear.</b> Continuous functions are integrable on $[a, b]$, and for $f, g \in C(\mathbb{R})$, $\alpha, \beta \in \mathbb{R}$, linearity of the integral gives</p>
+<p>$$T(\alpha f + \beta g) = \int_a^b (\alpha f(t) + \beta g(t))\,dt = \alpha\int_a^b f(t)\,dt + \beta\int_a^b g(t)\,dt = \alpha T(f) + \beta T(g).$$</p>
+<p><b>Onto.</b> Let $r \in \mathbb{R}$, and let $f$ be the constant function $f(t) = \frac{r}{b - a}$ (allowed since $b - a &gt; 0$). $f$ is continuous and $T(f) = \frac{r}{b - a}(b - a) = r$. So $\mathcal{R}(T) = \mathbb{R}$: $T$ is onto.</p>
+<p><b>Not one-to-one.</b> Let $m = \frac{a + b}{2}$ and $f(t) = t - m$. Then $f$ is continuous and not the zero function ($f(m + 1) = 1$), but</p>
+<p>$$T(f) = \int_a^b (t - m)\,dt = \left[\frac{(t - m)^2}{2}\right]_a^b = \frac{(b - m)^2 - (a - m)^2}{2} = 0,$$</p>
+<p>because $b - m = \frac{b - a}{2}$ and $a - m = -\frac{b - a}{2}$ have equal squares. So $f \in \mathcal{N}(T)$, $\mathcal{N}(T) \neq \{0\}$, and $T$ is not one-to-one (Problem 9). $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-22"><div class="toprob"><a href="#t3-p-ex-p2-22">&uarr; Problem</a></div><p class="lead">22 (Claude, not official)</p><p><b>Linear.</b> For $f, g \in C(\mathbb{R})$ and $\alpha, \beta \in \mathbb{R}$, the operations in $C(\mathbb{R})$ are pointwise, so</p>
+<p>$$T(\alpha f + \beta g) = \big(\alpha f(0) + \beta g(0),\ \alpha f(1) + \beta g(1)\big) = \alpha\big(f(0), f(1)\big) + \beta\big(g(0), g(1)\big) = \alpha T(f) + \beta T(g).$$</p>
+<p><b>Onto.</b> Let $(s, t) \in \mathbb{R}^2$. Define $f(x) = s + (t - s)x$, a polynomial and hence continuous. Then $f(0) = s$ and $f(1) = s + (t - s) = t$, so $T(f) = (s, t)$.</p>
+<p><b>Not one-to-one.</b> Let $f(x) = x(x - 1)$. It is continuous and not the zero function ($f(2) = 2 \neq 0$), yet $T(f) = (0, 0)$. So $\mathcal{N}(T) \neq \{0\}$, and $T$ is not one-to-one by Problem 9 (equivalently, $T(f) = T(0)$ with $f \neq 0$). $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-23"><div class="toprob"><a href="#t3-p-ex-p2-23">&uarr; Problem</a></div><p class="lead">23 (Claude, not official)</p><p><b>Proof.</b> Write $A = (A_{ij})$. For $x = (x_1, \ldots, x_n)^{\mathsf T}$ the $i$-th entry of $Ax$ is $\sum_{j=1}^n A_{ij}x_j$, so $L_A$ maps $F^n$ into $F^m$.</p>
+<p>Let $x, y \in F^n$ and $\alpha, \beta \in F$. The $i$-th entry of $A(\alpha x + \beta y)$ is</p>
+<p>$$\sum_{j=1}^n A_{ij}(\alpha x_j + \beta y_j) = \alpha\sum_{j=1}^n A_{ij}x_j + \beta\sum_{j=1}^n A_{ij}y_j,$$</p>
+<p>using distributivity, commutativity and associativity in the field $F$. This is the $i$-th entry of $\alpha Ax + \beta Ay$. Since this holds for every $i = 1, \ldots, m$,</p>
+<p>$$L_A(\alpha x + \beta y) = \alpha L_A(x) + \beta L_A(y),$$</p>
+<p>and $L_A$ is linear by Problem 4. $\blacksquare$</p></div>
+<div class="item sol" id="t3-s-ex-p2-24"><div class="toprob"><a href="#t3-p-ex-p2-24">&uarr; Problem</a></div><p class="lead">24 (Claude, not official)</p><p><b>Proof.</b></p>
+<p>1. *Zero:* $0_V \in U$ (as $U$ is a subspace), and $T(0_V) = 0_W$, so $0_W \in T(U)$.</p>
+<p>2. *Addition:* let $y_1 = T(u_1)$, $y_2 = T(u_2)$ with $u_1, u_2 \in U$. Then $y_1 + y_2 = T(u_1 + u_2)$, and $u_1 + u_2 \in U$ since $U$ is closed under addition. So $y_1 + y_2 \in T(U)$.</p>
+<p>3. *Scalars:* let $y = T(u)$ with $u \in U$, and $c \in F$. Then $cy = T(cu)$ with $cu \in U$. So $cy \in T(U)$.</p>
+<p>Hence $T(U)$ is a subspace of $W$. $\blacksquare$ (Taking $U = V$ recovers Problem 7.)</p></div>
+<div class="item sol" id="t3-s-ex-p2-25"><div class="toprob"><a href="#t3-p-ex-p2-25">&uarr; Problem</a></div><p class="lead">25 (Claude, not official)</p><p>(Here $T^{-1}(Z)$ is the preimage; $T$ need not be invertible.)</p>
+<p><b>Proof.</b></p>
+<p>1. *Zero:* $T(0_V) = 0_W \in Z$ (since $Z$ is a subspace), so $0_V \in T^{-1}(Z)$.</p>
+<p>2. *Addition:* if $v, w \in T^{-1}(Z)$, then $T(v), T(w) \in Z$, so $T(v + w) = T(v) + T(w) \in Z$ because $Z$ is closed under addition. Thus $v + w \in T^{-1}(Z)$.</p>
+<p>3. *Scalars:* if $v \in T^{-1}(Z)$ and $c \in F$, then $T(cv) = cT(v) \in Z$ because $Z$ is closed under scalar multiplication. Thus $cv \in T^{-1}(Z)$.</p>
+<p>Hence $T^{-1}(Z)$ is a subspace of $V$. $\blacksquare$ (Taking $Z = \{0_W\}$ recovers Problem 6.)</p></div>
 <footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
 </main></body></html>
