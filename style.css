@@ -16,6 +16,8 @@ h4.sub{font-size:1em;margin:1.3em 0 .3em}
 .hdr{margin-bottom:1em}
 .item{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:10px 0;scroll-margin-top:12px}
 .item p{margin:.35em 0}
+.item.sol p{margin:.55em 0}
+.item p.disp{margin:.2em 0;text-align:center}
 .item.sol{border-left:4px solid var(--sol)}
 .item.prob{border-left:4px solid var(--acc)}
 .tosol,.toprob{font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:6px 0 2px}
