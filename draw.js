@@ -101,7 +101,16 @@
     function eraseAt(p) {
       var before = data.strokes.length, r = 14;
       data.strokes = data.strokes.filter(function (s) {
-        return !s.p.some(function (q2) { return Math.abs(sx(q2[0]) - sx(p[0])) < r && Math.abs(q2[1] - p[1]) < r; });
+        // hit-test every segment, not just sampled points, so a fast straight stroke still erases
+        var px = sx(p[0]), py = p[1];
+        for (var i = 0; i < s.p.length; i++) {
+          var ax = sx(s.p[i][0]), ay = s.p[i][1], b = s.p[Math.min(i + 1, s.p.length - 1)];
+          var bx = sx(b[0]), by = b[1], dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy;
+          var t = L ? Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / L)) : 0;
+          var cx = ax + t * dx - px, cy = ay + t * dy - py;
+          if (cx * cx + cy * cy < r * r) return false;
+        }
+        return true;
       });
       if (data.strokes.length !== before) { redraw(); persist(); }
     }
@@ -137,7 +146,8 @@
       if (scrollY0 !== null && e.pointerType === "touch") { wrap.scrollTop = scrollY0 - (e.clientY - touchY0); return; }
       if (!cur) return;
       e.preventDefault();
-      var evs = e.getCoalescedEvents ? e.getCoalescedEvents() : [e];
+      var evs = (e.getCoalescedEvents && e.getCoalescedEvents()) || [];
+      if (!evs.length) evs = [e];
       evs.forEach(function (ev) {
         var p = pt(ev);
         if (cur.erase) { eraseAt(p); return; }
