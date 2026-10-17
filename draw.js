@@ -38,6 +38,10 @@
     ".item.prob.st-done{border-left-color:#34c759!important;background:#f3fbf5}" +
     ".item.prob.st-again{border-left-color:#ff9f0a!important;background:#fff8ee}" +
     "#pcov .hdr .sbtn{float:none;margin:0}" +
+    "#pcov .toast{position:fixed;left:50%;top:42%;transform:translate(-50%,-50%) scale(.9);background:rgba(28,28,30,.86);color:#fff;" +
+    "font:600 20px " + UI + ";padding:14px 22px;border-radius:16px;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s;z-index:10000}" +
+    "#pcov .toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}" +
+    "#pcov .tools .t.on.er1{background:#ffe1e1}" +
     "#pcov{position:fixed;inset:0;z-index:9999;background:#ececf0;display:flex;flex-direction:column;font:15px/1.3 " + UI + "}" +
     "#pcov .hdr{display:flex;align-items:center;gap:10px;padding:10px 14px 6px;color:#1c1c1e}" +
     "#pcov .hdr .done{font:600 16px " + UI + ";color:#2f6fe4;background:none;border:0;cursor:pointer;padding:4px 2px}" +
@@ -129,6 +133,7 @@
       if (!keep) oneShot = false;
       tool = t;
       penB.classList.toggle("on", t === "pen"); hlB.classList.toggle("on", t === "hl"); erB.classList.toggle("on", t === "eraser");
+      erB.classList.remove("er1");
       renderSwatches();
     }
 
@@ -184,6 +189,9 @@
     }
     var t0 = null, f0 = null;
     function flash(msg) { st.textContent = msg; clearTimeout(f0); f0 = setTimeout(function () { st.textContent = ""; }, 2200); }
+    // big centred banner for mode switches, so the double-tap eraser is impossible to miss
+    var toast = el("div", "toast"), tt0 = null;
+    function banner(msg) { toast.textContent = msg; toast.classList.add("show"); clearTimeout(tt0); tt0 = setTimeout(function () { toast.classList.remove("show"); }, 1300); }
     function persist() {
       clearTimeout(t0);
       t0 = setTimeout(function () { flash(save(id, data) ? "saved" : "NOT saved (storage full?)"); }, 250);
@@ -214,12 +222,13 @@
     // Finger double-tap = eraser for ONE stroke, then back to whatever tool was in use
     // (10/17: "can I double tap to turn on eraser then after erasure u switch back to pencil").
     var lastTap = 0, tapStart = null;
+    function toolName(t) { return t === "hl" ? "🖍️ Highlighter" : "✒️ Pen"; }
     function fingerTapped() {
       var now = Date.now();
-      if (now - lastTap < 350) {
+      if (now - lastTap < 500) {
         lastTap = 0;
-        if (tool === "eraser" && oneShot) { setTool(prevTool); flash("back to " + (prevTool === "hl" ? "highlighter" : "pen")); }
-        else { prevTool = tool === "eraser" ? "pen" : tool; setTool("eraser"); oneShot = true; flash("eraser: 1 stroke"); }
+        if (tool === "eraser" && oneShot) { setTool(prevTool); banner(toolName(prevTool)); }
+        else { prevTool = tool === "eraser" ? "pen" : tool; setTool("eraser"); oneShot = true; erB.classList.add("er1"); banner("🧽 Eraser (1 stroke)"); }
         return true;
       }
       lastTap = now; return false;
@@ -260,14 +269,16 @@
     });
     function up(e) {
       scrollY0 = null;
-      var tap = e && e.pointerType === "touch" && tapStart && Date.now() - tapStart.t < 250 &&
-        Math.abs(e.clientX - tapStart.x) < 12 && Math.abs(e.clientY - tapStart.y) < 12;
+      // forgiving tap: real iPad finger taps run longer and drift more than a mouse click (10/17: "double
+      // tap to switch to eraser mode isn't working")
+      var tap = e && e.pointerType === "touch" && tapStart && Date.now() - tapStart.t < 400 &&
+        Math.abs(e.clientX - tapStart.x) < 24 && Math.abs(e.clientY - tapStart.y) < 24;
       tapStart = null;
       if (tap) {
         if (fingerTapped()) return;
       }
       if (cur && !cur.erase) { data.strokes.push(cur); redraw(); persist(); }
-      if (cur && cur.erase && oneShot) { setTool(prevTool); flash("back to " + (prevTool === "hl" ? "highlighter" : "pen")); }
+      if (cur && cur.erase && oneShot) { setTool(prevTool); banner(toolName(prevTool)); }
       cur = null;
     }
     cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
