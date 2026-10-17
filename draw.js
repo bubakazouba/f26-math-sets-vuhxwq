@@ -127,7 +127,7 @@
       if (e.pointerType === "pen") penSeen = true;
       if (e.pointerType === "touch") tapStart = { t: Date.now(), x: e.clientX, y: e.clientY };
       if (e.pointerType === "touch" && penSeen) { scrollY0 = wrap.scrollTop; touchY0 = e.clientY; return; }  // finger = scroll once a Pencil is in use
-      e.preventDefault(); cv.setPointerCapture(e.pointerId);
+      e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch (_) {}
       var p = pt(e);
       if (tool === "eraser") { cur = { erase: true }; eraseAt(p); return; }
       cur = { c: color, w: 2.6, p: [p] }; redo = [];
