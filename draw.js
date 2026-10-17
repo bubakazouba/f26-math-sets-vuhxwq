@@ -1,96 +1,177 @@
 /* Pencil canvas for the pset site (Sahmoud 2026-10-17: "can I have a button here I can click on
    where I start writing a solution with the pencil on iPad, like it opens a canvas for that
-   question"). Adds a "Write" button to every .item.prob; the canvas opens full screen with the
-   problem pinned on top. Apple Pencil / mouse draw, a finger scrolls (palm never inks). Strokes are
-   saved as vectors in localStorage on THIS device, keyed by course + problem id, so the same
-   problem on a chapter page and the "all" page shares one drawing. Written by build_pset_site.py. */
+   question"; then "make it in general a bit notability style"). Adds a "Write" button to every
+   .item.prob; the canvas opens full screen with the problem pinned on top as a card.
+   - Apple Pencil / mouse ink; a finger scrolls once a Pencil has been used (palm never inks).
+   - Notability-style floating toolbar: pen, highlighter (drawn under the ink), eraser, colour and
+     size swatches, undo/redo, paper (lined with margin / grid / blank).
+   - Finger double-tap = eraser for ONE stroke, then back to the previous tool. Safari never exposes
+     the Pencil's own barrel double-tap to web pages (native UIPencilInteraction only).
+   - Strokes are vectors in localStorage on THIS device, keyed by course + problem id, so the same
+     problem on a chapter page and the "all" page shares one drawing. Old pen-only saves still load.
+   Written into the site by build_pset_site.py. */
 (function () {
   var COURSE = (location.pathname.split("/").pop() || "").slice(0, 4);
-  var COLORS = ["#111111", "#1f5fbf", "#c62828"];
-  var PAGE_H = 1400;
+  var PEN_COLORS = ["#1c1c1e", "#1f4fa8", "#c0392b", "#1e8449", "#7d3c98", "#d35400"];
+  var HL_COLORS = ["#ffe14d", "#7ee08a", "#ff8fc1", "#8fd3ff"];
+  var PEN_SIZES = [1.8, 2.8, 4.2], HL_SIZES = [14, 22, 32];
+  var PAGE_H = 1400, LINE = 34;
 
   function key(id) { return "pencil:" + COURSE + ":" + id; }
   function load(id) { try { return JSON.parse(localStorage.getItem(key(id)) || "null"); } catch (e) { return null; } }
   function save(id, d) { try { localStorage.setItem(key(id), JSON.stringify(d)); return true; } catch (e) { return false; } }
+  function pref(k, v) { try { if (v === undefined) return localStorage.getItem("pencilpref:" + k); localStorage.setItem("pencilpref:" + k, v); } catch (e) { return null; } }
 
+  var UI = "-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,sans-serif";
   var css = document.createElement("style");
   css.textContent =
-    ".wbtn{font:14px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;border:1px solid var(--acc,#2f5f93);" +
-    "color:var(--acc,#2f5f93);background:#fff;border-radius:16px;padding:6px 12px;cursor:pointer;float:left;margin:4px 0 2px}" +
-    ".wbtn.has{background:var(--acc,#2f5f93);color:#fff}" +
-    "#pcov{position:fixed;inset:0;z-index:9999;background:#fbfaf7;display:flex;flex-direction:column}" +
-    "#pcov .bar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 10px;border-bottom:1px solid #d9dde3;" +
-    "background:#fff;font:15px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}" +
-    "#pcov .bar button{font:inherit;border:1px solid #c9ced6;background:#fff;border-radius:8px;padding:8px 11px;cursor:pointer}" +
-    "#pcov .bar button.on{border-color:#2f5f93;box-shadow:0 0 0 2px #2f5f93 inset}" +
-    "#pcov .bar .sw{width:30px;height:30px;padding:0;border-radius:50%}" +
-    "#pcov .bar .sp{flex:1}" +
-    "#pcov .bar .st{color:#5f6368;font-size:13px;min-width:4em}" +
-    "#pcov .q{max-height:30vh;overflow:auto;padding:8px 14px;border-bottom:2px solid #2f5f93;background:#fff;font-size:16px}" +
+    ".wbtn{font:600 13px/1 " + UI + ";border:0;color:#fff;background:linear-gradient(#5b8def,#3b6fd8);" +
+    "border-radius:14px;padding:7px 12px;cursor:pointer;float:left;margin:4px 0 2px;box-shadow:0 1px 3px rgba(40,70,140,.35)}" +
+    ".wbtn.has{background:linear-gradient(#ffb347,#f39c12);box-shadow:0 1px 3px rgba(160,100,10,.35)}" +
+    "#pcov{position:fixed;inset:0;z-index:9999;background:#ececf0;display:flex;flex-direction:column;font:15px/1.3 " + UI + "}" +
+    "#pcov .hdr{display:flex;align-items:center;gap:10px;padding:10px 14px 6px;color:#1c1c1e}" +
+    "#pcov .hdr .done{font:600 16px " + UI + ";color:#2f6fe4;background:none;border:0;cursor:pointer;padding:4px 2px}" +
+    "#pcov .hdr .ttl{flex:1;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}" +
+    "#pcov .hdr .st{font-size:12px;color:#8e8e93;min-width:5em;text-align:right}" +
+    "#pcov .hdr .png{font:15px " + UI + ";color:#2f6fe4;background:none;border:0;cursor:pointer}" +
+    "#pcov .tools{align-self:center;display:flex;align-items:center;gap:4px;background:#fff;border-radius:22px;" +
+    "padding:6px 10px;margin:2px 10px 8px;box-shadow:0 4px 18px rgba(0,0,0,.12);flex-wrap:wrap;justify-content:center;max-width:calc(100% - 20px)}" +
+    "#pcov .tools .t{width:40px;height:40px;border-radius:12px;border:0;background:none;font-size:20px;cursor:pointer;line-height:40px;padding:0}" +
+    "#pcov .tools .t.on{background:#e3ecfd}" +
+    "#pcov .tools .sep{width:1px;height:26px;background:#e5e5ea;margin:0 4px}" +
+    "#pcov .tools .sw{width:24px;height:24px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #d1d1d6;margin:0 3px;cursor:pointer;padding:0}" +
+    "#pcov .tools .sw.on{box-shadow:0 0 0 2px #2f6fe4}" +
+    "#pcov .tools .sz{width:30px;height:30px;border-radius:50%;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}" +
+    "#pcov .tools .sz i{display:block;border-radius:50%;background:#1c1c1e}" +
+    "#pcov .tools .sz.on{background:#e3ecfd}" +
+    "#pcov .q{margin:0 14px 10px;padding:10px 14px;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,.08);" +
+    "max-height:26vh;overflow:auto;font:16px/1.5 Georgia,'Times New Roman',serif;color:#1c1c1e;cursor:pointer}" +
+    "#pcov .q.min{max-height:2.6em;overflow:hidden;opacity:.85}" +
     "#pcov .q .tosol,#pcov .q .wbtn{display:none}" +
-    "#pcov .wrap{flex:1;overflow:auto;-webkit-overflow-scrolling:touch}" +
-    "#pcov canvas{display:block;width:100%;touch-action:none;background:" +
-    "repeating-linear-gradient(#fff 0 39px,#e8ecf2 39px 40px)}" +
-    "#pcov .more{display:block;margin:10px auto 40px;font:15px -apple-system,sans-serif;padding:8px 14px;border-radius:8px;border:1px solid #c9ced6;background:#fff}";
+    "#pcov .wrap{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;padding:0 14px}" +
+    "#pcov .sheet{background:#fffdf7;border-radius:6px 6px 0 0;box-shadow:0 2px 12px rgba(0,0,0,.10);position:relative}" +
+    "#pcov canvas{display:block;width:100%;touch-action:none}" +
+    "#pcov .more{display:block;margin:14px auto 40px;font:600 14px " + UI + ";color:#2f6fe4;padding:9px 16px;border-radius:18px;border:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1);cursor:pointer}";
   document.head.appendChild(css);
+
+  function paperCss(kind) {
+    if (kind === "grid") return "linear-gradient(#e3e9f3 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,#e3e9f3 1px,transparent 1px) 0 0/28px 28px,#fffdf7";
+    if (kind === "blank") return "#fffdf7";
+    return "linear-gradient(90deg,transparent 64px,#f3b3b3 64px,#f3b3b3 66px,transparent 66px)," +
+      "repeating-linear-gradient(#fffdf7 0 " + (LINE - 1) + "px,#cfe0f3 " + (LINE - 1) + "px " + LINE + "px)";
+  }
 
   function open(item) {
     var id = item.id;
     var data = load(id) || { h: PAGE_H, strokes: [] };
     var redo = [];
-    var tool = "pen", color = COLORS[0], penSeen = false;
+    var tool = "pen", penColor = PEN_COLORS[0], hlColor = HL_COLORS[0];
+    var penSize = PEN_SIZES[1], hlSize = HL_SIZES[1], penSeen = false;
+    var paper = pref("paper") || "lined";
+    var oneShot = false, prevTool = "pen";
 
     var cov = document.createElement("div"); cov.id = "pcov";
-    var bar = document.createElement("div"); bar.className = "bar";
-    function btn(label, fn, cls) { var b = document.createElement("button"); b.textContent = label; if (cls) b.className = cls; b.onclick = fn; bar.appendChild(b); return b; }
-    var closeB = btn("✕ Close", close);
-    var penB = btn("✏️ Pen", function () { setTool("pen"); }, "on");
-    var swB = COLORS.map(function (c, i) { var b = btn("", function () { color = c; setTool("pen"); swB.forEach(function (x, j) { x.classList.toggle("on", j === i); }); }, "sw" + (i ? "" : " on")); b.style.background = c; b.title = "colour"; return b; });
-    var erB = btn("⌫ Eraser", function () { setTool("eraser"); });
-    btn("↶ Undo", function () { if (data.strokes.length) { redo.push(data.strokes.pop()); redraw(); persist(); } });
-    btn("↷ Redo", function () { if (redo.length) { data.strokes.push(redo.pop()); redraw(); persist(); } });
-    btn("Clear", function () { if (data.strokes.length && confirm("Erase everything on this page?")) { data.strokes = []; redo = []; redraw(); persist(); } });
-    var sp = document.createElement("span"); sp.className = "sp"; bar.appendChild(sp);
-    var st = document.createElement("span"); st.className = "st"; bar.appendChild(st);
-    btn("⬇ PNG", exportPng);
-    function setTool(t, keepShot) { if (!keepShot) oneShot = false; tool = t; penB.classList.toggle("on", t === "pen"); erB.classList.toggle("on", t === "eraser"); }
+    function el(tag, cls, parent, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; (parent || cov).appendChild(e); return e; }
 
-    var q = document.createElement("div"); q.className = "q"; q.innerHTML = item.innerHTML;
-    var wrap = document.createElement("div"); wrap.className = "wrap";
-    var cv = document.createElement("canvas"); wrap.appendChild(cv);
-    var more = document.createElement("button"); more.className = "more"; more.textContent = "+ More space";
-    more.onclick = function () { data.h += 1000; size(); persist(); };
-    wrap.appendChild(more);
-    cov.appendChild(bar); cov.appendChild(q); cov.appendChild(wrap);
+    var hdr = el("div", "hdr");
+    var doneB = el("button", "done", hdr, "‹ Done"); doneB.onclick = close;
+    var ttl = el("div", "ttl", hdr, (item.querySelector(".lead") || {}).textContent || document.title);
+    var st = el("span", "st", hdr);
+    var pngB = el("button", "png", hdr, "Share PNG"); pngB.onclick = exportPng;
+
+    var tools = el("div", "tools");
+    function tbtn(icon, title, fn) { var b = el("button", "t", tools, icon); b.title = title; b.onclick = fn; return b; }
+    var penB = tbtn("✒️", "Pen", function () { setTool("pen"); });
+    var hlB = tbtn("🖍️", "Highlighter", function () { setTool("hl"); });
+    var erB = tbtn("🧽", "Eraser (or double-tap with a finger)", function () { setTool("eraser"); });
+    el("span", "sep", tools);
+    var swWrap = el("span", "", tools); swWrap.style.display = "flex";
+    el("span", "sep", tools);
+    var szWrap = el("span", "", tools); szWrap.style.display = "flex";
+    el("span", "sep", tools);
+    tbtn("↶", "Undo", function () { if (data.strokes.length) { redo.push(data.strokes.pop()); redraw(); persist(); } });
+    tbtn("↷", "Redo", function () { if (redo.length) { data.strokes.push(redo.pop()); redraw(); persist(); } });
+    var paperB = tbtn("📄", "Paper: lined / grid / blank", function () {
+      paper = paper === "lined" ? "grid" : paper === "grid" ? "blank" : "lined"; pref("paper", paper); sheet.style.background = paperCss(paper); flash("paper: " + paper);
+    });
+    tbtn("🗑️", "Clear page", function () { if (data.strokes.length && confirm("Erase everything on this page?")) { data.strokes = []; redo = []; redraw(); persist(); } });
+
+    function renderSwatches() {
+      swWrap.innerHTML = ""; szWrap.innerHTML = "";
+      var hl = tool === "hl", cols = hl ? HL_COLORS : PEN_COLORS, cur = hl ? hlColor : penColor;
+      cols.forEach(function (c) {
+        var b = el("button", "sw" + (c === cur ? " on" : ""), swWrap); b.style.background = c; b.title = "colour";
+        b.onclick = function () { if (tool === "hl") hlColor = c; else { penColor = c; if (tool !== "pen") setTool("pen"); } renderSwatches(); };
+      });
+      var sizes = hl ? HL_SIZES : PEN_SIZES, curS = hl ? hlSize : penSize;
+      sizes.forEach(function (s, i) {
+        var b = el("button", "sz" + (s === curS ? " on" : ""), szWrap), d = el("i", "", b);
+        var px = [6, 10, 15][i]; d.style.width = d.style.height = px + "px"; d.style.background = hl ? hlColor : penColor;
+        b.onclick = function () { if (tool === "hl") hlSize = s; else penSize = s; renderSwatches(); };
+      });
+    }
+    function setTool(t, keep) {
+      if (!keep) oneShot = false;
+      tool = t;
+      penB.classList.toggle("on", t === "pen"); hlB.classList.toggle("on", t === "hl"); erB.classList.toggle("on", t === "eraser");
+      renderSwatches();
+    }
+
+    var q = el("div", "q"); q.innerHTML = item.innerHTML; q.title = "tap to fold / unfold the problem";
+    q.onclick = function () { q.classList.toggle("min"); size(); };
+    var wrap = el("div", "wrap");
+    var sheet = el("div", "sheet", wrap); sheet.style.background = paperCss(paper);
+    var cv = el("canvas", "", sheet);
+    var more = el("button", "more", wrap, "+ Add page"); more.onclick = function () { data.h += 1000; size(); persist(); };
     document.body.appendChild(cov);
     var prevOverflow = document.body.style.overflow; document.body.style.overflow = "hidden";
+    if (window.renderMathInElement) try { window.renderMathInElement(q, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }], throwOnError: false }); } catch (e) {}
 
     var ctx = cv.getContext("2d"), dpr = Math.max(1, window.devicePixelRatio || 1), W = 0;
     function size() {
-      W = wrap.clientWidth;
+      W = sheet.clientWidth;
       cv.style.height = data.h + "px";
       cv.width = Math.round(W * dpr); cv.height = Math.round(data.h * dpr);
       redraw();
     }
     // strokes are stored in a 1000-unit-wide coordinate space so they survive rotation / resize
     function sx(x) { return x * W / 1000; }
+    function styleFor(s) {
+      ctx.globalCompositeOperation = s.t === "hl" ? "multiply" : "source-over";
+      ctx.globalAlpha = s.t === "hl" ? 0.55 : 1;
+      ctx.strokeStyle = ctx.fillStyle = s.c; ctx.lineJoin = "round"; ctx.lineCap = s.t === "hl" ? "butt" : "round";
+    }
+    function widthAt(s, pr) { return s.t === "hl" ? sx(s.w) : sx(s.w * (0.45 + pr)); }
+    // smooth ink: quadratic curves through segment midpoints
     function drawStroke(s) {
       var p = s.p; if (!p.length) return;
-      ctx.strokeStyle = s.c; ctx.fillStyle = s.c; ctx.lineCap = "round"; ctx.lineJoin = "round";
-      if (p.length === 1) { ctx.beginPath(); ctx.arc(sx(p[0][0]), p[0][1], sx(s.w * (0.4 + p[0][2])) / 2, 0, 7); ctx.fill(); return; }
-      for (var i = 1; i < p.length; i++) {
-        ctx.beginPath(); ctx.lineWidth = sx(s.w * (0.4 + p[i][2]));
-        ctx.moveTo(sx(p[i - 1][0]), p[i - 1][1]); ctx.lineTo(sx(p[i][0]), p[i][1]); ctx.stroke();
+      styleFor(s);
+      if (p.length === 1) { ctx.beginPath(); ctx.arc(sx(p[0][0]), p[0][1], widthAt(s, p[0][2]) / 2, 0, 7); ctx.fill(); ctx.globalAlpha = 1; return; }
+      if (s.t === "hl") {
+        ctx.lineWidth = widthAt(s, 0.5); ctx.beginPath(); ctx.moveTo(sx(p[0][0]), p[0][1]);
+        for (var k = 1; k < p.length; k++) ctx.lineTo(sx(p[k][0]), p[k][1]);
+        ctx.stroke(); ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over"; return;
       }
+      var mx = sx(p[0][0]), my = p[0][1];
+      for (var i = 1; i < p.length; i++) {
+        var nx = (sx(p[i - 1][0]) + sx(p[i][0])) / 2, ny = (p[i - 1][1] + p[i][1]) / 2;
+        ctx.beginPath(); ctx.lineWidth = widthAt(s, p[i][2]);
+        ctx.moveTo(mx, my); ctx.quadraticCurveTo(sx(p[i - 1][0]), p[i - 1][1], nx, ny); ctx.stroke();
+        mx = nx; my = ny;
+      }
+      var L = p[p.length - 1]; ctx.beginPath(); ctx.moveTo(mx, my); ctx.lineTo(sx(L[0]), L[1]); ctx.stroke();
     }
     function redraw() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, data.h);
-      data.strokes.forEach(drawStroke);
+      data.strokes.forEach(function (s) { if (s.t === "hl") drawStroke(s); });   // highlighter sits under the ink
+      data.strokes.forEach(function (s) { if (s.t !== "hl") drawStroke(s); });
+      ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
     }
-    var t0 = null;
+    var t0 = null, f0 = null;
+    function flash(msg) { st.textContent = msg; clearTimeout(f0); f0 = setTimeout(function () { st.textContent = ""; }, 2200); }
     function persist() {
       clearTimeout(t0);
-      t0 = setTimeout(function () { st.textContent = save(id, data) ? "saved" : "NOT saved (storage full?)"; }, 250);
+      t0 = setTimeout(function () { flash(save(id, data) ? "saved" : "NOT saved (storage full?)"); }, 250);
       item._wbtn && item._wbtn.classList.toggle("has", data.strokes.length > 0);
     }
     function pt(e) {
@@ -99,33 +180,31 @@
       return [Math.round((e.clientX - r.left) * 1000 / W * 10) / 10, Math.round((e.clientY - r.top) * 10) / 10, Math.round(pr * 100) / 100];
     }
     function eraseAt(p) {
-      var before = data.strokes.length, r = 14;
+      var before = data.strokes.length, r = 14, px = sx(p[0]), py = p[1];
       data.strokes = data.strokes.filter(function (s) {
+        var rr = r + (s.t === "hl" ? sx(s.w) / 2 : 0);
         // hit-test every segment, not just sampled points, so a fast straight stroke still erases
-        var px = sx(p[0]), py = p[1];
         for (var i = 0; i < s.p.length; i++) {
           var ax = sx(s.p[i][0]), ay = s.p[i][1], b = s.p[Math.min(i + 1, s.p.length - 1)];
           var bx = sx(b[0]), by = b[1], dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy;
           var t = L ? Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / L)) : 0;
           var cx = ax + t * dx - px, cy = ay + t * dy - py;
-          if (cx * cx + cy * cy < r * r) return false;
+          if (cx * cx + cy * cy < rr * rr) return false;
         }
         return true;
       });
       if (data.strokes.length !== before) { redraw(); persist(); }
     }
 
-    // Finger double-tap = eraser for ONE stroke, then back to the pen (10/17: "can I double tap to
-    // turn on eraser then after erasure u switch back to pencil"). Safari never exposes the Pencil's
-    // own barrel double-tap to web pages (native UIPencilInteraction only), so a finger double-tap
-    // on the page is the closest a website can get.
-    var oneShot = false, lastTap = 0, tapStart = null;
-    function fingerTapped(e) {
+    // Finger double-tap = eraser for ONE stroke, then back to whatever tool was in use
+    // (10/17: "can I double tap to turn on eraser then after erasure u switch back to pencil").
+    var lastTap = 0, tapStart = null;
+    function fingerTapped() {
       var now = Date.now();
       if (now - lastTap < 350) {
         lastTap = 0;
-        if (tool === "eraser" && oneShot) { oneShot = false; setTool("pen"); st.textContent = "pen"; }
-        else { setTool("eraser"); oneShot = true; st.textContent = "eraser: 1 stroke"; }
+        if (tool === "eraser" && oneShot) { setTool(prevTool); flash("back to " + (prevTool === "hl" ? "highlighter" : "pen")); }
+        else { prevTool = tool === "eraser" ? "pen" : tool; setTool("eraser"); oneShot = true; flash("eraser: 1 stroke"); }
         return true;
       }
       lastTap = now; return false;
@@ -139,8 +218,9 @@
       e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch (_) {}
       var p = pt(e);
       if (tool === "eraser") { cur = { erase: true }; eraseAt(p); return; }
-      cur = { c: color, w: 2.6, p: [p] }; redo = [];
-      drawStroke(cur);
+      cur = tool === "hl" ? { t: "hl", c: hlColor, w: hlSize, p: [p] } : { c: penColor, w: penSize, p: [p] };
+      redo = [];
+      if (cur.t !== "hl") { ctx.setTransform(dpr, 0, 0, dpr, 0, 0); drawStroke(cur); }
     });
     cv.addEventListener("pointermove", function (e) {
       if (scrollY0 !== null && e.pointerType === "touch") { wrap.scrollTop = scrollY0 - (e.clientY - touchY0); return; }
@@ -154,8 +234,12 @@
         var last = cur.p[cur.p.length - 1];
         cur.p.push(p);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        ctx.strokeStyle = cur.c; ctx.lineCap = "round"; ctx.lineWidth = sx(cur.w * (0.4 + p[2]));
-        ctx.beginPath(); ctx.moveTo(sx(last[0]), last[1]); ctx.lineTo(sx(p[0]), p[1]); ctx.stroke();
+        if (cur.t === "hl") {   // live highlighter preview: redraw so the translucent stroke doesn't stack on itself
+          redraw(); drawStroke(cur); data.strokes.forEach(function (s) { if (s.t !== "hl") drawStroke(s); });
+        } else {
+          styleFor(cur); ctx.lineWidth = widthAt(cur, p[2]);
+          ctx.beginPath(); ctx.moveTo(sx(last[0]), last[1]); ctx.lineTo(sx(p[0]), p[1]); ctx.stroke();
+        }
       });
     });
     function up(e) {
@@ -166,20 +250,23 @@
       if (tap) {
         if (cur && !cur.erase && !penSeen) { cur = null; redraw(); }   // a finger tap is a gesture, not ink
         else if (cur && cur.erase) cur = null;
-        if (fingerTapped(e)) return;
+        if (fingerTapped()) return;
       }
-      if (cur && !cur.erase) { data.strokes.push(cur); persist(); }
-      if (cur && cur.erase && oneShot) { oneShot = false; setTool("pen"); st.textContent = "back to pen"; }
+      if (cur && !cur.erase) { data.strokes.push(cur); redraw(); persist(); }
+      if (cur && cur.erase && oneShot) { setTool(prevTool); flash("back to " + (prevTool === "hl" ? "highlighter" : "pen")); }
       cur = null;
     }
     cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
 
     function exportPng() {
-      var a = document.createElement("a");
-      a.download = (document.title + " " + id).replace(/[^\w.-]+/g, "_") + ".png";
       var out = document.createElement("canvas"); out.width = cv.width; out.height = cv.height;
-      var o = out.getContext("2d"); o.fillStyle = "#fff"; o.fillRect(0, 0, out.width, out.height); o.drawImage(cv, 0, 0);
-      a.href = out.toDataURL("image/png"); a.click();
+      var o = out.getContext("2d"); o.fillStyle = "#fffdf7"; o.fillRect(0, 0, out.width, out.height); o.drawImage(cv, 0, 0);
+      var name = (document.title + " " + id).replace(/[^\w.-]+/g, "_") + ".png";
+      out.toBlob(function (blob) {
+        var file = blob && window.File ? new File([blob], name, { type: "image/png" }) : null;
+        if (file && navigator.canShare && navigator.canShare({ files: [file] })) { navigator.share({ files: [file] }).catch(function () {}); return; }
+        var a = document.createElement("a"); a.download = name; a.href = out.toDataURL("image/png"); a.click();
+      }, "image/png");
     }
     function close() {
       clearTimeout(t0); save(id, data);
@@ -187,8 +274,9 @@
       document.body.style.overflow = prevOverflow; cov.remove();
     }
     window.addEventListener("resize", size);
+    setTool("pen");
     size();
-    st.textContent = data.strokes.length ? "loaded" : "";
+    if (data.strokes.length) flash("loaded");
   }
 
   function init() {
