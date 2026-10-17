@@ -38,6 +38,9 @@
     ".item.prob.st-done{border-left-color:#34c759!important;background:#f3fbf5}" +
     ".item.prob.st-again{border-left-color:#ff9f0a!important;background:#fff8ee}" +
     "#pcov .hdr .sbtn{float:none;margin:0}" +
+    // no iOS double-tap-to-zoom anywhere in the canvas UI (10/17: "when I press undo multiple times safari
+    // thinks I want to zoom on the undo button"); the canvas itself stays touch-action:none
+    "#pcov,#pcov *,.wbtn,.sbtn{touch-action:manipulation;-webkit-user-select:none;user-select:none}" +
     "#pcov .toast{position:fixed;left:50%;top:42%;transform:translate(-50%,-50%) scale(.9);background:rgba(28,28,30,.86);color:#fff;" +
     "font:600 20px " + UI + ";padding:14px 22px;border-radius:16px;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s;z-index:10000}" +
     "#pcov .toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}" +
