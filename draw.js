@@ -2,7 +2,7 @@
    where I start writing a solution with the pencil on iPad, like it opens a canvas for that
    question"; then "make it in general a bit notability style"). Adds a "Write" button to every
    .item.prob; the canvas opens full screen with the problem pinned on top as a card.
-   - Apple Pencil / mouse ink; a finger scrolls once a Pencil has been used (palm never inks).
+   - Apple Pencil / mouse ink; a finger NEVER inks (it scrolls, and double-taps for the eraser).
    - Notability-style floating toolbar: pen, highlighter (drawn under the ink), eraser, colour and
      size swatches, undo/redo, paper (lined with margin / grid / blank).
    - Finger double-tap = eraser for ONE stroke, then back to the previous tool. Safari never exposes
@@ -76,7 +76,7 @@
     var data = load(id) || { h: PAGE_H, strokes: [] };
     var redo = [];
     var tool = "pen", penColor = PEN_COLORS[0], hlColor = HL_COLORS[0];
-    var penSize = PEN_SIZES[1], hlSize = HL_SIZES[1], penSeen = false;
+    var penSize = PEN_SIZES[1], hlSize = HL_SIZES[1];
     var paper = pref("paper") || "lined";
     var oneShot = false, prevTool = "pen";
 
@@ -227,9 +227,10 @@
 
     var cur = null, scrollY0 = null, touchY0 = 0;
     cv.addEventListener("pointerdown", function (e) {
-      if (e.pointerType === "pen") penSeen = true;
       if (e.pointerType === "touch") tapStart = { t: Date.now(), x: e.clientX, y: e.clientY };
-      if (e.pointerType === "touch" && penSeen) { scrollY0 = wrap.scrollTop; touchY0 = e.clientY; return; }  // finger = scroll once a Pencil is in use
+      // a finger NEVER inks, only scrolls / double-taps (10/17: "make sure only the pencil gets to write on
+      // the page not my finger"); Pencil and mouse write
+      if (e.pointerType === "touch") { scrollY0 = wrap.scrollTop; touchY0 = e.clientY; return; }
       e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch (_) {}
       var p = pt(e);
       if (tool === "eraser") { cur = { erase: true }; eraseAt(p); return; }
@@ -263,8 +264,6 @@
         Math.abs(e.clientX - tapStart.x) < 12 && Math.abs(e.clientY - tapStart.y) < 12;
       tapStart = null;
       if (tap) {
-        if (cur && !cur.erase && !penSeen) { cur = null; redraw(); }   // a finger tap is a gesture, not ink
-        else if (cur && cur.erase) cur = null;
         if (fingerTapped()) return;
       }
       if (cur && !cur.erase) { data.strokes.push(cur); redraw(); persist(); }
