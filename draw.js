@@ -53,7 +53,7 @@
     var sp = document.createElement("span"); sp.className = "sp"; bar.appendChild(sp);
     var st = document.createElement("span"); st.className = "st"; bar.appendChild(st);
     btn("⬇ PNG", exportPng);
-    function setTool(t) { tool = t; penB.classList.toggle("on", t === "pen"); erB.classList.toggle("on", t === "eraser"); }
+    function setTool(t, keepShot) { if (!keepShot) oneShot = false; tool = t; penB.classList.toggle("on", t === "pen"); erB.classList.toggle("on", t === "eraser"); }
 
     var q = document.createElement("div"); q.className = "q"; q.innerHTML = item.innerHTML;
     var wrap = document.createElement("div"); wrap.className = "wrap";
@@ -106,9 +106,26 @@
       if (data.strokes.length !== before) { redraw(); persist(); }
     }
 
+    // Finger double-tap = eraser for ONE stroke, then back to the pen (10/17: "can I double tap to
+    // turn on eraser then after erasure u switch back to pencil"). Safari never exposes the Pencil's
+    // own barrel double-tap to web pages (native UIPencilInteraction only), so a finger double-tap
+    // on the page is the closest a website can get.
+    var oneShot = false, lastTap = 0, tapStart = null;
+    function fingerTapped(e) {
+      var now = Date.now();
+      if (now - lastTap < 350) {
+        lastTap = 0;
+        if (tool === "eraser" && oneShot) { oneShot = false; setTool("pen"); st.textContent = "pen"; }
+        else { setTool("eraser"); oneShot = true; st.textContent = "eraser: 1 stroke"; }
+        return true;
+      }
+      lastTap = now; return false;
+    }
+
     var cur = null, scrollY0 = null, touchY0 = 0;
     cv.addEventListener("pointerdown", function (e) {
       if (e.pointerType === "pen") penSeen = true;
+      if (e.pointerType === "touch") tapStart = { t: Date.now(), x: e.clientX, y: e.clientY };
       if (e.pointerType === "touch" && penSeen) { scrollY0 = wrap.scrollTop; touchY0 = e.clientY; return; }  // finger = scroll once a Pencil is in use
       e.preventDefault(); cv.setPointerCapture(e.pointerId);
       var p = pt(e);
@@ -131,9 +148,18 @@
         ctx.beginPath(); ctx.moveTo(sx(last[0]), last[1]); ctx.lineTo(sx(p[0]), p[1]); ctx.stroke();
       });
     });
-    function up() {
+    function up(e) {
       scrollY0 = null;
+      var tap = e && e.pointerType === "touch" && tapStart && Date.now() - tapStart.t < 250 &&
+        Math.abs(e.clientX - tapStart.x) < 12 && Math.abs(e.clientY - tapStart.y) < 12;
+      tapStart = null;
+      if (tap) {
+        if (cur && !cur.erase && !penSeen) { cur = null; redraw(); }   // a finger tap is a gesture, not ink
+        else if (cur && cur.erase) cur = null;
+        if (fingerTapped(e)) return;
+      }
       if (cur && !cur.erase) { data.strokes.push(cur); persist(); }
+      if (cur && cur.erase && oneShot) { oneShot = false; setTool("pen"); st.textContent = "back to pen"; }
       cur = null;
     }
     cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
