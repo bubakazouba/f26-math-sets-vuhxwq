@@ -20,6 +20,10 @@
   function key(id) { return "pencil:" + COURSE + ":" + id; }
   function load(id) { try { return JSON.parse(localStorage.getItem(key(id)) || "null"); } catch (e) { return null; } }
   function save(id, d) { try { localStorage.setItem(key(id), JSON.stringify(d)); return true; } catch (e) { return false; } }
+  // per-problem status: "done" | "again" | "" (10/17: "can u also add a button for done and a button for do again")
+  function skey(id) { return "pstatus:" + COURSE + ":" + id; }
+  function getStatus(id) { try { return localStorage.getItem(skey(id)) || ""; } catch (e) { return ""; } }
+  function setStatus(id, v) { try { if (v) localStorage.setItem(skey(id), v); else localStorage.removeItem(skey(id)); } catch (e) {} }
   function pref(k, v) { try { if (v === undefined) return localStorage.getItem("pencilpref:" + k); localStorage.setItem("pencilpref:" + k, v); } catch (e) { return null; } }
 
   var UI = "-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,sans-serif";
@@ -28,6 +32,12 @@
     ".wbtn{font:600 13px/1 " + UI + ";border:0;color:#fff;background:linear-gradient(#5b8def,#3b6fd8);" +
     "border-radius:14px;padding:7px 12px;cursor:pointer;float:left;margin:4px 0 2px;box-shadow:0 1px 3px rgba(40,70,140,.35)}" +
     ".wbtn.has{background:linear-gradient(#ffb347,#f39c12);box-shadow:0 1px 3px rgba(160,100,10,.35)}" +
+    ".sbtn{font:600 13px/1 " + UI + ";border:1px solid #d1d1d6;color:#3a3a3c;background:#fff;border-radius:14px;padding:6px 11px;cursor:pointer;float:left;margin:4px 0 2px 6px}" +
+    ".sbtn.d.on{background:#34c759;border-color:#34c759;color:#fff}" +
+    ".sbtn.a.on{background:#ff9f0a;border-color:#ff9f0a;color:#fff}" +
+    ".item.prob.st-done{border-left-color:#34c759!important;background:#f3fbf5}" +
+    ".item.prob.st-again{border-left-color:#ff9f0a!important;background:#fff8ee}" +
+    "#pcov .hdr .sbtn{float:none;margin:0}" +
     "#pcov{position:fixed;inset:0;z-index:9999;background:#ececf0;display:flex;flex-direction:column;font:15px/1.3 " + UI + "}" +
     "#pcov .hdr{display:flex;align-items:center;gap:10px;padding:10px 14px 6px;color:#1c1c1e}" +
     "#pcov .hdr .done{font:600 16px " + UI + ";color:#2f6fe4;background:none;border:0;cursor:pointer;padding:4px 2px}" +
@@ -77,6 +87,11 @@
     var doneB = el("button", "done", hdr, "‹ Done"); doneB.onclick = close;
     var ttl = el("div", "ttl", hdr, (item.querySelector(".lead") || {}).textContent || document.title);
     var st = el("span", "st", hdr);
+    var hd = el("button", "sbtn d", hdr, "✅ Done"), ha = el("button", "sbtn a", hdr, "🔁 Do again");
+    function syncHdr() { var v = getStatus(id); hd.classList.toggle("on", v === "done"); ha.classList.toggle("on", v === "again"); }
+    hd.onclick = function () { toggleStatus(item, "done"); syncHdr(); };
+    ha.onclick = function () { toggleStatus(item, "again"); syncHdr(); };
+    syncHdr();
     var pngB = el("button", "png", hdr, "Share PNG"); pngB.onclick = exportPng;
 
     var tools = el("div", "tools");
@@ -279,6 +294,17 @@
     if (data.strokes.length) flash("loaded");
   }
 
+  function paintStatus(item) {
+    var v = getStatus(item.id);
+    item.classList.toggle("st-done", v === "done"); item.classList.toggle("st-again", v === "again");
+    if (item._sd) item._sd.classList.toggle("on", v === "done");
+    if (item._sa) item._sa.classList.toggle("on", v === "again");
+  }
+  function toggleStatus(item, v) {   // tap again to clear; Done and Do again are mutually exclusive
+    setStatus(item.id, getStatus(item.id) === v ? "" : v);
+    document.querySelectorAll(".item.prob").forEach(function (it) { if (it.id === item.id) paintStatus(it); });
+  }
+
   function init() {
     document.querySelectorAll(".item.prob[id]").forEach(function (item) {
       var b = document.createElement("button");
@@ -286,8 +312,15 @@
       b.type = "button"; b.textContent = "✏️ Write";
       b.onclick = function () { open(item); };
       item._wbtn = b;
+      var d = document.createElement("button"); d.type = "button"; d.className = "sbtn d"; d.textContent = "✅ Done";
+      var a = document.createElement("button"); a.type = "button"; a.className = "sbtn a"; a.textContent = "🔁 Do again";
+      d.onclick = function () { toggleStatus(item, "done"); };
+      a.onclick = function () { toggleStatus(item, "again"); };
+      item._sd = d; item._sa = a;
       var link = item.querySelector(".tosol");
-      if (link) link.insertBefore(b, link.firstChild); else item.appendChild(b);
+      if (link) { link.insertBefore(a, link.firstChild); link.insertBefore(d, a); link.insertBefore(b, d); }
+      else { item.appendChild(b); item.appendChild(d); item.appendChild(a); }
+      paintStatus(item);
     });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
