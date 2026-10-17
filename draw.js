@@ -40,7 +40,8 @@
     "#pcov .hdr .sbtn{float:none;margin:0}" +
     // no iOS double-tap-to-zoom anywhere in the canvas UI (10/17: "when I press undo multiple times safari
     // thinks I want to zoom on the undo button"); the canvas itself stays touch-action:none
-    "#pcov,#pcov *,.wbtn,.sbtn{touch-action:manipulation;-webkit-user-select:none;user-select:none}" +
+    "#pcov,#pcov *,.wbtn,.sbtn{touch-action:manipulation;-webkit-user-select:none;user-select:none;" +
+    "-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}" +
     "#pcov .toast{position:fixed;left:50%;top:42%;transform:translate(-50%,-50%) scale(.9);background:rgba(28,28,30,.86);color:#fff;" +
     "font:600 20px " + UI + ";padding:14px 22px;border-radius:16px;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s;z-index:10000}" +
     "#pcov .toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}" +
@@ -62,7 +63,7 @@
     "#pcov .tools .sz i{display:block;border-radius:50%;background:#1c1c1e}" +
     "#pcov .tools .sz.on{background:#e3ecfd}" +
     "#pcov .q{margin:0 14px 10px;padding:10px 14px;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,.08);" +
-    "max-height:26vh;overflow:auto;font:16px/1.5 Georgia,'Times New Roman',serif;color:#1c1c1e;cursor:pointer}" +
+    "max-height:26vh;overflow:auto;font:16px/1.5 Georgia,'Times New Roman',serif;color:#1c1c1e}" +
     "#pcov .q.min{max-height:2.6em;overflow:hidden;opacity:.85}" +
     "#pcov .q .tosol,#pcov .q .wbtn{display:none}" +
     "#pcov .wrap{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;padding:0 14px}" +
@@ -140,8 +141,10 @@
       renderSwatches();
     }
 
-    var q = el("div", "q"); q.innerHTML = item.innerHTML; q.title = "tap to fold / unfold the problem";
-    q.onclick = function () { q.classList.toggle("min"); size(); };
+    var q = el("div", "q"); q.innerHTML = item.innerHTML;
+    // fold via an explicit button only: a resting palm on the card must not fold it
+    var foldB = el("button", "t", tools, "▴"); foldB.title = "Fold / unfold the problem";
+    foldB.onclick = function () { q.classList.toggle("min"); foldB.textContent = q.classList.contains("min") ? "▾" : "▴"; size(); };
     var wrap = el("div", "wrap");
     var sheet = el("div", "sheet", wrap); sheet.style.background = paperCss(paper);
     var cv = el("canvas", "", sheet);
@@ -237,12 +240,23 @@
       lastTap = now; return false;
     }
 
-    var cur = null, scrollY0 = null, touchY0 = 0;
+    // Pencil and finger are tracked separately by pointerId. A finger NEVER inks, it only scrolls /
+    // double-taps (10/17: "make sure only the pencil gets to write on the page not my finger"), and any
+    // touch while the Pencil is writing (or just lifted) is treated as a resting palm and ignored
+    // completely (10/17: "my palm ... keeps accidentally selecting html elements").
+    var cur = null, scrollY0 = null, touchY0 = 0, touchId = null, penId = null, penLast = 0;
+    function penBusy() { return penId !== null || Date.now() - penLast < 700; }
+    function isPalm(e) { return (e.width || 0) > 40 || (e.height || 0) > 40; }
     cv.addEventListener("pointerdown", function (e) {
-      if (e.pointerType === "touch") tapStart = { t: Date.now(), x: e.clientX, y: e.clientY };
-      // a finger NEVER inks, only scrolls / double-taps (10/17: "make sure only the pencil gets to write on
-      // the page not my finger"); Pencil and mouse write
-      if (e.pointerType === "touch") { scrollY0 = wrap.scrollTop; touchY0 = e.clientY; return; }
+      if (e.pointerType === "touch") {
+        e.preventDefault();
+        if (penBusy() || isPalm(e) || touchId !== null) return;          // palm / second finger: ignore
+        touchId = e.pointerId; tapStart = { t: Date.now(), x: e.clientX, y: e.clientY };
+        scrollY0 = wrap.scrollTop; touchY0 = e.clientY; return;
+      }
+      if (penId !== null) return;
+      penId = e.pointerId;
+      touchId = null; scrollY0 = null; tapStart = null;                  // pen wins over any finger in flight
       e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch (_) {}
       var p = pt(e);
       if (tool === "eraser") { cur = { erase: true }; eraseAt(p); return; }
@@ -251,8 +265,12 @@
       if (cur.t !== "hl") { ctx.setTransform(dpr, 0, 0, dpr, 0, 0); drawStroke(cur); }
     });
     cv.addEventListener("pointermove", function (e) {
-      if (scrollY0 !== null && e.pointerType === "touch") { wrap.scrollTop = scrollY0 - (e.clientY - touchY0); return; }
-      if (!cur) return;
+      if (e.pointerType === "touch") {
+        e.preventDefault();
+        if (e.pointerId === touchId && scrollY0 !== null && !penBusy()) wrap.scrollTop = scrollY0 - (e.clientY - touchY0);
+        return;
+      }
+      if (e.pointerId !== penId || !cur) return;
       e.preventDefault();
       var evs = (e.getCoalescedEvents && e.getCoalescedEvents()) || [];
       if (!evs.length) evs = [e];
@@ -271,15 +289,19 @@
       });
     });
     function up(e) {
-      scrollY0 = null;
-      // forgiving tap: real iPad finger taps run longer and drift more than a mouse click (10/17: "double
-      // tap to switch to eraser mode isn't working")
-      var tap = e && e.pointerType === "touch" && tapStart && Date.now() - tapStart.t < 400 &&
-        Math.abs(e.clientX - tapStart.x) < 24 && Math.abs(e.clientY - tapStart.y) < 24;
-      tapStart = null;
-      if (tap) {
-        if (fingerTapped()) return;
+      if (e.pointerType === "touch") {
+        if (e.pointerId !== touchId) return;                              // a palm lifting: ignore
+        touchId = null; scrollY0 = null;
+        // forgiving tap: real iPad finger taps run longer and drift more than a mouse click (10/17: "double
+        // tap to switch to eraser mode isn't working")
+        var tap = e.type === "pointerup" && tapStart && Date.now() - tapStart.t < 400 &&
+          Math.abs(e.clientX - tapStart.x) < 24 && Math.abs(e.clientY - tapStart.y) < 24;
+        tapStart = null;
+        if (tap && !penBusy()) fingerTapped();
+        return;
       }
+      if (e.pointerId !== penId) return;
+      penId = null; penLast = Date.now();
       if (cur && !cur.erase) { data.strokes.push(cur); redraw(); persist(); }
       if (cur && cur.erase && oneShot) { setTool(prevTool); banner(toolName(prevTool)); }
       cur = null;
