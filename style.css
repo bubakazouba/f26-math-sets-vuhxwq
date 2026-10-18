@@ -57,4 +57,5 @@ p.quiz{background:#eef4fb;border-radius:6px;padding:6px 10px;font-size:.9em}
 table.quiz{border-collapse:collapse;width:100%;font-size:.86em;margin:.4em 0 1.4em;display:block;overflow-x:auto}
 table.quiz th,table.quiz td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left;background:var(--card)}
 table.quiz th{background:#eef4fb}
+.sets small.due{color:var(--acc);margin-top:3px}
 @media (max-width:600px){body{font-size:17px}.item{padding:8px 10px}}
