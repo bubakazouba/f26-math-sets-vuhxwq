@@ -401,6 +401,13 @@ Note: For this problem, we regard $\mathbb{R}$ as having the Euclidean topology,
 <div class="item prob" id="c6-p-s6-3-1"><p><b>$\bullet$  #1.</b> Verify that the sequence $\{x_n = \sum_{i=0}^{n} \frac{1}{i!}\}$ is a Cauchy sequence in $\mathbb{Q}$ with the euclidean metric. [This sequence does not converge in $\mathbb{Q}$. In $\mathbb{R}$ it converges to the number $e$, which is known to be irrational. For a proof that $e$ is irrational, indeed transcendental, see Jones et al. [221].]</p><div class="tosol"><a href="#c6-s-s6-3-1">Solution &darr;</a></div></div>
 <div class="item prob" id="c6-p-s6-3-2"><p><b>$\bullet$  #2.</b> Prove that every subsequence of a Cauchy sequence is a Cauchy sequence.</p><div class="tosol"><a href="#c6-s-s6-3-2">Solution &darr;</a></div></div>
 <div class="item prob" id="c6-p-s6-3-3"><p><b>$\bullet$  #3.</b> Give an example of a sequence in $\mathbb{R}$ with the euclidean metric which has no subsequence which is a Cauchy sequence.</p><div class="tosol"><a href="#c6-off-ch6-maintext-p5">Official solution &darr;</a></div></div>
+<div class="frag">
+
+<h3>Self-assigned (Sahmoud, not on Krebs' list)</h3>
+<h4>Exercises 6.1</h4>
+<div class="n anch" id="c6-p-s6-1-5">∙ #5. <div class="tosol"><a href="#c6-s-s6-1-5">Solution &darr;</a></div></div>
+<div>Let (X, d) be a metric space and τ the corresponding topology on X. Fix a ∈ X. Prove that the map f : (X, τ) → ℝ defined by f(x) = d(a, x) is continuous.</div>
+</div>
 <h2 class="chap" id="c7-problems">MATH 5690 (Topology)  ·  Chapter 7 Homework</h2><div class="hdr"><p class="small">Problems first; ALL solutions together at the end. The comps problem is quoted verbatim from the CSULA topology comprehensive exam (solution by Claude - comps have no key). The assigned main-textbook problems are inlined verbatim (cropped from Morris, Topology Without Tears); official solutions are appended.</p></div><h3 class="grp">Assigned problems (Chapter 7)</h3>
 <p>$\bullet$ Fall 2008 topology comps, Problem 4(b).</p>
 <p>$\bullet$ Main textbook: Section 7.1 #1-5;  Section 7.2 #1, 3, 4, 6, 7.</p>
@@ -1467,6 +1474,20 @@ Verify that f<sub>n</sub> → f<sub>0</sub>, where f<sub>0</sub>(x) = 0, for all
 <p style="margin-left:2em">d<sub>1</sub>(y, 0) ⩽ d<sub>1</sub>(y, x) + d<sub>1</sub>(x, 0) &lt; r + d<sub>1</sub>(x, 0) = 1,</p>
 <p>i.e. y ∈ U. Thus the d<sub>2</sub>-ball B<sub>δ</sub>(x) (a round ball, a disc when n = 2) is contained in U. Since x ∈ U was arbitrary, U is open with respect to d<sub>2</sub> by Proposition 6.1.23. ∎</p>
 
+</div>
+<div class="frag">
+<h3>Chapter 6: self-assigned problem (Claude solution, not official)</h3>
+
+<div class="lbl anch" id="c6-s-s6-1-5">Section 6.1 #5</div><div class="toprob"><a href="#c6-p-s6-1-5">&uarr; Problem</a></div>
+<div class="stmt">Let (X, d) be a metric space and τ the corresponding topology on X. Fix a ∈ X. Prove that the map f : (X, τ) → ℝ defined by f(x) = d(a, x) is continuous.</div>
+<p><b>Step 1 (f is 1-Lipschitz).</b> For any x, y ∈ X the triangle inequality gives</p>
+<p style="margin-left:2em;text-align:center">d(a, x) ⩽ d(a, y) + d(y, x)  and  d(a, y) ⩽ d(a, x) + d(x, y).</p>
+<p>The first says f(x) − f(y) ⩽ d(x, y), the second says f(y) − f(x) ⩽ d(x, y). Together:</p>
+<p style="margin-left:2em;text-align:center">|f(x) − f(y)| = |d(a, x) − d(a, y)| ⩽ d(x, y).</p>
+<p><b>Step 2 (balls map into intervals).</b> Fix x ∈ X and ε &gt; 0. If y ∈ B<sub>ε</sub>(x), i.e. d(x, y) &lt; ε, then by Step 1 |f(y) − f(x)| &lt; ε. So</p>
+<p style="margin-left:2em;text-align:center">f(B<sub>ε</sub>(x)) ⊆ (f(x) − ε, f(x) + ε).</p>
+<p><b>Step 3 (preimages of open sets are open).</b> Let U be open in ℝ and let x ∈ f<sup>−1</sup>(U). Since f(x) ∈ U and U is open, there is ε &gt; 0 with (f(x) − ε, f(x) + ε) ⊆ U. By Step 2, B<sub>ε</sub>(x) ⊆ f<sup>−1</sup>(U). So every point of f<sup>−1</sup>(U) has an open ball around it inside f<sup>−1</sup>(U), hence f<sup>−1</sup>(U) is open in τ (Proposition 6.1.23).</p>
+<p><b>Conclusion.</b> The preimage of every open subset of ℝ is open in (X, τ), so f is continuous. ∎</p>
 </div>
 <h2 class="chap" id="c7-solutions">Chapter 7 solutions</h2><p class="small">My worked solutions to the comprehensive-exam problem (and any class problem with no official key) follow; the instructor's official solutions to the main-textbook / worksheet problems are appended after.</p>
 <h4 class="sub">Comps Fall 2008 #4(b)  - solution</h4>
