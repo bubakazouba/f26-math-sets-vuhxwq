@@ -25,6 +25,10 @@
   function getStatus(id) { try { return localStorage.getItem(skey(id)) || ""; } catch (e) { return ""; } }
   function setStatus(id, v) { try { if (v) localStorage.setItem(skey(id), v); else localStorage.removeItem(skey(id)); } catch (e) {} }
   function pref(k, v) { try { if (v === undefined) return localStorage.getItem("pencilpref:" + k); localStorage.setItem("pencilpref:" + k, v); } catch (e) { return null; } }
+  // per-problem typed notes (10/18: "can you add a feature where i can write some text on the pset website for each problem")
+  function nkey(id) { return "pnote:" + COURSE + ":" + id; }
+  function getNote(id) { try { return localStorage.getItem(nkey(id)) || ""; } catch (e) { return ""; } }
+  function setNote(id, v) { try { if (v.trim()) localStorage.setItem(nkey(id), v); else localStorage.removeItem(nkey(id)); return true; } catch (e) { return false; } }
 
   var UI = "-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,sans-serif";
   var css = document.createElement("style");
@@ -38,6 +42,13 @@
     ".item.prob.st-done{border-left-color:#34c759!important;background:#f3fbf5}" +
     ".item.prob.st-again{border-left-color:#ff9f0a!important;background:#fff8ee}" +
     "#pcov .hdr .sbtn{float:none;margin:0}" +
+    ".sbtn.n.has{background:#fff4c2;border-color:#e6c84f;color:#6b5400}" +
+    ".pnote{clear:both;padding-top:6px}" +
+    ".pnote textarea{display:block;box-sizing:border-box;width:100%;min-height:5.5em;padding:9px 11px;border:1px solid #d1d1d6;" +
+    "border-radius:10px;background:#fffdf3;font:15px/1.45 " + UI + ";color:#1c1c1e;resize:vertical;-webkit-user-select:text;user-select:text}" +
+    ".pnote textarea:focus{outline:none;border-color:#5b8def;box-shadow:0 0 0 3px rgba(91,141,239,.18)}" +
+    ".pnote .ns{font:12px " + UI + ";color:#8e8e93;margin-top:3px;min-height:1em}" +
+    "#pcov .q .pnote,#pcov .q .sbtn{display:none}" +
     // no iOS double-tap-to-zoom anywhere in the canvas UI (10/17: "when I press undo multiple times safari
     // thinks I want to zoom on the undo button"); the canvas itself stays touch-action:none
     "#pcov,#pcov *,.wbtn,.sbtn{touch-action:manipulation;-webkit-user-select:none;user-select:none;" +
@@ -340,6 +351,40 @@
     document.querySelectorAll(".item.prob").forEach(function (it) { if (it.id === item.id) paintStatus(it); });
   }
 
+  // Notes: a "📝 Note" button toggles a text box under the problem. It saves as you type (localStorage, this
+  // device, same key on the chapter page and the "all" page) and stays open on load whenever a note exists.
+  function addNote(item) {
+    var id = item.id, nb = document.createElement("button");
+    nb.type = "button"; nb.className = "sbtn n"; nb.textContent = "📝 Note";
+    var box = document.createElement("div"); box.className = "pnote";
+    var ta = document.createElement("textarea"); ta.placeholder = "Your notes on this problem…";
+    var ns = document.createElement("div"); ns.className = "ns";
+    box.appendChild(ta); box.appendChild(ns); item.appendChild(box);
+    function paint() { var v = getNote(id); nb.classList.toggle("has", !!v.trim()); nb.textContent = v.trim() ? "📝 Note ✓" : "📝 Note"; }
+    ta.value = getNote(id);
+    box.style.display = ta.value.trim() ? "" : "none";
+    var t = null;
+    ta.addEventListener("input", function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        ns.textContent = setNote(id, ta.value) ? "saved" : "NOT saved (storage full?)";
+        paint();
+        document.querySelectorAll(".item.prob").forEach(function (it) {   // keep a duplicate of this problem on the page in sync
+          if (it !== item && it.id === id && it._nta) { it._nta.value = ta.value; it._npaint(); }
+        });
+      }, 300);
+    });
+    ta.addEventListener("blur", function () { clearTimeout(t); setNote(id, ta.value); paint(); });
+    nb.onclick = function () {
+      var showing = box.style.display !== "none";
+      box.style.display = showing ? "none" : "";
+      if (!showing) ta.focus();
+    };
+    item._nta = ta; item._npaint = paint;
+    paint();
+    return nb;
+  }
+
   function init() {
     document.querySelectorAll(".item.prob[id]").forEach(function (item) {
       var b = document.createElement("button");
@@ -352,9 +397,10 @@
       d.onclick = function () { toggleStatus(item, "done"); };
       a.onclick = function () { toggleStatus(item, "again"); };
       item._sd = d; item._sa = a;
+      var n = addNote(item);
       var link = item.querySelector(".tosol");
-      if (link) { link.insertBefore(a, link.firstChild); link.insertBefore(d, a); link.insertBefore(b, d); }
-      else { item.appendChild(b); item.appendChild(d); item.appendChild(a); }
+      if (link) { link.insertBefore(n, link.firstChild); link.insertBefore(a, n); link.insertBefore(d, a); link.insertBefore(b, d); }
+      else { item.insertBefore(b, item._nta.parentNode); item.insertBefore(d, item._nta.parentNode); item.insertBefore(a, item._nta.parentNode); item.insertBefore(n, item._nta.parentNode); }
       paintStatus(item);
     });
   }
