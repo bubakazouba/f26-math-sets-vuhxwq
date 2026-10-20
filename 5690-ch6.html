@@ -42,6 +42,10 @@
 <p>(iii) $d$ and $e$ are equivalent metrics.</p><div class="tosol"><a href="#c6-off-ch6-maintext-p3">Official solution &darr;</a> &middot; <a href="#c6-s-s6-1-4">Solution (Claude) &darr;</a></div></div>
 <div class="item prob" id="c6-p-s6-1-5"><p><b>$\bullet$  #5.</b> </p>
 <p>[Self-assigned by Sahmoud 10/18, not on Krebs' list.] Let $(X,d)$ be a metric space and $\tau$ the corresponding topology on $X$. Fix $a \in X$. Prove that the map $f : (X,\tau) \to \mathbb{R}$ defined by $f(x) = d(a,x)$ is continuous.</p><div class="tosol"><a href="#c6-s-s6-1-5">Solution &darr;</a></div></div>
+<div class="item prob" id="c6-p-s6-1-9"><p><b>$\bullet$  #9.</b> </p>
+<p>[Self-assigned by Sahmoud 10/19, not on Krebs' list.] A topological space $(X,\tau)$ is said to be a normal space if for each pair of disjoint closed sets $A$ and $B$, there exist open sets $U$ and $V$ such that $A \subseteq U$, $B \subseteq V$, and $U \cap V = \emptyset$. Prove that</p>
+<p>(i) Every metrizable space is a normal space.</p>
+<p>(ii) Every space which is both a $T_1$-space and a normal space is a Hausdorff space. [A normal space which is also Hausdorff is called a $T_4$-space.]</p><div class="tosol"><a href="#c6-s-s6-1-9">Solution &darr;</a></div></div>
 <h4 class="sub">Exercises 6.2</h4>
 <div class="item prob" id="c6-p-s6-2-1"><p><b>$\bullet$  #1.</b> Let $C[0,1]$ and $d$ be as in Example 6.1.5. Define a sequence of functions $f_1, f_2, \dots, f_n, \dots$ in $(C[0,1], d)$ by $f_n(x) = \frac{\sin(nx)}{n}$, $n = 1, 2, \dots$, $x \in [0,1]$. Verify that $f_n \to f_0$, where $f_0(x) = 0$, for all $x \in [0,1]$.</p><div class="tosol"><a href="#c6-s-s6-2-1">Solution &darr;</a></div></div>
 <div class="item prob" id="c6-p-s6-2-2"><p><b>$\bullet$  #2.</b> Let $(X,d)$ be a metric space and $x_1, x_2, \dots, x_n, \dots$ a sequence such that $x_n \to x$ and $x_n \to y$. Prove that $x = y$.</p><div class="tosol"><a href="#c6-s-s6-2-2">Solution &darr;</a></div></div>
@@ -193,6 +197,22 @@ Verify that f<sub>n</sub> → f<sub>0</sub>, where f<sub>0</sub>(x) = 0, for all
 <p style="margin-left:2em;text-align:center">f(B<sub>ε</sub>(x)) ⊆ (f(x) − ε, f(x) + ε).</p>
 <p><b>Step 3 (preimages of open sets are open).</b> Let U be open in ℝ and let x ∈ f<sup>−1</sup>(U). Since f(x) ∈ U and U is open, there is ε &gt; 0 with (f(x) − ε, f(x) + ε) ⊆ U. By Step 2, B<sub>ε</sub>(x) ⊆ f<sup>−1</sup>(U). So every point of f<sup>−1</sup>(U) has an open ball around it inside f<sup>−1</sup>(U), hence f<sup>−1</sup>(U) is open in τ (Proposition 6.1.23).</p>
 <p><b>Conclusion.</b> The preimage of every open subset of ℝ is open in (X, τ), so f is continuous. ∎</p>
+
+<div class="lbl anch" id="c6-s-s6-1-9">Section 6.1 #9</div><div class="toprob"><a href="#c6-p-s6-1-9">&uarr; Problem</a></div>
+<div class="stmt">A topological space (X, τ) is said to be a normal space if for each pair of disjoint closed sets A and B, there exist open sets U and V such that A ⊆ U, B ⊆ V, and U ∩ V = Ø. Prove that (i) Every metrizable space is a normal space. (ii) Every space which is both a T<sub>1</sub>-space and a normal space is a Hausdorff space.</div>
+<p><b>(i) Setup.</b> Let (X, τ) be metrizable, with τ induced by a metric d, and let A, B be disjoint closed sets. If A = Ø take U = Ø, V = X (similarly if B = Ø). So assume both are non-empty. For x ∈ X put</p>
+<p style="margin-left:2em;text-align:center">d(x, A) = inf{ d(x, a) : a ∈ A }.</p>
+<p><b>Step 1 (x ↦ d(x, A) is continuous).</b> For x, y ∈ X and any a ∈ A, d(x, a) ⩽ d(x, y) + d(y, a). Taking the infimum over a gives d(x, A) ⩽ d(x, y) + d(y, A); swapping x and y gives the reverse, so</p>
+<p style="margin-left:2em;text-align:center">|d(x, A) − d(y, A)| ⩽ d(x, y).</p>
+<p>Exactly as in 6.1 #5, a 1-Lipschitz function is continuous: B<sub>ε</sub>(x) is mapped into (d(x, A) − ε, d(x, A) + ε). The same holds for x ↦ d(x, B).</p>
+<p><b>Step 2 (d(x, A) = 0 exactly when x ∈ A).</b> If x ∈ A then d(x, A) ⩽ d(x, x) = 0. If x ∉ A, then x lies in the open set X \ A, so some ball B<sub>r</sub>(x) misses A, i.e. d(x, a) ⩾ r for all a ∈ A, so d(x, A) ⩾ r &gt; 0. Likewise d(x, B) = 0 exactly when x ∈ B.</p>
+<p><b>Step 3 (the open sets).</b> The function g(x) = d(x, A) − d(x, B) is continuous (difference of continuous real functions). Define</p>
+<p style="margin-left:2em;text-align:center">U = g<sup>−1</sup>((−∞, 0)) = { x : d(x, A) &lt; d(x, B) },  V = g<sup>−1</sup>((0, ∞)) = { x : d(x, B) &lt; d(x, A) }.</p>
+<p>Both are preimages of open subsets of ℝ, so both are open, and U ∩ V = Ø since no x has g(x) &lt; 0 and g(x) &gt; 0.</p>
+<p><b>Step 4 (A ⊆ U, B ⊆ V).</b> Let a ∈ A. By Step 2, d(a, A) = 0, and since a ∉ B (A ∩ B = Ø), d(a, B) &gt; 0. So g(a) &lt; 0 and a ∈ U. Symmetrically every b ∈ B has d(b, B) = 0 &lt; d(b, A), so b ∈ V.</p>
+<p><b>Conclusion (i).</b> Any two disjoint closed sets are separated by disjoint open sets, so every metrizable space is normal. ∎</p>
+<p><b>(ii)</b> Let (X, τ) be T<sub>1</sub> and normal, and let x ≠ y in X. In a T<sub>1</sub>-space every singleton is closed, so {x} and {y} are disjoint closed sets. Normality gives open U ⊇ {x} and V ⊇ {y} with U ∩ V = Ø. That is exactly the Hausdorff condition for x and y. ∎</p>
+<p class="small"><b>Why T<sub>1</sub> is needed in (ii).</b> The indiscrete topology on a two-point set is normal (the only closed sets are Ø and X, so there is no pair of disjoint non-empty closed sets) but not Hausdorff.</p>
 </div>
 <footer><a href="index.html">&larr; All problem sets</a> &middot; <a href="#problems">Top</a></footer>
 </main></body></html>
