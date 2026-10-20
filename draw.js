@@ -471,13 +471,17 @@
       if (!keys.length) { location.href = NEW_BASE + page; return; }
       var w = window.open(NEW_BASE + page + "#import", "_blank");
       btn.textContent = "Waiting for the new site (sign in there if asked)…";
+      var sent = false, moved = 0;
       window.addEventListener("message", function (ev) {
         if (ev.origin !== new URL(NEW_BASE).origin || !ev.data) return;
         if (ev.data.t === "ready") {
+          if (sent) { w.postMessage({ t: "nothing" }, new URL(NEW_BASE).origin); return; }   // its post-import reload asks again
+          sent = true;
           var items = {}; keys.forEach(function (k) { items[k] = localStorage.getItem(k); });
           w.postMessage({ t: "data", items: items }, new URL(NEW_BASE).origin);
         } else if (ev.data.t === "done") {
-          btn.textContent = "Moved " + ev.data.n + " items. Use the new site from now on.";
+          moved += ev.data.n;
+          btn.textContent = "Moved " + moved + " of " + keys.length + " items. Use the new site from now on.";
         }
       });
     };
@@ -493,7 +497,7 @@
         var n = oks.filter(Boolean).length;
         ev.source.postMessage({ t: "done", n: n }, OLD_ORIGIN);
         if (location.hash === "#import") history.replaceState(null, "", location.pathname);
-        location.reload();
+        if (n) location.reload();   // redraw with the imported work; the next "ready" gets "nothing" back
       });
     });
     window.opener.postMessage({ t: "ready" }, OLD_ORIGIN);
