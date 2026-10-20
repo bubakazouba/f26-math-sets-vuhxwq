@@ -7,7 +7,7 @@
      size swatches, undo/redo, paper (lined with margin / grid / blank).
    - Finger double-tap = eraser for ONE stroke, then back to the previous tool. Safari never exposes
      the Pencil's own barrel double-tap to web pages (native UIPencilInteraction only).
-   - Strokes are vectors in localStorage on THIS device, keyed by course + problem id, so the same
+   - Strokes are vectors stored on the laptop (apps/pset-site api/kv), keyed by course + problem id, so the same
      problem on a chapter page and the "all" page shares one drawing. Old pen-only saves still load.
    Written into the site by build_pset_site.py. */
 (function () {
@@ -17,18 +17,42 @@
   var PEN_SIZES = [1.8, 2.8, 4.2], HL_SIZES = [14, 22, 32];
   var PAGE_H = 1400, LINE = 34;
 
+  // State lives on the laptop, not in this browser (10/19: "I want u to store the state of things on ur side
+  // not my browser"). The site is served by apps/pset-site behind the Tailscale gateway; S mirrors its
+  // api/kv store, loaded once before init() and written through on every change. A failed write shows a
+  // red banner, never a silent local fallback.
+  var S = {};
+  var banner = null;
+  function showErr(msg) {
+    if (!banner) {
+      banner = document.createElement("div");
+      banner.style.cssText = "position:fixed;left:0;right:0;top:0;z-index:10001;background:#d93025;color:#fff;" +
+        "font:600 14px -apple-system,sans-serif;padding:8px 12px;text-align:center";
+      document.body.appendChild(banner);
+    }
+    banner.textContent = msg; banner.style.display = "";
+  }
+  function kvSet(k, v) {   // v === null deletes; resolves true once the server has it
+    if (v === null) delete S[k]; else S[k] = v;
+    return fetch("api/kv/" + encodeURIComponent(k), v === null ? { method: "DELETE" } :
+      { method: "PUT", body: v, headers: { "Content-Type": "text/plain;charset=utf-8" } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); if (banner) banner.style.display = "none"; return true; })
+      .catch(function (e) { showErr("Not saved to the server (" + e.message + "). Your last change is only on this screen."); return false; });
+  }
+  function kvGet(k) { return Object.prototype.hasOwnProperty.call(S, k) ? S[k] : null; }
+
   function key(id) { return "pencil:" + COURSE + ":" + id; }
-  function load(id) { try { return JSON.parse(localStorage.getItem(key(id)) || "null"); } catch (e) { return null; } }
-  function save(id, d) { try { localStorage.setItem(key(id), JSON.stringify(d)); return true; } catch (e) { return false; } }
+  function load(id) { try { return JSON.parse(kvGet(key(id)) || "null"); } catch (e) { return null; } }
+  function save(id, d) { return kvSet(key(id), JSON.stringify(d)); }   // Promise<bool>
   // per-problem status: "done" | "again" | "" (10/17: "can u also add a button for done and a button for do again")
   function skey(id) { return "pstatus:" + COURSE + ":" + id; }
-  function getStatus(id) { try { return localStorage.getItem(skey(id)) || ""; } catch (e) { return ""; } }
-  function setStatus(id, v) { try { if (v) localStorage.setItem(skey(id), v); else localStorage.removeItem(skey(id)); } catch (e) {} }
-  function pref(k, v) { try { if (v === undefined) return localStorage.getItem("pencilpref:" + k); localStorage.setItem("pencilpref:" + k, v); } catch (e) { return null; } }
+  function getStatus(id) { return kvGet(skey(id)) || ""; }
+  function setStatus(id, v) { kvSet(skey(id), v || null); }
+  function pref(k, v) { if (v === undefined) return kvGet("pencilpref:" + k); kvSet("pencilpref:" + k, v); }
   // per-problem typed notes (10/18: "can you add a feature where i can write some text on the pset website for each problem")
   function nkey(id) { return "pnote:" + COURSE + ":" + id; }
-  function getNote(id) { try { return localStorage.getItem(nkey(id)) || ""; } catch (e) { return ""; } }
-  function setNote(id, v) { try { if (v.trim()) localStorage.setItem(nkey(id), v); else localStorage.removeItem(nkey(id)); return true; } catch (e) { return false; } }
+  function getNote(id) { return kvGet(nkey(id)) || ""; }
+  function setNote(id, v) { return kvSet(nkey(id), v.trim() ? v : null); }   // Promise<bool>
 
   var UI = "-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,sans-serif";
   var css = document.createElement("style");
@@ -211,7 +235,7 @@
     function banner(msg) { toast.textContent = msg; toast.classList.add("show"); clearTimeout(tt0); tt0 = setTimeout(function () { toast.classList.remove("show"); }, 1300); }
     function persist() {
       clearTimeout(t0);
-      t0 = setTimeout(function () { flash(save(id, data) ? "saved" : "NOT saved (storage full?)"); }, 250);
+      t0 = setTimeout(function () { save(id, data).then(function (ok) { flash(ok ? "saved" : "NOT saved"); }); }, 250);
       item._wbtn && item._wbtn.classList.toggle("has", data.strokes.length > 0);
     }
     function pt(e) {
@@ -351,8 +375,8 @@
     document.querySelectorAll(".item.prob").forEach(function (it) { if (it.id === item.id) paintStatus(it); });
   }
 
-  // Notes: a "📝 Note" button toggles a text box under the problem. It saves as you type (localStorage, this
-  // device, same key on the chapter page and the "all" page) and stays open on load whenever a note exists.
+  // Notes: a "📝 Note" button toggles a text box under the problem. It saves as you type (to the laptop via api/kv, so every
+  // device sees it; same key on the chapter page and the "all" page) and stays open on load whenever a note exists.
   function addNote(item) {
     var id = item.id, nb = document.createElement("button");
     nb.type = "button"; nb.className = "sbtn n"; nb.textContent = "📝 Note";
@@ -367,7 +391,8 @@
     ta.addEventListener("input", function () {
       clearTimeout(t);
       t = setTimeout(function () {
-        ns.textContent = setNote(id, ta.value) ? "saved" : "NOT saved (storage full?)";
+        ns.textContent = "saving…";
+        setNote(id, ta.value).then(function (ok) { ns.textContent = ok ? "saved" : "NOT saved"; });
         paint();
         document.querySelectorAll(".item.prob").forEach(function (it) {   // keep a duplicate of this problem on the page in sync
           if (it !== item && it.id === id && it._nta) { it._nta.value = ta.value; it._npaint(); }
@@ -404,5 +429,78 @@
       paintStatus(item);
     });
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+  // Boot: load the server state, then copy up anything this browser still holds from the localStorage
+  // era that the server doesn't have yet (one-time migration per device), then draw the buttons.
+  function boot() {
+    fetch("api/kv").then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (data) {
+        S = data;
+        var up = [];
+        try {
+          for (var i = 0; i < localStorage.length; i++) {
+            var k = localStorage.key(i);
+            if (/^(pencil|pstatus|pnote|pencilpref):/.test(k) && !Object.prototype.hasOwnProperty.call(S, k)) up.push(k);
+          }
+        } catch (e) {}
+        return Promise.all(up.map(function (k) {
+          var v = localStorage.getItem(k);
+          return kvSet(k, v).then(function (ok) { if (ok) localStorage.removeItem(k); });
+        }));
+      })
+      .then(function () { init(); importFromOld(); })
+      .catch(function (e) { showErr("Could not load your saved work from the server (" + e.message + "). Reload the page."); });
+  }
+  // Moving off GitHub Pages: a browser's localStorage belongs to one site, so work saved on
+  // bubakazouba.github.io can't be read from the Tailscale site. The old site (which also loads this
+  // file) shows a "moved" banner; its button opens the new page with #import and hands the saved keys
+  // over with postMessage (cross-site safe; the new page only accepts them from the old site's origin).
+  var OLD_ORIGIN = "https://bubakazouba.github.io";
+  var NEW_BASE = "https://laptop-vc6cr3t5.tail6b841b.ts.net/app/pset-site/";
+  var MIG = /^(pencil|pstatus|pnote|pencilpref):/;
+  function movedBanner() {
+    var page = location.pathname.split("/").pop() || "index.html";
+    var keys = [];
+    try { for (var i = 0; i < localStorage.length; i++) if (MIG.test(localStorage.key(i))) keys.push(localStorage.key(i)); } catch (e) {}
+    var b = document.createElement("div");
+    b.style.cssText = "position:sticky;top:0;z-index:10001;background:#1f4fa8;color:#fff;font:600 15px -apple-system,sans-serif;padding:10px 14px;text-align:center";
+    b.innerHTML = "This site moved to your Tailscale address. ";
+    var btn = document.createElement("button");
+    btn.style.cssText = "font:600 14px -apple-system,sans-serif;border:0;border-radius:10px;padding:6px 12px;margin-left:6px;cursor:pointer";
+    btn.textContent = keys.length ? "Move my " + keys.length + " saved items and open it" : "Open the new site";
+    btn.onclick = function () {
+      if (!keys.length) { location.href = NEW_BASE + page; return; }
+      var w = window.open(NEW_BASE + page + "#import", "_blank");
+      btn.textContent = "Waiting for the new site (sign in there if asked)…";
+      window.addEventListener("message", function (ev) {
+        if (ev.origin !== new URL(NEW_BASE).origin || !ev.data) return;
+        if (ev.data.t === "ready") {
+          var items = {}; keys.forEach(function (k) { items[k] = localStorage.getItem(k); });
+          w.postMessage({ t: "data", items: items }, new URL(NEW_BASE).origin);
+        } else if (ev.data.t === "done") {
+          btn.textContent = "Moved " + ev.data.n + " items. Use the new site from now on.";
+        }
+      });
+    };
+    b.appendChild(btn);
+    document.body.insertBefore(b, document.body.firstChild);
+  }
+  function importFromOld() {   // on the new site, opened by the old one with #import
+    if (!window.opener) return;   // not keyed on #import alone: the OAuth sign-in redirect can drop the hash
+    window.addEventListener("message", function (ev) {
+      if (ev.origin !== OLD_ORIGIN || !ev.data || ev.data.t !== "data") return;
+      var ks = Object.keys(ev.data.items).filter(function (k) { return MIG.test(k) && !Object.prototype.hasOwnProperty.call(S, k); });
+      Promise.all(ks.map(function (k) { return kvSet(k, ev.data.items[k]); })).then(function (oks) {
+        var n = oks.filter(Boolean).length;
+        ev.source.postMessage({ t: "done", n: n }, OLD_ORIGIN);
+        if (location.hash === "#import") history.replaceState(null, "", location.pathname);
+        location.reload();
+      });
+    });
+    window.opener.postMessage({ t: "ready" }, OLD_ORIGIN);
+  }
+  if (location.origin === OLD_ORIGIN) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", movedBanner); else movedBanner();
+    return;
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
 })();
